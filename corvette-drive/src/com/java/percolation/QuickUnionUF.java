@@ -5,13 +5,13 @@ import java.awt.Frame;
 import javax.swing.JOptionPane;
 
 /**
- * Class to find the Dynamic Connectivity between the given pair.
+ * Class to find the Dynamic Connectivity between the given pair. {Efficient}
  * 
  * @author Akash Pargat
  */
-public class QuickFindUF
+public class QuickUnionUF
 {
-    private int id[];
+    private static int id[];
 
     /**
      * Public constructor.
@@ -19,7 +19,7 @@ public class QuickFindUF
      * @param numberOfId
      *            Number of Id in the grid.
      */
-    public QuickFindUF(final int numberOfId)
+    public QuickUnionUF(final int numberOfId)
     {
         id = new int[numberOfId];
         for (int index = 0; index < numberOfId; index++)
@@ -39,7 +39,23 @@ public class QuickFindUF
      */
     private boolean connected(int firstPair, int secondPair)
     {
-        return id[firstPair] == id[secondPair];
+        return root(firstPair) == root(secondPair);
+    }
+
+    /**
+     * Determines the root of the given number.
+     * 
+     * @param element
+     *            Tree element to the determine the root of.
+     * @return The root of the given element.
+     */
+    private int root(int element)
+    {
+        while (element != id[element])
+        {
+            element = id[element];
+        }
+        return element;
     }
 
     /**
@@ -52,16 +68,10 @@ public class QuickFindUF
      */
     private void union(int firstNumber, int secondNumber)
     {
-        int firstNumberId = id[firstNumber];
-        int secondNumberId = id[secondNumber];
+        int firstNumberId = root(firstNumber);
+        int secondNumberId = root(secondNumber);
 
-        for (int index = 0; index < id.length; index++)
-        {
-            if (id[index] == firstNumberId)
-            {
-                id[index] = secondNumberId;
-            }
-        }
+        id[firstNumberId] = secondNumberId;
     }
 
     /**
@@ -72,13 +82,25 @@ public class QuickFindUF
      */
     public static void main(String[] args)
     {
-        QuickFindUF quickFind = new QuickFindUF(10);
-        quickFind.union(5, 7);
-        quickFind.union(6, 2);
-        quickFind.union(3, 2);
+        QuickUnionUF quickUnion = new QuickUnionUF(10);
 
-        quickFind.showDialog(quickFind.connected(6, 3));
-        quickFind.showDialog(quickFind.connected(7, 3));
+        quickUnion.union(4, 3);
+        quickUnion.union(3, 8);
+        quickUnion.union(6, 5);
+        quickUnion.union(9, 4);
+        quickUnion.union(2, 1);
+        quickUnion.showDialog(quickUnion.connected(8, 9));
+        quickUnion.showDialog(quickUnion.connected(5, 4));
+        quickUnion.union(5, 0);
+        quickUnion.union(7, 2);
+        quickUnion.union(6, 1);
+        quickUnion.union(7, 3);
+        quickUnion.showDialog(quickUnion.connected(5, 4));
+
+        for (int index = 0; index < 10; index++)
+        {
+            System.out.print(id[index]);
+        }
     }
 
     /**
