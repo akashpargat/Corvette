@@ -33,20 +33,6 @@ public class FacebookConnectivityProblem
     }
 
     /**
-     * Determines if the given pair is connected.
-     * 
-     * @param firstPair
-     *            Number to determine the connectivity to.
-     * @param secondPair
-     *            Number to determine the connectivity with.
-     * @return True, if the given pair is connected.
-     */
-    private boolean connected(int firstPair, int secondPair)
-    {
-        return root(firstPair) == root(secondPair);
-    }
-
-    /**
      * Determines the root of the given number.
      * 
      * @param element
