@@ -9,7 +9,7 @@ public class BubbleSort {
 		 BubbleSort.bubbleSort(new int [] {5,2,32,22,1,3,1,3});
 	    }
 
-static void bubbleSort(int[] lst) {
+public static int[] bubbleSort(int[] lst) {
 	int n = lst.length;
 	boolean swapped;
 	do 
@@ -26,5 +26,6 @@ static void bubbleSort(int[] lst) {
 	} while (swapped == true);
 	
 	System.out.println(Arrays.toString(lst));
+	return lst;
 }
 }
