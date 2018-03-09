@@ -1,14 +1,14 @@
 package com.java.datastructure;
 
 /**
- * Input: aaasddddddddcccccccssdddsssppppppssss Output: a3s1d8c7s2d3s3p6s4
- * 
- * @author AP027887
+ * Class to compress strings.
  */
 public class StringCompression
 {
-
-    private static void compare(final String stringToCompare)
+    /**
+     * @param stringToCompare
+     */
+    private static void compress(final String stringToCompare)
     {
         int count = 0;
         StringBuffer newString = new StringBuffer();
@@ -23,12 +23,19 @@ public class StringCompression
                 count = 0;
             }
         }
-        System.out.println(newString);
+
+        System.out.println(
+                stringToCompare.length() <= newString.length() ? stringToCompare : newString);
     }
 
-    // a3s1d8c7s2d3s3p6s4
     public static void main(String[] args)
     {
-        compare("aaasddddddddcccccccssdddsssppppppssss");
+        compress("aaasddddddddcccccccssdddsssppppppssss");
+        compress("aaasddddddddddddddcccccccssdddsssppppppppppssss");
+        compress("abcd");
+        compress("aabbccdd");
+        compress("aabbbcd");
+        compress("a");
+        compress("aa");
     }
 }
