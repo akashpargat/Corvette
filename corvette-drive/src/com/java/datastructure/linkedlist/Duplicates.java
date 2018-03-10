@@ -3,7 +3,7 @@ package com.java.datastructure.linkedlist;
 import com.java.datastructure.util.Node;
 
 /**
- *
+ * Class which checks for duplicates and removes them from a linked list.
  */
 public class Duplicates
 {
