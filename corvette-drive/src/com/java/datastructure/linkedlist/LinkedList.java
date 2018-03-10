@@ -132,22 +132,21 @@ public class LinkedList
     public void removeDuplicate()
     {
         Node node = head;
-        Node fast = head;
-        Node prev = head;
-        while (node.next != null)
+        while (node != null)
         {
-            while (fast.next != null)
+        	Node runner = node;
+            while (runner.next != null)
             {
-                if (node.data == fast.data)
+                if (runner.next.data == node.data)
                 {
-                    prev.next = fast.next;
+                	runner.next = runner.next.next;
+                }else {
+                	runner = runner.next;
                 }
-                prev = fast;
-                fast = fast.next;
             }
             node = node.next;
         }
-        System.out.println("Yo this is my thing!!!"); //$NON-NLS-1$
+        System.out.println("Removed Duplicates successfully!!!"); //$NON-NLS-1$
     }
 
     public static void main(String[] args)
