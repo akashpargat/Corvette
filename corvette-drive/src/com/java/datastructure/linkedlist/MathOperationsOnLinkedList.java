@@ -1,19 +1,19 @@
 package com.java.datastructure.linkedlist;
 
-import com.java.datastructure.util.Node;
+import com.java.datastructure.util.LinkedListNode;
 
 public class MathOperationsOnLinkedList {
 
-public MathOperationsOnLinkedList(Node first, Node second) {
+public MathOperationsOnLinkedList(LinkedListNode first, LinkedListNode second) {
 	// TODO Auto-generated constructor stub
 	printLinkedList(addLinkedList( first,  second));
 }
 
-private Node addLinkedList(Node first, Node second) {
+private LinkedListNode addLinkedList(LinkedListNode first, LinkedListNode second) {
 	int firstCount = getCount(first);
 	int secondCount = getCount(second);
-	Node firstNode = first;
-	Node secondNode = second;
+	LinkedListNode firstNode = first;
+	LinkedListNode secondNode = second;
 	LinkedList secondLinkedListToAdd = new LinkedList();
 	LinkedList firstLinkedListToAdd = new LinkedList();
 	LinkedList newAddedLinkedList = new LinkedList();
@@ -85,10 +85,10 @@ if(secondLinkedListToAdd.getHead()==null) {
 	return  addFront(firstData, newAddedLinkedList.reverse(newAddedLinkedList.getHead()));
 }
 
-private Node addFront(int a, Node node) {
+private LinkedListNode addFront(int a, LinkedListNode node) {
 	// TODO Auto-generated method stub
-	Node newNode = new Node(a- 10);
-	Node newNode1 = new Node(1);
+	LinkedListNode newNode = new LinkedListNode(a- 10);
+	LinkedListNode newNode1 = new LinkedListNode(1);
 	newNode1.next = newNode;
 	newNode.next = node.next;
 	 
@@ -96,9 +96,9 @@ private Node addFront(int a, Node node) {
 	
 }
 
-private int filterTheCarryOver(Node head) {
+private int filterTheCarryOver(LinkedListNode head) {
 	// TODO Auto-generated method stub
-	Node node = head;
+	LinkedListNode node = head;
 	while(node.next!=null) {
 		if(node.next.data /10 == 1 ) {
 			node.data -= 10;
@@ -121,7 +121,7 @@ private int filterTheCarryOver(Node head) {
 //	}
 }
 
-public int getCount(Node nodeToBeCounted) {
+public int getCount(LinkedListNode nodeToBeCounted) {
 	int count =0;
 	while(nodeToBeCounted!=null) {
 		count++;
@@ -131,7 +131,7 @@ public int getCount(Node nodeToBeCounted) {
 	return count;
 }
 
-public void printLinkedList(Node node)
+public void printLinkedList(LinkedListNode node)
 {
     while (node != null)
     {

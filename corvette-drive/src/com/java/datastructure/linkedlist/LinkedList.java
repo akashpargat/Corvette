@@ -2,13 +2,13 @@ package com.java.datastructure.linkedlist;
 
 import java.util.HashSet;
 
-import com.java.datastructure.util.Node;
+import com.java.datastructure.util.LinkedListNode;
 
 public class LinkedList
 {
-    private  Node head;
+    private  LinkedListNode head;
 
-    public Node getHead()
+    public LinkedListNode getHead()
     {
         return head;
     }
@@ -17,11 +17,11 @@ public class LinkedList
     {
         if (head == null)
         {
-            head = new Node(data);
+            head = new LinkedListNode(data);
             return;
         }
-        Node newNode = new Node(data);
-        Node last = head;
+        LinkedListNode newNode = new LinkedListNode(data);
+        LinkedListNode last = head;
         while (last.next != null)
         {
             last = last.next;
@@ -38,7 +38,7 @@ public class LinkedList
             System.out.println("LinkedList is Empty.");
             return;
         }
-        Node tempHead = head.next;
+        LinkedListNode tempHead = head.next;
         head = tempHead;
         return;
     }
@@ -50,8 +50,8 @@ public class LinkedList
             System.out.println("LinkedList is Empty.");
             return;
         }
-        Node last = head;
-        Node prev = null;
+        LinkedListNode last = head;
+        LinkedListNode prev = null;
         while (last.next != null)
         {
             prev = last;
@@ -66,10 +66,10 @@ public class LinkedList
     {
         if (head == null)
         {
-            head = new Node(data);
+            head = new LinkedListNode(data);
             return;
         }
-        Node newNode = new Node(data);
+        LinkedListNode newNode = new LinkedListNode(data);
         newNode.next = head;
         head = newNode;
         return;
@@ -79,16 +79,16 @@ public class LinkedList
     {
         if (head == null)
         {
-            head = new Node(data);
+            head = new LinkedListNode(data);
             return;
         }
-        Node newNode = new Node(data);
-        Node last = head;
+        LinkedListNode newNode = new LinkedListNode(data);
+        LinkedListNode last = head;
         while (last.next != null)
         {
             if (last.data == addAfterThis)
             {
-                Node temp = last.next;
+                LinkedListNode temp = last.next;
                 last.next = newNode;
                 newNode.next = temp;
                 return;
@@ -106,8 +106,8 @@ public class LinkedList
             System.out.println("LinkedList is Empty.");
             return;
         }
-        Node last = head;
-        Node prev = null;
+        LinkedListNode last = head;
+        LinkedListNode prev = null;
         if (last.data == data)
         {
             head = head.next;
@@ -133,10 +133,10 @@ public class LinkedList
      */
     public void removeDuplicate()
     {
-        Node node = head;
+        LinkedListNode node = head;
         while (node != null)
         {
-        	Node runner = node;
+        	LinkedListNode runner = node;
             while (runner.next != null)
             {
                 if (runner.next.data == node.data)
@@ -200,8 +200,8 @@ public class LinkedList
     	if(head == null) {
     		return;
     	}
-        Node node = head;
-        Node toIgnore = head;
+        LinkedListNode node = head;
+        LinkedListNode toIgnore = head;
         int count=0;
         while (node != null)
         {
@@ -221,10 +221,10 @@ public class LinkedList
         }
     }
     /* Function to reverse the linked list */
-   public Node reverse(Node node) {
-        Node prev = null;
-        Node current = node;
-        Node next = null;
+   public LinkedListNode reverse(LinkedListNode node) {
+        LinkedListNode prev = null;
+        LinkedListNode current = node;
+        LinkedListNode next = null;
         while (current != null) {
             next = current.next;
             current.next = prev;
@@ -236,13 +236,13 @@ public class LinkedList
     }
     
     public void addCircularLinkedList() {
-    	Node node = head;
+    	LinkedListNode node = head;
     	while(node.next!= null) {
     		node = node.next;
     	}
     	node.next = head.next.next.next.next.next;
     }
-    public void printLinkedList(Node node)
+    public void printLinkedList(LinkedListNode node)
     {
         while (node != null)
         {

@@ -1,14 +1,14 @@
 package com.java.datastructure.util;
 
-public class Node
+public class LinkedListNode
 {
     public int data;
-    public Node next;
+    public LinkedListNode next;
 
     /**
      * @param d
      */
-    public Node(int d)
+    public LinkedListNode(int d)
     {
         data = d;
         next = null;

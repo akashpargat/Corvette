@@ -1,11 +1,11 @@
 package com.java.datastructure.linkedlist;
 
-import com.java.datastructure.util.Node;
+import com.java.datastructure.util.LinkedListNode;
 
 public class FloydCycleDetection {
-private Node isALoop(Node node) {
-	Node fastHelperNode = node;
-	Node slowHelperNode = node;
+private LinkedListNode isALoop(LinkedListNode node) {
+	LinkedListNode fastHelperNode = node;
+	LinkedListNode slowHelperNode = node;
 	while(slowHelperNode!= null && fastHelperNode!=null && fastHelperNode.next!= null) {
 		fastHelperNode = fastHelperNode.next.next;
 		slowHelperNode = slowHelperNode.next;
@@ -16,10 +16,10 @@ private Node isALoop(Node node) {
 	return null;
 }
 
-private String startingCircularLoop(Node node) {
-Node headNode = node;
-Node startNode = node;
-Node loopMeetingPoint = isALoop(headNode);
+private String startingCircularLoop(LinkedListNode node) {
+LinkedListNode headNode = node;
+LinkedListNode startNode = node;
+LinkedListNode loopMeetingPoint = isALoop(headNode);
 	while(startNode != loopMeetingPoint) {
 		startNode = startNode.next;
 		loopMeetingPoint = loopMeetingPoint.next;
