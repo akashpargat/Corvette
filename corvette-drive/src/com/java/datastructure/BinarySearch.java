@@ -1,5 +1,7 @@
 package com.java.datastructure;
 
+import com.java.datastructure.sorts.BubbleSort;
+
 public class BinarySearch 
 	{
 		public static void main(String[] args) {

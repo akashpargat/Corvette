@@ -1,4 +1,4 @@
-package com.java.datastructure;
+package com.java.datastructure.sorts;
 
 import java.io.IOException;
 import java.util.Scanner;
