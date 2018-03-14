@@ -23,11 +23,13 @@ private TreeNode addRecursive(TreeNode current, String value) {
  
     return current;
 }
-
+public TreeNode getRoot() {
+	return root;
+}
 public void add(String value) {
     root = addRecursive(root, value);
 }
-
+//This will sort the table
 public void inOrderTraversal(TreeNode node) {
 	if(node!=null) {
 		inOrderTraversal(node.left);
@@ -43,7 +45,7 @@ public void postOrderTraversal(TreeNode node) {
 		printElement(node.value);
 	}
 }
-
+//This is also known as the depth first search.
 public void preOrderTraversal(TreeNode node) {
 	if(node!=null) {
 		printElement(node.value);
