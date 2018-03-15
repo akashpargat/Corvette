@@ -81,10 +81,27 @@ public class BinarySearchTree
         return false;
     }
 
-    // TODO
-    public boolean isBST(TreeNode node)
-    {
-        return false;
+    public boolean isValidBST(TreeNode root) {
+        if(root==null)
+            return true;
+     
+        return helper(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+    }
+     
+    public boolean helper(TreeNode root, double low, double high){
+     
+        if(Integer.parseInt(root.value)<=low || Integer.parseInt(root.value)>=high)
+            return false;
+     
+        if(root.left!=null && !helper(root.left, low, Integer.parseInt(root.value))){
+            return false;
+        }
+     
+        if(root.right!=null && !helper(root.right, Integer.parseInt(root.value), high)){
+            return false;
+        }
+     
+        return true;    
     }
 
     private int getHeight(TreeNode node)
@@ -126,6 +143,7 @@ public class BinarySearchTree
         System.out.println("\nPost Order Traversal: ");
         tree.postOrderTraversal(nodeToPrint);
         System.out.println(tree.isBalanced(nodeToPrint));
+        System.out.println(tree.isValidBST(nodeToPrint));
     }
 
     private TreeNode createMinimalBST(String[] tree)
