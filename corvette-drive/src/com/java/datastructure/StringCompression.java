@@ -23,7 +23,9 @@ public class StringCompression
                 count = 0;
             }
         }
-
+int arr[][] = new int[5][5];
+arr[0][0] = 10;
+		
         System.out.println(
                 stringToCompare.length() <= newString.length() ? stringToCompare : newString);
     }

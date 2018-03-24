@@ -1,5 +1,7 @@
 package com.java.datastructure.util;
 
+import java.util.LinkedList;
+
 public class LinkedListNode
 {
     public int data;
@@ -13,4 +15,11 @@ public class LinkedListNode
         data = d;
         next = null;
     }
+    
+    public LinkedList<String> str =  new LinkedList<String>();
+    void some(){
+    	
+    }
+    
+    
 }

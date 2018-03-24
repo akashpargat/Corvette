@@ -133,7 +133,7 @@ public class BinarySearchTree
         TreeNode nodeToPrint = tree.root;
         // tree.createMinimalBST(treeArray);
         TreePrinter.print(tree.createMinimalBST(treeArray));
-        TreePrinter.print(tree.root);
+        //TreePrinter.print(tree.root);
         System.out.println("In Order Traversal: ");
         tree.inOrderTraversal(nodeToPrint);
         nodeToPrint = tree.root;
@@ -144,6 +144,8 @@ public class BinarySearchTree
         tree.postOrderTraversal(nodeToPrint);
         System.out.println(tree.isBalanced(nodeToPrint));
         System.out.println(tree.isValidBST(nodeToPrint));
+        System.out.println(Math.sqrt(4));
+        Double d  = Double.MAX_VALUE;
     }
 
     private TreeNode createMinimalBST(String[] tree)

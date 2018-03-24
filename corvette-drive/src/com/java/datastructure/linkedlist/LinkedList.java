@@ -1,5 +1,6 @@
 package com.java.datastructure.linkedlist;
 
+import java.util.Comparator;
 import java.util.HashSet;
 
 import com.java.datastructure.util.LinkedListNode;
@@ -29,6 +30,16 @@ public class LinkedList
 
         last.next = newNode;
         return;
+    }
+    
+    private class myComparator implements Comparator<Integer>{
+
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			// TODO Auto-generated method stub
+			return o1-o2;
+		}
+    	
     }
 
     public void deleteFirst()
