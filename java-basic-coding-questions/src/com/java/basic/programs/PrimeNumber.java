@@ -31,6 +31,15 @@ public class PrimeNumber {
 			}
 		}
 	}
+	
+	/*
+	    * This method uses standard logic to check leap year in Java.
+	    * A year is a leap year if its multiple of 400 or multiple of 4 but not 100
+	    */
+	   public static boolean doesLeapYear(int year){
+	       return (year%400 == 0) || ((year%100) != 0 && (year%4 == 0));
+	   }
+
 	public static void main(String[] args) {
 		//Test Cases
 		System.out.println(new PrimeNumber().isPrimeNumber(-1));
@@ -46,5 +55,7 @@ public class PrimeNumber {
 			if(prime[i]==1)
 			System.out.println(" The number "+i +" is a Prime Number.");
 		}
+		
+		System.out.println(doesLeapYear(2016));
 	}
 }

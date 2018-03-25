@@ -17,18 +17,20 @@ public class Deadlock {
 	 * thread holds String lock * and other holds Integer lock and they wait for
 	 * each other, forever.
 	 */ public void method2() {
-		synchronized (Integer.class) {
-			System.out.println("Aquired lock on Integer.class object");
-			synchronized (String.class) {
-				System.out.println("Aquired lock on String.class object");
-			}
-		}
-	}
+		 
+		 //Reverse the order of below calls to avoid the deadlock
+		 synchronized (Integer.class) {
+			 System.out.println("Aquired lock on Integer.class object");
+			 synchronized (String.class) {
+				 System.out.println("Aquired lock on String.class object");
+			 }
+		 }
+	 }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-new Deadlock().method1();
-new Deadlock().method2();
-	}
+	 public static void main(String[] args) {
+		 // TODO Auto-generated method stub
+		 new Deadlock().method1();
+		 new Deadlock().method2();
+	 }
 
 }
