@@ -12,7 +12,7 @@ import java.util.Scanner;
  * and each subsequent number is the sum of the previous two.*/
 public class Fibonacci {
 
-	private int getFibonacci(final int number) {
+	private int getFibonacciRecursion(final int number) {
 		if(number <= 0) {
 			return 0;
 		}
@@ -20,16 +20,74 @@ public class Fibonacci {
 			return 1;
 		}
 		
-		return getFibonacci(number-1) + getFibonacci(number-2);
+		return getFibonacciRecursion(number-1) + getFibonacciRecursion(number-2);
+	}
+	private int getFibonacci(final int number) {
+		int fib = 0, n1 =0;
+		int n2=1;
+		if(number <= 0) {
+			return 0;
+		}
+		if(number == 1 || number == 2) {
+			return 1;
+		}
+		for(int i=2; i<number; i++) {
+			fib = n1+n2;
+			n1= n2;
+			n2 = fib;
+			
+		}
+		return fib;
+	}
+	public   int factorialRecurssion(final int number) {
+		int factorial =0;
+		if(number <0 ) {
+			return 0;
+		}
+		if(number ==0 || number ==1 ) {
+			return 1;
+		}
+		
+		factorial = number * factorialRecurssion(number-1);
+		return factorial;
+		
+	}
+	public   int factorialWithoutRecurssion( int number) {
+		int factorial =1;
+		if(number <0 ) {
+			return 0;
+		}
+		if(number ==0 || number ==1 ) {
+			return 1;
+		}
+		while(number>=2) {
+			
+			factorial = factorial * (number);
+			number--;
+		}
+		return factorial;
+		
 	}
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		//Test Case
-		System.out.println("Enter number upto which Fibonacci series to print: "); 
-		int number = new Scanner(System.in).nextInt(); 
-		System.out.println("Fibonacci series upto " + number +" numbers : "); 
-		for(int i=1; i<=number; i++){ 
-			System.out.print(new Fibonacci().getFibonacci(i) +" "); 
-			}
+//		System.out.println("Enter number upto which Fibonacci series to print: "); 
+//		int number = new Scanner(System.in).nextInt(); 
+//		System.out.println("Fibonacci series upto " + number +" numbers : "); 
+//		for(int i=1; i<=number; i++){ 
+//			System.out.print(new Fibonacci().getFibonacciRecursion(i) +" "); 
+//			}
+//		//Test Case 2
+//		System.out.println("Enter number upto which Fibonacci series to print: "); 
+//		int number1 = new Scanner(System.in).nextInt(); 
+//		System.out.println("Fibonacci series upto " + number1 +" numbers : "); 
+//		for(int i=1; i<=number1; i++){ 
+//			System.out.print(new Fibonacci().getFibonacciRecursion(i) +" "); 
+//		}
+		
+		System.out.println(new Fibonacci().factorialRecurssion(5));
+		System.out.println(new Fibonacci().factorialWithoutRecurssion(5));
+		System.out.println(new Fibonacci().factorialRecurssion(10));
+		System.out.println(new Fibonacci().factorialWithoutRecurssion(10));
 	}
 }
