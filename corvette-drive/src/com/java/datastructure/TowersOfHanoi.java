@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class TowersOfHanoi {
 
-	   public void solve(int n, String start, String auxiliary, String end) {
+	   public void towerOfHanoi(int n, String start, String auxiliary, String end) {
 	       if (n == 1) {
 	           System.out.println(start + " -> " + end);
 	       } else {
-	           solve(n - 1, start, end, auxiliary);
+	           towerOfHanoi(n - 1, start, end, auxiliary);
 	           System.out.println(start + " -> " + end);
-	           solve(n - 1, auxiliary, start, end);
+	           towerOfHanoi(n - 1, auxiliary, start, end);
 	       }
 	   }
 
@@ -19,7 +19,7 @@ public class TowersOfHanoi {
 	       System.out.print("Enter number of discs: ");
 	       Scanner scanner = new Scanner(System.in);
 	       int discs = scanner.nextInt();
-	       towersOfHanoi.solve(discs, "A", "B", "C");
+	       towersOfHanoi.towerOfHanoi(discs, "A", "B", "C");
 	       scanner.close();
 	   }
 	}

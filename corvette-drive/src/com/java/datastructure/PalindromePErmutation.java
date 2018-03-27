@@ -29,10 +29,10 @@ public class PalindromePErmutation
 
     public static void main(String[] args)
     {
-//        System.out.println(isPalindrome("?eva, can i stab bats in a c,ave?"));
-//
-//        System.out.println(canPermutePalindrome("?eva, can i stab bats in a c,ave?"));
-        System.out.println(palindromeInteger(1545158));
+        // System.out.println(isPalindrome("?eva, can i stab bats in a c,ave?"));
+        //
+        System.out.println(canPermutePalindrome("?eva, can i stab bats in a c,ave?"));
+        // System.out.println(palindromeInteger(1545158));
     }
 
     public static boolean canPermutePalindrome(String s)
@@ -49,24 +49,27 @@ public class PalindromePErmutation
         }
         return count <= 1;
     }
-    
-    public static boolean palindromeInteger(final int someNumber) {
-    	int number = someNumber;
-    	int tempNumber = 0;
-    	int newNumber = 0;
-    	while(number >0) {
-    		tempNumber = number%10;
-    		newNumber = (newNumber +tempNumber)*10;
-    		number = number/10;
-    	}
-    	newNumber = newNumber/10;
-    	if(someNumber - newNumber == 0) {
-    		System.out.println(someNumber);
-    		System.out.println(newNumber);
-    		return true;
-    	}
-    	System.out.println(someNumber);
-    	System.out.println(newNumber);
-    	return false;
+
+    public static boolean palindromeInteger(final int someNumber)
+    {
+        int number = someNumber;
+        int tempNumber = 0;
+        int newNumber = 0;
+        while (number > 0)
+        {
+            tempNumber = number % 10;
+            newNumber = (newNumber + tempNumber) * 10;
+            number = number / 10;
+        }
+        newNumber = newNumber / 10;
+        if (someNumber - newNumber == 0)
+        {
+            System.out.println(someNumber);
+            System.out.println(newNumber);
+            return true;
+        }
+        System.out.println(someNumber);
+        System.out.println(newNumber);
+        return false;
     }
 }
