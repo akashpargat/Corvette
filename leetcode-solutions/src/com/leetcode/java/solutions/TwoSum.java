@@ -33,7 +33,7 @@ public class TwoSum
             if (isInTheBinaryTree(root, target - nums[i]))
             {
                 array[j] = i;
-                System.out.println(i + "th index with value :-->" + nums[i]);
+                System.out.println(i + "th index with value :-->" + nums[i]); //$NON-NLS-1$
                 j++;
             }
         }
@@ -93,8 +93,8 @@ public class TwoSum
         }
         TreePrinter.print(root);
         int arr[] = ts.twoSum(myArray, target);
-        System.out.println("The sum of value with index " + arr[0] + " and index " + arr[1]
-                + " is the total value of target.");
+        System.out.println("The sum of value with index " + arr[0] + " and index " + arr[1] //$NON-NLS-1$ //$NON-NLS-2$
+                + " is the total value of target."); //$NON-NLS-1$
 
         // Test Suite two
         TwoSum ts1 = new TwoSum();
@@ -107,8 +107,8 @@ public class TwoSum
         }
         TreePrinter.print(root);
         int arr1[] = ts1.twoSum(myArray1, target1);
-        System.out.println("The sum of value with index " + arr1[0] + " and index " + arr1[1]
-                + " is the total value of target.");
+        System.out.println("The sum of value with index " + arr1[0] + " and index " + arr1[1] //$NON-NLS-1$ //$NON-NLS-2$
+                + " is the total value of target."); //$NON-NLS-1$
     }
 
 }
