@@ -1,5 +1,7 @@
 package com.java.datastructure.trees;
 
+import java.util.LinkedList;
+
 import com.java.datastructure.linkedlist.Queue;
 import com.java.datastructure.util.TreeNode;
 import com.java.datastructure.util.TreePrinter;
@@ -9,6 +11,7 @@ public class BreadthFirstSearchTree
 
     public BinarySearchTree tree = new BinarySearchTree();
     public TreeNode node;
+    public LinkedList<Integer> ints = new LinkedList<>();
 
     public Queue<TreeNode> queue = new Queue<>();
 

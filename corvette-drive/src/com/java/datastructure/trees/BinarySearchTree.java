@@ -81,27 +81,35 @@ public class BinarySearchTree
         return false;
     }
 
-    public boolean isValidBST(TreeNode root) {
-        if(root==null)
+    public boolean isValidBST(TreeNode root)
+    {
+        if (root == null)
+        {
             return true;
-     
+        }
+
         return helper(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
     }
-     
-    public boolean helper(TreeNode root, double low, double high){
-     
-        if(Integer.parseInt(root.value)<=low || Integer.parseInt(root.value)>=high)
-            return false;
-     
-        if(root.left!=null && !helper(root.left, low, Integer.parseInt(root.value))){
-            return false;
-        }
-     
-        if(root.right!=null && !helper(root.right, Integer.parseInt(root.value), high)){
+
+    public boolean helper(TreeNode root, double low, double high)
+    {
+
+        if (Integer.parseInt(root.value) <= low || Integer.parseInt(root.value) >= high)
+        {
             return false;
         }
-     
-        return true;    
+
+        if (root.left != null && !helper(root.left, low, Integer.parseInt(root.value)))
+        {
+            return false;
+        }
+
+        if (root.right != null && !helper(root.right, Integer.parseInt(root.value), high))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     private int getHeight(TreeNode node)
@@ -133,7 +141,7 @@ public class BinarySearchTree
         TreeNode nodeToPrint = tree.root;
         // tree.createMinimalBST(treeArray);
         TreePrinter.print(tree.createMinimalBST(treeArray));
-        //TreePrinter.print(tree.root);
+        // TreePrinter.print(tree.root);
         System.out.println("In Order Traversal: ");
         tree.inOrderTraversal(nodeToPrint);
         nodeToPrint = tree.root;
@@ -145,7 +153,7 @@ public class BinarySearchTree
         System.out.println(tree.isBalanced(nodeToPrint));
         System.out.println(tree.isValidBST(nodeToPrint));
         System.out.println(Math.sqrt(4));
-        Double d  = Double.MAX_VALUE;
+        Double d = Double.MAX_VALUE;
     }
 
     private TreeNode createMinimalBST(String[] tree)
@@ -164,6 +172,23 @@ public class BinarySearchTree
         TreeNode newNode = new TreeNode(tree[mid]);
         newNode.left = createMinimalBST(tree, start, mid - 1);
         newNode.right = createMinimalBST(tree, mid + 1, end);
+        return newNode;
+    }
+
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2)
+    {
+        if (t1 == null && t2 == null)
+        {
+            return null;
+        }
+
+        int val = (t1 == null ? 0 : Integer.parseInt(t1.value))
+                + (t2 == null ? 0 : Integer.parseInt(t2.value));
+        TreeNode newNode = new TreeNode(String.valueOf(val));
+
+        newNode.left = mergeTrees(t1 == null ? null : t1.left, t2 == null ? null : t2.left);
+        newNode.right = mergeTrees(t1 == null ? null : t1.right, t2 == null ? null : t2.right);
+
         return newNode;
     }
 

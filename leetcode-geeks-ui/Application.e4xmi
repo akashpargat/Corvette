@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Eclipse E4 RCP Application" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_lGO8cC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.perspectivestack.0">
+      <children xsi:type="advanced:Perspective" xmi:id="_mteAAC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.perspective.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_pRqbEC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.partsashcontainer.0" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_pvRHoC3OEeifb57tBisp2Q" elementId="leetcode-geeks-ui.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_vCvo4C3NEeifb57tBisp2Q" elementId="" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.SamplePart" label="SamplePart1"/>
+            <children xsi:type="basic:Part" xmi:id="_cjWf8C3OEeifb57tBisp2Q" elementId="leetcode-geeks-ui.part.samplepart2" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.SamplePart" label="SamplePart2"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_SJFLYC3MEeifb57tBisp2Q" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_X3kYMC3MEeifb57tBisp2Q" elementId="" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_pGAaIC3MEeifb57tBisp2Q" elementId="leetcode-geeks-ui.handledmenuitem.open" label="Open" command="_nWeBEC3KEeifb57tBisp2Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_56qDEC3MEeifb57tBisp2Q" elementId="leetcode-geeks-ui.handledmenuitem.save" label="Save" command="_qcsyMC3KEeifb57tBisp2Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_9tolcC3MEeifb57tBisp2Q" elementId="leetcode-geeks-ui.handledmenuitem.exit" label="Exit" command="_gNt1sC3KEeifb57tBisp2Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_gn6zgC3MEeifb57tBisp2Q" elementId="" label="Function"/>
+      <children xsi:type="menu:Menu" xmi:id="_kPHjsC3MEeifb57tBisp2Q" elementId="" label="Help"/>
+    </mainMenu>
+    <trimBars xmi:id="_GpQcoC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.trimbar.0">
+      <children xsi:type="menu:ToolBar" xmi:id="_HMRqIC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Na2FMC3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.handledtoolitem.open" label="Open" command="_nWeBEC3KEeifb57tBisp2Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_IrKC8C3NEeifb57tBisp2Q" elementId="leetcode-geeks-ui.handledtoolitem.save" label="Save" command="_qcsyMC3KEeifb57tBisp2Q"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_g8ZEIC3LEeifb57tBisp2Q" elementId="handler.quitCommand" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.handler.QuitHandler" command="_gNt1sC3KEeifb57tBisp2Q"/>
+  <handlers xmi:id="_0VDh8C3LEeifb57tBisp2Q" elementId="handler.openCommand" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.handler.OpenHandler" command="_nWeBEC3KEeifb57tBisp2Q"/>
+  <handlers xmi:id="_3i4I0C3LEeifb57tBisp2Q" elementId="handler.saveCommand" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.handler.SaveHandler" command="_qcsyMC3KEeifb57tBisp2Q"/>
+  <handlers xmi:id="_L2gaEC3MEeifb57tBisp2Q" elementId="handler.aboutCommand" contributionURI="bundleclass://leetcode-geeks-ui/com.leetcode.practice.handler.AboutHandler" command="_s-ARUC3KEeifb57tBisp2Q"/>
+  <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_gNt1sC3KEeifb57tBisp2Q" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_nWeBEC3KEeifb57tBisp2Q" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
+  <commands xmi:id="_qcsyMC3KEeifb57tBisp2Q" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_s-ARUC3KEeifb57tBisp2Q" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_c3AF1cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_c3AF1sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_c3AF18jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_c3AF2MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

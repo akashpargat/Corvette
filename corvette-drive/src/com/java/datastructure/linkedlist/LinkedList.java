@@ -1,13 +1,12 @@
 package com.java.datastructure.linkedlist;
 
 import java.util.Comparator;
-import java.util.HashSet;
 
 import com.java.datastructure.util.LinkedListNode;
 
 public class LinkedList
 {
-    private  LinkedListNode head;
+    private LinkedListNode head;
 
     public LinkedListNode getHead()
     {
@@ -31,15 +30,16 @@ public class LinkedList
         last.next = newNode;
         return;
     }
-    
-    private class myComparator implements Comparator<Integer>{
 
-		@Override
-		public int compare(Integer o1, Integer o2) {
-			// TODO Auto-generated method stub
-			return o1-o2;
-		}
-    	
+    private class myComparator implements Comparator<Integer>
+    {
+
+        @Override
+        public int compare(Integer o1, Integer o2)
+        {
+            // TODO Auto-generated method stub
+            return o1 - o2;
+        }
     }
 
     public void deleteFirst()
@@ -147,42 +147,43 @@ public class LinkedList
         LinkedListNode node = head;
         while (node != null)
         {
-        	LinkedListNode runner = node;
+            LinkedListNode runner = node;
             while (runner.next != null)
             {
                 if (runner.next.data == node.data)
                 {
-                	runner.next = runner.next.next;
-                }else {
-                	runner = runner.next;
+                    runner.next = runner.next.next;
+                }
+                else
+                {
+                    runner = runner.next;
                 }
             }
             node = node.next;
         }
         System.out.println("Removed Duplicates successfully!!!"); //$NON-NLS-1$
     }
-    
 
     /**
      * 
      */
-//    public void removeDuplicate_usingHashSet()
-//    {
-//    	HashSet<Integer> hash = new HashSet<>();
-//        Node node = head;
-//        LinkedList newList = new LinkedList();
-//        while (node.next != null)
-//        {
-//        		hash.add(node.data);
-//        		node = node.next;
-//        }
-//        while (hash.iterator().hasNext())
-//        {
-//        		newList.insertAtEnd(hash.iterator().next().intValue());
-//        }
-//        head = newList.head;
-//        System.out.println("Removed Duplicates successfully!!!"); //$NON-NLS-1$
-//    }
+    // public void removeDuplicate_usingHashSet()
+    // {
+    // HashSet<Integer> hash = new HashSet<>();
+    // Node node = head;
+    // LinkedList newList = new LinkedList();
+    // while (node.next != null)
+    // {
+    // hash.add(node.data);
+    // node = node.next;
+    // }
+    // while (hash.iterator().hasNext())
+    // {
+    // newList.insertAtEnd(hash.iterator().next().intValue());
+    // }
+    // head = newList.head;
+    // System.out.println("Removed Duplicates successfully!!!"); //$NON-NLS-1$
+    // }
 
     public static void main(String[] args)
     {
@@ -201,42 +202,49 @@ public class LinkedList
         System.out.println("Now we will delete the last one:");
         // lst.deleteDataInLinkedList(10);
         list.removeDuplicate();
-//        list.removeDuplicate_usingHashSet();
+        // list.removeDuplicate_usingHashSet();
         list.printLinkedList(list.getHead());
-        //list.printKthLinkedList(6);
+        // list.printKthLinkedList(6);
     }
-    
+
     public void printKthLinkedList(int k)
     {
-    	if(head == null) {
-    		return;
-    	}
+        if (head == null)
+        {
+            return;
+        }
         LinkedListNode node = head;
         LinkedListNode toIgnore = head;
-        int count=0;
+        int count = 0;
         while (node != null)
         {
             node = node.next;
             count++;
         }
-        if(count < k) {
-        	return;
+        if (count < k)
+        {
+            return;
         }
-        int toPrint = count -k;
-        for(int i=0 ; i< toPrint; i++) {
-        	toIgnore = toIgnore.next;
+        int toPrint = count - k;
+        for (int i = 0; i < toPrint; i++)
+        {
+            toIgnore = toIgnore.next;
         }
-        while(toIgnore!=null) {
-        	System.out.println(toIgnore.data);
-        	toIgnore = toIgnore.next;
+        while (toIgnore != null)
+        {
+            System.out.println(toIgnore.data);
+            toIgnore = toIgnore.next;
         }
     }
+
     /* Function to reverse the linked list */
-   public LinkedListNode reverse(LinkedListNode node) {
+    public LinkedListNode reverse(LinkedListNode node)
+    {
         LinkedListNode prev = null;
         LinkedListNode current = node;
         LinkedListNode next = null;
-        while (current != null) {
+        while (current != null)
+        {
             next = current.next;
             current.next = prev;
             prev = current;
@@ -245,14 +253,17 @@ public class LinkedList
         node = prev;
         return node;
     }
-    
-    public void addCircularLinkedList() {
-    	LinkedListNode node = head;
-    	while(node.next!= null) {
-    		node = node.next;
-    	}
-    	node.next = head.next.next.next.next.next;
+
+    public void addCircularLinkedList()
+    {
+        LinkedListNode node = head;
+        while (node.next != null)
+        {
+            node = node.next;
+        }
+        node.next = head.next.next.next.next.next;
     }
+
     public void printLinkedList(LinkedListNode node)
     {
         while (node != null)
