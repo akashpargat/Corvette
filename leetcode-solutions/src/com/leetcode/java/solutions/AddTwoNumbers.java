@@ -1,5 +1,7 @@
 package com.leetcode.java.solutions;
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import com.java.datastructure.linkedlist.LinkedList;
 import com.java.datastructure.util.LinkedListNode;
 
@@ -17,6 +19,8 @@ import com.java.datastructure.util.LinkedListNode;
  */
 public class AddTwoNumbers
 {
+    static StopWatch watch = new StopWatch();
+
     public static void main(String[] args)
     {
         // First Testing Suite
@@ -29,7 +33,6 @@ public class AddTwoNumbers
         list1.insertAtEnd(6);
         list1.insertAtEnd(4);
         printLinkedList(addLinkedList(list.getHead(), list1.getHead()));
-
         // Second Testing Suite
         LinkedList list2 = new LinkedList();
         list2.insertAtEnd(9);
@@ -51,6 +54,32 @@ public class AddTwoNumbers
         list5.insertAtEnd(1);
         list5.insertAtEnd(1);
         printLinkedList(addLinkedList(list4.getHead(), list5.getHead()));
+
+        // fourht Testing Suite
+        watch.start();
+        LinkedList list6 = new LinkedList();
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        list6.insertAtEnd(9);
+        LinkedList list7 = new LinkedList();
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        list7.insertAtEnd(9);
+        printLinkedList(addLinkedList(list6.getHead(), list7.getHead()));
+        watch.stop();
+        System.out.println("This is ultimate :" + watch.getNanoTime()); //$NON-NLS-1$
     }
 
     /**
