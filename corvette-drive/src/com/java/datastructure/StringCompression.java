@@ -23,21 +23,18 @@ public class StringCompression
                 count = 0;
             }
         }
-int arr[][] = new int[5][5];
-arr[0][0] = 10;
-		
         System.out.println(
                 stringToCompare.length() <= newString.length() ? stringToCompare : newString);
     }
 
     public static void main(String[] args)
     {
-        compress("aaasddddddddcccccccssdddsssppppppssss");
-        compress("aaasddddddddddddddcccccccssdddsssppppppppppssss");
-        compress("abcd");
-        compress("aabbccdd");
-        compress("aabbbcd");
-        compress("a");
-        compress("aa");
+        compress("aaasddddddddcccccccssdddsssppppppssss"); //$NON-NLS-1$
+        compress("aaasddddddddddddddcccccccssdddsssppppppppppssss"); //$NON-NLS-1$
+        compress("abcd"); //$NON-NLS-1$
+        compress("aabbccdd"); //$NON-NLS-1$
+        compress("aabbbcd"); //$NON-NLS-1$
+        compress("a"); //$NON-NLS-1$
+        compress("aa"); //$NON-NLS-1$
     }
 }

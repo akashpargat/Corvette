@@ -44,25 +44,31 @@ public class URLify
         return newString;
     }
 
-    Map<Integer, String> map = new HashMap();
-    String host = "http://tinyurl.com/";
+    static Map<Integer, String> map = new HashMap();
+    static String host = "http://tinyurl.com/";
 
-    public String encode(String longUrl)
+    public static String encode(String longUrl)
     {
         int key = longUrl.hashCode();
         map.put(key, longUrl);
         return host + key;
     }
 
-    public String decode(String shortUrl)
+    public static String decode(String shortUrl)
     {
         int key = Integer.parseInt(shortUrl.replace(host, ""));
         return map.get(key);
     }
 
+    public static String urlIfy_tinyUrl(String actualURL)
+    {
+        return encode(actualURL);
+    }
+
     public static void main(String[] args)
     {
-        // TODO Auto-generated method stub
         System.out.println(urlIfy("Yo Mr. Diggle how is it going?"));
+        System.out.println(urlIfy_tinyUrl("www.akashpargat.com"));
+        System.out.println(decode(urlIfy_tinyUrl("www.akashpargat.com")));
     }
 }

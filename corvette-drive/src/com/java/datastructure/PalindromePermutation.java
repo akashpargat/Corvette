@@ -2,7 +2,7 @@ package com.java.datastructure;
 
 import java.util.HashMap;
 
-public class PalindromePErmutation
+public class PalindromePermutation
 {
     public static String isPalindrome(String str)
     {
@@ -32,6 +32,8 @@ public class PalindromePErmutation
         // System.out.println(isPalindrome("?eva, can i stab bats in a c,ave?"));
         //
         System.out.println(canPermutePalindrome("?eva, can i stab bats in a c,ave?"));
+        System.out.println(canPermutePalindrome("madddam"));
+        System.out.println(1 % 2);
         // System.out.println(palindromeInteger(1545158));
     }
 
