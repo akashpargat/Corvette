@@ -81,7 +81,7 @@ public class LetterCombination
     {
         LetterCombination.printCombo(letterCombinations("234"));
         System.out.println("**********");
-        LetterCombination.printCombo(letterCombinationsMyWay("23"));
+        LetterCombination.printCombo(letterCombinationsMyWay("234"));
     }
 
     private static void printCombo(List<String> stringToPrint)
