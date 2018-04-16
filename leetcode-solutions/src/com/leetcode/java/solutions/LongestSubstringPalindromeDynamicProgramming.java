@@ -99,5 +99,4 @@ public class LongestSubstringPalindromeDynamicProgramming
         System.out.println(LongestSubstringPalindromeDynamicProgramming
                 .longestPalindromeSubStringOptimized("baac")); //$NON-NLS-1$
     }
-
 }
