@@ -6,7 +6,7 @@ import java.util.List;
 public class BinarySearchRotatedSorted
 {
 
-    public static int search(int A[], int target)
+    public static int search_old(int A[], int target)
     {
         int n = A.length;
         int lo = 0, hi = n - 1;
@@ -295,6 +295,110 @@ public class BinarySearchRotatedSorted
         return newList;
     }
 
+    private static int findPivotForRotatedSortedArray(final int start, final int end,
+            final int[] arr)
+    {
+        int length = arr.length;
+        if (length == 0)
+        {
+            return 0;
+        }
+        if (end >= start)
+        {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] > arr[mid + 1])
+            {
+                return mid + 1;
+            }
+            if (arr[mid] > arr[start])
+            {
+                return findPivotForRotatedSortedArray(mid, end, arr);
+            }
+            if (arr[mid] < arr[end] && end >= 0)
+            {
+                return findPivotForRotatedSortedArray(start, mid, arr);
+            }
+        }
+        return 0;
+
+    }
+
+    public static int search(int[] nums, int target)
+    {
+        int length = nums.length;
+        if (length == 0)
+        {
+            return -1;
+        }
+        if (length == 1 && nums[0] == target)
+        {
+            return 0;
+        }
+        else if (length == 1 && nums[0] != target)
+        {
+            return -1;
+        }
+
+        if (nums[0] < nums[length - 1])
+        {
+            return searchRotatedSortedArray(0, length - 1, nums, target);
+        }
+        int pivot = findPivotForRotatedSortedArray(0, length - 1, nums);
+        if (nums[pivot] == target)
+        {
+            return pivot;
+        }
+        if (nums[pivot] < target && nums[length - 1] >= target)
+        {
+            return searchRotatedSortedArray(pivot, length - 1, nums, target);
+        }
+        // else if (nums[pivot - 1] > target && nums[0] < target)
+        // {
+        return searchRotatedSortedArray(0, pivot - 1, nums, target);
+        // }
+
+        // return searchRotatedSortedArray(0, length - 1, nums, target);
+    }
+
+    public static int searchRotatedSortedArray(int start, int end, final int[] nums,
+            final int target)
+    {
+        if (nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        while (start + 1 < end)
+        {
+            // Prevent (left + right) overflow
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target)
+            {
+                return mid;
+            }
+            else if (nums[mid] < target)
+            {
+                start = mid;
+            }
+            else
+            {
+                end = mid;
+            }
+        }
+
+        // Post-processing:
+        // End Condition: start + 1 == end
+        if (nums[start] == target)
+        {
+            return start;
+        }
+        if (nums[end] == target)
+        {
+            return end;
+        }
+        return -1;
+    }
+
     public static void main(String[] args)
     {
         // int num[] = { 0, 0, 1, 2, 3, 3, 4, 7, 7, 8 };
@@ -310,5 +414,9 @@ public class BinarySearchRotatedSorted
         {
             System.out.print(val + ", "); //$NON-NLS-1$
         }
+
+        System.out.println("Rotated Pivot");
+        int arr[] = { 5, 1, 3 };
+        System.out.println(search(arr, 3));
     }
 }
