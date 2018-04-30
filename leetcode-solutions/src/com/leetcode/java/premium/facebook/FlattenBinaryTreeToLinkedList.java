@@ -8,19 +8,21 @@ public class FlattenBinaryTreeToLinkedList
 {
     public static void flatten(TreeNode root)
     {
-        if (root != null)
+        flatten(root, null);
+    }
+
+    private static TreeNode flatten(TreeNode root, TreeNode pre)
+    {
+        if (root == null)
         {
-            System.out.print(root.value + "->"); //$NON-NLS-1$
-            if (root.left != null)
-            {
-                TreeNode newNode = root.left;
-                flatten(root.left);
-            }
-            if (root.right != null)
-            {
-                flatten(root.right);
-            }
+            return pre;
         }
+        pre = flatten(root.right, pre);
+        pre = flatten(root.left, pre);
+        root.right = pre;
+        root.left = null;
+        pre = root;
+        return pre;
     }
 
     public static void main(String[] args)
@@ -42,6 +44,7 @@ public class FlattenBinaryTreeToLinkedList
         tree.preOrderTraversal(tree.root);
         System.out.println("\nFlatten");
         flatten(tree.root);
+        TreePrinter.print(tree.root);
     }
 
 }
