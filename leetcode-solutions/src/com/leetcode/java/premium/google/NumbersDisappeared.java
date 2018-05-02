@@ -1,35 +1,56 @@
 package com.leetcode.java.premium.google;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NumbersDisappeared
 {
     public static List<Integer> findDisappearedNumbers(int[] nums)
     {
-        if (nums.length == 0)
+        int max = nums.length;
+        if (max == 0)
         {
-            return null;
+            return new ArrayList<>();
         }
-        int max = 0;
+        List<Integer> res = new ArrayList<>();
+        int n = nums.length;
         for (int i = 0; i < nums.length; i++)
         {
-            if (nums[i] > max)
+            nums[(nums[i] - 1) % n] += n;
+        }
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (nums[i] <= n)
             {
-                max = nums[i];
+                res.add(i + 1);
             }
         }
-        for (int i = 0; i <= max; i++)
+        return res;
+    }
+
+    public List<Integer> findDisappearedNumbers_withExtraSpace(int[] nums)
+    {
+        boolean[] marked = new boolean[nums.length];
+        for (int i = 0; i < nums.length; ++i)
         {
-
+            int val = nums[i];
+            marked[val - 1] = true;
         }
-
-        return null;
+        List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; ++i)
+        {
+            if (!marked[i])
+            {
+                result.add(i + 1);
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        int[] nums = { 7, 1, 4, 3, 2, 3, 8, 9 };
+        int[] nums = { 7, 1, 4, 3, 2, 3, 8, 7 };
         System.out.println(findDisappearedNumbers(nums));
     }
 
