@@ -7,7 +7,7 @@ public class RemoveKDigitsForSmallest
         int len = num.length();
         int outLen = len - k - 1;
         char out[] = new char[len];
-        int min = Integer.parseInt(String.valueOf(num.charAt(0)));
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < len; i++)
         {
             while (i <= outLen)
@@ -28,7 +28,7 @@ public class RemoveKDigitsForSmallest
     public static void main(String[] args)
     {
         RemoveKDigitsForSmallest val = new RemoveKDigitsForSmallest();
-        System.out.println(val.removeKdigits("41357199", 3));
+        System.out.println(val.removeKdigits("10121341", 3));
     }
 
 }
