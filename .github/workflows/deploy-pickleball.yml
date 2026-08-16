@@ -1,0 +1,65 @@
+name: Deploy Pickleball
+
+# Publishes pickleball/ to Cloudflare Pages.
+#
+# Until the two secrets below exist, the deploy step is skipped rather than
+# failed, so this workflow never puts a red X on an unrelated push.
+#
+#   Repo Settings -> Secrets and variables -> Actions -> New repository secret
+#     CLOUDFLARE_API_TOKEN   token with the "Cloudflare Pages: Edit" permission
+#     CLOUDFLARE_ACCOUNT_ID  the account ID from any Cloudflare dashboard URL
+#
+# Pushes to the project's production branch publish to the live domain; any
+# other branch gets its own preview URL.
+
+on:
+  push:
+    branches:
+      - master
+      - claude/pickleball-group-messaging-p03r1k
+    paths:
+      - 'pickleball/**'
+      - '.github/workflows/deploy-pickleball.yml'
+  pull_request:
+    paths:
+      - 'pickleball/**'
+  workflow_dispatch:
+
+concurrency:
+  group: pickleball-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  deploy:
+    name: Check and deploy
+    runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Catches the failure mode you cannot see in a browser: the service
+      # worker's precache list drifting from the files actually shipped, which
+      # breaks offline mode silently.
+      - name: Check assets, manifest and service worker agree
+        run: node pickleball/tools/check-assets.mjs
+
+      - name: Report missing credentials
+        if: env.CF_API_TOKEN == ''
+        run: |
+          echo "### Pickleball not deployed" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Asset checks passed, but CLOUDFLARE_API_TOKEN is not set, so there was nothing to deploy to." >> "$GITHUB_STEP_SUMMARY"
+          echo "Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID under Settings -> Secrets and variables -> Actions, then re-run." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Deploy to Cloudflare Pages
+        if: env.CF_API_TOKEN != '' && github.event_name != 'pull_request'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy pickleball --project-name=pickleball --branch=${{ github.ref_name }}

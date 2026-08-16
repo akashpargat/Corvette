@@ -68,6 +68,18 @@ npx wrangler pages deploy pickleball --project-name=pickleball
 Run it from the repo root. First run creates the project and prompts you to log in;
 after that it's the same one-liner to publish an update.
 
+**Or via GitHub Actions** — `.github/workflows/deploy-pickleball.yml` does the same
+upload on every push that touches this folder. It needs two repository secrets
+(*Settings → Secrets and variables → Actions*):
+
+| Secret | Where it comes from |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare → My Profile → API Tokens, with **Cloudflare Pages: Edit** |
+| `CLOUDFLARE_ACCOUNT_ID` | the ID in any Cloudflare dashboard URL |
+
+Until those exist the workflow still runs its checks but skips the deploy, so it
+never fails a push for an unrelated reason.
+
 ### GitHub Pages
 
 Also works, with the app at a subpath (`https://<user>.github.io/<repo>/pickleball/`):
@@ -121,8 +133,14 @@ js/
     settings.js            defaults, templates, backup
 tools/
   make-icons.py            regenerates the app icons
+  check-assets.mjs         verifies sw.js, the manifest and index.html agree
   smoke-test.mjs           end-to-end browser test (needs playwright)
 ```
+
+Run `node pickleball/tools/check-assets.mjs` from the repo root after adding, renaming
+or deleting any file in this folder. It catches the mistake that has no visible symptom:
+a file that ships but isn't in the `sw.js` precache list still works online and quietly
+breaks offline.
 
 ### Message placeholders
 
