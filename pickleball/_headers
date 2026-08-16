@@ -1,0 +1,30 @@
+# Cloudflare Pages header rules. Applies when this folder is the build output
+# directory, so paths here are relative to the site root.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+
+# The service worker is what decides when the app updates, so it must never be
+# served from a stale HTTP cache — otherwise a phone can pin an old build.
+/sw.js
+  Cache-Control: no-cache
+
+/index.html
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: no-cache
+
+# The service worker already caches these for offline use, and versions them by
+# bumping CACHE in sw.js. Revalidating on each request keeps the two in step;
+# the files are a few KB, so the 304s cost nothing.
+/js/*
+  Cache-Control: no-cache
+
+/css/*
+  Cache-Control: no-cache
+
+/icons/*
+  Cache-Control: public, max-age=604800

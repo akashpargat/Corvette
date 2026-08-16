@@ -37,18 +37,49 @@ native Android app (Android lets an app read SMS with permission) or a Twilio nu
 receives replies on your behalf. Both are bigger builds with real trade-offs — an unfamiliar
 sending number for Twilio, sideloading for Android.
 
-## Running it
+## Hosting it
 
-**On your phone (the real way).** The app needs to be served over HTTPS for offline mode
-and home-screen install to work. With GitHub Pages:
+The app needs HTTPS for offline mode and home-screen install to work, so it has to be
+served from somewhere rather than opened as a file. There's no build step — whatever you
+use just serves this folder as-is.
 
-1. Repo **Settings → Pages → Build and deployment → Deploy from a branch**, pick the branch
-   holding this folder and `/ (root)`.
-2. Open `https://<your-user>.github.io/<repo>/pickleball/` on your phone.
-3. **Android/Chrome:** menu → *Add to Home screen*. **iPhone/Safari:** Share → *Add to Home
-   Screen*.
+### Cloudflare Pages (recommended)
 
-Any static host works the same way (Netlify, Vercel, your own server) — it's plain files.
+Point the project at this folder as the **build output directory** and the app lands at the
+root of the domain (`https://pickleball.example.com/`) rather than a subpath. Free tier,
+HTTPS included, and `_headers` in this folder already sets the cache rules the service
+worker needs.
+
+**Connected to the repo** — deploys automatically on every push:
+
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**, pick this
+   repo and branch.
+2. **Framework preset:** None. **Build command:** leave empty. **Build output directory:**
+   `pickleball`.
+3. Deploy. You get a `*.pages.dev` URL; add a custom domain under the project's **Custom
+   domains** tab if you have one on Cloudflare.
+
+**Or from the command line** — no repo connection, uploads what's on disk:
+
+```sh
+npx wrangler pages deploy pickleball --project-name=pickleball
+```
+
+Run it from the repo root. First run creates the project and prompts you to log in;
+after that it's the same one-liner to publish an update.
+
+### GitHub Pages
+
+Also works, with the app at a subpath (`https://<user>.github.io/<repo>/pickleball/`):
+repo **Settings → Pages → Deploy from a branch**, pick the branch holding this folder and
+`/ (root)`.
+
+### Installing it once it's up
+
+Open the URL on your phone. **Android/Chrome:** menu → *Add to Home screen*.
+**iPhone/Safari:** Share → *Add to Home Screen*.
+
+## Running it locally
 
 **On a computer, to try it out:**
 
