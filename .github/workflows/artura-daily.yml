@@ -1,6 +1,9 @@
 name: Artura Tracker
 
 on:
+  push:
+    branches: [claude/mclaren-artura-tracker-0lqn5g, master]
+    paths: ["artura-tracker/crawler/**", "artura-tracker/dashboard/**", "artura-tracker/*.py", "artura-tracker/requirements.txt", ".github/workflows/artura-daily.yml"]
   schedule:
     - cron: "0 11 * * *"        # 06:00 Central / 07:00 Eastern, every day
   workflow_dispatch:
