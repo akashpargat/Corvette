@@ -1,13 +1,13 @@
 {
  "summary": {
-  "generated_at": "2026-09-12T23:56:55+00:00",
+  "generated_at": "2026-09-12T23:59:50+00:00",
   "date": "2026-09-12",
-  "active": 45,
-  "clean_candidates": 20,
-  "new_today": 37,
+  "active": 37,
+  "clean_candidates": 12,
+  "new_today": 0,
   "price_drops_today": 0,
-  "removed_today": 0,
-  "cheapest_clean_key": "seed:2bfbfcf6b1c5",
+  "removed_today": 8,
+  "cheapest_clean_key": "SBM16AEA5PW001931",
   "cheapest_clean_price": 160699,
   "median_clean_price": 181889.0,
   "market_model": {
@@ -20,8 +20,7 @@
   "sources_ok": [
    "dealer_sites",
    "mclaren_preowned",
-   "seed",
-   "truecar"
+   "seed"
   ],
   "sources_failed": [
    "autolist",
@@ -37,111 +36,27 @@
    "edmunds",
    "fb_marketplace",
    "hemmings",
-   "kbb"
+   "kbb",
+   "truecar"
   ]
  },
  "changes": {
-  "new": [
-   "SBM16AEA4PW001824",
-   "SBM16AEA4PW001466",
-   "SBM16AEA8PW001874",
-   "SBM16AEA1PW001909",
-   "SBM16AEA0PW000623",
-   "SBM16AEA2PW001465",
-   "SBM16AEA8RW002106",
-   "SBM16BEA5SW002852",
-   "SBM16BEA4SW003300",
-   "SBM16BEAXTW004436",
-   "truecar:9a6e86359c59",
-   "SBM16AEA6PW001162",
-   "SBM16AEA5RW002127",
-   "SBM16AEA2PW001921",
-   "SBM16AEA5PW001637",
-   "SBM16AEA5PW001931",
-   "SBM16AEA9PW001446",
-   "SBM16AEA7PW000960",
-   "SBM16AEA8PW000661",
-   "SBM16AEA8RW002123",
-   "SBM16AEA9RW002101",
-   "SBM16AEA7PW000621",
-   "SBM16BEA8TW004421",
-   "dealer_sites:a5073737643d",
-   "dealer_sites:75903c10ccc0",
-   "dealer_sites:4899a11378c2",
-   "dealer_sites:1fd746686a48",
-   "dealer_sites:991b73331f86",
-   "dealer_sites:39dfe867a701",
-   "dealer_sites:7fc715c9bc51",
-   "dealer_sites:ea20776e3d93",
-   "dealer_sites:31d6b201302e",
-   "dealer_sites:d400d2a88404",
-   "dealer_sites:f2ad089403fd",
-   "dealer_sites:a29756defbf6",
-   "dealer_sites:4095d8e37dac",
-   "dealer_sites:1b0d94672a71"
-  ],
+  "new": [],
   "price_drop": [],
   "price_up": [],
-  "removed": [],
+  "removed": [
+   "seed:2bfbfcf6b1c5",
+   "seed:d3f1c8fb3403",
+   "seed:b46ee5e4d324",
+   "seed:bd103a2410c0",
+   "seed:9edf3a71afea",
+   "seed:766d10a1007f",
+   "seed:71b219cf6f4f",
+   "seed:6b2d75961b75"
+  ],
   "returned": []
  },
  "listings": [
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-cnf6dn8",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 160699,
-   "mileage": 8755,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Greenwich",
-   "location": "Greenwich, CT",
-   "state": "CT",
-   "color": "Paris Blue",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:2bfbfcf6b1c5",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-cnf6dn8",
-     "price": 160699,
-     "dealer": "McLaren Greenwich",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 160699,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 160699
-    }
-   ],
-   "expected_price": 176487,
-   "deal_pct": 8.9,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 1
-  },
   {
    "source": "mclaren_preowned",
    "source_name": "McLaren Qualified (official CPO)",
@@ -187,7 +102,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -198,119 +113,7 @@
    "expected_price": 176487,
    "deal_pct": 8.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 2
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-jvf6xr7",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 174991,
-   "mileage": 10811,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Scottsdale",
-   "location": "Scottsdale, AZ",
-   "state": "AZ",
-   "color": "White",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:d3f1c8fb3403",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-jvf6xr7",
-     "price": 174991,
-     "dealer": "McLaren Scottsdale",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 174991,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 174991
-    }
-   ],
-   "expected_price": 172704,
-   "deal_pct": -1.3,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 3
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhfutht",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 175490,
-   "mileage": 8325,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Dallas",
-   "location": "Dallas, TX",
-   "state": "TX",
-   "color": "Onyx Black",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:b46ee5e4d324",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhfutht",
-     "price": 175490,
-     "dealer": "McLaren Dallas",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 175490,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 175490
-    }
-   ],
-   "expected_price": 177278,
-   "deal_pct": 1.0,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 4
+   "rank_cheapest_clean": 1
   },
   {
    "source": "mclaren_preowned",
@@ -357,7 +160,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -368,7 +171,7 @@
    "expected_price": 186261,
    "deal_pct": 4.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 5
+   "rank_cheapest_clean": 2
   },
   {
    "source": "mclaren_preowned",
@@ -397,16 +200,6 @@
    "candidate": true,
    "offers": [
     {
-     "source": "truecar",
-     "source_name": "TrueCar",
-     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA1PW001909/",
-     "price": null,
-     "dealer": "Lawrence Motorsport",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-12"
-    },
-    {
      "source": "mclaren_preowned",
      "source_name": "McLaren Qualified (official CPO)",
      "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-p6f9rl4",
@@ -419,14 +212,13 @@
    ],
    "price_high": 178991,
    "sources": [
-    "mclaren_preowned",
-    "truecar"
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -437,7 +229,7 @@
    "expected_price": 174766,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 6
+   "rank_cheapest_clean": 3
   },
   {
    "source": "mclaren_preowned",
@@ -484,7 +276,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -495,7 +287,7 @@
    "expected_price": 188259,
    "deal_pct": 4.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 7
+   "rank_cheapest_clean": 4
   },
   {
    "source": "mclaren_preowned",
@@ -542,7 +334,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -553,7 +345,7 @@
    "expected_price": 179714,
    "deal_pct": 0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8
+   "rank_cheapest_clean": 5
   },
   {
    "source": "mclaren_preowned",
@@ -600,7 +392,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -611,7 +403,7 @@
    "expected_price": 173887,
    "deal_pct": -3.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 9
+   "rank_cheapest_clean": 6
   },
   {
    "source": "mclaren_preowned",
@@ -658,7 +450,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -669,7 +461,7 @@
    "expected_price": 180930,
    "deal_pct": 0.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 10
+   "rank_cheapest_clean": 7
   },
   {
    "source": "mclaren_preowned",
@@ -716,7 +508,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -727,7 +519,7 @@
    "expected_price": 181162,
    "deal_pct": -1.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 11
+   "rank_cheapest_clean": 8
   },
   {
    "source": "mclaren_preowned",
@@ -774,7 +566,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -785,63 +577,7 @@
    "expected_price": 186352,
    "deal_pct": 1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 12
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefz93d",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 184991,
-   "mileage": 5927,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Scottsdale",
-   "location": "Scottsdale, AZ",
-   "state": "AZ",
-   "color": "Teal",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:bd103a2410c0",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefz93d",
-     "price": 184991,
-     "dealer": "McLaren Scottsdale",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 184991,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 184991
-    }
-   ],
-   "expected_price": 181690,
-   "deal_pct": -1.8,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 13
+   "rank_cheapest_clean": 9
   },
   {
    "source": "mclaren_preowned",
@@ -888,7 +624,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -899,7 +635,7 @@
    "expected_price": 189131,
    "deal_pct": 1.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 14
+   "rank_cheapest_clean": 10
   },
   {
    "source": "mclaren_preowned",
@@ -946,7 +682,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -957,7 +693,7 @@
    "expected_price": 186651,
    "deal_pct": -0.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 15
+   "rank_cheapest_clean": 11
   },
   {
    "source": "mclaren_preowned",
@@ -1004,7 +740,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -1015,231 +751,7 @@
    "expected_price": 186487,
    "deal_pct": -1.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 16
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefl8pm",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 189999,
-   "mileage": 2650,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Newport Beach",
-   "location": "Newport Beach, CA",
-   "state": "CA",
-   "color": "Silica White",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:9edf3a71afea",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefl8pm",
-     "price": 189999,
-     "dealer": "McLaren Newport Beach",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 189999,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 189999
-    }
-   ],
-   "expected_price": 187720,
-   "deal_pct": -1.2,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 17
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-hzfpj6w",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 192384,
-   "mileage": 9274,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Florida",
-   "location": "Florida",
-   "state": "FL",
-   "color": "Vega Blue",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:766d10a1007f",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-hzfpj6w",
-     "price": 192384,
-     "dealer": "McLaren Florida",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 192384,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 192384
-    }
-   ],
-   "expected_price": 175532,
-   "deal_pct": -9.6,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 18
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcfz5m7",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 194990,
-   "mileage": 2769,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Palm Beach",
-   "location": "West Palm Beach, FL",
-   "state": "FL",
-   "color": "McLaren Orange",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:71b219cf6f4f",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcfz5m7",
-     "price": 194990,
-     "dealer": "McLaren Palm Beach",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 194990,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 194990
-    }
-   ],
-   "expected_price": 187501,
-   "deal_pct": -4.0,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 19
-  },
-  {
-   "source": "seed",
-   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf2llr",
-   "title": "2023 McLaren Artura",
-   "vin": null,
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 199995,
-   "mileage": 1243,
-   "condition": "cpo",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Miami",
-   "location": "Coral Gables, FL",
-   "state": "FL",
-   "color": "Ice Silver",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": null,
-   "extra": {},
-   "key": "seed:6b2d75961b75",
-   "candidate": true,
-   "offers": [
-    {
-     "source": "seed",
-     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
-     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf2llr",
-     "price": 199995,
-     "dealer": "McLaren Miami",
-     "listing_type": "dealer",
-     "condition": "cpo",
-     "seen": "2026-09-12"
-    }
-   ],
-   "price_high": 199995,
-   "sources": [
-    "seed"
-   ],
-   "first_seen": "2026-09-12",
-   "missing_runs": 1,
-   "last_price_change": null,
-   "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:51:57+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-12",
-     "p": 199995
-    }
-   ],
-   "expected_price": 190309,
-   "deal_pct": -5.1,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 20
+   "rank_cheapest_clean": 12
   },
   {
    "source": "dealer_sites",
@@ -1287,7 +799,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [
     {
@@ -1865,7 +1377,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -1918,7 +1430,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -1971,7 +1483,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2024,7 +1536,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2077,7 +1589,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2130,7 +1642,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2183,7 +1695,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2236,7 +1748,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2289,7 +1801,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2342,7 +1854,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2395,7 +1907,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2448,7 +1960,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2501,7 +2013,7 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
@@ -2554,12 +2066,468 @@
    "missing_runs": 0,
    "last_price_change": null,
    "last_seen": "2026-09-12",
-   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "last_seen_at": "2026-09-12T23:59:50+00:00",
    "status": "active",
    "price_history": [],
    "expected_price": null,
    "deal_pct": null,
    "price_per_mile_note": null
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-cnf6dn8",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 160699,
+   "mileage": 8755,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Greenwich",
+   "location": "Greenwich, CT",
+   "state": "CT",
+   "color": "Paris Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:2bfbfcf6b1c5",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-cnf6dn8",
+     "price": 160699,
+     "dealer": "McLaren Greenwich",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 160699,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 160699
+    }
+   ],
+   "expected_price": 176487,
+   "deal_pct": 8.9,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 1,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-jvf6xr7",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 174991,
+   "mileage": 10811,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Scottsdale",
+   "location": "Scottsdale, AZ",
+   "state": "AZ",
+   "color": "White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:d3f1c8fb3403",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-jvf6xr7",
+     "price": 174991,
+     "dealer": "McLaren Scottsdale",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 174991,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 174991
+    }
+   ],
+   "expected_price": 172704,
+   "deal_pct": -1.3,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 3,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhfutht",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 175490,
+   "mileage": 8325,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Dallas",
+   "location": "Dallas, TX",
+   "state": "TX",
+   "color": "Onyx Black",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:b46ee5e4d324",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhfutht",
+     "price": 175490,
+     "dealer": "McLaren Dallas",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 175490,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 175490
+    }
+   ],
+   "expected_price": 177278,
+   "deal_pct": 1.0,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 4,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefz93d",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 184991,
+   "mileage": 5927,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Scottsdale",
+   "location": "Scottsdale, AZ",
+   "state": "AZ",
+   "color": "Teal",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:bd103a2410c0",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefz93d",
+     "price": 184991,
+     "dealer": "McLaren Scottsdale",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 184991,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 184991
+    }
+   ],
+   "expected_price": 181690,
+   "deal_pct": -1.8,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 13,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefl8pm",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 189999,
+   "mileage": 2650,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Newport Beach",
+   "location": "Newport Beach, CA",
+   "state": "CA",
+   "color": "Silica White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:9edf3a71afea",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fefl8pm",
+     "price": 189999,
+     "dealer": "McLaren Newport Beach",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 189999,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 189999
+    }
+   ],
+   "expected_price": 187720,
+   "deal_pct": -1.2,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 17,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-hzfpj6w",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 192384,
+   "mileage": 9274,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Florida",
+   "location": "Florida",
+   "state": "FL",
+   "color": "Vega Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:766d10a1007f",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-hzfpj6w",
+     "price": 192384,
+     "dealer": "McLaren Florida",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 192384,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 192384
+    }
+   ],
+   "expected_price": 175532,
+   "deal_pct": -9.6,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 18,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcfz5m7",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 194990,
+   "mileage": 2769,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Palm Beach",
+   "location": "West Palm Beach, FL",
+   "state": "FL",
+   "color": "McLaren Orange",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:71b219cf6f4f",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcfz5m7",
+     "price": 194990,
+     "dealer": "McLaren Palm Beach",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 194990,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 194990
+    }
+   ],
+   "expected_price": 187501,
+   "deal_pct": -4.0,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 19,
+   "removed_on": "2026-09-12"
+  },
+  {
+   "source": "seed",
+   "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf2llr",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 199995,
+   "mileage": 1243,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Miami",
+   "location": "Coral Gables, FL",
+   "state": "FL",
+   "color": "Ice Silver",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {},
+   "key": "seed:6b2d75961b75",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "seed",
+     "source_name": "Seed (McLaren Qualified, 2026-09-12)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf2llr",
+     "price": 199995,
+     "dealer": "McLaren Miami",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 199995,
+   "sources": [
+    "seed"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 2,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:51:57+00:00",
+   "status": "removed",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 199995
+    }
+   ],
+   "expected_price": 190309,
+   "deal_pct": -5.1,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 20,
+   "removed_on": "2026-09-12"
   }
  ]
 }

@@ -301,5 +301,281 @@
    "removed_today": 0,
    "cheapest_clean_price": 160699
   }
+ },
+ {
+  "started_at": "2026-09-12T23:59:50+00:00",
+  "seconds": 118.6,
+  "sources": [
+   {
+    "source": "mclaren_preowned",
+    "label": "McLaren Qualified (official CPO)",
+    "kind": "dealer",
+    "status": "ok",
+    "count": 12,
+    "seconds": 19.1,
+    "pages": 28,
+    "notes": [
+     "McLaren Qualified (official CPO): 12 vehicle pages found"
+    ],
+    "error": null
+   },
+   {
+    "source": "dealer_sites",
+    "label": "McLaren dealer websites",
+    "kind": "dealer",
+    "status": "ok",
+    "count": 15,
+    "seconds": 93.8,
+    "pages": 2,
+    "notes": [
+     "McLaren dealer websites: 30 retailer sites to crawl",
+     "McLaren Atlanta: sitemap:0, 0 listings",
+     "McLaren Austin: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarenaustin.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)'))))",
+     "McLaren Beverly Hills: sitemap:0, 0 listings",
+     "McLaren Boston: unreachable (403)",
+     "McLaren Charlotte: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarencharlotte.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))))",
+     "McLaren Chicago: sitemap:0, 0 listings",
+     "McLaren Dallas: sitemap:0, 0 listings",
+     "McLaren Denver: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarendenver.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)'))))",
+     "McLaren Greenwich: unreachable (403)",
+     "McLaren Houston: sitemap:11, 1 listings",
+     "McLaren Long Island: sitemap:0, 0 listings",
+     "McLaren Miami: unreachable (ConnectionError: HTTPSConnectionPool(host='www.mclarenmiami.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.mclarenmiami.com', port=443): Failed to resolve 'www.mclarenmiami.com' ([Errno -3] Temporary failure in name resolution)\")))",
+     "McLaren Newport Beach: unreachable (403)",
+     "McLaren Orlando: sitemap:0, 0 listings",
+     "McLaren Palm Beach: unreachable (403)",
+     "McLaren Philadelphia: unreachable (403)",
+     "McLaren Rancho Mirage: sitemap:9, 0 listings",
+     "McLaren San Diego: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarensandiego.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))))",
+     "McLaren San Francisco: unreachable (403)",
+     "McLaren Scottsdale: unreachable (403)",
+     "McLaren Seattle: unreachable (ConnectTimeout: HTTPSConnectionPool(host='www.mclarenseattle.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mclarenseattle.com', port=443) at 0x7fce5cb65ca0>, 'Connection to www.mclarenseattle.com timed out. (connect timeout=30)')))",
+     "McLaren St. Louis: unreachable (ConnectionError: HTTPSConnectionPool(host='www.mclarenstlouis.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.mclarenstlouis.com', port=443): Failed to resolve 'www.mclarenstlouis.com' ([Errno -3] Temporary failure in name resolution)\")))",
+     "McLaren Tampa Bay: sitemap:41, 14 listings",
+     "McLaren Washington DC: unreachable (ConnectTimeout: HTTPSConnectionPool(host='www.mclarenwashingtondc.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mclarenwashingtondc.com', port=443) at 0x7fce58a0f650>, 'Connection to www.mclarenwashingtondc.com timed out. (connect timeout=30)')))",
+     "McLaren North Jersey: sitemap:0, 0 listings",
+     "McLaren Las Vegas: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarenlasvegas.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)'))))",
+     "McLaren Nashville: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarennashville.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))))",
+     "McLaren Detroit: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarendetroit.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))))",
+     "McLaren Manhattan: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarenmanhattan.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)'))))",
+     "McLaren Sterling: unreachable (SSLError: HTTPSConnectionPool(host='www.mclarensterling.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.mclarensterling.com'. (_ssl.c:1010)\"))))"
+    ],
+    "error": null
+   },
+   {
+    "source": "cars_com",
+    "label": "Cars.com",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "Cars.com: cloudflare challenge"
+    ],
+    "error": null
+   },
+   {
+    "source": "autotrader",
+    "label": "Autotrader",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "Autotrader: captcha page"
+    ],
+    "error": null
+   },
+   {
+    "source": "kbb",
+    "label": "Kelley Blue Book",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "Kelley Blue Book: akamai access denied"
+    ],
+    "error": null
+   },
+   {
+    "source": "cargurus",
+    "label": "CarGurus",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 1.4,
+    "pages": 3,
+    "notes": [
+     "CarGurus: JSON endpoint unavailable (406); trying HTML",
+     "CarGurus: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "carfax",
+    "label": "CARFAX",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 1.5,
+    "pages": 3,
+    "notes": [
+     "CARFAX: helix API unavailable (200); trying HTML",
+     "CARFAX: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "truecar",
+    "label": "TrueCar",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "TrueCar: perimeterx captcha"
+    ],
+    "error": null
+   },
+   {
+    "source": "edmunds",
+    "label": "Edmunds",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 1.4,
+    "pages": 3,
+    "notes": [
+     "Edmunds: inventory API unavailable (akamai access denied); trying HTML",
+     "Edmunds: akamai access denied"
+    ],
+    "error": null
+   },
+   {
+    "source": "autolist",
+    "label": "Autolist",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.1,
+    "pages": 1,
+    "notes": [
+     "Autolist: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "dupont",
+    "label": "duPont REGISTRY",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 0.4,
+    "pages": 2,
+    "notes": [
+     "duPont REGISTRY: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "classic_com",
+    "label": "CLASSIC.COM",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "CLASSIC.COM: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "bringatrailer",
+    "label": "Bring a Trailer",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "Bring a Trailer: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "carsandbids",
+    "label": "Cars & Bids",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 0.2,
+    "pages": 2,
+    "notes": [
+     "Cars & Bids: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "ebay",
+    "label": "eBay Motors",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.4,
+    "pages": 2,
+    "notes": [
+     "eBay Motors: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "hemmings",
+    "label": "Hemmings",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 0.1,
+    "pages": 2,
+    "notes": [
+     "Hemmings: cloudflare challenge"
+    ],
+    "error": null
+   },
+   {
+    "source": "fb_marketplace",
+    "label": "Facebook Marketplace",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 24.8,
+    "pages": 0,
+    "notes": [
+     "Facebook Marketplace: login wall on 4 hubs in a row; stopping. Add FB_COOKIES_JSON secret to unlock.",
+     "Facebook Marketplace: 62 hubs searched, 4 login-walled, 0 raw cards"
+    ],
+    "error": null,
+    "extra": {
+     "login_walled_hubs": 4,
+     "hubs": 62,
+     "had_cookies": false
+    }
+   }
+  ],
+  "raw_listings": 27,
+  "zip": "",
+  "summary": {
+   "active": 37,
+   "clean_candidates": 12,
+   "new_today": 0,
+   "price_drops_today": 0,
+   "removed_today": 8,
+   "cheapest_clean_price": 160699
+  }
  }
 ]
