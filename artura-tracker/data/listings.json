@@ -1,37 +1,84 @@
 {
  "summary": {
-  "generated_at": "2026-09-12T23:51:57+00:00",
+  "generated_at": "2026-09-12T23:56:55+00:00",
   "date": "2026-09-12",
-  "active": 8,
-  "clean_candidates": 8,
-  "new_today": 8,
+  "active": 45,
+  "clean_candidates": 20,
+  "new_today": 37,
   "price_drops_today": 0,
   "removed_today": 0,
   "cheapest_clean_key": "seed:2bfbfcf6b1c5",
   "cheapest_clean_price": 160699,
-  "median_clean_price": 187495.0,
+  "median_clean_price": 181889.0,
   "market_model": {
-   "n": 8,
-   "intercept": null,
-   "per_mile": null,
-   "per_year": null,
-   "median": 187495.0
+   "n": 20,
+   "intercept": 192596,
+   "per_mile": -1.84,
+   "per_year": 6445,
+   "median": 181889.0
   },
   "sources_ok": [
-   "seed"
+   "dealer_sites",
+   "mclaren_preowned",
+   "seed",
+   "truecar"
   ],
-  "sources_failed": []
+  "sources_failed": [
+   "autolist",
+   "autotrader",
+   "bringatrailer",
+   "carfax",
+   "cargurus",
+   "cars_com",
+   "carsandbids",
+   "classic_com",
+   "dupont",
+   "ebay",
+   "edmunds",
+   "fb_marketplace",
+   "hemmings",
+   "kbb"
+  ]
  },
  "changes": {
   "new": [
-   "seed:2bfbfcf6b1c5",
-   "seed:d3f1c8fb3403",
-   "seed:b46ee5e4d324",
-   "seed:bd103a2410c0",
-   "seed:9edf3a71afea",
-   "seed:766d10a1007f",
-   "seed:71b219cf6f4f",
-   "seed:6b2d75961b75"
+   "SBM16AEA4PW001824",
+   "SBM16AEA4PW001466",
+   "SBM16AEA8PW001874",
+   "SBM16AEA1PW001909",
+   "SBM16AEA0PW000623",
+   "SBM16AEA2PW001465",
+   "SBM16AEA8RW002106",
+   "SBM16BEA5SW002852",
+   "SBM16BEA4SW003300",
+   "SBM16BEAXTW004436",
+   "truecar:9a6e86359c59",
+   "SBM16AEA6PW001162",
+   "SBM16AEA5RW002127",
+   "SBM16AEA2PW001921",
+   "SBM16AEA5PW001637",
+   "SBM16AEA5PW001931",
+   "SBM16AEA9PW001446",
+   "SBM16AEA7PW000960",
+   "SBM16AEA8PW000661",
+   "SBM16AEA8RW002123",
+   "SBM16AEA9RW002101",
+   "SBM16AEA7PW000621",
+   "SBM16BEA8TW004421",
+   "dealer_sites:a5073737643d",
+   "dealer_sites:75903c10ccc0",
+   "dealer_sites:4899a11378c2",
+   "dealer_sites:1fd746686a48",
+   "dealer_sites:991b73331f86",
+   "dealer_sites:39dfe867a701",
+   "dealer_sites:7fc715c9bc51",
+   "dealer_sites:ea20776e3d93",
+   "dealer_sites:31d6b201302e",
+   "dealer_sites:d400d2a88404",
+   "dealer_sites:f2ad089403fd",
+   "dealer_sites:a29756defbf6",
+   "dealer_sites:4095d8e37dac",
+   "dealer_sites:1b0d94672a71"
   ],
   "price_drop": [],
   "price_up": [],
@@ -79,7 +126,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -90,10 +137,68 @@
      "p": 160699
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": 14.3,
+   "expected_price": 176487,
+   "deal_pct": 8.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 1
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef7dt4",
+   "title": "Artura",
+   "vin": "SBM16AEA5PW001931",
+   "year": null,
+   "trim": "TechLux",
+   "price": 160699,
+   "mileage": 8755,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Greenwich",
+   "state": null,
+   "color": "Silica White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/5d19571846b043aab4c246ba5b54c53d.jpg",
+   "extra": {
+    "description": "2 doors, Colour: Silica White, Approved used vehicle, 8 gears, Rear wheel drive<br />\r\n<br />\r\nEntertainment, Bowers and Wilkins Audio System, Smartphone Integration Package, Exterior, Black Pack, Door Mirror - Gloss Black, Engine Covers - Brushed Aluminium, Exhaust Finisher - Stealth, Exterior Standard Paint - Silica White, Front Fender - Gloss Black Louvres, Model Designation, Roof - Body Colour, Sports Exhaust, Interior, 3-Point Seatbelt - Black, Gloss Black Interior Pack, S/Wheel Finish - Jet Black Leather, Seats - Electric Heated Memory Comfort, Sill Finisher - Jet Black Leather, TechLux "
+   },
+   "key": "SBM16AEA5PW001931",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef7dt4",
+     "price": 160699,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 160699,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 160699
+    }
+   ],
+   "expected_price": 176487,
+   "deal_pct": 8.9,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 2
   },
   {
    "source": "seed",
@@ -135,7 +240,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -146,10 +251,10 @@
      "p": 174991
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": 6.7,
+   "expected_price": 172704,
+   "deal_pct": -1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 2
+   "rank_cheapest_clean": 3
   },
   {
    "source": "seed",
@@ -191,7 +296,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -202,10 +307,485 @@
      "p": 175490
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": 6.4,
+   "expected_price": 177278,
+   "deal_pct": 1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 3
+   "rank_cheapest_clean": 4
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9mmx",
+   "title": "Artura",
+   "vin": "SBM16AEA8PW000661",
+   "year": 2023,
+   "trim": "TechLux",
+   "price": 177449,
+   "mileage": 3443,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Boston",
+   "state": null,
+   "color": "Volcano Yellow",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/de125fff5ffd4ec1aad2038efd016f3f.jpg",
+   "extra": {
+    "description": "*3.99% up to 63 Months - Call for details*Recent Arrival! Certified. CARFAX One-Owner. Odometer is 1447 miles below market average! 2023 Artura McLaren TechLux Volcano Yellow RWD 8-Speed Manual 3.0L V6 Turbocharged DOHC 24V LEV3-ULEV50 ABS brakes, Black Pack, Bowers &amp; Wilkins 12-Speaker Audio System, Comfort Seats w/Power Adjust Heated Memory, Compass, Electronic Stability Control, Front dual zone A/C, Heated door mirrors, Illuminated entry, Low tire pressure warning, Navigation System, Remote keyless entry, Sport Exhaust &amp; Stealth Hot Vee Finishers, Technology Pack, Traction control, "
+   },
+   "key": "SBM16AEA8PW000661",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9mmx",
+     "price": 177449,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 177449,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 177449
+    }
+   ],
+   "expected_price": 186261,
+   "deal_pct": 4.7,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 5
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-p6f9rl4",
+   "title": "Artura",
+   "vin": "SBM16AEA1PW001909",
+   "year": null,
+   "trim": "Coupe",
+   "price": 178991,
+   "mileage": 9690,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Scottsdale",
+   "state": null,
+   "color": "Silver",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/de7aec6a7a514c769b1d1e763a84fed6.jpg",
+   "extra": {
+    "description": "2 doors, Colour: Silver, Approved used vehicle, 8 gears, Rear wheel drive<br />\r\n<br />\r\nEntertainment, Bowers and Wilkins Audio System, Smartphone Integration Package, Exterior, Black Pack, Door Mirror - Gloss Black, Engine Covers - Brushed Aluminium, Exhaust Finisher - Stealth, Exterior Elite Paint - Glacier White, Front Fender - Gloss Black Louvres, Model Designation, Roof - Gloss Black, Sports Exhaust, Interior, 3-Point Seatbelt - McLaren Orange, Carbon Fibre Interior Pack, Perf- Graphite/Blk and Vis Orange Accent, S/Wheel Finish - Jet Black Leather, Seats - Electric Heated Memory Comfort,"
+   },
+   "key": "SBM16AEA1PW001909",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA1PW001909/",
+     "price": null,
+     "dealer": "Lawrence Motorsport",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    },
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-p6f9rl4",
+     "price": 178991,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 178991,
+   "sources": [
+    "mclaren_preowned",
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 178991
+    }
+   ],
+   "expected_price": 174766,
+   "deal_pct": -2.4,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 6
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9mmy",
+   "title": "Artura",
+   "vin": "SBM16AEA5PW001637",
+   "year": 2023,
+   "trim": "TechLux",
+   "price": 179449,
+   "mileage": 2357,
+   "condition": "cpo",
+   "title_status": "clean",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Boston",
+   "state": null,
+   "color": "Supernova Silver",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/4ebf9bd99ea246b9bb697cd1a309a837.jpg",
+   "extra": {
+    "description": "*3.99% up to 63 Months - Call for details*Recent Arrival! Certified. Clean CARFAX. Odometer is 2268 miles below market average! 2023 Artura McLaren TechLux Supernova Silver RWD 8-Speed Manual 3.0L V6 Turbocharged DOHC 24V LEV3-ULEV50 ABS brakes, Black Pack, Bowers &amp; Wilkins 12-Speaker Audio System, Comfort Seats w/Power Adjust Heated Memory, Compass, Electronic Stability Control, Front dual zone A/C, Gloss Black Interior Pack, Heated door mirrors, Illuminated entry, Low tire pressure warning, Navigation System, Red Brake Calipers, Remote keyless entry, Satin Titanium Engine Cover w/McLaren"
+   },
+   "key": "SBM16AEA5PW001637",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9mmy",
+     "price": 179449,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 179449,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 179449
+    }
+   ],
+   "expected_price": 188259,
+   "deal_pct": 4.7,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 7
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf9mmv",
+   "title": "Artura",
+   "vin": "SBM16AEA9PW001446",
+   "year": 2023,
+   "trim": "TechLux",
+   "price": 179449,
+   "mileage": 7001,
+   "condition": "cpo",
+   "title_status": "clean",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Boston",
+   "state": null,
+   "color": "Silica White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/b223efa5e679445db4a3db0d09d9e2fe.jpg",
+   "extra": {
+    "description": "*3.99% up to 63 Months - Call for details*Recent Arrival! Certified. CARFAX One-Owner. Clean CARFAX. 2023 Artura McLaren TechLux Silica White RWD 8-Speed Manual 3.0L V6 Turbocharged DOHC 24V LEV3-ULEV50 ABS brakes, Active Cruise Control, Bowers &amp; Wilkins 12-Speaker Audio System, Compass, Electronic Stability Control, Front dual zone A/C, Heated door mirrors, Illuminated entry, Low tire pressure warning, Navigation System, Red Brake Calipers, Remote keyless entry, Sport Exhaust &amp; Silver Hot Vee Finishers, Technology Pack, Traction control, Wheels: 20 Gloss Black Dynamo Forged Alloy 10-S"
+   },
+   "key": "SBM16AEA9PW001446",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-nhf9mmv",
+     "price": 179449,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 179449,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 179449
+    }
+   ],
+   "expected_price": 179714,
+   "deal_pct": 0.1,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 8
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-gwf683b",
+   "title": "Artura",
+   "vin": "SBM16AEA5RW002127",
+   "year": null,
+   "trim": "Coupe",
+   "price": 179699,
+   "mileage": 10168,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Greenwich",
+   "state": null,
+   "color": "Ludus Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/5c1f05ed1e1847e7b5f8f4c683304b60.jpg",
+   "extra": {
+    "description": "2 doors, Colour: Ludus Blue, Approved used vehicle, 8 gears, Rear wheel drive<br />\r\n<br />\r\nEntertainment, Bowers and Wilkins Audio System, Smartphone Integration Package, Exterior, Black Pack, Door Mirror - Gloss Black, Engine Covers - Brushed Aluminium, Exhaust Finisher - Stealth, Front Fender - Gloss Black Louvres, Model Designation, Roof - Gloss Black, Sports Exhaust, Interior, 3-Point Seatbelt - Black, Perf - Black/Black and Black Accent, S/Wheel Finish - Carbon Black Alcantara, Seats - ClubSport with Lumbar Adjustment, Sill Finisher - Jet Black Leather, Steering Wheel Upper, Pack, Ameri"
+   },
+   "key": "SBM16AEA5RW002127",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-gwf683b",
+     "price": 179699,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 179699,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 179699
+    }
+   ],
+   "expected_price": 173887,
+   "deal_pct": -3.3,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 9
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9743",
+   "title": "Artura",
+   "vin": "SBM16AEA7PW000621",
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 179890,
+   "mileage": 6340,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Dallas",
+   "state": null,
+   "color": "Storm Grey",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/8e2e0b377ab24c66874220dac8c7be33.jpg",
+   "extra": {
+    "description": "Certified. 2023 McLaren ArturaStorm Grey, Bowers &amp; Wilkins 12-Speaker Audio System, Comfort Seats w/Power Adjust Heated Memory, Sport Exhaust &amp; Stealth Hot Vee Finishers, Technology Pack, Wheels: 20 Gloss Black Dynamo Forged Alloy 10-Spk, Yellow Brake Calipers.Certification Program Details: McLaren Qualified Details*Limited Warranty: Minimum 12 month/Unlimited Mile beginning at time of Purchase*90+ Point Inspection*Transferable Warranty*$0 Warranty Deductible*Roadside Assistance**Important Disclosure** -The listed price does not include a $275 dealer documentary fee. -The listed price "
+   },
+   "key": "SBM16AEA7PW000621",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-etf9743",
+     "price": 179890,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 179890,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 179890
+    }
+   ],
+   "expected_price": 180930,
+   "deal_pct": 0.6,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 10
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcf9wt5",
+   "title": "Artura",
+   "vin": "SBM16AEA6PW001162",
+   "year": 2023,
+   "trim": "Performance",
+   "price": 183888,
+   "mileage": 6214,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Long Island",
+   "state": null,
+   "color": "Flux Green",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/b204608781754f0ea8fd63767c891d5f.jpg",
+   "extra": {
+    "description": "Our Flux Green McLaren Qualified 2023 McLaren Artura TechLux Coupe will wow you with electrifying performance and incredible driving dynamics, making every drive feel special. Motivated by a Twin TurboCharged 3.0 Liter V6 and an Electric Motor generating a combined 671hp paired with an 8 Speed SSG Dual-Clutch Automatic transmission to propel you to 124mph in just 8.3 seconds. You&#039;ll love the sensational handling offered by this mid-engine, Rear Wheel Drive plug-in Hybrid, along with its ability to attain nearly 21mpg on the highway and provide nearly 11miles of electric-only range. With i"
+   },
+   "key": "SBM16AEA6PW001162",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-kcf9wt5",
+     "price": 183888,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 183888,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 183888
+    }
+   ],
+   "expected_price": 181162,
+   "deal_pct": -1.5,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 11
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef43ud",
+   "title": "Artura",
+   "vin": "SBM16AEA8RW002123",
+   "year": 2024,
+   "trim": "Coupe",
+   "price": 184449,
+   "mileage": 6896,
+   "condition": "cpo",
+   "title_status": "clean",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Boston",
+   "state": null,
+   "color": "Belize Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/47a1e03f03d7425c97e890862a6cd83b.jpg",
+   "extra": {
+    "description": "*3.99% up to 63 Months - Call for details*Recent Arrival! Clean CARFAX. 2024 Artura McLaren Belize Blue RWD 8-Speed Manual V6 ABS brakes, Black Pack, Comfort Seats w/Power Adjust Heated Memory, Compass, Electronic Stability Control, Front dual zone A/C, Heated door mirrors, Illuminated entry, Low tire pressure warning, Navigation System, Polished Brake Calipers, Remote keyless entry, Sport Exhaust &amp; Stealth Hot Vee Finishers, Traction control, Wheels: 20 Gloss Black Dynamo Forged Alloy 10-Spk.<br />\r\n<br />\r\nEntertainment, McLaren Audio System, Smartphone Integration Package, Exterior, Bla"
+   },
+   "key": "SBM16AEA8RW002123",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef43ud",
+     "price": 184449,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 184449,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 184449
+    }
+   ],
+   "expected_price": 186352,
+   "deal_pct": 1.0,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 12
   },
   {
    "source": "seed",
@@ -247,7 +827,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -258,10 +838,184 @@
      "p": 184991
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": 1.3,
+   "expected_price": 181690,
+   "deal_pct": -1.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 4
+   "rank_cheapest_clean": 13
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-p6f7n76",
+   "title": "Artura",
+   "vin": "SBM16AEA2PW001921",
+   "year": 2023,
+   "trim": "Performance",
+   "price": 185888,
+   "mileage": 1883,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Long Island",
+   "state": null,
+   "color": "MSO Ceramic Grey",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/147955aa83b34ab7bb5692e5cbf66b35.jpg",
+   "extra": {
+    "description": "Our McLaren Qualified Ceramic Grey by MSO 2023 McLaren Artura TechLux Coupe will wow you with electrifying performance and incredible driving dynamics, making every drive feel special. Motivated by a Twin TurboCharged 3.0 Liter V6 and an Electric Motor generating a combined 671hp paired with an 8 Speed SSG Dual-Clutch Automatic transmission to propel you to 124mph in just 8.3 seconds. You&#039;ll love the sensational handling offered by this mid-engine, Rear Wheel Drive plug-in Hybrid along with its ability to attain nearly 21mpg on the highway and provide nearly 11miles of electric-only range"
+   },
+   "key": "SBM16AEA2PW001921",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-p6f7n76",
+     "price": 185888,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 185888,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 185888
+    }
+   ],
+   "expected_price": 189131,
+   "deal_pct": 1.7,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 14
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef5mtq",
+   "title": "Artura",
+   "vin": "SBM16AEA7PW000960",
+   "year": 2023,
+   "trim": "Vision",
+   "price": 187995,
+   "mileage": 3231,
+   "condition": "cpo",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "San Diego",
+   "state": null,
+   "color": "Cirrus Gray",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/ef1314177b144eb0b68b3ae7185152a7.jpg",
+   "extra": {
+    "description": "O&#039;Gara Coach San Diego is proud to present for sale this stunning 2023 McLaren Artura Vision as part of our hand-selected pre-owned lineup. This gorgeous example is finished in the Cirrus Gray exterior paint and Dove Gray/Jet Black interior. Other manufacturer options include:10 Spoke SLW Star Forged WheelsTechnology packageVision SpecSport ExhaustBowers &amp; Wilkins Sound systemSmart Phone Integration PackageCARFAX One-Owner. Certified.McLaren Qualified Details:* 90+ Point Inspection* Warranty Deductible: $0* Transferable Warranty* Limited Warranty: 12 Month/Unlimited Mile beginning whe"
+   },
+   "key": "SBM16AEA7PW000960",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef5mtq",
+     "price": 187995,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 187995,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 187995
+    }
+   ],
+   "expected_price": 186651,
+   "deal_pct": -0.7,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 15
+  },
+  {
+   "source": "mclaren_preowned",
+   "source_name": "McLaren Qualified (official CPO)",
+   "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef43ub",
+   "title": "Artura",
+   "vin": "SBM16AEA9RW002101",
+   "year": 2024,
+   "trim": "Coupe",
+   "price": 188449,
+   "mileage": 6823,
+   "condition": "cpo",
+   "title_status": "clean",
+   "title_notes": [],
+   "dealer": "McLaren Certified Commitment",
+   "location": "Boston",
+   "state": null,
+   "color": "Vermillion Red",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "/picserver1/userdata/37/14698/3FAdVwEMPE/b0a48175372640408495cb67d7535aa6.jpg",
+   "extra": {
+    "description": "*3.99% up to 63 Months - Call for details*Recent Arrival! Certified. CARFAX One-Owner. Clean CARFAX. 2024 Artura McLaren Vermillion Red RWD 8-Speed Manual V6 ABS brakes, Alcantara Seat Trim, Bowers &amp; Wilkins 12-Speaker Audio System, Comfort Seats w/Power Adjust Heated Memory, Compass, Electronic Stability Control, Front dual zone A/C, Heated door mirrors, Illuminated entry, Low tire pressure warning, Navigation System, Red Brake Calipers, Remote keyless entry, Technology Pack, Traction control, Wheels: 20 Gloss Black Dynamo Forged Alloy 10-Spk.McLaren Qualified Details:* Transferable Warra"
+   },
+   "key": "SBM16AEA9RW002101",
+   "candidate": true,
+   "offers": [
+    {
+     "source": "mclaren_preowned",
+     "source_name": "McLaren Qualified (official CPO)",
+     "url": "https://preowned.mclaren.com/amn/us/en/vehicles/mclaren-artura-qualified-fef43ub",
+     "price": 188449,
+     "dealer": "McLaren Certified Commitment",
+     "listing_type": "dealer",
+     "condition": "cpo",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 188449,
+   "sources": [
+    "mclaren_preowned"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 188449
+    }
+   ],
+   "expected_price": 186487,
+   "deal_pct": -1.1,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 16
   },
   {
    "source": "seed",
@@ -303,7 +1057,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -314,10 +1068,10 @@
      "p": 189999
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": -1.3,
+   "expected_price": 187720,
+   "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 5
+   "rank_cheapest_clean": 17
   },
   {
    "source": "seed",
@@ -359,7 +1113,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -370,10 +1124,10 @@
      "p": 192384
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": -2.6,
+   "expected_price": 175532,
+   "deal_pct": -9.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 6
+   "rank_cheapest_clean": 18
   },
   {
    "source": "seed",
@@ -415,7 +1169,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -426,10 +1180,10 @@
      "p": 194990
     }
    ],
-   "expected_price": 187495,
+   "expected_price": 187501,
    "deal_pct": -4.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 7
+   "rank_cheapest_clean": 19
   },
   {
    "source": "seed",
@@ -471,7 +1225,7 @@
     "seed"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 0,
+   "missing_runs": 1,
    "last_price_change": null,
    "last_seen": "2026-09-12",
    "last_seen_at": "2026-09-12T23:51:57+00:00",
@@ -482,10 +1236,1330 @@
      "p": 199995
     }
    ],
-   "expected_price": 187495,
-   "deal_pct": -6.7,
+   "expected_price": 190309,
+   "deal_pct": -5.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8
+   "rank_cheapest_clean": 20
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Houston",
+   "url": "https://www.mclarenhouston.com/new-Houston-2026-McLaren-Artura-Vision-SBM16BEA8TW004421",
+   "title": "2026 McLaren Artura Vision",
+   "vin": "SBM16BEA8TW004421",
+   "year": 2026,
+   "trim": "Spider",
+   "price": 3332000,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Houston",
+   "location": "Houston",
+   "state": null,
+   "color": "Mso - Paris Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://www.mclarenhouston.com/inventoryphotos/3232/sbm16bea8tw004421/ip/1.jpg",
+   "extra": {
+    "description": "Porsche North Houston is delighted to showcase, this Brand New <b>2026 McLaren Artura Spider</b>. Dressed in an evocative MSO Paris Blue and with just <b>41 miles</b> to its name, this vehicle is a testament to the potent combination of high performance and sophistication that McLaren embodies.<br> <br>The Artura Spider stands as a beacon of cutting-edge design and hybrid performance, its MSO Paris Blue exterior not just a color, but a bold statement of McLarens relentless pursuit of innovation. Adorned with 10-Spoke SLW Dynamo Forged Alloy Wheels in Gloss Black and Anodised Black Calipers wit",
+    "dealer_site": "https://www.mclarenhouston.com"
+   },
+   "key": "SBM16BEA8TW004421",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Houston",
+     "url": "https://www.mclarenhouston.com/new-Houston-2026-McLaren-Artura-Vision-SBM16BEA8TW004421",
+     "price": 3332000,
+     "dealer": "McLaren Houston",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": 3332000,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-12",
+     "p": 3332000
+    }
+   ],
+   "expected_price": 211931,
+   "deal_pct": -1472.2,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA4PW001824/",
+   "title": "2023 McLaren Artura Standard",
+   "vin": "SBM16AEA4PW001824",
+   "year": 2023,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": 13787,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Southern California Preowned",
+   "location": null,
+   "state": null,
+   "color": "Black",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/138155/24/18/SBM16AEA4PW001824/001_2026071903.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA4PW001824",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA4PW001824/",
+     "price": null,
+     "dealer": "Southern California Preowned",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA4PW001466/",
+   "title": "2023 McLaren Artura TechLux",
+   "vin": "SBM16AEA4PW001466",
+   "year": 2023,
+   "trim": "TechLux",
+   "price": null,
+   "mileage": 3413,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Mercedes-Benz of Cary",
+   "location": null,
+   "state": null,
+   "color": "White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/7353/66/14/SBM16AEA4PW001466/001_2026082908.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA4PW001466",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA4PW001466/",
+     "price": null,
+     "dealer": "Mercedes-Benz of Cary",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA8PW001874/",
+   "title": "2023 McLaren Artura Standard",
+   "vin": "SBM16AEA8PW001874",
+   "year": 2023,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": 6679,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Fishers Imports Northwest",
+   "location": null,
+   "state": null,
+   "color": "Unknown",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/174982/74/18/SBM16AEA8PW001874/001_2026082308.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA8PW001874",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA8PW001874/",
+     "price": null,
+     "dealer": "Fishers Imports Northwest",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA0PW000623/",
+   "title": "2023 McLaren Artura Performance",
+   "vin": "SBM16AEA0PW000623",
+   "year": 2023,
+   "trim": "Performance",
+   "price": null,
+   "mileage": 10638,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Luxury Auto Collection",
+   "location": null,
+   "state": null,
+   "color": "Green",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/66604/23/06/SBM16AEA0PW000623/001_2026081707.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA0PW000623",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA0PW000623/",
+     "price": null,
+     "dealer": "Luxury Auto Collection",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA2PW001465/",
+   "title": "2023 McLaren Artura Standard",
+   "vin": "SBM16AEA2PW001465",
+   "year": 2023,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": 5087,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Mercedes-Benz of Coconut Creek",
+   "location": null,
+   "state": null,
+   "color": "Green",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/9130/65/14/SBM16AEA2PW001465/001_2026071107.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA2PW001465",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA2PW001465/",
+     "price": null,
+     "dealer": "Mercedes-Benz of Coconut Creek",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA8RW002106/",
+   "title": "2024 McLaren Artura Vision",
+   "vin": "SBM16AEA8RW002106",
+   "year": 2024,
+   "trim": "Vision",
+   "price": null,
+   "mileage": 3471,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Manhattan Motorcars",
+   "location": null,
+   "state": null,
+   "color": "Red",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/21460/06/21/SBM16AEA8RW002106/001_2026050915.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16AEA8RW002106",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16AEA8RW002106/",
+     "price": null,
+     "dealer": "Manhattan Motorcars",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEA5SW002852/",
+   "title": "2025 McLaren Artura Standard",
+   "vin": "SBM16BEA5SW002852",
+   "year": 2025,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": 8762,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Porsche Main Line",
+   "location": null,
+   "state": null,
+   "color": "Gray",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/39730/52/28/SBM16BEA5SW002852/001_2026030808.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16BEA5SW002852",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEA5SW002852/",
+     "price": null,
+     "dealer": "Porsche Main Line",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEA4SW003300/",
+   "title": "2025 McLaren Artura Standard",
+   "vin": "SBM16BEA4SW003300",
+   "year": 2025,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": 2359,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Lawrence Motorsport",
+   "location": null,
+   "state": null,
+   "color": "Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/208460/00/33/SBM16BEA4SW003300/001_2026082107.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16BEA4SW003300",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEA4SW003300/",
+     "price": null,
+     "dealer": "Lawrence Motorsport",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEAXTW004436/",
+   "title": "2026 McLaren Artura Performance",
+   "vin": "SBM16BEAXTW004436",
+   "year": 2026,
+   "trim": "Performance",
+   "price": null,
+   "mileage": 352,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Napleton's Aston Martin of Chicago",
+   "location": null,
+   "state": null,
+   "color": "Orange",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://listings-prod.tcimg.net/listings/48589/36/44/SBM16BEAXTW004436/001_2026073009.jpg",
+   "extra": {
+    "description": ""
+   },
+   "key": "SBM16BEAXTW004436",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listing/SBM16BEAXTW004436/",
+     "price": null,
+     "dealer": "Napleton's Aston Martin of Chicago",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "truecar",
+   "source_name": "TrueCar",
+   "url": "https://www.truecar.com/used-cars-for-sale/listings/mclaren/artura/#model",
+   "title": "McLaren Artura",
+   "vin": null,
+   "year": null,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "unknown",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": null,
+   "location": null,
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": ""
+   },
+   "key": "truecar:9a6e86359c59",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "truecar",
+     "source_name": "TrueCar",
+     "url": "https://www.truecar.com/used-cars-for-sale/listings/mclaren/artura/#model",
+     "price": null,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "truecar"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2023-mclaren-artura-tampa-fl.html",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "When all you want to do is drive, there’s no car better suited for your needs than the 2023 McLaren Artura. Efficiency, athleticism, and safety come standard in this McLaren sports car. Expect to get a detailed walkthrough as well as information on other trims and options for the Artura at McLaren Tampa Bay. Relish the experience when you set up your test drive near Tampa. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:a5073737643d",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2023-mclaren-artura-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2023-mclaren-artura-st-petersburg-fl.html",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "Roar past the competition with a tap of the accelerator in the 2023 McLaren Artura. This sports car brings the reliability and seamless driving dynamics you expect from a companion on the road for years to come. Our friendly and knowledgeable staff is happy to show you the Artura as well as answer any questions that you might have. Experience a whole new look at St. Petersburg during a test drive with one of our staff. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:75903c10ccc0",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2023-mclaren-artura-st-petersburg-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2023-mclaren-artura-pinellas-park-fl.html",
+   "title": "2023 McLaren Artura",
+   "vin": null,
+   "year": 2023,
+   "trim": "Performance",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "The 2023 McLaren Artura has remarkable performance capabilities that tap into to your driving spirit. This sports car offers the level of quality and performance you expect from McLaren and is sure to impress friends and family alike. A generous selection of the Artura can be found at McLaren Tampa Bay, the premier choice for McLaren vehicles. Ask us any questions you might have on a test drive near Pinellas Park. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:4899a11378c2",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2023-mclaren-artura-pinellas-park-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2025-mclaren-artura-tampa-fl.html",
+   "title": "2025 McLaren Artura",
+   "vin": null,
+   "year": 2025,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "For cruising along the wide open road, you can find the perfect pace in the 2025 McLaren Artura. You’ll enjoy the perfect balance of driveability and style in this McLaren sports car. No one is more qualified to show you the Artura and other models from the McLaren lineup than the experts at McLaren Tampa Bay. Schedule a test drive on your terms near Tampa when you talk to a member of our staff. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:1fd746686a48",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2025-mclaren-artura-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2025-mclaren-artura-spider-tampa-fl.html",
+   "title": "2025 McLaren Artura Spider",
+   "vin": null,
+   "year": 2025,
+   "trim": "Spider",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "Roar past the competition with a tap of the accelerator in the 2025 McLaren Artura Spider. You can also choose to personalize this sports car with a number of interior and exterior customization options. At McLaren Tampa Bay, we care about one thing above others: making sure you’re satisfied with the Artura Spider or whatever option you may choose. A game-changing test drive awaits near Tampa. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:991b73331f86",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2025-mclaren-artura-spider-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2024-mclaren-artura-tampa-fl.html",
+   "title": "2024 McLaren Artura",
+   "vin": null,
+   "year": 2024,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "When all you want to do is drive, there’s no car better suited for your needs than the 2024 McLaren Artura. McLaren broke the mold when they made this vehicle, a Sport with driving dynamics that back up its bold appearance. To get the most out of the Artura, you have to take advantage of our services at McLaren Tampa Bay. Swing by or call ahead to schedule a test drive through the streets of Tampa. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:39dfe867a701",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2024-mclaren-artura-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2025-mclaren-artura-st-petersburg-fl.html",
+   "title": "2025 McLaren Artura",
+   "vin": null,
+   "year": 2025,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "The 2025 McLaren Artura always delivers the right torque and grip, whether you're on the road or spending a day at the track. You’ll enjoy the perfect balance of driveability and style in this McLaren sports car. We can give you more details on the Artura with a walkaround at McLaren Tampa Bay. Contact us to schedule a test drive, and experience St. Petersburg as it should be. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:7fc715c9bc51",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2025-mclaren-artura-st-petersburg-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2025-mclaren-artura-spider-st-petersburg-fl.html",
+   "title": "2025 McLaren Artura Spider",
+   "vin": null,
+   "year": 2025,
+   "trim": "Spider",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "In a world that demands perfection, the 2025 McLaren Artura Spider silences even the pickiest performance critics. On top of performance and technology features, this sports car also comes with a variety of options for personalization. Stop by McLaren Tampa Bay to see all of the benefits and appeal of the Artura Spider for yourself. Find out what your everyday commute will feel like with a test drive near St. Petersburg. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:ea20776e3d93",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2025-mclaren-artura-spider-st-petersburg-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-tampa-fl.html",
+   "title": "2026 McLaren Artura",
+   "vin": null,
+   "year": 2026,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "Thrill seekers can rejoice in the all-new 2026 McLaren Artura. You can also choose to personalize this sports car with a number of interior and exterior customization options. All you have to do to experience the Artura in all its glory is make the trip to McLaren Tampa Bay, a dealership worthy of bearing the McLaren name. You’ll get a guided walk-around of the vehicle and a test drive through Tampa when you come to our store. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:31d6b201302e",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-tampa-fl.html",
+   "title": "2026 McLaren Artura Spider",
+   "vin": null,
+   "year": 2026,
+   "trim": "Spider",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "In a world that demands perfection, the 2026 McLaren Artura Spider silences even the pickiest performance critics. McLaren made sure to craft this sports car according to their highest standards for quality and performance. Take a closer look at our inventory to find the Artura Spider that suits you, and speak to a McLaren Tampa Bay sales associate about next steps. Schedule your test drive with us to see Tampa from a whole new perspective. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:d400d2a88404",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-tampa-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-st-petersburg-fl.html",
+   "title": "2026 McLaren Artura",
+   "vin": null,
+   "year": 2026,
+   "trim": "Performance",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "The 2026 McLaren Artura is the perfect high-performance vehicle for those who accept nothing less than excellence. With a variety of options and upgrades, this McLaren sports car places equal emphasis on convenience and performance. The staff at McLaren Tampa Bay is committed to excellence, whether you buy the Artura or go a different route. Our customer service associates are on standby to schedule your test drive appointment near St. Petersburg. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:f2ad089403fd",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-st-petersburg-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-st-petersburg-fl.html",
+   "title": "2026 McLaren Artura Spider",
+   "vin": null,
+   "year": 2026,
+   "trim": "Spider",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "For cruising along the wide open road, you can find the perfect pace in the 2026 McLaren Artura Spider. This sports car brings the reliability and seamless driving dynamics you expect from a companion on the road for years to come. There’s no time to waste with a vehicle this exciting, so come see it for yourself at McLaren Tampa Bay. Reach out to our sales team about getting behind the wheel for a drive around St. Petersburg. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:a29756defbf6",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-st-petersburg-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-pinellas-park-fl.html",
+   "title": "2026 McLaren Artura",
+   "vin": null,
+   "year": 2026,
+   "trim": "Coupe",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "The 2026 McLaren Artura speeds to the front of the pack to take its rightful place as the frontrunner of its class. This McLaren sports car is as maneuverable and reliable going to and from work as it is on Sunday drives. The team at McLaren Tampa Bay, your local McLaren dealer, will make sure you don’t have any trouble finding the right Artura for you. See Pinellas Park as it was meant to be seen when you come in for your test drive. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:4095d8e37dac",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-pinellas-park-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
+  },
+  {
+   "source": "dealer_sites",
+   "source_name": "McLaren Tampa Bay",
+   "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-pinellas-park-fl.html",
+   "title": "2026 McLaren Artura Spider",
+   "vin": null,
+   "year": 2026,
+   "trim": "Spider",
+   "price": null,
+   "mileage": null,
+   "condition": "new",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Tampa Bay",
+   "location": "Tampa Bay",
+   "state": null,
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": null,
+   "extra": {
+    "description": "The 2026 McLaren Artura Spider has such remarkable performance stats, you'll wonder what took you so long to discover its greatness. You won’t mind taking a few extra turns in this sleek and thrilling McLaren sports car. Let a McLaren Tampa Bay sales associate help you find the Artura Spider that best matches your ideal vehicle in our inventory. The only step left is to get behind the wheel for a test drive around Pinellas Park. ",
+    "dealer_site": "https://www.mclarentampabay.com"
+   },
+   "key": "dealer_sites:1b0d94672a71",
+   "candidate": false,
+   "offers": [
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Tampa Bay",
+     "url": "https://www.mclarentampabay.com/2026-mclaren-artura-spider-pinellas-park-fl.html",
+     "price": null,
+     "dealer": "McLaren Tampa Bay",
+     "listing_type": "dealer",
+     "condition": "new",
+     "seen": "2026-09-12"
+    }
+   ],
+   "price_high": null,
+   "sources": [
+    "dealer_sites"
+   ],
+   "first_seen": "2026-09-12",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-12",
+   "last_seen_at": "2026-09-12T23:56:55+00:00",
+   "status": "active",
+   "price_history": [],
+   "expected_price": null,
+   "deal_pct": null,
+   "price_per_mile_note": null
   }
  ]
 }
