@@ -1,0 +1,72 @@
+"""TrueCar - server-rendered cards; fall back to embedded JSON and VIN cards."""
+from __future__ import annotations
+
+import re
+from bs4 import BeautifulSoup
+
+from ..extract import abs_url, next_data, walk
+from ..models import Listing, parse_mileage, parse_price, parse_year
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+
+NAME = "truecar"
+LABEL = "TrueCar"
+KIND = "marketplace"
+HOST = "https://www.truecar.com"
+URL = HOST + "/used-cars-for-sale/listings/mclaren/artura/?searchRadius=5000&sort[]=price_asc&page={page}"
+
+
+def fetch(client, ctx: Ctx):
+    out = []
+    for page in (1, 2):
+        res = client.get(URL.format(page=page))
+        ctx.pages += 1
+        if not res.ok:
+            ctx.diagnose(res, LABEL)
+            break
+        got = _cards(res.text, res.url)
+        nd = next_data(res.text)
+        if nd:
+            for v in walk(nd, lambda d: isinstance(d.get("vin"), str) and d["vin"].startswith("SBM")):
+                got.append(_from_json(v))
+        got += listings_from_jsonld(res.text, NAME, LABEL, res.url)
+        if not got:
+            got = listings_from_vin_cards(res.text, NAME, LABEL, res.url)
+        if not got:
+            if page == 1:
+                ctx.diagnose(res, LABEL)
+            break
+        out += got
+    return dedupe(out)
+
+
+def _cards(html: str, base: str) -> list[Listing]:
+    soup = BeautifulSoup(html, "lxml")
+    out = []
+    for a in soup.select("a[data-test='vehicleCardLink'], a[href*='/used-cars-for-sale/listing/']"):
+        text = a.get_text("\n", strip=True)
+        if "artura" not in text.lower():
+            continue
+        title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^\n]*)", text)
+        l = Listing(source=NAME, source_name=LABEL, url=abs_url(base, a.get("href", "")), title=title_m.group(1) if title_m else text[:80],
+                    price=parse_price(text), mileage=parse_mileage(text), year=parse_year(text),
+                    extra={"description": text[:400]})
+        loc = re.search(r"\n([A-Z][A-Za-z .]+,\s*[A-Z]{2})\b", text)
+        if loc:
+            l.location = loc.group(1)
+        vin = re.search(r"(SBM[A-HJ-NPR-Z0-9]{14})", a.get("href", ""))
+        if vin:
+            l.vin = vin.group(1)
+        out.append(l.finalize())
+    return out
+
+
+def _from_json(v: dict) -> Listing:
+    veh = v.get("vehicle") or v
+    dealer = v.get("dealership") or v.get("dealer") or {}
+    loc = dealer.get("location") or {}
+    return Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, v.get("vdpUrl") or v.get("url") or f"/used-cars-for-sale/listing/{v['vin']}/"),
+                   title=f"{veh.get('year','')} McLaren Artura {veh.get('trim','') or ''}".strip(), vin=v["vin"],
+                   year=veh.get("year"), price=parse_price((v.get("pricing") or {}).get("listPrice") or v.get("listPrice") or v.get("price")),
+                   mileage=parse_mileage(veh.get("mileage") or v.get("mileage")), dealer=dealer.get("name"),
+                   location=", ".join(x for x in [loc.get("city"), loc.get("state")] if x) or None,
+                   condition="cpo" if v.get("certified") else "used", color=veh.get("exteriorColor")).finalize()

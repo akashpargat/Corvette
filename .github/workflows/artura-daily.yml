@@ -1,0 +1,107 @@
+name: Artura Tracker
+
+on:
+  schedule:
+    - cron: "0 11 * * *"        # 06:00 Central / 07:00 Eastern, every day
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Comma-separated subset of sources (blank = all)"
+        required: false
+        default: ""
+      skip:
+        description: "Comma-separated sources to skip"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: artura-tracker
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    name: Crawl every source
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: artura-tracker
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: artura-tracker/requirements.txt
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt pytest
+          python -m playwright install --with-deps chromium
+
+      - name: Unit tests
+        run: python -m pytest -q tests
+
+      - name: Crawl
+        env:
+          FB_COOKIES_JSON: ${{ secrets.FB_COOKIES_JSON }}
+          SCRAPER_PROXY_URL: ${{ secrets.SCRAPER_PROXY_URL }}
+          ARTURA_ZIP: ${{ vars.ARTURA_ZIP }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ github.event.inputs.sources }}"; fi
+          if [ -n "${{ github.event.inputs.skip }}" ]; then ARGS="$ARGS --skip ${{ github.event.inputs.skip }}"; fi
+          python -m crawler.main $ARGS
+
+      - name: Build site
+        run: python build_site.py
+
+      - name: Commit data
+        run: |
+          git config user.name "artura-tracker[bot]"
+          git config user.email "artura-tracker@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "data: artura crawl $(date -u +%Y-%m-%d)"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: artura-tracker/site
+
+      - name: Upload run data (debug)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: artura-data-${{ github.run_number }}
+          path: artura-tracker/data
+          retention-days: 14
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: crawl
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - id: deployment
+        uses: actions/deploy-pages@v4

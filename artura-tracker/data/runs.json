@@ -1,0 +1,31 @@
+[
+ {
+  "started_at": "2026-09-12T23:30:00+00:00",
+  "seconds": 0,
+  "raw_listings": 8,
+  "zip": "10001",
+  "sources": [
+   {
+    "source": "seed",
+    "label": "Seed (web search, day zero)",
+    "kind": "seed",
+    "status": "ok",
+    "count": 8,
+    "seconds": 0,
+    "pages": 0,
+    "notes": [
+     "Hand-seeded from McLaren Qualified search results; replaced by the first crawl."
+    ],
+    "error": null
+   }
+  ],
+  "summary": {
+   "active": 8,
+   "clean_candidates": 8,
+   "new_today": 8,
+   "price_drops_today": 0,
+   "removed_today": 0,
+   "cheapest_clean_price": 160699
+  }
+ }
+]

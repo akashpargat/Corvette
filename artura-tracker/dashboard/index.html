@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artura Hunt</title>
+<meta name="description" content="Daily scan of every US McLaren dealer, the big marketplaces, auctions and Facebook Marketplace for the cheapest clean-title McLaren Artura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- INLINE_DATA -->
+<div class="page">
+  <header class="masthead">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Artura Hunt</h1>
+        <p class="tagline">Every US McLaren retailer · Cars.com · Autotrader · CarGurus · CARFAX · TrueCar · Edmunds · duPont · BaT · Cars &amp; Bids · eBay · Facebook Marketplace, scanned daily</p>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <div><span class="k">Last scan</span><span class="v" id="lastScan">—</span></div>
+      <div><span class="k">Sources up</span><span class="v" id="sourcesUp">—</span></div>
+      <div><span class="k">Model years</span><span class="v">2020 – 2026</span></div>
+    </div>
+  </header>
+
+  <section class="board" aria-label="Headline">
+    <article class="hero" id="hero">
+      <div class="hero-eyebrow">Cheapest clean-title Artura right now</div>
+      <div class="hero-empty" id="heroEmpty">No clean-title candidate yet. Run the crawler once and this fills in.</div>
+      <div class="hero-body" id="heroBody" hidden>
+        <div class="hero-price"><span id="heroPrice">$—</span><span class="hero-delta" id="heroDelta"></span></div>
+        <div class="hero-title" id="heroTitle"></div>
+        <div class="hero-facts" id="heroFacts"></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="heroLink" href="#" target="_blank" rel="noopener">Open listing</a>
+          <button class="btn" id="heroWatch" type="button">☆ Watch</button>
+          <span class="hero-sources" id="heroSources"></span>
+        </div>
+      </div>
+      <svg class="hero-spark" id="heroSpark" viewBox="0 0 320 64" preserveAspectRatio="none" aria-hidden="true"></svg>
+    </article>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="filters" aria-label="Filters">
+    <div class="filter-row">
+      <div class="chipset" id="yearChips" role="group" aria-label="Model year"></div>
+      <label class="fld"><span>Max price</span><input type="range" id="maxPrice" min="60000" max="400000" step="5000" value="400000"><output id="maxPriceOut">any</output></label>
+      <label class="fld"><span>Max miles</span><input type="range" id="maxMiles" min="0" max="40000" step="1000" value="40000"><output id="maxMilesOut">any</output></label>
+    </div>
+    <div class="filter-row">
+      <label class="fld"><span>Title</span>
+        <select id="titleFilter"><option value="notbranded">Clean or unverified</option><option value="clean">Verified clean only</option><option value="all">Everything incl. branded</option></select></label>
+      <label class="fld"><span>Seller</span>
+        <select id="typeFilter"><option value="all">Any</option><option value="dealer">Dealer</option><option value="private">Private</option><option value="auction">Auction</option></select></label>
+      <label class="fld"><span>State</span><select id="stateFilter"><option value="">Any</option></select></label>
+      <label class="fld"><span>Source</span><select id="sourceFilter"><option value="">Any</option></select></label>
+      <label class="fld grow"><span>Search</span><input type="search" id="q" placeholder="VIN, dealer, color, city…"></label>
+      <label class="fld"><span>Sort</span>
+        <select id="sort"><option value="price">Price ↑</option><option value="deal">Best deal</option><option value="mileage">Mileage ↑</option><option value="newest">Newest listing</option><option value="drop">Biggest drop</option><option value="year">Year ↓</option></select></label>
+      <label class="fld check"><input type="checkbox" id="showRemoved"> <span>Show sold/removed</span></label>
+      <label class="fld check"><input type="checkbox" id="onlyWatch"> <span>Watchlist only</span></label>
+      <div class="viewtoggle" role="group" aria-label="View"><button type="button" data-view="table" class="on">Table</button><button type="button" data-view="cards">Cards</button></div>
+    </div>
+  </section>
+
+  <section class="results" aria-label="Listings">
+    <div class="results-head"><h2 id="resultsTitle">Listings</h2><span class="count" id="resultsCount"></span></div>
+    <div class="table-wrap" id="tableView">
+      <table class="grid" id="grid">
+        <thead><tr>
+          <th class="num">#</th><th>Car</th><th class="num">Price</th><th class="num">Δ</th><th class="num">Miles</th><th>Title</th><th>Seller</th><th>Where</th><th>Sources</th><th class="num">Days</th><th>Trend</th><th></th>
+        </tr></thead>
+        <tbody id="gridBody"></tbody>
+      </table>
+    </div>
+    <div class="cards" id="cardsView" hidden></div>
+  </section>
+
+  <section class="charts">
+    <figure class="chart">
+      <figcaption><strong>Asking price vs mileage</strong><span>Clean-title candidates, colored by model year. Hover a dot.</span></figcaption>
+      <div class="legend" id="scatterLegend"></div>
+      <svg id="scatter" viewBox="0 0 640 340" role="img" aria-label="Price versus mileage scatter"></svg>
+    </figure>
+    <figure class="chart">
+      <figcaption><strong>Cheapest clean Artura, day by day</strong><span>Lowest and median asking price across all sources.</span></figcaption>
+      <div class="legend" id="marketLegend"></div>
+      <svg id="market" viewBox="0 0 640 340" role="img" aria-label="Cheapest price over time"></svg>
+    </figure>
+  </section>
+
+  <section class="two-col">
+    <div class="panel">
+      <h2>What changed today</h2>
+      <ul class="changes" id="changes"></ul>
+    </div>
+    <div class="panel">
+      <h2>Source health</h2>
+      <div class="sources" id="sources"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Prices are asking prices as scraped. Title status is <em>verified clean</em> only when a history source (CARFAX, CarGurus, Edmunds) or the seller states it; everything else is <em>unverified</em>. Always pull your own CARFAX and a PPI before wiring money.</p>
+    <p id="footMeta"></p>
+  </footer>
+</div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

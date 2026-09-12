@@ -1,0 +1,198 @@
+"""Persistence + day-over-day diffing.
+
+data/listings.json  - every listing ever seen (active + removed), merged by VIN
+data/history.json   - {key: [{d: 'YYYY-MM-DD', p: price, s: source}, ...]}
+data/runs.json      - last 90 run reports (per-source status)
+"""
+from __future__ import annotations
+
+import json
+import os
+from datetime import datetime, timezone
+from typing import Optional
+
+from .models import Listing
+
+REMOVED_AFTER_MISSING_RUNS = 2  # a car has to be missing from every source twice before we call it gone
+
+
+def _load(path: str, default):
+    if not os.path.exists(path):
+        return default
+    with open(path, "r", encoding="utf-8") as f:
+        try:
+            return json.load(f)
+        except ValueError:
+            return default
+
+
+def _save(path: str, obj):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=1, ensure_ascii=False, sort_keys=False)
+    os.replace(tmp, path)
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def today() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
+    """Merge today's crawl into the persisted state. Returns the dashboard payload."""
+    lpath, hpath, rpath = (os.path.join(data_dir, n) for n in ("listings.json", "history.json", "runs.json"))
+    prev = _load(lpath, {"listings": []})
+    history = _load(hpath, {})
+    runs = _load(rpath, [])
+    by_key = {r["key"]: r for r in prev.get("listings", [])}
+    d = today()
+    ts = now_iso()
+    sources_ok = {s["source"] for s in run_report["sources"] if s["status"] == "ok"} | {"seed"}
+    # a seed/no-VIN record superseded by a VIN-keyed record for the same URL
+    url_index = {}
+    for r in prev.get("listings", []):
+        for o in r.get("offers", []) or [{"url": r.get("url")}]:
+            if o.get("url"):
+                url_index.setdefault(o["url"].split("?")[0].rstrip("/"), r["key"])
+    for l in fresh:
+        old_key = url_index.get((l.url or "").split("?")[0].rstrip("/"))
+        if old_key and old_key != l.key and old_key in by_key and not by_key[old_key].get("vin"):
+            del by_key[old_key]
+
+    # 1. group fresh listings by key (a VIN can appear on 5 sites)
+    groups: dict[str, list[Listing]] = {}
+    for l in fresh:
+        groups.setdefault(l.key, []).append(l)
+
+    changes = {"new": [], "price_drop": [], "price_up": [], "removed": [], "returned": []}
+    seen_today = set()
+    for key, group in groups.items():
+        offers = []
+        for l in group:
+            offers.append({"source": l.source, "source_name": l.source_name, "url": l.url, "price": l.price,
+                           "dealer": l.dealer, "listing_type": l.listing_type, "condition": l.condition, "seen": d})
+        best = _best(group)
+        rec = best.to_dict()
+        rec["offers"] = offers
+        priced = [o["price"] for o in offers if o["price"]]
+        rec["price"] = min(priced) if priced else None
+        rec["price_high"] = max(priced) if priced else None
+        rec["sources"] = sorted({o["source"] for o in offers})
+        # keep the best-known static facts from history if today's scrape is thinner
+        old = by_key.get(key)
+        if old:
+            for f in ("vin", "year", "trim", "mileage", "dealer", "location", "state", "color", "image", "title"):
+                if not rec.get(f) and old.get(f):
+                    rec[f] = old[f]
+            if rec.get("title_status") == "unknown" and old.get("title_status") != "unknown":
+                rec["title_status"] = old["title_status"]
+                rec["title_notes"] = old.get("title_notes", [])
+            rec["first_seen"] = old.get("first_seen", d)
+            rec["missing_runs"] = 0
+            if old.get("status") == "removed":
+                changes["returned"].append(key)
+            oldp = old.get("price")
+            if oldp and rec["price"] and rec["price"] != oldp:
+                rec["last_price_change"] = {"date": d, "from": oldp, "to": rec["price"], "delta": rec["price"] - oldp}
+                (changes["price_drop"] if rec["price"] < oldp else changes["price_up"]).append(key)
+            else:
+                rec["last_price_change"] = old.get("last_price_change")
+        else:
+            rec["first_seen"] = d
+            rec["missing_runs"] = 0
+            rec["last_price_change"] = None
+            changes["new"].append(key)
+        rec["last_seen"] = d
+        rec["last_seen_at"] = ts
+        rec["status"] = "active"
+        rec["candidate"] = _candidate(rec)
+        # price history (one point per day, lowest price of the day)
+        hist = history.setdefault(key, [])
+        if rec["price"]:
+            if hist and hist[-1]["d"] == d:
+                hist[-1]["p"] = min(hist[-1]["p"], rec["price"])
+            elif not hist or hist[-1]["p"] != rec["price"]:
+                hist.append({"d": d, "p": rec["price"]})
+            elif hist[-1]["p"] == rec["price"] and (len(hist) < 2 or hist[-2]["p"] != rec["price"]):
+                # extend a flat line with a fresh timestamp
+                hist.append({"d": d, "p": rec["price"]})
+            else:
+                hist[-1]["d"] = d
+        rec["price_history"] = hist[-60:]
+        by_key[key] = rec
+        seen_today.add(key)
+
+    # 2. anything not seen today -> count a miss; remove after N misses,
+    #    but only if the sources that used to carry it actually ran OK today.
+    for key, rec in by_key.items():
+        if key in seen_today:
+            continue
+        if rec.get("status") == "removed":
+            continue
+        carried_by = set(rec.get("sources", [rec.get("source")]))
+        if carried_by and not (carried_by & sources_ok):
+            continue  # its sources failed today; not evidence the car sold
+        rec["missing_runs"] = rec.get("missing_runs", 0) + 1
+        if rec["missing_runs"] >= REMOVED_AFTER_MISSING_RUNS:
+            rec["status"] = "removed"
+            rec["removed_on"] = d
+            changes["removed"].append(key)
+        rec["price_history"] = history.get(key, [])[-60:]
+
+    listings = list(by_key.values())
+    from .scoring import score_all
+    model = score_all(listings)
+
+    active = [r for r in listings if r["status"] == "active"]
+    clean = [r for r in active if r.get("candidate") and r.get("title_status") != "branded"]
+    cheapest = min(clean, key=lambda r: r["price"]) if clean else None
+    summary = {
+        "generated_at": ts, "date": d, "active": len(active), "clean_candidates": len(clean),
+        "new_today": len(changes["new"]), "price_drops_today": len(changes["price_drop"]),
+        "removed_today": len(changes["removed"]), "cheapest_clean_key": cheapest["key"] if cheapest else None,
+        "cheapest_clean_price": cheapest["price"] if cheapest else None,
+        "median_clean_price": model.get("median"), "market_model": model,
+        "sources_ok": sorted(sources_ok), "sources_failed": sorted(s["source"] for s in run_report["sources"] if s["status"] != "ok"),
+    }
+    run_report["summary"] = {k: summary[k] for k in ("active", "clean_candidates", "new_today", "price_drops_today", "removed_today", "cheapest_clean_price")}
+    runs = (runs + [run_report])[-90:]
+    # daily market series for the dashboard chart
+    series = _load(os.path.join(data_dir, "market.json"), [])
+    lows = sorted(r["price"] for r in clean)
+    point = {"d": d, "cheapest": lows[0] if lows else None, "p10": lows[max(0, len(lows) // 10 - 1)] if lows else None,
+             "median": model.get("median"), "active": len(active), "clean": len(clean)}
+    if series and series[-1]["d"] == d:
+        series[-1] = point
+    else:
+        series.append(point)
+    series = series[-365:]
+
+    payload = {"summary": summary, "changes": changes, "listings": sorted(listings, key=lambda r: (r["status"] != "active", r.get("price") or 10**9))}
+    _save(lpath, payload)
+    _save(hpath, history)
+    _save(rpath, runs)
+    _save(os.path.join(data_dir, "market.json"), series)
+    return payload
+
+
+def _best(group: list[Listing]) -> Listing:
+    def score(l: Listing):
+        return sum(1 for f in (l.vin, l.price, l.mileage, l.year, l.dealer, l.location, l.image, l.color) if f) + (2 if l.source in ("carfax", "cargurus", "mclaren_preowned") else 0)
+    return max(group, key=score)
+
+
+def _candidate(rec: dict) -> bool:
+    from . import config
+    p = rec.get("price")
+    if not p or not (config.PRICE_FLOOR <= p <= config.PRICE_CEILING):
+        return False
+    y = rec.get("year")
+    if y and not (config.YEAR_MIN <= y <= config.YEAR_MAX):
+        return False
+    if rec.get("extra", {}).get("reference_only"):
+        return False
+    return True
