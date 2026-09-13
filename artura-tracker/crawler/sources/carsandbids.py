@@ -5,7 +5,7 @@ import re
 
 from ..extract import abs_url, html_to_text, find_jsonld
 from ..models import Listing, parse_mileage, parse_price, parse_year
-from .base import Ctx, dedupe, listings_from_jsonld
+from .base import Ctx, dedupe, listings_from_jsonld, parse_any
 
 NAME = "carsandbids"
 LABEL = "Cars & Bids"
@@ -20,7 +20,32 @@ def fetch(client, ctx: Ctx):
     if not res.ok:
         ctx.diagnose(res, LABEL)
         return []
-    out = listings_from_jsonld(res.text, NAME, LABEL, res.url, listing_type="auction")
+    out = parse_any(res.text, NAME, LABEL, res.url, listing_type="auction")
+    pre = re.search(r'<script id="preloaded-data"[^>]*>(.*?)</script>', res.text, re.S)
+    if pre:
+        import json
+        try:
+            data = json.loads(pre.group(1))
+            ctx.sample("carsandbids-preloaded", data)
+            from ..extract import walk
+            for a in walk(data, lambda d: "artura" in str(d.get("title", "")).lower() and ("id" in d or "slug" in d)):
+                ctx.sample("carsandbids-auction", a)
+                url = a.get("url") or (f"/auctions/{a.get('id')}/{a.get('slug')}" if a.get("slug") else None)
+                out.append(Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, url) if url else URL, title=a["title"],
+                                   year=parse_year(a["title"]), price=parse_price(a.get("current_bid") or a.get("currentBid") or a.get("price") or a.get("bid")),
+                                   mileage=parse_mileage(str(a.get("mileage") or a.get("sub_title") or a.get("subtitle") or "")),
+                                   listing_type="auction", condition="used", image=a.get("main_photo") or a.get("thumbnail"),
+                                   auction_end=str(a.get("auction_end") or a.get("ends_at") or "") or None,
+                                   location=a.get("location") if isinstance(a.get("location"), str) else None,
+                                   extra={"auction_status": a.get("status")}).finalize())
+        except ValueError:
+            pass
+    if not out:
+        from ..browser import browser_get
+        b = browser_get(URL, scroll=3)
+        if not b.error and b.html:
+            out += parse_any(b.html, NAME, LABEL, URL, listing_type="auction")
+            res.text = b.html
     for m in re.finditer(r'href="(/auctions/[A-Za-z0-9]+/[^"]*artura[^"]*)"', res.text, re.I):
         text = html_to_text(res.text[max(0, m.start() - 1500): m.start() + 2500])
         title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^\n]{0,40})", text)

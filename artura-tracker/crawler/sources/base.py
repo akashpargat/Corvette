@@ -5,7 +5,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Optional
 
-from ..extract import find_jsonld, vehicles_from_jsonld, html_to_text, find_vins, abs_url
+from ..extract import find_jsonld, vehicles_from_jsonld, html_to_text, find_vins, abs_url, vin_dicts_from_html, vehicle_from_vin_dict
 from ..http_client import Client, FetchResult, page_title, sentinel_keys, visible_text
 from ..models import Listing, parse_mileage, parse_price, parse_year, is_artura, VIN_RE
 
@@ -32,6 +32,9 @@ class Ctx:
             scripts = re.findall(r"<script([^>]{0,160})>", res.text)
             ids = [re.sub(r"\s+", " ", a).strip()[:90] for a in scripts if ("id=" in a or "type=" in a)]
             self.log.warning("  scripts(%d): %s", len(scripts), " | ".join(dict.fromkeys(ids))[:1200])
+            hrefs = list(dict.fromkeys(re.findall(r'href="([^"]*[Aa]rtura[^"]*)"', res.text)))[:6]
+            if hrefs:
+                self.log.warning("  artura hrefs: %s", hrefs)
             hits = [m.start() for m in re.finditer(r"[Aa]rtura", res.text)][:200]
             shown = 0
             for h in hits:
@@ -114,6 +117,90 @@ def listings_from_vin_cards(html: str, source: str, source_name: str, base_url: 
                       dealer=dealer, extra={"description": text[:500]})
         out.append(lst.finalize())
     return out
+
+
+def listings_from_embedded_json(html: str, source: str, source_name: str, base_url: str,
+                                listing_type: str = "dealer", dealer: Optional[str] = None) -> list[Listing]:
+    out = []
+    for o in vin_dicts_from_html(html):
+        v = vehicle_from_vin_dict(o)
+        if not v["vin"] or not v["vin"].startswith("SBM16"):
+            continue
+        text = f"{v['title']} {v['trim'] or ''} {json_snippet(o)}"
+        if not is_artura(text) and not v["vin"].startswith("SBM16"):
+            continue
+        url = v["url"] or base_url
+        if url and not str(url).startswith("http"):
+            url = abs_url(base_url, str(url))
+        loc = ", ".join(x for x in [v["city"], v["state"]] if x) or None
+        l = Listing(source=source, source_name=source_name, url=url, title=v["title"] or "McLaren Artura", vin=v["vin"],
+                    year=v["year"], trim=v["trim"] if v["trim"] and re.search(r"spider|performance|techlux|vision|gt4", v["trim"], re.I) else None,
+                    price=v["price"], mileage=v["mileage"], color=v["color"], dealer=v["dealer"] or dealer, location=loc,
+                    image=v["image"], listing_type=listing_type, condition=v["condition"],
+                    extra={"accidents": v["accidents"], "owners": v["owners"], "from": "embedded-json"})
+        if v["branded"]:
+            l.title_status = "branded"
+            l.title_notes.append(f"{source_name} history flag")
+        elif v["clean"]:
+            l.title_status = "clean"
+        out.append(l.finalize())
+    return out
+
+
+def json_snippet(o: dict, n: int = 300) -> str:
+    import json
+    try:
+        return json.dumps(o, default=str)[:n]
+    except Exception:
+        return ""
+
+
+def parse_any(html: str, source: str, source_name: str, base_url: str, listing_type: str = "dealer",
+              dealer: Optional[str] = None) -> list[Listing]:
+    """Every generic strategy, merged by VIN, best-filled record wins."""
+    found = listings_from_jsonld(html, source, source_name, base_url, listing_type=listing_type, dealer=dealer)
+    found += listings_from_embedded_json(html, source, source_name, base_url, listing_type=listing_type, dealer=dealer)
+    if not found:
+        found = listings_from_vin_cards(html, source, source_name, base_url, dealer=dealer)
+    merged = merge_by_vin(found)
+    with_vin = [l for l in merged if l.vin]
+    if with_vin:
+        vins_on_page = set(find_vins(html))
+        norm = lambda u: (u or "").split("?")[0].rstrip("/")
+        keep = []
+        for l in merged:
+            if l.vin:
+                keep.append(l)
+                continue
+            same_url = next((w for w in with_vin if norm(w.url) == norm(l.url)), None)
+            target = same_url or (with_vin[0] if len(vins_on_page) == 1 else None)
+            if target is None:
+                keep.append(l)
+                continue
+            for f in ("price", "mileage", "year", "dealer", "location", "state", "color", "image", "trim", "condition"):
+                if (not getattr(target, f) or getattr(target, f) == "unknown") and getattr(l, f) and getattr(l, f) != "unknown":
+                    setattr(target, f, getattr(l, f))
+            target.finalize()
+        merged = keep
+    return merged
+
+
+def merge_by_vin(listings: list[Listing]) -> list[Listing]:
+    best: dict[str, Listing] = {}
+    for l in listings:
+        cur = best.get(l.key)
+        if cur is None:
+            best[l.key] = l
+            continue
+        for f in ("price", "mileage", "year", "dealer", "location", "state", "color", "image", "trim"):
+            if not getattr(cur, f) and getattr(l, f):
+                setattr(cur, f, getattr(l, f))
+        if cur.title_status == "unknown" and l.title_status != "unknown":
+            cur.title_status, cur.title_notes = l.title_status, l.title_notes
+        if (not cur.url or cur.url == "") and l.url:
+            cur.url = l.url
+        cur.finalize()
+    return list(best.values())
 
 
 def dedupe(listings: list[Listing]) -> list[Listing]:

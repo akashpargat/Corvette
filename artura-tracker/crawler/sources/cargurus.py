@@ -6,7 +6,7 @@ import re
 from .. import config
 from ..extract import find_script_json, walk, abs_url
 from ..models import Listing, parse_mileage, parse_price
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "cargurus"
 LABEL = "CarGurus"
@@ -39,8 +39,7 @@ def fetch(client, ctx: Ctx):
         if res.ok:
             data = find_script_json(res.text, "window.__PRELOADED_STATE__") or find_script_json(res.text, '"listings":')
             out += _parse_api(data, ctx) if data else []
-            out += listings_from_jsonld(res.text, NAME, LABEL, res.url)
-            out += listings_from_vin_cards(res.text, NAME, LABEL, res.url)
+            out += parse_any(res.text, NAME, LABEL, res.url)
         if not out:
             ctx.diagnose(res, LABEL)
     return dedupe(out)

@@ -87,8 +87,11 @@ def vehicles_from_jsonld(objs: Iterable[dict]) -> list[dict]:
         model = o.get("model") or ""
         if isinstance(model, dict):
             model = model.get("name", "")
+        pp = parse_price(price) if price is not None else None
+        if pp is not None and pp < 40000:
+            pp = None  # a monthly payment or placeholder, never an Artura
         found.append({
-            "name": name, "description": desc, "price": parse_price(price) if price is not None else None,
+            "name": name, "description": desc, "price": pp,
             "mileage": mileage, "vin": vm.group(1) if vm else None,
             "year": int(str(year)[:4]) if year and str(year)[:4].isdigit() else None,
             "color": color if isinstance(color, str) else None, "url": url, "image": image,
@@ -194,3 +197,126 @@ def html_to_text(html: str) -> str:
 def abs_url(base: str, href: str) -> str:
     from urllib.parse import urljoin
     return urljoin(base, href)
+
+
+def enclosing_object(text: str, pos: int, max_back: int = 6000) -> Optional[int]:
+    """Index of the '{' that opens the JSON object containing text[pos]. Heuristic."""
+    depth = 0
+    i = pos
+    stop = max(0, pos - max_back)
+    while i > stop:
+        c = text[i]
+        if c == "}":
+            depth += 1
+        elif c == "{":
+            if depth == 0:
+                return i
+            depth -= 1
+        i -= 1
+    return None
+
+
+def vin_dicts_from_html(html: str, limit: int = 400) -> list[dict]:
+    """Every JSON object in the page that carries a McLaren VIN, from any script blob.
+
+    Works for Dealer.com (DDC.dataLayer), DealerOn (dlron-srp-model), DealerInspire,
+    CARFAX/CarGurus preloaded state, Cars & Bids preloaded-data and most Next.js pages.
+    """
+    out = []
+    seen = set()
+    for m in VIN_RE.finditer(html):
+        if len(out) >= limit:
+            break
+        start = enclosing_object(html, m.start())
+        if start is None:
+            continue
+        obj = parse_json_prefix(html, start)
+        if not isinstance(obj, dict):
+            # RSC / double-escaped payloads: try unescaping the chunk
+            chunk = html[start: min(len(html), start + 8000)].replace('\\"', '"').replace("\\\\", "\\")
+            obj = parse_json_prefix(chunk, 0)
+        if not isinstance(obj, dict):
+            continue
+        key = json.dumps(obj, sort_keys=True, default=str)[:400]
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(obj)
+    return out
+
+
+def _first_key(d: dict, pattern: str, want=None):
+    rx = re.compile(pattern, re.I)
+    for k, v in d.items():
+        if rx.search(k) and v not in (None, "", [], {}):
+            if want == "num":
+                n = parse_price(v) if isinstance(v, (int, float, str)) else None
+                if n:
+                    return n
+            elif want == "str":
+                if isinstance(v, (str, int, float)):
+                    return str(v)
+            else:
+                return v
+    return None
+
+
+def vehicle_from_vin_dict(o: dict) -> dict:
+    """Map an arbitrary dealer/marketplace JSON object to our vehicle fields."""
+    flat = dict(o)
+    for k, v in list(o.items()):            # one level of nesting is common (pricing: {...}, dealer: {...})
+        if isinstance(v, dict):
+            for k2, v2 in v.items():
+                flat.setdefault(f"{k}.{k2}", v2)
+    vin = None
+    for k, v in flat.items():
+        if isinstance(v, str) and VIN_RE.fullmatch(v.strip()) and re.search(r"vin|identifier|id$", k, re.I):
+            vin = v.strip()
+            break
+    if not vin:
+        vm = VIN_RE.search(json.dumps(o, default=str))
+        vin = vm.group(1) if vm else None
+    price = None
+    for pat in (r"^(internet|selling|sale|asking|final|our|dealer|retail|list|listing|current|display|vehicle)?_?price(amount|value)?$",
+                r"price", r"^msrp$"):
+        cand = []
+        for k, v in flat.items():
+            if re.search(pat, k, re.I) and not re.search(r"monthly|payment|lease|finance|per_?month|apr|rate|history|drop|change|delta|was|old|prev|original|msrp_?diff|diff", k, re.I):
+                n = parse_price(v) if isinstance(v, (int, float, str)) else None
+                if n and 40000 <= n <= 600000:
+                    cand.append(n)
+        if cand:
+            price = min(cand)
+            break
+    mileage = None
+    for k, v in flat.items():
+        if re.search(r"odometer|mileage|^miles$|mileageFromOdometer|\.value$", k, re.I) and not re.search(r"unit|string|label|formatted|type", k, re.I):
+            n = parse_mileage(v) if isinstance(v, (int, float, str)) else None
+            if n is not None and 0 <= n < 100000 and not re.search(r"price", k, re.I):
+                mileage = n
+                break
+    year = _first_key(flat, r"^(model)?year$|modelDate|vehicleModelDate", "str")
+    year = int(str(year)[:4]) if year and str(year)[:4].isdigit() else None
+    trim = _first_key(flat, r"^trim(name)?$|^vehicleTrim$|^series$", "str")
+    color = _first_key(flat, r"exterior_?colou?r(name|simple)?$|^colou?r$|^normalizedExteriorColor$", "str")
+    dealer = _first_key(flat, r"dealer(ship)?_?name|seller_?name|^dealer\.name$|serviceProviderName|ownerName|^retailer(name)?$", "str")
+    city = _first_key(flat, r"(dealer|seller|location)?\.?city$|^dealerCity$|^sellerCity$", "str")
+    state = _first_key(flat, r"(dealer|seller|location)?\.?(state|stateCode|region)$|^dealerState$|^sellerRegion$", "str")
+    url = _first_key(flat, r"^(vdp_?url|vdpBaseUrl|url|link|href|detail_?url|listing_?url|canonical_?url|vdpLink|vdp)$", "str")
+    image = _first_key(flat, r"image|photo|thumbnail|picture", "str")
+    if image and not str(image).startswith("http"):
+        image = None
+    cond = (_first_key(flat, r"^(type|condition|stock_?type|inventory_?type|vehicle_?type|status|listingType)$", "str") or "").lower()
+    condition = "cpo" if "cert" in cond or flat.get("certified") or flat.get("isCertified") else "new" if cond == "new" or cond.startswith("new") else "used" if "used" in cond or "pre" in cond else "unknown"
+    branded = any(v for k, v in flat.items() if re.search(r"salvage|branded|lemon|flood|rebuilt|frameDamage|totalLoss", k, re.I) and v is True)
+    clean = any(v for k, v in flat.items() if re.search(r"noAccidents?|accidentFree|isCleanTitle|clean_?title", k, re.I) and v is True)
+    acc = _first_key(flat, r"^accident(s|Count|History|Text)?$")
+    if acc in (0, "0", "None reported", "No accidents", "no accidents reported") or (isinstance(acc, str) and re.search(r"no accident", acc, re.I)):
+        clean = clean or not branded
+    if isinstance(acc, (int, float)) and acc > 0:
+        pass
+    title = _first_key(flat, r"^(title|listing_?title|name|heading|display_?name|vehicle_?title)$", "str") or ""
+    return {"vin": vin, "price": price, "mileage": mileage, "year": year, "trim": trim, "color": color, "dealer": dealer,
+            "city": city, "state": state, "url": url, "image": image, "condition": condition,
+            "branded": branded, "clean": clean, "title": title, "accidents": acc,
+            "owners": _first_key(flat, r"owner(s|Count|History|Text)?$")}

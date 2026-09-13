@@ -5,7 +5,7 @@ import re
 
 from ..extract import abs_url, html_to_text, next_data, walk
 from ..models import Listing, parse_mileage, parse_price, parse_year
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "hemmings"
 LABEL = "Hemmings"

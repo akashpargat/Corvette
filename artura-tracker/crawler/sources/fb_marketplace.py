@@ -42,7 +42,7 @@ def fetch(client, ctx: Ctx):
     walled = 0
     hubs = config.FB_HUBS
     with sync_playwright() as p:
-        launch = {"headless": True, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox"]}
+        launch = {"headless": os.environ.get("HEADLESS", "1") != "0", "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox"]}
         if config.PROXY_URL:
             launch["proxy"] = {"server": config.PROXY_URL}
         browser = p.chromium.launch(**launch)

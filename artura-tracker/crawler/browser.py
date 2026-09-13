@@ -32,12 +32,12 @@ def browser_get(url: str, *, wait_ms: int = 3500, challenge_wait_s: int = 20, sc
         return BrowserResult(0, url, "", f"playwright unavailable: {e}")
     try:
         with sync_playwright() as p:
-            launch = {"headless": True, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox",
+            import os
+            launch = {"headless": os.environ.get("HEADLESS", "1") != "0", "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox",
                                                  "--disable-dev-shm-usage"]}
             if config.PROXY_URL:
                 launch["proxy"] = {"server": config.PROXY_URL}
             browser = p.chromium.launch(**launch)
-            ua = browser.new_context().pages and None
             ctx = browser.new_context(locale="en-US", timezone_id="America/Chicago",
                                       viewport={"width": 1366, "height": 900},
                                       extra_http_headers={"Referer": referer} if referer else {})

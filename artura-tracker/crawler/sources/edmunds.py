@@ -4,7 +4,7 @@ from __future__ import annotations
 from .. import config
 from ..extract import walk
 from ..models import Listing, parse_mileage, parse_price
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "edmunds"
 LABEL = "Edmunds"
@@ -33,8 +33,7 @@ def fetch(client, ctx: Ctx):
         res = client.get(PAGE)
         ctx.pages += 1
         if res.ok:
-            out += listings_from_jsonld(res.text, NAME, LABEL, res.url)
-            out += listings_from_vin_cards(res.text, NAME, LABEL, res.url)
+            out += parse_any(res.text, NAME, LABEL, res.url)
         if not out:
             ctx.diagnose(res, LABEL)
     return dedupe(out)

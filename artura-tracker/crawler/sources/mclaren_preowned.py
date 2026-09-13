@@ -5,7 +5,7 @@ import re
 
 from ..extract import abs_url, html_to_text, find_jsonld, vehicles_from_jsonld
 from ..models import Listing, parse_mileage, parse_price, parse_year
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "mclaren_preowned"
 LABEL = "McLaren Qualified (official CPO)"

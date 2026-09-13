@@ -5,7 +5,7 @@ import re
 
 from ..extract import abs_url, html_to_text
 from ..models import Listing, parse_mileage, parse_price, parse_year
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "classic_com"
 LABEL = "CLASSIC.COM"
@@ -22,10 +22,8 @@ def fetch(client, ctx: Ctx):
         if not res.ok:
             ctx.diagnose(res, LABEL)
             break
-        got = listings_from_jsonld(res.text, NAME, LABEL, res.url)
+        got = parse_any(res.text, NAME, LABEL, res.url)
         got += _cards(res.text, res.url)
-        if not got:
-            got = listings_from_vin_cards(res.text, NAME, LABEL, res.url)
         if not got:
             if page == 1:
                 ctx.diagnose(res, LABEL)

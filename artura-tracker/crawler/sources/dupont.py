@@ -5,7 +5,7 @@ import re
 
 from ..extract import abs_url, next_data, walk
 from ..models import Listing, parse_mileage, parse_price, parse_year
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "dupont"
 LABEL = "duPont REGISTRY"
@@ -29,9 +29,16 @@ def fetch(client, ctx: Ctx):
             for r in walk(nd, lambda d: ("artura" in str(d.get("model", "")).lower() or "artura" in str(d.get("title", "")).lower()) and ("price" in d or "askingPrice" in d)):
                 ctx.sample('dupont', r)
                 got.append(_row(r))
-        got += listings_from_jsonld(res.text, NAME, LABEL, res.url)
+        got += parse_any(res.text, NAME, LABEL, res.url)
         if not got:
             got = _links(res.text, res.url)
+        if not got and page == 1:
+            from ..browser import browser_get
+            b = browser_get(URL.format(page=page), scroll=4, wait_ms=5000)
+            ctx.log.info("%s: browser render -> %s bytes, %s", LABEL, len(b.html), b.error or "ok")
+            if b.html:
+                got = parse_any(b.html, NAME, LABEL, res.url) + _links(b.html, res.url)
+                res.text = b.html
         if not got:
             if page == 1:
                 ctx.diagnose(res, LABEL)
@@ -57,7 +64,7 @@ def _row(r: dict) -> Listing:
 
 def _links(html: str, base: str) -> list[Listing]:
     out = []
-    for m in re.finditer(r'href="([^"]*/autos/listing/[^"]*artura[^"]*)"', html, re.I):
+    for m in re.finditer(r'href="([^"]*/(?:autos/listing|autos/details|listing|vehicle)[^"]*artura[^"]*)"', html, re.I):
         chunk = html[max(0, m.start() - 3000): m.end() + 3000]
         text = re.sub(r"<[^>]+>", " ", chunk)
         title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^<]{0,30})", text)

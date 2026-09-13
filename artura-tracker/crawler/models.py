@@ -108,6 +108,8 @@ class Listing:
 
     def is_candidate(self) -> bool:
         """A plausible, real, road-going Artura with a believable price."""
+        if is_junk(self.title) or self.trim == "GT4":
+            return False
         if self.price is None or not (config.PRICE_FLOOR <= self.price <= config.PRICE_CEILING):
             return False
         if self.year and not (config.YEAR_MIN <= self.year <= config.YEAR_MAX):
@@ -208,5 +210,13 @@ def extract_state(location: str) -> Optional[str]:
     return None
 
 
+JUNK_RE = re.compile(r"ride[- ]along|charity|experience|hot lap|track day|wheel set|wheels?\b|rims?\b|parts?\b|badge|brochure|key fob|model car|diecast|1:18|1/18|1:43|poster|jacket|seat\b|exhaust|spoiler|carbon fiber (?:kit|piece)|GT4 Trophy", re.I)
+
+
 def is_artura(text: str) -> bool:
     return bool(re.search(r"artura", text or "", re.I))
+
+
+def is_junk(text: str) -> bool:
+    """Accessories, experiences and race cars that mention 'Artura' but are not a road car listing."""
+    return bool(JUNK_RE.search(text or ""))

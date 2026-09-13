@@ -1,0 +1,28 @@
+from crawler.extract import vin_dicts_from_html, vehicle_from_vin_dict
+from crawler.sources.base import parse_any
+
+DDC = '''<html><script type="application/ld+json">{"@type":["Product","Car"],"name":"Certified Pre-Owned 2025 McLaren Artura Performance","offers":{"@type":"Offer","price":"1489","url":"https://d.example/certified/x.htm"}}</script>
+<script>window.DDC = window.DDC || {}; DDC.dataLayer = {"page":{"pageType":"vdp"},"vehicles":[{"vin":"SBM16BEA4SW003068","year":2025,"make":"McLaren","model":"Artura","trim":"Performance","internetPrice":244900,"msrp":289000,"odometer":1200,"exteriorColor":"Onyx Black","status":"certified","link":"/certified/McLaren/2025-McLaren-Artura-938e.htm","payment":{"monthly":1489}}]};</script></html>'''
+DLRON = '''<script id='dlron-srp-model' type="application/json">{"Vehicles":[{"Vin":"SBM16BEA1TW004129","Year":2026,"Make":"McLaren","Model":"Artura","Trim":"Base","Price":259585,"Mileage":12,"ExteriorColor":"Ember","VdpUrl":"/new-Pinellas+Park-2026-McLaren-Artura-+-SBM16BEA1TW004129","MonthlyPayment":3300}]}</script>'''
+CFX = '''<script>window.__PRELOADED_STATE__={"listings":[{"vin":"SBM16AEA0PW000718","year":2023,"listPrice":156635,"mileage":14948,"noAccidents":true,"oneOwner":false,"dealer":{"name":"Da Vinci Automotive","city":"Bronx","state":"NY"},"vdpUrl":"https://www.carfax.com/vehicle/SBM16AEA0PW000718","salvageTitle":false}]};</script>'''
+
+
+def test_ddc_datalayer_beats_monthly_payment_jsonld():
+    ls = parse_any(DDC, "t", "T", "https://d.example/", dealer="McLaren Denver")
+    assert len(ls) == 1
+    l = ls[0]
+    assert l.vin == "SBM16BEA4SW003068" and l.price == 244900 and l.mileage == 1200 and l.year == 2025
+    assert l.trim == "Performance" and l.condition == "cpo" and l.color == "Onyx Black"
+    assert l.url.endswith("938e.htm")
+
+
+def test_dealeron_srp_model():
+    ls = parse_any(DLRON, "t", "T", "https://www.mclarentampabay.com/")
+    assert ls[0].price == 259585 and ls[0].mileage == 12 and ls[0].year == 2026 and ls[0].condition in ("new", "unknown")
+    assert ls[0].url.startswith("https://www.mclarentampabay.com/new-")
+
+
+def test_carfax_preloaded_state_title_flags():
+    ls = parse_any(CFX, "carfax", "CARFAX", "https://www.carfax.com/x")
+    l = ls[0]
+    assert l.price == 156635 and l.title_status == "clean" and l.dealer == "Da Vinci Automotive" and l.state == "NY"

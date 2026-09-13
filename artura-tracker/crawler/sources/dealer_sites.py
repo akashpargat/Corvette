@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor
 from .. import config
 from ..extract import abs_url, find_vins
 from ..http_client import Client
-from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
+from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "dealer_sites"
 LABEL = "McLaren dealer websites"
@@ -110,15 +110,26 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
                 if found or pages:
                     status = f"inventory-page:{p}"
                     break
-    pages = [p for p in dict.fromkeys(pages) if not re.search(r"\.(jpg|png|pdf|xml)$", p, re.I)]
+    if not pages:
+        # last resort: follow the site's own inventory navigation links
+        nav = [abs_url(base, h) for h in re.findall(r'href=["\']([^"\'#]+)["\']', home.text)
+               if re.search(r"inventory|vehicles|pre-?owned|used|artura|showroom", h, re.I) and not re.search(r"\.(jpg|png|pdf|css|js)$|specials|service|parts|finance|about|contact|privacy", h, re.I)]
+        nav = [n for n in dict.fromkeys(nav) if n.startswith(base)][:8]
+        for n in nav:
+            res = client.get(n, retries=0)
+            if res.ok and re.search(r"artura", res.text, re.I):
+                found += parse_any(res.text, NAME, name, res.url, dealer=name)
+                for href in re.findall(r'href=["\']([^"\']*artura[^"\']*)["\']', res.text, re.I):
+                    pages.append(abs_url(res.url, href))
+        if found or pages:
+            status = f"nav-links:{len(nav)}"
+    pages = [p for p in dict.fromkeys(pages) if p.startswith("http") and not re.search(r"\.(jpg|png|pdf|xml|css|js)(\?|$)", p, re.I)]
     sampled = False
     for p in pages[:config.MAX_DETAIL_PAGES_PER_SOURCE]:
         res = client.get(p, retries=0)
         if not res.ok:
             continue
-        got = listings_from_jsonld(res.text, NAME, name, res.url, dealer=name)
-        if not got:
-            got = listings_from_vin_cards(res.text, NAME, name, res.url, dealer=name)
+        got = parse_any(res.text, NAME, name, res.url, dealer=name)
         if got and not sampled and not any(g.price for g in got):
             sampled = True
             ctx2 = Ctx(log)

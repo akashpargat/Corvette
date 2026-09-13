@@ -50,6 +50,7 @@ jobs:
         run: |
           pip install -r requirements.txt pytest
           python -m playwright install --with-deps chromium
+          sudo apt-get install -y -qq xvfb >/dev/null
 
       - name: Unit tests
         run: python -m pytest -q tests
@@ -59,11 +60,12 @@ jobs:
           FB_COOKIES_JSON: ${{ secrets.FB_COOKIES_JSON }}
           SCRAPER_PROXY_URL: ${{ secrets.SCRAPER_PROXY_URL }}
           ARTURA_ZIP: ${{ vars.ARTURA_ZIP }}
+          HEADLESS: "0"
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ github.event.inputs.sources }}"; fi
           if [ -n "${{ github.event.inputs.skip }}" ]; then ARGS="$ARGS --skip ${{ github.event.inputs.skip }}"; fi
-          python -m crawler.main $ARGS
+          xvfb-run -a --server-args="-screen 0 1366x900x24" python -m crawler.main $ARGS
 
       - name: Build site
         run: python build_site.py
