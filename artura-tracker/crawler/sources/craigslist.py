@@ -20,6 +20,7 @@ FALLBACK = ["newyork", "losangeles", "chicago", "houston", "dallas", "sfbay", "m
 
 def _sites(client: Client, ctx: Ctx):
     res = client.get(SITES_PAGE, retries=0)
+    ctx.note(f"{LABEL}: sites page status {res.status}, {len(res.text)} bytes")
     if not res.ok:
         return [(s, "US" if s not in ("toronto", "vancouver", "montreal", "calgary", "edmonton", "ottawa") else "CA") for s in FALLBACK]
     out = []
@@ -40,8 +41,10 @@ def _one(sub_country, log):
     client = Client(log, delay=0.2, browser_fallback=False)
     url = f"https://{sub}.craigslist.org/search/cta?query=mclaren+artura&min_price=40000"
     res = client.get(url, retries=0)
-    if not res.ok or "artura" not in res.text.lower():
+    if not res.ok:
         return [], res.status
+    if "artura" not in res.text.lower():
+        return [], 204 if ("cl-static-search-result" in res.text or "zero results" in res.text.lower() or "no results" in res.text.lower()) else 200
     got = cards_from_links(res.text, res.url, r"/(cto|ctd)/d/|/cars-trucks/|\.html$", NAME, LABEL, "private", country,
                            "CAD" if country == "CA" else "USD")
     for l in got:

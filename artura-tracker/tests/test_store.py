@@ -68,3 +68,18 @@ def test_vinless_card_joins_vin_group_by_url_and_outlier_price_ignored(tmp_path)
     assert len([r for r in p["listings"] if r["status"] == "active"]) == 1
     car = p["listings"][0]
     assert car["key"] == "SBM16AEA5PW000777" and car["price"] == 315000 and len(car["offers"]) == 2
+
+
+def test_vinless_card_joins_by_mileage_and_price_fingerprint(tmp_path):
+    d = str(tmp_path)
+    vin = _l("SBM16AEA0PW000718", 155985, source="carfax")
+    vin.mileage = 14948
+    card = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/abc/",
+                   title="2023 McLaren Artura", price=155985, mileage=14948).finalize()
+    other = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/def/",
+                    title="2023 McLaren Artura", price=189000, mileage=2100).finalize()
+    p = merge(d, [vin, card, other], _report(("carfax", "cars_com")))
+    active = [r for r in p["listings"] if r["status"] == "active"]
+    assert len(active) == 2
+    joined = next(r for r in active if r["key"] == "SBM16AEA0PW000718")
+    assert sorted(joined["sources"]) == ["carfax", "cars_com"]

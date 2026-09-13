@@ -83,7 +83,13 @@ def browser_get(url: str, *, wait_ms: int = 3500, challenge_wait_s: int = 20, sc
             for _ in range(scroll):
                 page.mouse.wheel(0, 2200)
                 page.wait_for_timeout(700)
-            html = page.content()
+            html = ""
+            for _ in range(4):
+                try:
+                    html = page.content()
+                    break
+                except Exception:
+                    page.wait_for_timeout(1500)
             final = page.url
             # JSON endpoints render inside <pre>
             m = re.match(r"^\s*<html><head></head><body><pre[^>]*>(.*)</pre></body></html>\s*$", html, re.S)
