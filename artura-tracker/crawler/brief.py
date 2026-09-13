@@ -96,7 +96,7 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
             lines.append(f"   {l['url']}")
         def _keep(k):
             r = by.get(k)
-            return bool(r) and r.get("target", "artura") == tk and r.get("candidate") and r.get("title_status") != "branded"
+            return bool(r) and r.get("target", "artura") == tk and r.get("rankable", r.get("candidate")) and r.get("title_status") != "branded"
         def _list(keys, fmt):
             rows = sorted([by[k] for k in keys if _keep(k)], key=lambda r: r.get("price") or 0)
             return [fmt(r) for r in rows[:15]] or ["   none"]
