@@ -3,7 +3,7 @@
   "targets": {
    "artura": {
     "active": 226,
-    "clean_candidates": 208,
+    "clean_candidates": 175,
     "cheapest_clean_key": "SBM16AEA0PW000718",
     "cheapest_clean_price": 157380,
     "new_today": 5,
@@ -18,9 +18,9 @@
    },
    "huracan": {
     "active": 389,
-    "clean_candidates": 100,
-    "cheapest_clean_key": "ZHWUA6ZX9NLA20281",
-    "cheapest_clean_price": 196791,
+    "clean_candidates": 85,
+    "cheapest_clean_key": "ZHWUC1ZC6TLA01419",
+    "cheapest_clean_price": 202609,
     "new_today": 389,
     "price_drops_today": 0,
     "market_model": {
@@ -2396,7 +2396,7 @@
    "deal_pct": 38.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 3,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotrader",
@@ -2468,7 +2468,7 @@
    "expected_price": 177770,
    "deal_pct": 7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 4,
+   "rank_cheapest_clean": 3,
    "target": "artura",
    "rankable": true
   },
@@ -2622,7 +2622,7 @@
    "deal_pct": 1.3,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 5,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "bringatrailer",
@@ -2827,7 +2827,7 @@
    "expected_price": 165579,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 6,
+   "rank_cheapest_clean": 4,
    "rankable": true
   },
   {
@@ -2890,7 +2890,7 @@
    "expected_price": 167651,
    "deal_pct": -0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 7,
+   "rank_cheapest_clean": 5,
    "rankable": true
   },
   {
@@ -3156,7 +3156,7 @@
    "expected_price": 180262,
    "deal_pct": 5.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8,
+   "rank_cheapest_clean": 6,
    "rankable": true
   },
   {
@@ -3258,7 +3258,7 @@
    "expected_price": 182281,
    "deal_pct": 6.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 9,
+   "rank_cheapest_clean": 7,
    "rankable": true
   },
   {
@@ -3351,7 +3351,7 @@
    "expected_price": 184744,
    "deal_pct": 7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 10,
+   "rank_cheapest_clean": 8,
    "rankable": true
   },
   {
@@ -3486,7 +3486,7 @@
    "expected_price": 177763,
    "deal_pct": 3.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 11,
+   "rank_cheapest_clean": 9,
    "rankable": true
   },
   {
@@ -3625,7 +3625,7 @@
    "expected_price": 168031,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 12,
+   "rank_cheapest_clean": 10,
    "rankable": true
   },
   {
@@ -3701,7 +3701,7 @@
    "expected_price": 178436,
    "deal_pct": 3.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 13,
+   "rank_cheapest_clean": 11,
    "rankable": true
   },
   {
@@ -3771,7 +3771,7 @@
    "expected_price": 179288,
    "deal_pct": 3.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 14,
+   "rank_cheapest_clean": 12,
    "rankable": true
   },
   {
@@ -3836,7 +3836,7 @@
    "expected_price": 163705,
    "deal_pct": -5.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 15,
+   "rank_cheapest_clean": 13,
    "rankable": true
   },
   {
@@ -3969,7 +3969,7 @@
    "expected_price": 152797,
    "deal_pct": -14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 16,
+   "rank_cheapest_clean": 14,
    "rankable": true
   },
   {
@@ -4037,7 +4037,7 @@
    "expected_price": 177023,
    "deal_pct": 1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 17,
+   "rank_cheapest_clean": 15,
    "rankable": true
   },
   {
@@ -4134,7 +4134,7 @@
    "expected_price": 181286,
    "deal_pct": 3.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 18,
+   "rank_cheapest_clean": 16,
    "rankable": true
   },
   {
@@ -4210,7 +4210,7 @@
    "expected_price": 177781,
    "deal_pct": 1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 19,
+   "rank_cheapest_clean": 17,
    "rankable": true
   },
   {
@@ -4274,7 +4274,7 @@
    "expected_price": 197059,
    "deal_pct": 11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 20,
+   "rank_cheapest_clean": 18,
    "rankable": true
   },
   {
@@ -4411,7 +4411,7 @@
    "expected_price": 177102,
    "deal_pct": 1.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 21,
+   "rank_cheapest_clean": 19,
    "rankable": true
   },
   {
@@ -4553,7 +4553,7 @@
    "deal_pct": 15.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 22,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -4626,7 +4626,7 @@
    "deal_pct": 8.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 23,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -4715,7 +4715,7 @@
    "expected_price": 233420,
    "deal_pct": 24.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 24,
+   "rank_cheapest_clean": 20,
    "rankable": true
   },
   {
@@ -4801,7 +4801,7 @@
    "expected_price": 174529,
    "deal_pct": -0.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 25,
+   "rank_cheapest_clean": 21,
    "rankable": true
   },
   {
@@ -4874,7 +4874,7 @@
    "expected_price": 172803,
    "deal_pct": -1.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 26,
+   "rank_cheapest_clean": 22,
    "target": "artura",
    "rankable": true
   },
@@ -4956,7 +4956,7 @@
    "expected_price": 168699,
    "deal_pct": -4.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 27,
+   "rank_cheapest_clean": 23,
    "rankable": true
   },
   {
@@ -5055,7 +5055,7 @@
    "expected_price": 182233,
    "deal_pct": 2.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 28,
+   "rank_cheapest_clean": 24,
    "rankable": true
   },
   {
@@ -5124,7 +5124,7 @@
    "deal_pct": -1.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 29,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dupont",
@@ -5199,7 +5199,7 @@
    "expected_price": 175084,
    "deal_pct": -1.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 30,
+   "rank_cheapest_clean": 25,
    "rankable": true
   },
   {
@@ -5290,7 +5290,7 @@
    "expected_price": 178680,
    "deal_pct": 0.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 31,
+   "rank_cheapest_clean": 26,
    "rankable": true
   },
   {
@@ -5370,7 +5370,7 @@
    "expected_price": 234375,
    "deal_pct": 24.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 32,
+   "rank_cheapest_clean": 27,
    "rankable": true
   },
   {
@@ -5470,7 +5470,7 @@
    "expected_price": 172175,
    "deal_pct": -4.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 33,
+   "rank_cheapest_clean": 28,
    "rankable": true
   },
   {
@@ -5569,7 +5569,7 @@
    "expected_price": 183981,
    "deal_pct": 2.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 34,
+   "rank_cheapest_clean": 29,
    "rankable": true
   },
   {
@@ -5668,7 +5668,7 @@
    "expected_price": 176504,
    "deal_pct": -1.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 35,
+   "rank_cheapest_clean": 30,
    "rankable": true
   },
   {
@@ -5761,7 +5761,7 @@
    "expected_price": 195978,
    "deal_pct": 8.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 36,
+   "rank_cheapest_clean": 31,
    "rankable": true
   },
   {
@@ -5828,7 +5828,7 @@
    "expected_price": 177569,
    "deal_pct": -1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 37,
+   "rank_cheapest_clean": 32,
    "rankable": true
   },
   {
@@ -5907,7 +5907,7 @@
    "deal_pct": -2.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 38,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -6265,7 +6265,7 @@
    "expected_price": 231560,
    "deal_pct": 22.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 39,
+   "rank_cheapest_clean": 33,
    "rankable": true
   },
   {
@@ -6360,7 +6360,7 @@
    "expected_price": 170649,
    "deal_pct": -5.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 40,
+   "rank_cheapest_clean": 34,
    "rankable": true
   },
   {
@@ -6439,7 +6439,7 @@
    "deal_pct": 22.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 41,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "bringatrailer",
@@ -6567,7 +6567,7 @@
    "expected_price": 184162,
    "deal_pct": 2.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 42,
+   "rank_cheapest_clean": 35,
    "rankable": true
   },
   {
@@ -7034,7 +7034,7 @@
    "expected_price": 185675,
    "deal_pct": 1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 43,
+   "rank_cheapest_clean": 36,
    "target": "artura",
    "rankable": true
   },
@@ -7108,7 +7108,7 @@
    "expected_price": 175540,
    "deal_pct": -4.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 44,
+   "rank_cheapest_clean": 37,
    "target": "artura",
    "rankable": true
   },
@@ -7190,7 +7190,7 @@
    "expected_price": 179657,
    "deal_pct": -2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 45,
+   "rank_cheapest_clean": 38,
    "rankable": true
   },
   {
@@ -7289,7 +7289,7 @@
    "expected_price": 177771,
    "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 46,
+   "rank_cheapest_clean": 39,
    "rankable": true
   },
   {
@@ -7368,7 +7368,7 @@
    "deal_pct": 12.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 47,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "mclaren_preowned",
@@ -7466,7 +7466,7 @@
    "expected_price": 201245,
    "deal_pct": 8.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 48,
+   "rank_cheapest_clean": 40,
    "rankable": true
   },
   {
@@ -7596,7 +7596,7 @@
    "expected_price": 179586,
    "deal_pct": -2.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 49,
+   "rank_cheapest_clean": 41,
    "rankable": true
   },
   {
@@ -7681,7 +7681,7 @@
    "expected_price": 195543,
    "deal_pct": 5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 50,
+   "rank_cheapest_clean": 42,
    "rankable": true
   },
   {
@@ -7770,7 +7770,7 @@
    "expected_price": 260925,
    "deal_pct": 29.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 51,
+   "rank_cheapest_clean": 43,
    "rankable": true
   },
   {
@@ -7851,7 +7851,7 @@
    "expected_price": 186089,
    "deal_pct": 0.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 52,
+   "rank_cheapest_clean": 44,
    "rankable": true
   },
   {
@@ -7975,7 +7975,7 @@
    "expected_price": 167674,
    "deal_pct": -10.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 53,
+   "rank_cheapest_clean": 45,
    "target": "artura",
    "rankable": true
   },
@@ -8046,7 +8046,7 @@
    "expected_price": 204446,
    "deal_pct": 9.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 54,
+   "rank_cheapest_clean": 46,
    "rankable": true
   },
   {
@@ -8211,7 +8211,7 @@
    "expected_price": 206760,
    "deal_pct": 10.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 55,
+   "rank_cheapest_clean": 47,
    "rankable": true
   },
   {
@@ -8338,7 +8338,7 @@
    "expected_price": 182049,
    "deal_pct": -2.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 56,
+   "rank_cheapest_clean": 48,
    "rankable": true
   },
   {
@@ -8401,7 +8401,7 @@
    "expected_price": 187776,
    "deal_pct": 1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 57,
+   "rank_cheapest_clean": 49,
    "rankable": true
   },
   {
@@ -8480,7 +8480,7 @@
    "deal_pct": -5.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 58,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -8548,7 +8548,7 @@
    "deal_pct": 28.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 59,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dupont",
@@ -8612,7 +8612,7 @@
    "expected_price": 182582,
    "deal_pct": -2.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 60,
+   "rank_cheapest_clean": 50,
    "rankable": true
   },
   {
@@ -8697,7 +8697,7 @@
    "expected_price": 207090,
    "deal_pct": 9.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 61,
+   "rank_cheapest_clean": 51,
    "rankable": true
   },
   {
@@ -8798,7 +8798,7 @@
    "expected_price": 232323,
    "deal_pct": 19.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 62,
+   "rank_cheapest_clean": 52,
    "rankable": true
   },
   {
@@ -8877,7 +8877,7 @@
    "deal_pct": 19.1,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 63,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -8940,7 +8940,7 @@
    "expected_price": 179729,
    "deal_pct": -4.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 64,
+   "rank_cheapest_clean": 53,
    "rankable": true
   },
   {
@@ -9013,7 +9013,7 @@
    "expected_price": 209485,
    "deal_pct": 10.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 65,
+   "rank_cheapest_clean": 54,
    "target": "artura",
    "rankable": true
   },
@@ -9077,7 +9077,7 @@
    "expected_price": 187776,
    "deal_pct": -0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 66,
+   "rank_cheapest_clean": 55,
    "rankable": true
   },
   {
@@ -9144,7 +9144,7 @@
    "expected_price": 182574,
    "deal_pct": -3.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 67,
+   "rank_cheapest_clean": 56,
    "rankable": true
   },
   {
@@ -9207,7 +9207,7 @@
    "expected_price": 187776,
    "deal_pct": -0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 68,
+   "rank_cheapest_clean": 57,
    "rankable": true
   },
   {
@@ -9306,7 +9306,7 @@
    "expected_price": 201363,
    "deal_pct": 6.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 69,
+   "rank_cheapest_clean": 58,
    "rankable": true
   },
   {
@@ -9447,7 +9447,7 @@
    "deal_pct": 8.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 70,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -9525,7 +9525,7 @@
    "deal_pct": 18.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 71,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -9662,7 +9662,7 @@
    "expected_price": 180328,
    "deal_pct": -5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 72,
+   "rank_cheapest_clean": 59,
    "rankable": true
   },
   {
@@ -9725,7 +9725,7 @@
    "expected_price": 187776,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 73,
+   "rank_cheapest_clean": 60,
    "rankable": true
   },
   {
@@ -9815,7 +9815,7 @@
    "expected_price": 208924,
    "deal_pct": 9.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 74,
+   "rank_cheapest_clean": 61,
    "rankable": true
   },
   {
@@ -9947,7 +9947,7 @@
    "expected_price": 176368,
    "deal_pct": -8.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 75,
+   "rank_cheapest_clean": 62,
    "rankable": true
   },
   {
@@ -10026,7 +10026,7 @@
    "deal_pct": 9.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 76,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -10104,7 +10104,7 @@
    "deal_pct": 8.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 77,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -10193,7 +10193,7 @@
    "expected_price": 227704,
    "deal_pct": 15.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 78,
+   "rank_cheapest_clean": 63,
    "rankable": true
   },
   {
@@ -10255,7 +10255,7 @@
    "expected_price": 183875,
    "deal_pct": -4.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 79,
+   "rank_cheapest_clean": 64,
    "target": "artura",
    "rankable": true
   },
@@ -10391,7 +10391,7 @@
    "expected_price": 174292,
    "deal_pct": -10.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 80,
+   "rank_cheapest_clean": 65,
    "target": "artura",
    "rankable": true
   },
@@ -10462,7 +10462,7 @@
    "expected_price": 203388,
    "deal_pct": 5.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 81,
+   "rank_cheapest_clean": 66,
    "rankable": true
   },
   {
@@ -10530,7 +10530,7 @@
    "expected_price": 187776,
    "deal_pct": -2.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 82,
+   "rank_cheapest_clean": 67,
    "rankable": true
   },
   {
@@ -10718,7 +10718,7 @@
    "expected_price": 211371,
    "deal_pct": 7.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 83,
+   "rank_cheapest_clean": 68,
    "target": "artura",
    "rankable": true
   },
@@ -10938,7 +10938,7 @@
    "deal_pct": 45.3,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 1,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "jamesedition",
@@ -11005,7 +11005,7 @@
    "expected_price": 212348,
    "deal_pct": 7.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 84,
+   "rank_cheapest_clean": 69,
    "rankable": true
   },
   {
@@ -11201,7 +11201,7 @@
    "expected_price": 261421,
    "deal_pct": 22.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 85,
+   "rank_cheapest_clean": 70,
    "rankable": true
   },
   {
@@ -11283,7 +11283,7 @@
    "expected_price": 261460,
    "deal_pct": 22.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 86,
+   "rank_cheapest_clean": 71,
    "rankable": true
   },
   {
@@ -11354,7 +11354,7 @@
    "expected_price": 261468,
    "deal_pct": 22.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 87,
+   "rank_cheapest_clean": 72,
    "rankable": true
   },
   {
@@ -11485,7 +11485,7 @@
    "expected_price": 410583,
    "deal_pct": 50.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 2,
+   "rank_cheapest_clean": 1,
    "rankable": true
   },
   {
@@ -11551,7 +11551,7 @@
    "expected_price": 411098,
    "deal_pct": 50.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 3,
+   "rank_cheapest_clean": 2,
    "rankable": true
   },
   {
@@ -12087,7 +12087,7 @@
    "expected_price": 227764,
    "deal_pct": 9.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 88,
+   "rank_cheapest_clean": 73,
    "target": "artura",
    "rankable": true
   },
@@ -12243,7 +12243,7 @@
    "expected_price": 210487,
    "deal_pct": 0.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 89,
+   "rank_cheapest_clean": 74,
    "rankable": true
   },
   {
@@ -12607,7 +12607,7 @@
    "expected_price": 233969,
    "deal_pct": 9.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 90,
+   "rank_cheapest_clean": 75,
    "rankable": true
   },
   {
@@ -12691,7 +12691,7 @@
    "expected_price": 315460,
    "deal_pct": 32.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 4,
+   "rank_cheapest_clean": 3,
    "rankable": true
   },
   {
@@ -12843,7 +12843,7 @@
    "deal_pct": 8.6,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 91,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "cargurus",
@@ -12926,7 +12926,7 @@
    "expected_price": 232774,
    "deal_pct": 7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 92,
+   "rank_cheapest_clean": 76,
    "target": "artura",
    "rankable": true
   },
@@ -12992,7 +12992,7 @@
    "expected_price": 224624,
    "deal_pct": 4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 93,
+   "rank_cheapest_clean": 77,
    "rankable": true
   },
   {
@@ -13082,7 +13082,7 @@
    "expected_price": 231460,
    "deal_pct": 7.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 94,
+   "rank_cheapest_clean": 78,
    "rankable": true
   },
   {
@@ -13270,7 +13270,7 @@
    "deal_pct": 42.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 5,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -13396,7 +13396,7 @@
    "expected_price": 229936,
    "deal_pct": 5.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 95,
+   "rank_cheapest_clean": 79,
    "rankable": true
   },
   {
@@ -13475,7 +13475,7 @@
    "deal_pct": -5.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 96,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -13573,7 +13573,7 @@
    "expected_price": 231747,
    "deal_pct": 5.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 97,
+   "rank_cheapest_clean": 80,
    "rankable": true
   },
   {
@@ -13654,7 +13654,7 @@
    "expected_price": 258335,
    "deal_pct": 14.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 98,
+   "rank_cheapest_clean": 81,
    "rankable": true
   },
   {
@@ -13718,7 +13718,7 @@
    "deal_pct": 38.3,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 6,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -13870,7 +13870,7 @@
    "expected_price": 232393,
    "deal_pct": 5.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 99,
+   "rank_cheapest_clean": 82,
    "rankable": true
   },
   {
@@ -14421,7 +14421,7 @@
    "deal_pct": 37.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 7,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "truecar",
@@ -14552,7 +14552,7 @@
    "expected_price": 236331,
    "deal_pct": 5.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 100,
+   "rank_cheapest_clean": 83,
    "rankable": true
   },
   {
@@ -14808,7 +14808,7 @@
    "expected_price": 231333,
    "deal_pct": 2.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 101,
+   "rank_cheapest_clean": 84,
    "rankable": true
   },
   {
@@ -14894,7 +14894,7 @@
    "expected_price": 382002,
    "deal_pct": 41.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8,
+   "rank_cheapest_clean": 4,
    "rankable": true
   },
   {
@@ -15132,7 +15132,7 @@
    "expected_price": 222813,
    "deal_pct": -2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 102,
+   "rank_cheapest_clean": 85,
    "rankable": true
   },
   {
@@ -15222,7 +15222,7 @@
    "expected_price": 261189,
    "deal_pct": 12.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 103,
+   "rank_cheapest_clean": 86,
    "rankable": true
   },
   {
@@ -15609,7 +15609,7 @@
    "expected_price": 236920,
    "deal_pct": 2.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 104,
+   "rank_cheapest_clean": 87,
    "rankable": true
   },
   {
@@ -16326,7 +16326,7 @@
    "expected_price": 310563,
    "deal_pct": 24.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 9,
+   "rank_cheapest_clean": 5,
    "rankable": true
   },
   {
@@ -16458,7 +16458,7 @@
    "expected_price": 212348,
    "deal_pct": -10.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 105,
+   "rank_cheapest_clean": 88,
    "rankable": true
   },
   {
@@ -16652,7 +16652,7 @@
    "expected_price": 229367,
    "deal_pct": -2.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 106,
+   "rank_cheapest_clean": 89,
    "rankable": true
   },
   {
@@ -16730,7 +16730,7 @@
    "expected_price": 228849,
    "deal_pct": -3.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 107,
+   "rank_cheapest_clean": 90,
    "target": "artura",
    "rankable": true
   },
@@ -16867,7 +16867,7 @@
    "expected_price": 231877,
    "deal_pct": -3.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 108,
+   "rank_cheapest_clean": 91,
    "rankable": true
   },
   {
@@ -17238,7 +17238,7 @@
    "expected_price": 234032,
    "deal_pct": -2.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 109,
+   "rank_cheapest_clean": 92,
    "rankable": true
   },
   {
@@ -17572,7 +17572,7 @@
    "deal_pct": 20.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 10,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "carsandbids",
@@ -18049,7 +18049,7 @@
    "expected_price": 228851,
    "deal_pct": -7.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 110,
+   "rank_cheapest_clean": 93,
    "target": "artura",
    "rankable": true
   },
@@ -18123,7 +18123,7 @@
    "expected_price": 228083,
    "deal_pct": -7.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 111,
+   "rank_cheapest_clean": 94,
    "target": "artura",
    "rankable": true
   },
@@ -18342,7 +18342,7 @@
    "expected_price": 325519,
    "deal_pct": 24.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 11,
+   "rank_cheapest_clean": 6,
    "rankable": true
   },
   {
@@ -18495,7 +18495,7 @@
    "expected_price": 231303,
    "deal_pct": -6.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 112,
+   "rank_cheapest_clean": 95,
    "rankable": true
   },
   {
@@ -18766,7 +18766,7 @@
    "expected_price": 231089,
    "deal_pct": -7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 113,
+   "rank_cheapest_clean": 96,
    "target": "artura",
    "rankable": true
   },
@@ -19018,7 +19018,7 @@
    "expected_price": 228042,
    "deal_pct": -9.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 114,
+   "rank_cheapest_clean": 97,
    "rankable": true
   },
   {
@@ -19096,7 +19096,7 @@
    "expected_price": 230057,
    "deal_pct": -8.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 115,
+   "rank_cheapest_clean": 98,
    "target": "artura",
    "rankable": true
   },
@@ -19183,7 +19183,7 @@
    "expected_price": 179438,
    "deal_pct": -39.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 116,
+   "rank_cheapest_clean": 99,
    "rankable": true
   },
   {
@@ -19703,7 +19703,7 @@
    "expected_price": 317996,
    "deal_pct": 21.4,
    "price_per_mile_note": null,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -19864,7 +19864,7 @@
    "expected_price": 234273,
    "deal_pct": -6.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 117,
+   "rank_cheapest_clean": 100,
    "rankable": true
   },
   {
@@ -19954,7 +19954,7 @@
    "expected_price": 231947,
    "deal_pct": -7.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 118,
+   "rank_cheapest_clean": 101,
    "rankable": true
   },
   {
@@ -20035,7 +20035,7 @@
    "expected_price": 234392,
    "deal_pct": -6.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 119,
+   "rank_cheapest_clean": 102,
    "rankable": true
   },
   {
@@ -20369,7 +20369,7 @@
    "deal_pct": 31.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 12,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "truecar",
@@ -20511,7 +20511,7 @@
    "expected_price": 233122,
    "deal_pct": -7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 120,
+   "rank_cheapest_clean": 103,
    "rankable": true
   },
   {
@@ -21265,7 +21265,7 @@
    "expected_price": 345771,
    "deal_pct": 26.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 13,
+   "rank_cheapest_clean": 7,
    "rankable": true
   },
   {
@@ -21330,7 +21330,7 @@
    "expected_price": 362045,
    "deal_pct": 29.6,
    "price_per_mile_note": null,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "pcarmarket",
@@ -21644,7 +21644,7 @@
    "expected_price": 284523,
    "deal_pct": 10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 14,
+   "rank_cheapest_clean": 8,
    "rankable": true
   },
   {
@@ -21708,7 +21708,7 @@
    "deal_pct": 31.1,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 15,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -22118,7 +22118,7 @@
    "expected_price": 294835,
    "deal_pct": 12.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 16,
+   "rank_cheapest_clean": 9,
    "rankable": true
   },
   {
@@ -22263,7 +22263,7 @@
    "expected_price": 261407,
    "deal_pct": 0.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 121,
+   "rank_cheapest_clean": 104,
    "target": "artura",
    "rankable": true
   },
@@ -22409,7 +22409,7 @@
    "expected_price": 236513,
    "deal_pct": -10.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 122,
+   "rank_cheapest_clean": 105,
    "target": "artura",
    "rankable": true
   },
@@ -22537,7 +22537,7 @@
    "deal_pct": 25.1,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 17,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -22683,7 +22683,7 @@
    "expected_price": 338224,
    "deal_pct": 22.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 18,
+   "rank_cheapest_clean": 10,
    "rankable": true
   },
   {
@@ -22825,7 +22825,7 @@
    "deal_pct": -12.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 123,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -22903,7 +22903,7 @@
    "deal_pct": -11.4,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 124,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "jamesedition",
@@ -22965,7 +22965,7 @@
    "expected_price": 330534,
    "deal_pct": 20.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 19,
+   "rank_cheapest_clean": 11,
    "rankable": true
   },
   {
@@ -23228,7 +23228,7 @@
    "expected_price": 294810,
    "deal_pct": 9.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 20,
+   "rank_cheapest_clean": 12,
    "rankable": true
   },
   {
@@ -23460,7 +23460,7 @@
    "expected_price": 259694,
    "deal_pct": -3.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 125,
+   "rank_cheapest_clean": 106,
    "target": "artura",
    "rankable": true
   },
@@ -23525,7 +23525,7 @@
    "expected_price": 261383,
    "deal_pct": -3.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 126,
+   "rank_cheapest_clean": 107,
    "rankable": true
   },
   {
@@ -23598,7 +23598,7 @@
    "expected_price": 236299,
    "deal_pct": -14.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 127,
+   "rank_cheapest_clean": 108,
    "target": "artura",
    "rankable": true
   },
@@ -23790,7 +23790,7 @@
    "expected_price": 289422,
    "deal_pct": 6.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 21,
+   "rank_cheapest_clean": 13,
    "rankable": true
   },
   {
@@ -24020,7 +24020,7 @@
    "expected_price": 315797,
    "deal_pct": 14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 22,
+   "rank_cheapest_clean": 14,
    "rankable": true
   },
   {
@@ -24104,7 +24104,7 @@
    "expected_price": 311727,
    "deal_pct": 13.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 23,
+   "rank_cheapest_clean": 15,
    "rankable": true
   },
   {
@@ -24168,7 +24168,7 @@
    "deal_pct": 30.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 24,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "jamesedition",
@@ -24292,7 +24292,7 @@
    "expected_price": 263818,
    "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 25,
+   "rank_cheapest_clean": 16,
    "rankable": true
   },
   {
@@ -24355,7 +24355,7 @@
    "expected_price": 295315,
    "deal_pct": 7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 26,
+   "rank_cheapest_clean": 17,
    "rankable": true
   },
   {
@@ -24428,7 +24428,7 @@
    "expected_price": 261046,
    "deal_pct": -4.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 128,
+   "rank_cheapest_clean": 109,
    "target": "artura",
    "rankable": true
   },
@@ -24742,7 +24742,7 @@
    "expected_price": 341820,
    "deal_pct": 19.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 27,
+   "rank_cheapest_clean": 18,
    "rankable": true
   },
   {
@@ -25113,7 +25113,7 @@
    "expected_price": 261162,
    "deal_pct": -7.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 129,
+   "rank_cheapest_clean": 110,
    "target": "artura",
    "rankable": true
   },
@@ -25333,7 +25333,7 @@
    "expected_price": 261429,
    "deal_pct": -8.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 130,
+   "rank_cheapest_clean": 111,
    "target": "artura",
    "rankable": true
   },
@@ -25397,7 +25397,7 @@
    "expected_price": 339422,
    "deal_pct": 16.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 28,
+   "rank_cheapest_clean": 19,
    "rankable": true
   },
   {
@@ -25481,7 +25481,7 @@
    "expected_price": 320058,
    "deal_pct": 11.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 29,
+   "rank_cheapest_clean": 20,
    "rankable": true
   },
   {
@@ -25637,7 +25637,7 @@
    "expected_price": 332382,
    "deal_pct": 14.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 30,
+   "rank_cheapest_clean": 21,
    "rankable": true
   },
   {
@@ -25762,7 +25762,7 @@
    "expected_price": 295320,
    "deal_pct": 3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 31,
+   "rank_cheapest_clean": 22,
    "rankable": true
   },
   {
@@ -25898,7 +25898,7 @@
    "expected_price": 261476,
    "deal_pct": -10.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 131,
+   "rank_cheapest_clean": 112,
    "target": "artura",
    "rankable": true
   },
@@ -25983,7 +25983,7 @@
    "expected_price": 261345,
    "deal_pct": -10.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 132,
+   "rank_cheapest_clean": 113,
    "target": "artura",
    "rankable": true
   },
@@ -26068,7 +26068,7 @@
    "expected_price": 231850,
    "deal_pct": -25.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 133,
+   "rank_cheapest_clean": 114,
    "target": "artura",
    "rankable": true
   },
@@ -26154,7 +26154,7 @@
    "expected_price": 306880,
    "deal_pct": 5.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 32,
+   "rank_cheapest_clean": 23,
    "rankable": true
   },
   {
@@ -26217,7 +26217,7 @@
    "expected_price": 308700,
    "deal_pct": 6.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 33,
+   "rank_cheapest_clean": 24,
    "rankable": true
   },
   {
@@ -26435,7 +26435,7 @@
    "expected_price": 230694,
    "deal_pct": -25.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 134,
+   "rank_cheapest_clean": 115,
    "target": "artura",
    "rankable": true
   },
@@ -26510,7 +26510,7 @@
    "expected_price": 319692,
    "deal_pct": 9.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 34,
+   "rank_cheapest_clean": 25,
    "rankable": true
   },
   {
@@ -26635,7 +26635,7 @@
    "expected_price": 286927,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 35,
+   "rank_cheapest_clean": 26,
    "rankable": true
   },
   {
@@ -26843,7 +26843,7 @@
    "expected_price": 261403,
    "deal_pct": -11.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 135,
+   "rank_cheapest_clean": 116,
    "target": "artura",
    "rankable": true
   },
@@ -27178,7 +27178,7 @@
    "expected_price": 261492,
    "deal_pct": -12.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 136,
+   "rank_cheapest_clean": 117,
    "rankable": true
   },
   {
@@ -27258,7 +27258,7 @@
    "expected_price": 261434,
    "deal_pct": -12.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 137,
+   "rank_cheapest_clean": 118,
    "rankable": true
   },
   {
@@ -27322,7 +27322,7 @@
    "expected_price": 233019,
    "deal_pct": -26.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 138,
+   "rank_cheapest_clean": 119,
    "rankable": true
   },
   {
@@ -27385,7 +27385,7 @@
    "expected_price": 339422,
    "deal_pct": 13.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 36,
+   "rank_cheapest_clean": 27,
    "rankable": true
   },
   {
@@ -27458,7 +27458,7 @@
    "expected_price": 261428,
    "deal_pct": -13.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 139,
+   "rank_cheapest_clean": 120,
    "target": "artura",
    "rankable": true
   },
@@ -27601,7 +27601,7 @@
    "expected_price": 261492,
    "deal_pct": -13.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 140,
+   "rank_cheapest_clean": 121,
    "rankable": true
   },
   {
@@ -27665,7 +27665,7 @@
    "expected_price": 261407,
    "deal_pct": -13.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 141,
+   "rank_cheapest_clean": 122,
    "rankable": true
   },
   {
@@ -27728,7 +27728,7 @@
    "expected_price": 261492,
    "deal_pct": -13.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 142,
+   "rank_cheapest_clean": 123,
    "rankable": true
   },
   {
@@ -27797,7 +27797,7 @@
    "expected_price": 261421,
    "deal_pct": -14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 143,
+   "rank_cheapest_clean": 124,
    "rankable": true
   },
   {
@@ -27866,7 +27866,7 @@
    "expected_price": 261333,
    "deal_pct": -14.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 144,
+   "rank_cheapest_clean": 125,
    "rankable": true
   },
   {
@@ -27929,7 +27929,7 @@
    "expected_price": 261492,
    "deal_pct": -14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 145,
+   "rank_cheapest_clean": 126,
    "rankable": true
   },
   {
@@ -28014,7 +28014,7 @@
    "expected_price": 329831,
    "deal_pct": 9.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 37,
+   "rank_cheapest_clean": 28,
    "rankable": true
   },
   {
@@ -28339,7 +28339,7 @@
    "expected_price": 370609,
    "deal_pct": 19.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 38,
+   "rank_cheapest_clean": 29,
    "rankable": true
   },
   {
@@ -28402,7 +28402,7 @@
    "expected_price": 383955,
    "deal_pct": 22.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 39,
+   "rank_cheapest_clean": 30,
    "rankable": true
   },
   {
@@ -28465,7 +28465,7 @@
    "expected_price": 261492,
    "deal_pct": -14.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 146,
+   "rank_cheapest_clean": 127,
    "rankable": true
   },
   {
@@ -28534,7 +28534,7 @@
    "expected_price": 261392,
    "deal_pct": -14.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 147,
+   "rank_cheapest_clean": 128,
    "rankable": true
   },
   {
@@ -28661,7 +28661,7 @@
    "expected_price": 261442,
    "deal_pct": -14.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 148,
+   "rank_cheapest_clean": 129,
    "rankable": true
   },
   {
@@ -28730,7 +28730,7 @@
    "deal_pct": -14.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 149,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -28798,7 +28798,7 @@
    "deal_pct": -14.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 150,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -28886,7 +28886,7 @@
    "deal_pct": -14.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 151,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -29220,7 +29220,7 @@
    "expected_price": 261468,
    "deal_pct": -15.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 152,
+   "rank_cheapest_clean": 130,
    "rankable": true
   },
   {
@@ -29283,7 +29283,7 @@
    "expected_price": 261492,
    "deal_pct": -15.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 153,
+   "rank_cheapest_clean": 131,
    "rankable": true
   },
   {
@@ -29367,7 +29367,7 @@
    "expected_price": 261386,
    "deal_pct": -15.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 154,
+   "rank_cheapest_clean": 132,
    "target": "artura",
    "rankable": true
   },
@@ -29441,7 +29441,7 @@
    "expected_price": 261437,
    "deal_pct": -16.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 155,
+   "rank_cheapest_clean": 133,
    "target": "artura",
    "rankable": true
   },
@@ -29505,7 +29505,7 @@
    "expected_price": 261492,
    "deal_pct": -16.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 156,
+   "rank_cheapest_clean": 134,
    "rankable": true
   },
   {
@@ -29568,7 +29568,7 @@
    "expected_price": 376394,
    "deal_pct": 19.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 40,
+   "rank_cheapest_clean": 31,
    "rankable": true
   },
   {
@@ -29631,7 +29631,7 @@
    "expected_price": 351746,
    "deal_pct": 13.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 41,
+   "rank_cheapest_clean": 32,
    "rankable": true
   },
   {
@@ -29720,7 +29720,7 @@
    "deal_pct": -16.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 157,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotrader_ca",
@@ -29851,7 +29851,7 @@
    "deal_pct": -29.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 158,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -29925,7 +29925,7 @@
    "expected_price": 236521,
    "deal_pct": -29.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 159,
+   "rank_cheapest_clean": 135,
    "rankable": true
   },
   {
@@ -30057,7 +30057,7 @@
    "deal_pct": -17.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 160,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotrader",
@@ -30129,7 +30129,7 @@
    "expected_price": 261297,
    "deal_pct": -17.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 161,
+   "rank_cheapest_clean": 136,
    "target": "artura",
    "rankable": true
   },
@@ -30203,7 +30203,7 @@
    "expected_price": 261376,
    "deal_pct": -17.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 162,
+   "rank_cheapest_clean": 137,
    "target": "artura",
    "rankable": true
   },
@@ -30289,7 +30289,7 @@
    "expected_price": 365092,
    "deal_pct": 15.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 42,
+   "rank_cheapest_clean": 33,
    "rankable": true
   },
   {
@@ -30435,7 +30435,7 @@
    "expected_price": 261428,
    "deal_pct": -18.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 163,
+   "rank_cheapest_clean": 138,
    "target": "artura",
    "rankable": true
   },
@@ -30570,7 +30570,7 @@
    "expected_price": 351746,
    "deal_pct": 11.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 43,
+   "rank_cheapest_clean": 34,
    "rankable": true
   },
   {
@@ -30633,7 +30633,7 @@
    "expected_price": 351746,
    "deal_pct": 11.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 44,
+   "rank_cheapest_clean": 35,
    "rankable": true
   },
   {
@@ -30696,7 +30696,7 @@
    "expected_price": 281077,
    "deal_pct": -10.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 45,
+   "rank_cheapest_clean": 36,
    "rankable": true
   },
   {
@@ -30759,7 +30759,7 @@
    "expected_price": 324136,
    "deal_pct": 3.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 46,
+   "rank_cheapest_clean": 37,
    "rankable": true
   },
   {
@@ -30901,7 +30901,7 @@
    "deal_pct": -19.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 164,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -30975,7 +30975,7 @@
    "expected_price": 261337,
    "deal_pct": -19.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 165,
+   "rank_cheapest_clean": 139,
    "rankable": true
   },
   {
@@ -31044,7 +31044,7 @@
    "deal_pct": -19.4,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 166,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -31118,7 +31118,7 @@
    "expected_price": 261440,
    "deal_pct": -19.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 167,
+   "rank_cheapest_clean": 140,
    "rankable": true
   },
   {
@@ -31182,7 +31182,7 @@
    "expected_price": 261432,
    "deal_pct": -19.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 168,
+   "rank_cheapest_clean": 141,
    "rankable": true
   },
   {
@@ -31245,7 +31245,7 @@
    "expected_price": 261492,
    "deal_pct": -19.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 169,
+   "rank_cheapest_clean": 142,
    "rankable": true
   },
   {
@@ -31372,7 +31372,7 @@
    "expected_price": 258369,
    "deal_pct": -21.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 170,
+   "rank_cheapest_clean": 143,
    "rankable": true
   },
   {
@@ -31508,7 +31508,7 @@
    "expected_price": 351746,
    "deal_pct": 10.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 47,
+   "rank_cheapest_clean": 38,
    "rankable": true
   },
   {
@@ -31722,7 +31722,7 @@
    "deal_pct": -20.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 171,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -31811,7 +31811,7 @@
    "expected_price": 232096,
    "deal_pct": -36.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 172,
+   "rank_cheapest_clean": 144,
    "rankable": true
   },
   {
@@ -31901,7 +31901,7 @@
    "expected_price": 261310,
    "deal_pct": -21.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 173,
+   "rank_cheapest_clean": 145,
    "rankable": true
   },
   {
@@ -32025,7 +32025,7 @@
    "deal_pct": 6.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 48,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -32099,7 +32099,7 @@
    "expected_price": 261452,
    "deal_pct": -22.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 174,
+   "rank_cheapest_clean": 146,
    "rankable": true
   },
   {
@@ -32256,7 +32256,7 @@
    "expected_price": 329770,
    "deal_pct": 3.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 49,
+   "rank_cheapest_clean": 39,
    "rankable": true
   },
   {
@@ -32402,7 +32402,7 @@
    "expected_price": 261357,
    "deal_pct": -22.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 175,
+   "rank_cheapest_clean": 147,
    "target": "artura",
    "rankable": true
   },
@@ -32478,7 +32478,7 @@
    "expected_price": 388376,
    "deal_pct": 17.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 50,
+   "rank_cheapest_clean": 40,
    "rankable": true
   },
   {
@@ -32547,7 +32547,7 @@
    "expected_price": 261355,
    "deal_pct": -23.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 176,
+   "rank_cheapest_clean": 148,
    "rankable": true
   },
   {
@@ -32683,7 +32683,7 @@
    "expected_price": 261289,
    "deal_pct": -23.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 177,
+   "rank_cheapest_clean": 149,
    "target": "artura",
    "rankable": true
   },
@@ -32748,7 +32748,7 @@
    "expected_price": 261399,
    "deal_pct": -24.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 178,
+   "rank_cheapest_clean": 150,
    "rankable": true
   },
   {
@@ -32811,7 +32811,7 @@
    "expected_price": 388718,
    "deal_pct": 16.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 51,
+   "rank_cheapest_clean": 41,
    "rankable": true
   },
   {
@@ -32901,7 +32901,7 @@
    "expected_price": 236128,
    "deal_pct": -38.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 179,
+   "rank_cheapest_clean": 151,
    "rankable": true
   },
   {
@@ -32964,7 +32964,7 @@
    "expected_price": 261492,
    "deal_pct": -25.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 180,
+   "rank_cheapest_clean": 152,
    "rankable": true
   },
   {
@@ -33048,7 +33048,7 @@
    "expected_price": 261439,
    "deal_pct": -25.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 181,
+   "rank_cheapest_clean": 153,
    "target": "artura",
    "rankable": true
   },
@@ -33134,7 +33134,7 @@
    "expected_price": 232396,
    "deal_pct": -40.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 182,
+   "rank_cheapest_clean": 154,
    "rankable": true
   },
   {
@@ -33198,7 +33198,7 @@
    "expected_price": 261397,
    "deal_pct": -25.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 183,
+   "rank_cheapest_clean": 155,
    "rankable": true
   },
   {
@@ -33267,7 +33267,7 @@
    "expected_price": 261402,
    "deal_pct": -25.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 184,
+   "rank_cheapest_clean": 156,
    "rankable": true
   },
   {
@@ -33340,7 +33340,7 @@
    "expected_price": 261424,
    "deal_pct": -25.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 185,
+   "rank_cheapest_clean": 157,
    "target": "artura",
    "rankable": true
   },
@@ -33404,7 +33404,7 @@
    "expected_price": 261492,
    "deal_pct": -25.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 186,
+   "rank_cheapest_clean": 158,
    "rankable": true
   },
   {
@@ -33484,7 +33484,7 @@
    "expected_price": 261484,
    "deal_pct": -25.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 187,
+   "rank_cheapest_clean": 159,
    "rankable": true
   },
   {
@@ -33584,7 +33584,7 @@
    "expected_price": 261484,
    "deal_pct": -25.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 188,
+   "rank_cheapest_clean": 160,
    "rankable": true
   },
   {
@@ -33771,7 +33771,7 @@
    "expected_price": 332934,
    "deal_pct": 0.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 52,
+   "rank_cheapest_clean": 42,
    "rankable": true
   },
   {
@@ -33840,7 +33840,7 @@
    "deal_pct": -40.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 189,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -33914,7 +33914,7 @@
    "expected_price": 234817,
    "deal_pct": -40.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 190,
+   "rank_cheapest_clean": 161,
    "rankable": true
   },
   {
@@ -34238,7 +34238,7 @@
    "expected_price": 261281,
    "deal_pct": -26.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 191,
+   "rank_cheapest_clean": 162,
    "target": "artura",
    "rankable": true
   },
@@ -34301,7 +34301,7 @@
    "expected_price": 236920,
    "deal_pct": -39.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 192,
+   "rank_cheapest_clean": 163,
    "target": "artura",
    "rankable": true
   },
@@ -34511,7 +34511,7 @@
    "expected_price": 261202,
    "deal_pct": -26.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 193,
+   "rank_cheapest_clean": 164,
    "target": "artura",
    "rankable": true
   },
@@ -34577,7 +34577,7 @@
    "expected_price": 373186,
    "deal_pct": 11.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 53,
+   "rank_cheapest_clean": 43,
    "rankable": true
   },
   {
@@ -34652,7 +34652,7 @@
    "expected_price": 354989,
    "deal_pct": 6.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 54,
+   "rank_cheapest_clean": 44,
    "rankable": true
   },
   {
@@ -34715,7 +34715,7 @@
    "expected_price": 364070,
    "deal_pct": 8.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 55,
+   "rank_cheapest_clean": 45,
    "rankable": true
   },
   {
@@ -34788,7 +34788,7 @@
    "expected_price": 261492,
    "deal_pct": -27.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 194,
+   "rank_cheapest_clean": 165,
    "rankable": true
   },
   {
@@ -34851,7 +34851,7 @@
    "expected_price": 261492,
    "deal_pct": -27.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 195,
+   "rank_cheapest_clean": 166,
    "rankable": true
   },
   {
@@ -35044,7 +35044,7 @@
    "expected_price": 261492,
    "deal_pct": -28.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 196,
+   "rank_cheapest_clean": 167,
    "rankable": true
   },
   {
@@ -35113,7 +35113,7 @@
    "expected_price": 236682,
    "deal_pct": -42.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 197,
+   "rank_cheapest_clean": 168,
    "rankable": true
   },
   {
@@ -35203,7 +35203,7 @@
    "expected_price": 261352,
    "deal_pct": -29.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 198,
+   "rank_cheapest_clean": 169,
    "rankable": true
   },
   {
@@ -35272,7 +35272,7 @@
    "deal_pct": -29.3,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 199,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -35340,7 +35340,7 @@
    "deal_pct": -29.3,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 200,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotrader",
@@ -35412,7 +35412,7 @@
    "expected_price": 236532,
    "deal_pct": -42.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 201,
+   "rank_cheapest_clean": 170,
    "target": "artura",
    "rankable": true
   },
@@ -35482,7 +35482,7 @@
    "expected_price": 261234,
    "deal_pct": -29.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 202,
+   "rank_cheapest_clean": 171,
    "rankable": true
   },
   {
@@ -35571,7 +35571,7 @@
    "deal_pct": -29.6,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 203,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -35634,7 +35634,7 @@
    "expected_price": 261354,
    "deal_pct": -29.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 204,
+   "rank_cheapest_clean": 172,
    "rankable": true
   },
   {
@@ -35770,7 +35770,7 @@
    "expected_price": 344772,
    "deal_pct": 1.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 56,
+   "rank_cheapest_clean": 46,
    "rankable": true
   },
   {
@@ -35898,7 +35898,7 @@
    "expected_price": 386864,
    "deal_pct": 11.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 57,
+   "rank_cheapest_clean": 47,
    "rankable": true
   },
   {
@@ -35971,7 +35971,7 @@
    "expected_price": 261440,
    "deal_pct": -30.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 205,
+   "rank_cheapest_clean": 173,
    "target": "artura",
    "rankable": true
   },
@@ -36045,7 +36045,7 @@
    "expected_price": 261416,
    "deal_pct": -31.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 206,
+   "rank_cheapest_clean": 174,
    "target": "artura",
    "rankable": true
   },
@@ -36110,7 +36110,7 @@
    "expected_price": 355799,
    "deal_pct": 3.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 58,
+   "rank_cheapest_clean": 48,
    "rankable": true
   },
   {
@@ -36173,7 +36173,7 @@
    "expected_price": 364070,
    "deal_pct": 5.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 59,
+   "rank_cheapest_clean": 49,
    "rankable": true
   },
   {
@@ -36315,7 +36315,7 @@
    "deal_pct": -32.6,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 207,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "dealer_sites",
@@ -36378,7 +36378,7 @@
    "expected_price": 335583,
    "deal_pct": -3.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 60,
+   "rank_cheapest_clean": 50,
    "rankable": true
   },
   {
@@ -36441,7 +36441,7 @@
    "expected_price": 364070,
    "deal_pct": 4.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 61,
+   "rank_cheapest_clean": 51,
    "rankable": true
   },
   {
@@ -36504,7 +36504,7 @@
    "expected_price": 376394,
    "deal_pct": 7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 62,
+   "rank_cheapest_clean": 52,
    "rankable": true
   },
   {
@@ -36631,7 +36631,7 @@
    "expected_price": 367498,
    "deal_pct": 4.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 63,
+   "rank_cheapest_clean": 53,
    "rankable": true
   },
   {
@@ -36757,7 +36757,7 @@
    "deal_pct": -8.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 64,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -36883,7 +36883,7 @@
    "expected_price": 339552,
    "deal_pct": -5.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 65,
+   "rank_cheapest_clean": 54,
    "rankable": true
   },
   {
@@ -36946,7 +36946,7 @@
    "expected_price": 364070,
    "deal_pct": 1.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 66,
+   "rank_cheapest_clean": 55,
    "rankable": true
   },
   {
@@ -37073,7 +37073,7 @@
    "deal_pct": -0.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 67,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -37213,7 +37213,7 @@
    "expected_price": 261492,
    "deal_pct": -37.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 208,
+   "rank_cheapest_clean": 175,
    "rankable": true
   },
   {
@@ -37339,7 +37339,7 @@
    "expected_price": 350661,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 68,
+   "rank_cheapest_clean": 56,
    "rankable": true
   },
   {
@@ -37402,7 +37402,7 @@
    "expected_price": 376394,
    "deal_pct": 4.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 69,
+   "rank_cheapest_clean": 57,
    "rankable": true
   },
   {
@@ -37488,7 +37488,7 @@
    "expected_price": 385917,
    "deal_pct": 6.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 70,
+   "rank_cheapest_clean": 58,
    "rankable": true
   },
   {
@@ -37553,7 +37553,7 @@
    "expected_price": 377731,
    "deal_pct": 4.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 71,
+   "rank_cheapest_clean": 59,
    "rankable": true
   },
   {
@@ -37681,7 +37681,7 @@
    "expected_price": 369129,
    "deal_pct": 1.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 72,
+   "rank_cheapest_clean": 60,
    "rankable": true
   },
   {
@@ -37942,7 +37942,7 @@
    "expected_price": 352438,
    "deal_pct": -3.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 73,
+   "rank_cheapest_clean": 61,
    "rankable": true
   },
   {
@@ -38005,7 +38005,7 @@
    "expected_price": 364070,
    "deal_pct": -0.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 74,
+   "rank_cheapest_clean": 62,
    "rankable": true
   },
   {
@@ -38217,7 +38217,7 @@
    "expected_price": 366015,
    "deal_pct": -1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 75,
+   "rank_cheapest_clean": 63,
    "rankable": true
   },
   {
@@ -38499,7 +38499,7 @@
    "expected_price": 367048,
    "deal_pct": -0.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 76,
+   "rank_cheapest_clean": 64,
    "rankable": true
   },
   {
@@ -38563,7 +38563,7 @@
    "expected_price": 369781,
    "deal_pct": -0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 77,
+   "rank_cheapest_clean": 65,
    "rankable": true
   },
   {
@@ -38626,7 +38626,7 @@
    "expected_price": 376394,
    "deal_pct": 1.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 78,
+   "rank_cheapest_clean": 66,
    "rankable": true
   },
   {
@@ -38689,7 +38689,7 @@
    "expected_price": 376394,
    "deal_pct": 1.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 79,
+   "rank_cheapest_clean": 67,
    "rankable": true
   },
   {
@@ -38837,7 +38837,7 @@
    "deal_pct": -15.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 80,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "carsandbids",
@@ -39210,7 +39210,7 @@
    "expected_price": 376394,
    "deal_pct": 0.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 81,
+   "rank_cheapest_clean": 68,
    "rankable": true
   },
   {
@@ -39274,7 +39274,7 @@
    "expected_price": 376394,
    "deal_pct": 0.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 82,
+   "rank_cheapest_clean": 69,
    "rankable": true
   },
   {
@@ -39464,7 +39464,7 @@
    "expected_price": 362818,
    "deal_pct": -4.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 83,
+   "rank_cheapest_clean": 70,
    "rankable": true
   },
   {
@@ -39529,7 +39529,7 @@
    "expected_price": 351970,
    "deal_pct": -9.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 84,
+   "rank_cheapest_clean": 71,
    "rankable": true
   },
   {
@@ -39593,7 +39593,7 @@
    "deal_pct": -12.6,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 85,
-   "rankable": true
+   "rankable": false
   },
   {
    "source": "autotempest",
@@ -39739,7 +39739,7 @@
    "expected_price": 386873,
    "deal_pct": -0.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 86,
+   "rank_cheapest_clean": 72,
    "rankable": true
   },
   {
@@ -39877,7 +39877,7 @@
    "expected_price": 354528,
    "deal_pct": -10.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 87,
+   "rank_cheapest_clean": 73,
    "rankable": true
   },
   {
@@ -40026,7 +40026,7 @@
    "expected_price": 376568,
    "deal_pct": -4.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 88,
+   "rank_cheapest_clean": 74,
    "rankable": true
   },
   {
@@ -40174,7 +40174,7 @@
    "expected_price": 356298,
    "deal_pct": -11.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 89,
+   "rank_cheapest_clean": 75,
    "rankable": true
   },
   {
@@ -40642,7 +40642,7 @@
    "deal_pct": -8.1,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 90
+   "rank_cheapest_clean": 76
   },
   {
    "source": "dealer_sites",
@@ -40770,7 +40770,7 @@
    "deal_pct": -8.9,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 91
+   "rank_cheapest_clean": 77
   },
   {
    "source": "autotempest",
@@ -40894,7 +40894,7 @@
    "expected_price": 383379,
    "deal_pct": -7.1,
    "price_per_mile_note": null,
-   "rankable": true,
+   "rankable": false,
    "rank_cheapest_clean": 92
   },
   {
@@ -41220,7 +41220,7 @@
    "deal_pct": -10.6,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 93
+   "rank_cheapest_clean": 78
   },
   {
    "source": "jamesedition",
@@ -41283,7 +41283,7 @@
    "deal_pct": -10.6,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 94
+   "rank_cheapest_clean": 79
   },
   {
    "source": "carfax",
@@ -41411,7 +41411,7 @@
    "deal_pct": -20.3,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 95
+   "rank_cheapest_clean": 80
   },
   {
    "source": "autotempest",
@@ -41800,7 +41800,7 @@
    "deal_pct": -32.5,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 96
+   "rank_cheapest_clean": 81
   },
   {
    "source": "dealer_sites",
@@ -41864,7 +41864,7 @@
    "deal_pct": -10.9,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 97
+   "rank_cheapest_clean": 82
   },
   {
    "source": "autotempest",
@@ -41990,7 +41990,7 @@
    "deal_pct": -16.7,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 98
+   "rank_cheapest_clean": 83
   },
   {
    "source": "dupont",
@@ -42055,7 +42055,7 @@
    "deal_pct": -34.1,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 99
+   "rank_cheapest_clean": 84
   },
   {
    "source": "carsandbids",
@@ -42641,7 +42641,7 @@
    "deal_pct": -44.1,
    "price_per_mile_note": null,
    "rankable": true,
-   "rank_cheapest_clean": 100
+   "rank_cheapest_clean": 85
   },
   {
    "source": "autotempest",

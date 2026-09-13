@@ -266,7 +266,7 @@ def _rankable(rec: dict) -> bool:
     if not rec.get("candidate") or rec.get("listing_type") == "auction":
         return False
     srcs = set(rec.get("sources") or [rec.get("source")])
-    if srcs and srcs <= UNRELIABLE_ALONE and not rec.get("vin"):
+    if srcs and srcs <= UNRELIABLE_ALONE:
         return False
     return True
 
