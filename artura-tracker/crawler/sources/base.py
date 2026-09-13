@@ -251,7 +251,7 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
         seen.add(key)
         lines = [t for t in text.split("\n") if t.strip()]
         title = next((t for t in lines if re.search(r"20\d\d.*artura|artura.*20\d\d", t, re.I)), next((t for t in lines if re.search(r"artura", t, re.I)), "McLaren Artura"))
-        price_line = next((t for t in lines if re.search(r"(?:CA?\$|US\$|\$)\s?\d{2,3},?\d{3}", t)), "")
+        price_line = next((t for t in lines if re.search(r"(?:CA?\$|US\$|\$)\s?\d{2,3},?\d{3}", t) and not re.search(r"/\s?mo|month|down|deposit|save|off\b|msrp|was\b", t, re.I)), "")
         mile_line = next((t for t in lines if re.search(r"\b(mi|miles|km)\b", t, re.I) and re.search(r"\d", t)), "")
         loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t)), None)
         img = node.find("img") if hasattr(node, "find") else None
