@@ -246,6 +246,8 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
             continue
         if len(text) > 4000:      # climbed to the whole page; not a card
             continue
+        if hasattr(node, "find_all") and sum(1 for x in node.find_all("a", href=True) if rx.search(x["href"]) and x["href"].split("#")[0].split("?")[0] != key) > 0:
+            continue                # container holds several cars; would mix prices
         seen.add(key)
         lines = [t for t in text.split("\n") if t.strip()]
         title = next((t for t in lines if re.search(r"20\d\d.*artura|artura.*20\d\d", t, re.I)), next((t for t in lines if re.search(r"artura", t, re.I)), "McLaren Artura"))

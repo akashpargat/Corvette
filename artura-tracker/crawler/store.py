@@ -63,10 +63,21 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         if old_key and old_key != l.key and old_key in by_key and not by_key[old_key].get("vin"):
             del by_key[old_key]
 
-    # 1. group fresh listings by key (a VIN can appear on 5 sites)
+    # 1. group fresh listings by key (a VIN can appear on 5 sites). A VIN-less card
+    #    (AutoTempest, Craigslist) joins a VIN group when it links to the same page.
+    norm = lambda u: (u or "").split("?")[0].split("#")[0].rstrip("/").lower()
+    url_to_key = {}
+    for l in fresh:
+        if l.vin:
+            url_to_key.setdefault(norm(l.url), l.key)
+    for r in prev.get("listings", []):
+        if r.get("vin"):
+            for o in r.get("offers", []) or [{"url": r.get("url")}]:
+                url_to_key.setdefault(norm(o.get("url")), r["key"])
     groups: dict[str, list[Listing]] = {}
     for l in fresh:
-        groups.setdefault(l.key, []).append(l)
+        k = l.key if l.vin else url_to_key.get(norm(l.url), l.key)
+        groups.setdefault(k, []).append(l)
 
     changes = {"new": [], "price_drop": [], "price_up": [], "removed": [], "returned": []}
     seen_today = set()
@@ -79,7 +90,12 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec = best.to_dict()
         rec["offers"] = offers
         priced = [o["price"] for o in offers if o["price"]]
+        if len(priced) >= 2:
+            hi = max(priced)
+            priced = [p for p in priced if p >= hi * 0.6] or priced   # a card that scraped a neighbour's price
         rec["price"] = min(priced) if priced else None
+        rec.setdefault("country", "US")
+        rec.setdefault("currency", "USD")
         rec["price_high"] = max(priced) if priced else None
         rec["sources"] = sorted({o["source"] for o in offers})
         # keep the best-known static facts from history if today's scrape is thinner
@@ -142,6 +158,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             rec["removed_on"] = d
             changes["removed"].append(key)
         rec["price_history"] = history.get(key, [])[-60:]
+        rec.setdefault("country", "US")
 
     listings = list(by_key.values())
     from .scoring import score_all

@@ -30,7 +30,7 @@ def _sites(client: Client, ctx: Ctx):
     for (a, b, country) in ((us, ca, "US"), (ca, eu, "CA")):
         if a < 0:
             continue
-        for sub in re.findall(r'href="https?://([a-z0-9]+)\.craigslist\.org', res.text[a:b]):
+        for sub in re.findall(r'href="(?:https?:)?//([a-z0-9]+)\.craigslist\.org', res.text[a:b]):
             out.append((sub, country))
     return list(dict.fromkeys(out)) or [(s, "US") for s in FALLBACK]
 
@@ -54,13 +54,15 @@ def _one(sub_country, log):
 def fetch(client, ctx: Ctx):
     sites = _sites(client, ctx)
     ctx.note(f"{LABEL}: {len(sites)} sites")
-    out, blocked = [], 0
+    out, blocked, statuses = [], 0, {}
     with ThreadPoolExecutor(max_workers=8) as ex:
         for got, status in ex.map(lambda s: _one(s, ctx.log), sites):
+            statuses[status] = statuses.get(status, 0) + 1
             if status in (403, 429, 0):
                 blocked += 1
             out += got
     ctx.pages += len(sites)
+    ctx.note(f"{LABEL}: http statuses {statuses}")
     if blocked > len(sites) * 0.8:
         ctx.note(f"{LABEL}: {blocked}/{len(sites)} sites returned 403/429 (http 403)")
     return dedupe(out)

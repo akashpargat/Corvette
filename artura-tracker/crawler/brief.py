@@ -23,7 +23,7 @@ SHORT = {"mclaren_preowned": "McLaren CPO", "dealer_sites": "dealer site", "cars
          "usedcars_com": "UsedCars.com", "carsforsale": "Carsforsale", "carsdirect": "CarsDirect", "classiccars_com": "ClassicCars",
          "jamesedition": "JamesEdition", "exoticcartrader": "Exotic Car Trader", "pcarmarket": "PCARMARKET", "collectingcars": "Collecting Cars",
          "mclarenlife": "McLaren Life", "autotempest": "AutoTempest", "autotrader_ca": "AutoTrader.ca", "kijiji": "Kijiji", "cargurus_ca": "CarGurus.ca",
-         "clutch_canada": "CA exotic dealer"}
+         "pcarmarket_x": "x"}
 
 
 def _money(n):

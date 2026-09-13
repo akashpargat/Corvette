@@ -35,7 +35,6 @@ SOURCE_MODULES = [
     "autotrader_ca",
     "kijiji",
     "cargurus_ca",
-    "clutch_canada",
     "fb_marketplace",
 ]
 

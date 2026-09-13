@@ -56,3 +56,15 @@ def test_brief_builds_from_merged_data(tmp_path):
     assert "Artura Hunt" in subject and "TOP 10 CHEAPEST" in body
     assert "$170,000" in body and body.index("$170,000") < body.index("$180,000")
     assert "NEW" in body and "1 ok" in body
+
+
+def test_vinless_card_joins_vin_group_by_url_and_outlier_price_ignored(tmp_path):
+    d = str(tmp_path)
+    vin = _l("SBM16AEA5PW000777", 315000, source="autotrader")
+    vin.url = "https://www.autotrader.com/cars-for-sale/vehicle/1?x=1"
+    card = Listing(source="autotempest", source_name="AutoTempest", url="https://www.autotrader.com/cars-for-sale/vehicle/1?aff=atempest",
+                   title="2026 McLaren Artura", price=161498).finalize()
+    p = merge(d, [vin, card], _report(("autotrader", "autotempest")))
+    assert len([r for r in p["listings"] if r["status"] == "active"]) == 1
+    car = p["listings"][0]
+    assert car["key"] == "SBM16AEA5PW000777" and car["price"] == 315000 and len(car["offers"]) == 2

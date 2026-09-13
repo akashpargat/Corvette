@@ -121,4 +121,10 @@ DEALER_SITES_CA = [
     ("McLaren Toronto (retailer site)", "https://toronto.mclaren.com"),
     ("McLaren Vancouver (retailer site)", "https://vancouver.mclaren.com"),
     ("McLaren Montreal (retailer site)", "https://montreal.mclaren.com"),
+    ("Pfaff Reserve (Toronto)", "https://www.pfaffreserve.com"),
+    ("Pfaff Autoworks (Toronto)", "https://www.pfaffautoworks.com"),
+    ("Grand Touring Automobiles (Toronto)", "https://www.grandtouringautos.com"),
+    ("Weissach (Vancouver)", "https://www.weissach.com"),
+    ("Ferrari Quebec (Montreal)", "https://www.ferrariquebec.com"),
+    ("Lamborghini Calgary", "https://www.lamborghinicalgary.com"),
 ]

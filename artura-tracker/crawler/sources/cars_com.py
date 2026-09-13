@@ -105,6 +105,8 @@ def _parse_rendered(html: str, base: str) -> list[Listing]:
             text = node.get_text("\n", strip=True)
         if "$" not in text or not re.search(r"artura", text, re.I):
             continue
+        if hasattr(node, "select") and len({x.get("href", "").split("?")[0] for x in node.select("a[href*='/vehicledetail/']")}) > 1:
+            continue
         seen.add(href)
         lines = [t for t in text.split("\n") if t.strip()]
         title = next((t for t in lines if re.search(r"20\d\d.*artura", t, re.I)), "McLaren Artura")
