@@ -9,23 +9,23 @@
  },
  {
   "d": "2026-09-13",
-  "cheapest": 145927,
-  "p10": 178991,
-  "median": 187935.0,
-  "active": 668,
-  "clean": 383,
+  "cheapest": 149900,
+  "p10": 179998,
+  "median": 187990.0,
+  "active": 877,
+  "clean": 390,
   "targets": {
    "artura": {
-    "cheapest": 157380,
-    "median": 219000,
-    "active": 226,
-    "clean": 182
+    "cheapest": 149900,
+    "median": 224800,
+    "active": 304,
+    "clean": 189
    },
    "huracan": {
-    "cheapest": 145927,
-    "median": 305563,
-    "active": 389,
-    "clean": 165
+    "cheapest": 202609,
+    "median": 344989,
+    "active": 573,
+    "clean": 201
    }
   }
  }
