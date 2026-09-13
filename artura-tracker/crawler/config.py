@@ -212,7 +212,7 @@ def load_targets(path: str = TARGETS_FILE) -> dict:
             "make_slug": _slug(make), "model_slug": _slug(model_ascii),
             "alias_re": t.get("alias_re") or re.escape(model_ascii.lower()).replace("\\ ", r"\s*"),
             "vin_prefixes": tuple(t.get("vin_prefixes") or ()), "years": tuple(t.get("years") or (YEAR_MIN, YEAR_MAX)),
-            "price_floor": t.get("price_floor", PRICE_FLOOR),
+            "price_floor": t.get("price_floor", PRICE_FLOOR), "price_ceiling": t.get("price_ceiling", PRICE_CEILING),
             "trims": [(n, rx) for n, rx in t.get("trims", [])], "default_trim": t.get("default_trim", "Coupe"),
             "junk_re": t.get("junk_re") or "", "cargurus_entity": t.get("cargurus_entity") or "",
             "carfax_path": t.get("carfax_path") or f"Used-{make}-{model_ascii.replace(' ', '-')}",

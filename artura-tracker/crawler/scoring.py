@@ -73,7 +73,7 @@ def score_all(rows: list[dict]) -> dict:
         r["price_per_mile_note"] = None
     # rank among clean candidates by price
     for tk in targets:
-        pool = sorted([r for r in rows if r.get("target", "artura") == tk and r.get("candidate") and r.get("title_status") != "branded" and r.get("status") == "active"],
+        pool = sorted([r for r in rows if r.get("target", "artura") == tk and r.get("rankable", r.get("candidate")) and r.get("title_status") != "branded" and r.get("status") == "active"],
                       key=lambda r: r["price"])
         for i, r in enumerate(pool, 1):
             r["rank_cheapest_clean"] = i

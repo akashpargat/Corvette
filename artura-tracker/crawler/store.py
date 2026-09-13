@@ -111,7 +111,8 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["price"] = min(priced) if priced else None
         rec.setdefault("country", "US")
         rec.setdefault("currency", "USD")
-        rec.setdefault("target", "artura")
+        if not rec.get("target"):
+            rec["target"] = "artura"
         rec["price_high"] = max(priced) if priced else None
         rec["sources"] = sorted({o["source"] for o in offers})
         # keep the best-known static facts from history if today's scrape is thinner
@@ -142,6 +143,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["last_seen_at"] = ts
         rec["status"] = "active"
         rec["candidate"] = _candidate(rec)
+        rec["rankable"] = rec["candidate"] and rec.get("listing_type") != "auction"
         # price history (one point per day, lowest price of the day)
         hist = history.setdefault(key, [])
         if rec["price"]:
@@ -175,14 +177,17 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             changes["removed"].append(key)
         rec["price_history"] = history.get(key, [])[-60:]
         rec.setdefault("country", "US")
-        rec.setdefault("target", "artura")
+        if not rec.get("target"):
+            rec["target"] = "artura"
+        rec["candidate"] = _candidate(rec)
+        rec["rankable"] = rec["candidate"] and rec.get("listing_type") != "auction"
 
     listings = list(by_key.values())
     from .scoring import score_all
     model = score_all(listings)
 
     active = [r for r in listings if r["status"] == "active"]
-    clean = [r for r in active if r.get("candidate") and r.get("title_status") != "branded"]
+    clean = [r for r in active if r.get("rankable") and r.get("title_status") != "branded"]
     cheapest = min(clean, key=lambda r: r["price"]) if clean else None
     per_target = {}
     for tk in sorted({r.get("target", "artura") for r in listings}):
@@ -258,10 +263,10 @@ def _candidate(rec: dict) -> bool:
     from . import config
     t = config.TARGETS.get(rec.get("target") or "artura") or config.TARGETS["artura"]
     p = rec.get("price")
-    if not p or not (t.get("price_floor", config.PRICE_FLOOR) <= p <= config.PRICE_CEILING):
+    if not p or not (t.get("price_floor", config.PRICE_FLOOR) <= p <= t.get("price_ceiling", config.PRICE_CEILING)):
         return False
     y = rec.get("year")
-    if y and not (t["years"][0] <= y <= t["years"][1]):
+    if not y or not (t["years"][0] <= y <= t["years"][1]):
         return False
     if rec.get("extra", {}).get("reference_only"):
         return False

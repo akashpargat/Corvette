@@ -141,16 +141,23 @@ class Listing:
         t = config.TARGETS.get(self.target) or current_target()
         if is_junk(self.title, t) or self.trim in ("GT4", "GT3", "Super Trofeo"):
             return False
-        if self.price is None or not (t.get("price_floor", config.PRICE_FLOOR) <= self.price <= config.PRICE_CEILING):
+        if self.price is None or not (t.get("price_floor", config.PRICE_FLOOR) <= self.price <= t.get("price_ceiling", config.PRICE_CEILING)):
             return False
-        if self.year and not (t["years"][0] <= self.year <= t["years"][1]):
+        if not self.year:
+            return False        # an unknown model year cannot be proven to be in range
+        if not (t["years"][0] <= self.year <= t["years"][1]):
             return False
         return True
+
+    def is_rankable(self) -> bool:
+        """Counts toward 'cheapest': a candidate with an asking price, not a live auction bid."""
+        return self.is_candidate() and self.listing_type != "auction"
 
     def to_dict(self) -> dict:
         d = asdict(self)
         d["key"] = self.key
         d["candidate"] = self.is_candidate()
+        d["rankable"] = self.is_rankable()
         return d
 
 

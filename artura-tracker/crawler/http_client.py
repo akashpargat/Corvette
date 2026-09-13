@@ -121,6 +121,9 @@ class Client:
         self.browser_hits += 1
         t0 = time.time()
         b = browser_get(url, referer=(headers or {}).get("Referer"))
+        if (b.error or b.status != 200 or len(b.html) < 500) and self.browser_hits <= 2:
+            time.sleep(8)
+            b = browser_get(url, referer=(headers or {}).get("Referer"), wait_ms=6000, challenge_wait_s=30)
         self.log.info("  browser fallback %s -> %s (%d bytes%s)", url[:90], b.status, len(b.html), f", {b.error}" if b.error else "")
         if b.error or b.status != 200 or len(b.html) < 500:
             res.headers["x-browser-fallback"] = b.error or f"status {b.status}"

@@ -263,7 +263,8 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
         title = next((t for t in lines if re.search(r"20\d\d.*%s|%s.*20\d\d" % (alias, alias), t, re.I)), next((t for t in lines if re.search(alias, t, re.I)), current_target()["label"]))
         price_line = next((t for t in lines if re.search(r"(?:CA?\$|US\$|\$)\s?\d{2,3},?\d{3}", t) and not re.search(r"/\s?mo|month|down|deposit|save|off\b|msrp|was\b", t, re.I)), "")
         mile_line = next((t for t in lines if re.search(r"\b(mi|miles|km)\b", t, re.I) and re.search(r"\d", t)), "")
-        loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t)), None)
+        from ..models import extract_state
+        loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t) and (extract_state(t) or re.search(r",\s*(ON|QC|BC|AB|MB|SK|NS|NB|PE|NL)\b", t))), None)
         img = node.find("img") if hasattr(node, "find") else None
         cur = "CAD" if ("CA$" in price_line or "C$" in price_line or country == "CA") else currency
         mileage = parse_mileage(mile_line) if mile_line else None

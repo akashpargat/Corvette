@@ -33,7 +33,7 @@
 
   /* ---------- derived ---------- */
   const active = () => DATA.listings.filter((l) => l.status === "active" && tOf(l) === state.model);
-  const cleanPool = () => active().filter((l) => l.candidate && l.title_status !== "branded");
+  const cleanPool = () => active().filter((l) => (l.rankable !== undefined ? l.rankable : l.candidate) && l.title_status !== "branded");
   const heroCar = () => { const p = cleanPool().sort((a, b) => a.price - b.price); return p[0] || null; };
   const daysOn = (l) => { const a = new Date(l.first_seen), b = new Date(l.last_seen || DATA.summary.date); return Math.max(0, Math.round((b - a) / 864e5)); };
   const isNew = (l) => l.first_seen === DATA.summary.date;

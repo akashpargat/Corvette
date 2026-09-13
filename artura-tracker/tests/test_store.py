@@ -7,7 +7,7 @@ from crawler.store import merge
 
 def _l(vin, price, source="cars_com", **kw):
     return Listing(source=source, source_name=source, url=f"https://{source}/{vin}", title="2023 McLaren Artura",
-                   vin=vin, price=price, mileage=5000, location="Dallas, TX", **kw).finalize()
+                   vin=vin, price=price, mileage=5000, year=2023, location="Dallas, TX", **kw).finalize()
 
 
 def _report(ok=("cars_com",)):
@@ -75,9 +75,9 @@ def test_vinless_card_joins_by_mileage_and_price_fingerprint(tmp_path):
     vin = _l("SBM16AEA0PW000718", 155985, source="carfax")
     vin.mileage = 14948
     card = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/abc/",
-                   title="2023 McLaren Artura", price=155985, mileage=14948).finalize()
+                   title="2023 McLaren Artura", price=155985, mileage=14948, year=2023).finalize()
     other = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/def/",
-                    title="2023 McLaren Artura", price=189000, mileage=2100).finalize()
+                    title="2023 McLaren Artura", price=189000, mileage=2100, year=2023).finalize()
     p = merge(d, [vin, card, other], _report(("carfax", "cars_com")))
     active = [r for r in p["listings"] if r["status"] == "active"]
     assert len(active) == 2

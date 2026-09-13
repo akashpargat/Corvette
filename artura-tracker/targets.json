@@ -39,7 +39,8 @@
     "cargurus_entity": "d3238",
     "carfax_path": "Used-Mclaren-Artura_w10502",
     "dealer_network": "mclaren",
-    "enabled": true
+    "enabled": true,
+    "price_ceiling": 400000
   },
   "huracan": {
     "make": "Lamborghini",
@@ -117,6 +118,7 @@
     "cargurus_entity": "d2285",
     "carfax_path": "Used-Lamborghini-Huracan_w749",
     "dealer_network": "lamborghini",
-    "enabled": true
+    "enabled": true,
+    "price_ceiling": 700000
   }
 }
