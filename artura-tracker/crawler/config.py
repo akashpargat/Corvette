@@ -6,6 +6,7 @@ price sanity floor, dealer domains, Facebook Marketplace hubs.
 from __future__ import annotations
 
 import os
+import re
 
 YEAR_MIN = 2020
 YEAR_MAX = 2026
@@ -179,36 +180,51 @@ LAMBORGHINI_DEALERS_CA = [
 ]
 
 # ---------------------------------------------------------------------------
-# Targets: every car we hunt. Each source builds its URLs from these fields.
+# Targets: every car we hunt, loaded from artura-tracker/targets.json.
+# Add a car = add one JSON entry (or run: python -m crawler.targets add "Ferrari" "296 GTB").
 # ---------------------------------------------------------------------------
-TARGETS = {
-    "artura": {
-        "key": "artura", "make": "McLaren", "model": "Artura", "model_ascii": "Artura", "label": "McLaren Artura",
-        "make_slug": "mclaren", "model_slug": "artura", "alias_re": r"artura",
-        "vin_prefixes": ("SBM16",), "years": (2020, 2026), "price_floor": 60_000,
-        "trims": [("Spider", r"\bspider\b"), ("GT4", r"\bgt4\b"), ("Performance", r"\bperformance\b"),
-                  ("TechLux", r"\btech\s?lux\b"), ("Vision", r"\bvision\b")],
-        "default_trim": "Coupe", "junk_re": r"GT4 Trophy",
-        "cargurus_entity": "d3238", "carfax_path": "Used-Mclaren-Artura_w10502", "carfax_make": "Mclaren", "carfax_model": "Artura",
-        "query": "mclaren artura", "dealers": DEALER_SITES, "dealers_ca": DEALER_SITES_CA,
-    },
-    "huracan": {
-        "key": "huracan", "make": "Lamborghini", "model": "Huracán", "model_ascii": "Huracan", "label": "Lamborghini Huracán",
-        "make_slug": "lamborghini", "model_slug": "huracan", "alias_re": r"hurac[aá]n",
-        "vin_prefixes": ("ZHWU", "ZHWE", "ZHWH", "ZHWG", "ZHWR"), "years": (2020, 2026), "price_floor": 60_000,
-        "trims": [("STO", r"\bsto\b"), ("Tecnica", r"\btecnica\b"), ("Sterrato", r"\bsterrato\b"),
-                  ("Performante Spyder", r"performante\s+spyder"), ("Performante", r"\bperformante\b"),
-                  ("EVO RWD Spyder", r"evo\s+rwd\s+spyder|rwd\s+spyder"), ("EVO Spyder", r"evo\s+spyder"),
-                  ("EVO RWD", r"evo\s+rwd|\brwd\b"), ("EVO", r"\bevo\b"),
-                  ("LP 610-4 Spyder", r"610-4\s+spyder"), ("LP 610-4", r"610-4|lp\s?610"), ("LP 580-2", r"580-2|lp\s?580"),
-                  ("Spyder", r"\bspyder\b")],
-        "default_trim": "Coupe", "junk_re": r"Super Trofeo|GT3",
-        "cargurus_entity": "d2285", "carfax_path": "Used-Lamborghini-Huracan_w749", "carfax_make": "Lamborghini", "carfax_model": "Huracan",
-        "query": "lamborghini huracan", "dealers": LAMBORGHINI_DEALERS, "dealers_ca": LAMBORGHINI_DEALERS_CA,
-    },
+DEALER_NETWORKS = {
+    "mclaren": {"us": DEALER_SITES, "ca": DEALER_SITES_CA},
+    "lamborghini": {"us": LAMBORGHINI_DEALERS, "ca": LAMBORGHINI_DEALERS_CA},
 }
-DEFAULT_TARGETS = ["artura", "huracan"]
-for _t in TARGETS.values():
-    _t["query_plus"] = _t["query"].replace(" ", "+")
-    _t["query_enc"] = _t["query"].replace(" ", "%20")
-    _t["model_lower"] = _t["model_ascii"].lower()
+TARGETS_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "targets.json")
+
+
+def _slug(s: str) -> str:
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def load_targets(path: str = TARGETS_FILE) -> dict:
+    import json
+    raw = json.load(open(path, encoding="utf-8"))
+    targets = {}
+    for key, t in raw.items():
+        if t.get("enabled", True) is False:
+            continue
+        make, model = t["make"], t["model"]
+        import unicodedata
+        model_ascii = t.get("model_ascii") or unicodedata.normalize("NFKD", model).encode("ascii", "ignore").decode()
+        net = DEALER_NETWORKS.get(t.get("dealer_network", "").lower(), {"us": [], "ca": []})
+        entry = {
+            "key": key, "make": make, "model": model, "model_ascii": model_ascii, "label": f"{make} {model}",
+            "make_slug": _slug(make), "model_slug": _slug(model_ascii),
+            "alias_re": t.get("alias_re") or re.escape(model_ascii.lower()).replace("\\ ", r"\s*"),
+            "vin_prefixes": tuple(t.get("vin_prefixes") or ()), "years": tuple(t.get("years") or (YEAR_MIN, YEAR_MAX)),
+            "price_floor": t.get("price_floor", PRICE_FLOOR),
+            "trims": [(n, rx) for n, rx in t.get("trims", [])], "default_trim": t.get("default_trim", "Coupe"),
+            "junk_re": t.get("junk_re") or "", "cargurus_entity": t.get("cargurus_entity") or "",
+            "carfax_path": t.get("carfax_path") or f"Used-{make}-{model_ascii.replace(' ', '-')}",
+            "carfax_make": t.get("carfax_make") or make, "carfax_model": t.get("carfax_model") or model_ascii,
+            "query": f"{make} {model_ascii}".lower(), "dealers": net["us"], "dealers_ca": net["ca"],
+        }
+        entry["query_plus"] = entry["query"].replace(" ", "+")
+        entry["query_enc"] = entry["query"].replace(" ", "%20")
+        entry["model_lower"] = model_ascii.lower()
+        targets[key] = entry
+    return targets
+
+
+TARGETS = load_targets()
+DEFAULT_TARGETS = list(TARGETS.keys())

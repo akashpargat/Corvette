@@ -1,0 +1,122 @@
+{
+  "artura": {
+    "make": "McLaren",
+    "model": "Artura",
+    "model_ascii": "Artura",
+    "years": [
+      2020,
+      2026
+    ],
+    "price_floor": 60000,
+    "vin_prefixes": [
+      "SBM16"
+    ],
+    "alias_re": "artura",
+    "trims": [
+      [
+        "Spider",
+        "\\bspider\\b"
+      ],
+      [
+        "GT4",
+        "\\bgt4\\b"
+      ],
+      [
+        "Performance",
+        "\\bperformance\\b"
+      ],
+      [
+        "TechLux",
+        "\\btech\\s?lux\\b"
+      ],
+      [
+        "Vision",
+        "\\bvision\\b"
+      ]
+    ],
+    "default_trim": "Coupe",
+    "junk_re": "GT4 Trophy",
+    "cargurus_entity": "d3238",
+    "carfax_path": "Used-Mclaren-Artura_w10502",
+    "dealer_network": "mclaren",
+    "enabled": true
+  },
+  "huracan": {
+    "make": "Lamborghini",
+    "model": "Huracán",
+    "model_ascii": "Huracan",
+    "years": [
+      2020,
+      2026
+    ],
+    "price_floor": 60000,
+    "vin_prefixes": [
+      "ZHWU",
+      "ZHWE",
+      "ZHWH",
+      "ZHWG",
+      "ZHWR"
+    ],
+    "alias_re": "hurac[aá]n",
+    "trims": [
+      [
+        "STO",
+        "\\bsto\\b"
+      ],
+      [
+        "Tecnica",
+        "\\btecnica\\b"
+      ],
+      [
+        "Sterrato",
+        "\\bsterrato\\b"
+      ],
+      [
+        "Performante Spyder",
+        "performante\\s+spyder"
+      ],
+      [
+        "Performante",
+        "\\bperformante\\b"
+      ],
+      [
+        "EVO RWD Spyder",
+        "evo\\s+rwd\\s+spyder|rwd\\s+spyder"
+      ],
+      [
+        "EVO Spyder",
+        "evo\\s+spyder"
+      ],
+      [
+        "EVO RWD",
+        "evo\\s+rwd|\\brwd\\b"
+      ],
+      [
+        "EVO",
+        "\\bevo\\b"
+      ],
+      [
+        "LP 610-4 Spyder",
+        "610-4\\s+spyder"
+      ],
+      [
+        "LP 610-4",
+        "610-4|lp\\s?610"
+      ],
+      [
+        "LP 580-2",
+        "580-2|lp\\s?580"
+      ],
+      [
+        "Spyder",
+        "\\bspyder\\b"
+      ]
+    ],
+    "default_trim": "Coupe",
+    "junk_re": "Super Trofeo|GT3",
+    "cargurus_entity": "d2285",
+    "carfax_path": "Used-Lamborghini-Huracan_w749",
+    "dealer_network": "lamborghini",
+    "enabled": true
+  }
+}

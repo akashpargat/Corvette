@@ -194,8 +194,10 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
                           "new_today": sum(1 for k in changes["new"] if by_key.get(k, {}).get("target") == tk),
                           "price_drops_today": sum(1 for k in changes["price_drop"] if by_key.get(k, {}).get("target") == tk),
                           "market_model": model.get("per_target", {}).get(tk)}
+    from . import config as _cfg
     summary = {
         "targets": per_target,
+        "target_labels": {k: {"model": t["model"], "label": t["label"]} for k, t in _cfg.TARGETS.items()},
         "generated_at": ts, "date": d, "active": len(active), "clean_candidates": len(clean),
         "new_today": len(changes["new"]), "price_drops_today": len(changes["price_drop"]),
         "removed_today": len(changes["removed"]), "cheapest_clean_key": cheapest["key"] if cheapest else None,

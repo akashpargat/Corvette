@@ -20,6 +20,9 @@ PAGE_T = HOST + "/Cars/l-Used-{make}-{model_ascii}-{cargurus_entity}"
 def fetch(client, ctx: Ctx):
     out = []
     ENTITY = ctx.target["cargurus_entity"]
+    if not ENTITY:
+        ctx.note(f"{LABEL}: no cargurus_entity in targets.json for {ctx.target['label']} (find it in the CarGurus URL, e.g. d3238)")
+        return []
     PAGE = ctx.url(PAGE_T)
     for offset in (0, 100):
         res, data = client.get_json(API.format(zip=config.SEARCH_ZIP, entity=ENTITY, offset=offset),

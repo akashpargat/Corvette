@@ -122,6 +122,15 @@ GitHub Actions runs the same thing every day at 06:00 Central (`cron: 0 11 * * *
 
 ## Adding another car
 
-Targets live in `crawler/config.py` → `TARGETS`. Each entry gives the make/model slugs every marketplace URL is built
-from, the VIN prefixes, the trim regexes, the CarGurus entity id and CARFAX path, and the dealer network to crawl.
-Add an entry, put its key in `DEFAULT_TARGETS`, and every source, the dashboard tab, and the email pick it up.
+The cars being hunted live in **`targets.json`**. One entry per car; every source URL, the dashboard tab and the
+email section are generated from it. Either edit the file or run:
+
+```bash
+python -m crawler.targets add "Ferrari" "296 GTB" --years 2022-2026 --trims "GTS,Assetto Fiorano"
+python -m crawler.targets list | disable huracan | enable huracan | remove huracan
+```
+
+Only make and model are required. VIN prefixes are filled from the make where known; `cargurus_entity` (the `dXXXX`
+in a CarGurus search URL) and `carfax_path` are optional and only affect those two sources. `dealer_network`
+selects a franchise dealer list from `crawler/config.py` (`DEALER_NETWORKS`); add one there for a new make, or leave
+it out and rely on the marketplaces.

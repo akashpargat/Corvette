@@ -10,7 +10,7 @@
   const yearVar = (y) => `var(--y${String(y || 2023).slice(2)})`;
   const SOURCE_SHORT = { craigslist: "Craigslist", iseecars: "iSeeCars", usedcars_com: "UsedCars.com", carsforsale: "Carsforsale", carsdirect: "CarsDirect", classiccars_com: "ClassicCars", jamesedition: "JamesEdition", exoticcartrader: "Exotic Car Trader", pcarmarket: "PCARMARKET", collectingcars: "Collecting Cars", mclarenlife: "McLaren Life", autotempest: "AutoTempest", autotrader_ca: "AutoTrader.ca", kijiji: "Kijiji", cargurus_ca: "CarGurus.ca",  mclaren_preowned: "McLaren CPO", dealer_sites: "Dealer site", cars_com: "Cars.com", autotrader: "Autotrader", kbb: "KBB", cargurus: "CarGurus", carfax: "CARFAX", truecar: "TrueCar", edmunds: "Edmunds", autolist: "Autolist", dupont: "duPont", classic_com: "Classic.com", bringatrailer: "BaT", carsandbids: "Cars & Bids", ebay: "eBay", hemmings: "Hemmings", fb_marketplace: "FB Marketplace", seed: "Seed" };
 
-  const TARGETS = { artura: { model: "Artura", label: "McLaren Artura" }, huracan: { model: "Huracán", label: "Lamborghini Huracán" } };
+  let TARGETS = { artura: { model: "Artura", label: "McLaren Artura" } };
   const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table", country: "", model: "artura" };
   try { const m = localStorage.getItem("artura.model"); if (m && TARGETS[m]) state.model = m; } catch (e) { }
   const tOf = (l) => l.target || "artura";
@@ -26,6 +26,8 @@
     RUNS = inline("data-runs") || await fetchJSON("data/runs.json") || [];
     MARKET = inline("data-market") || await fetchJSON("data/market.json") || [];
     if (!Array.isArray(DATA.listings)) DATA.listings = [];
+    if (DATA.summary && DATA.summary.target_labels) TARGETS = Object.assign({}, TARGETS, DATA.summary.target_labels);
+    DATA.listings.forEach((l) => { if (!TARGETS[l.target || "artura"]) TARGETS[l.target] = { model: l.target, label: l.target }; });
   }
   async function fetchJSON(p) { try { const r = await fetch(p, { cache: "no-store" }); return r.ok ? await r.json() : null; } catch (e) { return null; } }
 
