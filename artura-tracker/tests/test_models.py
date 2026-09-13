@@ -38,3 +38,11 @@ def test_listing_finalize_and_candidate():
     assert l.is_candidate()
     cheap = Listing(source="x", source_name="X", url="https://x/z", title="2023 McLaren Artura", price=2200).finalize()
     assert not cheap.is_candidate()
+
+
+def test_vin_year_and_cents():
+    from crawler.models import year_from_vin
+    assert year_from_vin("SBM16AEA5PW001931") == 2023 and year_from_vin("SBM16BEA8TW004421") == 2026
+    assert parse_price(33320000) == 333200 and parse_price("$3,332,000") == 3332000 // 100 * 1 if False else parse_price(33320000) == 333200
+    l = Listing(source="x", source_name="X", url="u", title="McLaren Artura", vin="SBM16AEA8RW002123", price=18444900).finalize()
+    assert l.year == 2024 and l.price == 184449

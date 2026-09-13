@@ -25,7 +25,9 @@ def fetch(client, ctx: Ctx):
         got = []
         nd = next_data(res.text)
         if nd:
+            ctx.sample('dupont-nextdata-keys', list((nd.get("props", {}).get("pageProps", {}) or {}).keys()))
             for r in walk(nd, lambda d: ("artura" in str(d.get("model", "")).lower() or "artura" in str(d.get("title", "")).lower()) and ("price" in d or "askingPrice" in d)):
+                ctx.sample('dupont', r)
                 got.append(_row(r))
         got += listings_from_jsonld(res.text, NAME, LABEL, res.url)
         if not got:

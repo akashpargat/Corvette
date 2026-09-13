@@ -11,6 +11,12 @@ import requests
 
 from . import config
 
+try:  # requests only decodes brotli when the library is present
+    import brotli  # noqa: F401
+    _HAS_BROTLI = True
+except Exception:  # pragma: no cover
+    _HAS_BROTLI = False
+
 
 @dataclass
 class FetchResult:
@@ -46,9 +52,13 @@ class FetchResult:
 
 
 class Client:
-    def __init__(self, log, delay: float = config.POLITE_DELAY_SECONDS):
+    def __init__(self, log, delay: float = config.POLITE_DELAY_SECONDS, browser_fallback: bool = True,
+                 browser_budget: int = 12):
         self.log = log
         self.delay = delay
+        self.browser_fallback = browser_fallback
+        self.browser_budget = browser_budget
+        self.browser_hits = 0
         self.session = requests.Session()
         self.session.headers.update(self._headers())
         if config.PROXY_URL:
@@ -62,7 +72,7 @@ class Client:
             "User-Agent": random.choice(config.USER_AGENTS),
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Encoding": "gzip, deflate, br" if _HAS_BROTLI else "gzip, deflate",
             "Connection": "keep-alive",
             "Upgrade-Insecure-Requests": "1",
             "Sec-Fetch-Dest": "document",
@@ -97,12 +107,26 @@ class Client:
                 if r.status_code in (429, 503) and attempt < retries:
                     time.sleep(2.5 * (attempt + 1))
                     continue
+                if self.browser_fallback and self.browser_hits < self.browser_budget and (res.blocked_reason() or r.status_code in (403, 406, 429, 503)):
+                    return self._via_browser(url, res, headers)
                 return res
             except requests.RequestException as e:  # network errors
                 last_err = f"{type(e).__name__}: {e}"
                 self.log.debug("GET %s failed: %s", url, last_err)
                 time.sleep(1.5 * (attempt + 1))
         return FetchResult(url=url, status=0, text="", elapsed=0.0, error=last_err or "unknown error")
+
+    def _via_browser(self, url: str, res: "FetchResult", headers: Optional[dict]) -> "FetchResult":
+        from .browser import browser_get
+        self.browser_hits += 1
+        t0 = time.time()
+        b = browser_get(url, referer=(headers or {}).get("Referer"))
+        self.log.info("  browser fallback %s -> %s (%d bytes%s)", url[:90], b.status, len(b.html), f", {b.error}" if b.error else "")
+        if b.error or b.status != 200 or len(b.html) < 500:
+            res.headers["x-browser-fallback"] = b.error or f"status {b.status}"
+            return res
+        return FetchResult(url=b.url, status=200, text=b.html, elapsed=time.time() - t0,
+                           headers={"x-browser-fallback": "ok"})
 
     def get_json(self, url: str, **kw):
         res = self.get(url, **kw)

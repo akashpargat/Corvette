@@ -25,7 +25,7 @@ def fetch(client, ctx: Ctx):
                                     headers={"Accept": "application/json, text/plain, */*", "Referer": PAGE,
                                              "X-Requested-With": "XMLHttpRequest"})
         if data:
-            got = _parse_api(data)
+            got = _parse_api(data, ctx)
             out += got
             if len(got) < 100:
                 break
@@ -38,7 +38,7 @@ def fetch(client, ctx: Ctx):
         ctx.pages += 1
         if res.ok:
             data = find_script_json(res.text, "window.__PRELOADED_STATE__") or find_script_json(res.text, '"listings":')
-            out += _parse_api(data) if data else []
+            out += _parse_api(data, ctx) if data else []
             out += listings_from_jsonld(res.text, NAME, LABEL, res.url)
             out += listings_from_vin_cards(res.text, NAME, LABEL, res.url)
         if not out:
@@ -46,8 +46,10 @@ def fetch(client, ctx: Ctx):
     return dedupe(out)
 
 
-def _parse_api(data) -> list[Listing]:
+def _parse_api(data, ctx=None) -> list[Listing]:
     out = []
+    if ctx is not None:
+        ctx.sample('cargurus', data if not isinstance(data, list) else data[:1])
     rows = data if isinstance(data, list) else list(walk(data, lambda d: "listingTitle" in d or ("vin" in d and "price" in d)))
     for r in rows:
         if not isinstance(r, dict):

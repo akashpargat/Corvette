@@ -82,7 +82,11 @@ class Listing:
         if self.vin:
             self.vin = self.vin.upper()
         if not self.year:
-            self.year = parse_year(self.title) or parse_year(blob)
+            self.year = year_from_vin(self.vin) or parse_year(self.title) or parse_year(blob)
+        elif self.vin and year_from_vin(self.vin) and self.year != year_from_vin(self.vin):
+            self.year = year_from_vin(self.vin)
+        if self.price is not None:
+            self.price = _sane(self.price)
         if not self.trim:
             self.trim = detect_trim(blob) or "Coupe"
         if self.title_status == "unknown":
@@ -122,12 +126,30 @@ def parse_price(text: Optional[str]) -> Optional[int]:
         return None
     if isinstance(text, (int, float)):
         v = int(text)
-        return v if v > 0 else None
+        return _sane(v)
     m = PRICE_RE.search(str(text))
     if not m:
-        digits = re.sub(r"[^0-9]", "", str(text))
-        return int(digits) if 4 < len(digits) < 8 else None
-    return int(m.group(1).replace(",", ""))
+        digits = re.sub(r"[^0-9]", "", str(text).split(".")[0])
+        return _sane(int(digits)) if 4 < len(digits) < 10 else None
+    return _sane(int(m.group(1).replace(",", "")))
+
+
+def _sane(v: int) -> Optional[int]:
+    """Prices arrive as 179995, '17999500' (cents) or 0/1 placeholders."""
+    if v <= 0:
+        return None
+    if v >= 1_500_000 and 20_000 <= v // 100 <= 600_000:
+        return v // 100
+    return v
+
+
+VIN_YEAR = {"L": 2020, "M": 2021, "N": 2022, "P": 2023, "R": 2024, "S": 2025, "T": 2026, "V": 2027}
+
+
+def year_from_vin(vin: Optional[str]) -> Optional[int]:
+    if vin and len(vin) == 17:
+        return VIN_YEAR.get(vin[9].upper())
+    return None
 
 
 def parse_mileage(text: Optional[str]) -> Optional[int]:

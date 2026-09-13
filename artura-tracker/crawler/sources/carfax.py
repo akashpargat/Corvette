@@ -24,6 +24,7 @@ def fetch(client, ctx: Ctx):
                 ctx.note(f"{LABEL}: helix API unavailable ({res.blocked_reason() or res.status}); trying HTML")
             break
         rows = data.get("listings") or []
+        ctx.sample('carfax', rows[0] if rows else data)
         for r in rows:
             out.append(_row(r))
         if len(rows) < 100:

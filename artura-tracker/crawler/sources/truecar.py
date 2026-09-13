@@ -27,7 +27,9 @@ def fetch(client, ctx: Ctx):
         nd = next_data(res.text)
         if nd:
             for v in walk(nd, lambda d: isinstance(d.get("vin"), str) and d["vin"].startswith("SBM")):
+                ctx.sample("truecar-vehicle", v)
                 got.append(_from_json(v))
+        got = [g for g in got if g.vin or g.price]
         got += listings_from_jsonld(res.text, NAME, LABEL, res.url)
         if not got:
             got = listings_from_vin_cards(res.text, NAME, LABEL, res.url)
@@ -64,9 +66,17 @@ def _from_json(v: dict) -> Listing:
     veh = v.get("vehicle") or v
     dealer = v.get("dealership") or v.get("dealer") or {}
     loc = dealer.get("location") or {}
+    pricing = v.get("pricing") or {}
+    price = None
+    for k in ("listPrice", "list_price", "price", "salePrice", "sale_price", "totalPrice", "displayPrice"):
+        price = price or parse_price(pricing.get(k)) or parse_price(v.get(k))
+    if not price:
+        import re as _re, json as _json
+        m = _re.search(r'"(?:list_?[pP]rice|sale_?[pP]rice|price)"\s*:\s*"?([0-9]{5,7})', _json.dumps(v))
+        price = parse_price(m.group(1)) if m else None
     return Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, v.get("vdpUrl") or v.get("url") or f"/used-cars-for-sale/listing/{v['vin']}/"),
                    title=f"{veh.get('year','')} McLaren Artura {veh.get('trim','') or ''}".strip(), vin=v["vin"],
-                   year=veh.get("year"), price=parse_price((v.get("pricing") or {}).get("listPrice") or v.get("listPrice") or v.get("price")),
+                   year=veh.get("year"), price=price,
                    mileage=parse_mileage(veh.get("mileage") or v.get("mileage")), dealer=dealer.get("name"),
-                   location=", ".join(x for x in [loc.get("city"), loc.get("state")] if x) or None,
+                   location=", ".join(x for x in [loc.get("city") or v.get("city"), loc.get("state") or v.get("state")] if x) or None,
                    condition="cpo" if v.get("certified") else "used", color=veh.get("exteriorColor")).finalize()

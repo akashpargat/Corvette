@@ -24,6 +24,7 @@ def fetch(client, ctx: Ctx):
                 ctx.note(f"{LABEL}: inventory API unavailable ({res.blocked_reason() or res.status}); trying HTML")
             break
         rows = list(walk(data, lambda d: isinstance(d.get("vin"), str) and d["vin"].startswith("SBM")))
+        ctx.sample('edmunds', rows[0] if rows else data)
         for r in rows:
             out.append(_row(r))
         if len(rows) < 100:

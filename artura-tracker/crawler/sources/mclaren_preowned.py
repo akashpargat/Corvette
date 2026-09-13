@@ -17,8 +17,14 @@ SEARCH = BASE + "/amn/us/en/mclaren/artura"
 def fetch(client, ctx: Ctx):
     out = []
     detail_urls = []
-    for page in range(1, 6):
-        url = SEARCH if page == 1 else f"{SEARCH}?page={page}"
+    queue = [SEARCH]
+    visited = set()
+    while queue and len(visited) < 8:
+        url = queue.pop(0)
+        if url in visited:
+            continue
+        visited.add(url)
+        page = len(visited)
         res = client.get(url)
         ctx.pages += 1
         if not res.ok:
@@ -30,10 +36,17 @@ def fetch(client, ctx: Ctx):
         if not new:
             if page == 1:
                 ctx.diagnose(res, LABEL)
-            break
+            continue
         detail_urls.extend(new)
-        if len(new) < 10:
-            break
+        # pagination: any link back to the same search path with a query string
+        for href in re.findall(r'href=["\']([^"\']*/amn/us/en/mclaren/artura[^"\']*[?&][^"\']*)["\']', res.text):
+            u = abs_url(BASE, href.replace("&amp;", "&"))
+            if u not in visited:
+                queue.append(u)
+        if page == 1:
+            ctx.log.info("%s: pagination links: %s", LABEL, queue[:6])
+            if not queue:
+                queue += [f"{SEARCH}?page={n}" for n in (2, 3)]
     ctx.note(f"{LABEL}: {len(detail_urls)} vehicle pages found")
     for url in detail_urls[:80]:
         res = client.get(url)
@@ -67,13 +80,12 @@ def _from_text(url: str, html: str) -> Listing:
 
 def _enrich(l: Listing, html: str):
     text = html_to_text(html)
-    m = re.search(r"(?:Retailer|Dealer|Location)\s*[:\-]?\s*(McLaren\s+[A-Z][A-Za-z .]+)", text)
-    if m:
-        l.dealer = m.group(1).strip()
     m = re.search(r"McLaren\s+(Atlanta|Austin|Beverly Hills|Boston|Charlotte|Chicago|Dallas|Denver|Greenwich|Houston|Long Island|Miami|Coral Gables|Newport Beach|Orlando|Palm Beach|West Palm Beach|Philadelphia|Rancho Mirage|San Diego|San Francisco|Scottsdale|Seattle|St\.? Louis|Tampa|Washington|North Jersey|Las Vegas|Nashville|Detroit|Manhattan|Sterling|Florida)", text)
-    if m and not l.location:
-        l.location = m.group(1)
-        l.dealer = l.dealer or f"McLaren {m.group(1)}"
+    if m:
+        l.location = l.location or m.group(1)
+        l.dealer = f"McLaren {m.group(1)}"
+    else:
+        l.dealer = l.dealer if (l.dealer and l.dealer.startswith("McLaren ") and len(l.dealer) < 30) else "McLaren Qualified"
     if not l.mileage:
         l.mileage = parse_mileage(text)
     m = re.search(r"(?:Exterior|Colou?r)\s*[:\-]?\s*([A-Z][A-Za-z ]{2,30})", text)

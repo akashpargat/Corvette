@@ -53,6 +53,22 @@ def discover_dealers(client: Client, ctx: Ctx) -> list[tuple[str, str]]:
 
 def _sitemap_urls(client: Client, base: str) -> list[str]:
     urls = []
+    extra = []
+    rob = client.get(base + "/robots.txt", retries=0)
+    if rob.ok:
+        extra = [l.split(":", 1)[1].strip() for l in rob.text.splitlines() if l.lower().startswith("sitemap:")]
+    for sm in extra[:6]:
+        res = client.get(sm, retries=0)
+        if res.ok and "<loc>" in res.text:
+            locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", res.text)
+            subs = [l for l in locs if l.endswith(".xml")]
+            for s2 in subs[:10]:
+                r2 = client.get(s2, retries=0)
+                if r2.ok:
+                    locs += re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", r2.text)
+            urls += [l for l in locs if "artura" in l.lower() and not l.endswith(".xml")]
+    if urls:
+        return list(dict.fromkeys(urls))
     for path in ("/sitemap.xml", "/sitemap_index.xml", "/sitemap-index.xml", "/vehicle-sitemap.xml", "/inventory-sitemap.xml"):
         res = client.get(base + path, retries=0)
         if not res.ok or "<loc>" not in res.text:
@@ -70,12 +86,14 @@ def _sitemap_urls(client: Client, base: str) -> list[str]:
 
 
 def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
-    client = Client(log, delay=0.6)
+    client = Client(log, delay=0.6, browser_budget=3)
     ctx = Ctx(log)
     found = []
-    home = client.get(base, retries=1)
+    home = client.get(base, retries=0)
     if not home.ok:
-        return name, [], f"unreachable ({home.error or home.status})"
+        err = (home.error or str(home.status))
+        short = "dns" if "resolve" in err else "ssl" if "SSL" in err else "timeout" if "timed out" in err.lower() else err[:40]
+        return name, [], f"unreachable ({short})"
     base = re.match(r"https?://[^/]+", home.url).group(0)
     pages = _sitemap_urls(client, base)
     status = f"sitemap:{len(pages)}"
@@ -93,6 +111,7 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
                     status = f"inventory-page:{p}"
                     break
     pages = [p for p in dict.fromkeys(pages) if not re.search(r"\.(jpg|png|pdf|xml)$", p, re.I)]
+    sampled = False
     for p in pages[:config.MAX_DETAIL_PAGES_PER_SOURCE]:
         res = client.get(p, retries=0)
         if not res.ok:
@@ -100,6 +119,11 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
         got = listings_from_jsonld(res.text, NAME, name, res.url, dealer=name)
         if not got:
             got = listings_from_vin_cards(res.text, NAME, name, res.url, dealer=name)
+        if got and not sampled and not any(g.price for g in got):
+            sampled = True
+            ctx2 = Ctx(log)
+            log.info("  %s: page without price %s", name, res.url)
+            ctx2.diagnose(res, name)
         for l in got:
             if not l.url or l.url == base:
                 l.url = res.url

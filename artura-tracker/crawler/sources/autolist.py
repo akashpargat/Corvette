@@ -23,6 +23,8 @@ def fetch(client, ctx: Ctx):
         rows = data.get("records") if isinstance(data, dict) else None
         if rows is None:
             rows = list(walk(data, lambda d: "vin" in d and "price" in d))
+        if rows:
+            ctx.sample('autolist', rows[0])
         for r in rows:
             if "artura" not in str(r.get("model", "")).lower() and "artura" not in str(r.get("title") or r.get("display_name") or "").lower():
                 continue

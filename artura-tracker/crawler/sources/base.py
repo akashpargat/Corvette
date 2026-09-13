@@ -28,7 +28,32 @@ class Ctx:
                          label, f" {res.url}" if res.url else "", why, res.status, len(res.text),
                          page_title(res.text), sentinel_keys(res.text))
         self.log.warning("  text: %s", visible_text(res.text, 400))
+        if res.status == 200 and len(res.text) > 5000:
+            scripts = re.findall(r"<script([^>]{0,160})>", res.text)
+            ids = [re.sub(r"\s+", " ", a).strip()[:90] for a in scripts if ("id=" in a or "type=" in a)]
+            self.log.warning("  scripts(%d): %s", len(scripts), " | ".join(dict.fromkeys(ids))[:1200])
+            hits = [m.start() for m in re.finditer(r"[Aa]rtura", res.text)][:200]
+            shown = 0
+            for h in hits:
+                ctx = res.text[max(0, h - 160): h + 220].replace("\n", " ")
+                if "$" in ctx or "price" in ctx.lower() or "vin" in ctx.lower():
+                    self.log.warning("  artura@%d: %s", h, ctx)
+                    shown += 1
+                if shown >= 4:
+                    break
         self.notes.append(f"{label or res.url}: {why}")
+
+    def sample(self, label: str, obj, limit: int = 1500):
+        """Log a JSON sample once per label so the schema is visible in CI logs."""
+        import json
+        key = f"_sampled_{label}"
+        if getattr(self, key, False):
+            return
+        setattr(self, key, True)
+        try:
+            self.log.info("  sample[%s]: %s", label, json.dumps(obj, default=str)[:limit])
+        except Exception:
+            pass
 
 
 def listings_from_jsonld(html: str, source: str, source_name: str, base_url: str,
