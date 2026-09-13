@@ -94,13 +94,16 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
             srcs = ", ".join(SHORT.get(s, s) for s in l.get("sources", []))
             lines.append(f"{i}. {_money(l['price'])} — {_car(l)} · title {title}{tag} · on {srcs}")
             lines.append(f"   {l['url']}")
+        def _keep(k):
+            r = by.get(k)
+            return bool(r) and r.get("target", "artura") == tk and r.get("candidate") and r.get("title_status") != "branded"
         def _list(keys, fmt):
-            rows = [by[k] for k in keys if k in by and by[k].get("target", "artura") == tk]
+            rows = sorted([by[k] for k in keys if _keep(k)], key=lambda r: r.get("price") or 0)
             return [fmt(r) for r in rows[:15]] or ["   none"]
-        lines += ["", f"CHANGES ({config.TARGETS[tk]['model']})"]
-        new_k = [k for k in c.get("new", []) if by.get(k, {}).get("target", "artura") == tk]
-        drop_k = [k for k in c.get("price_drop", []) if by.get(k, {}).get("target", "artura") == tk]
-        gone_k = [k for k in c.get("removed", []) if by.get(k, {}).get("target", "artura") == tk]
+        lines += ["", f"CHANGES ({config.TARGETS[tk]['model']}, {config.TARGETS[tk]['years'][0]}-{config.TARGETS[tk]['years'][1]} candidates only)"]
+        new_k = [k for k in c.get("new", []) if _keep(k)]
+        drop_k = [k for k in c.get("price_drop", []) if _keep(k)]
+        gone_k = [k for k in c.get("removed", []) if _keep(k) or (by.get(k, {}).get("target", "artura") == tk)]
         lines.append(f"New today ({len(new_k)}):")
         lines += _list(new_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
         lines.append(f"Price drops ({len(drop_k)}):")
