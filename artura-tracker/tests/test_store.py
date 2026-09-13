@@ -46,3 +46,13 @@ def test_source_failure_does_not_remove_cars(tmp_path):
     p = merge(d, [], {"started_at": "t", "seconds": 1, "sources": [{"source": "cars_com", "status": "blocked", "count": 0}]})
     car = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000009")
     assert car["status"] == "active" and car.get("missing_runs", 0) == 0
+
+
+def test_brief_builds_from_merged_data(tmp_path):
+    from crawler.brief import build
+    d = str(tmp_path)
+    merge(d, [_l("SBM16AEA5PW000001", 180000), _l("SBM16AEA5PW000002", 170000)], _report())
+    subject, body = build(d)
+    assert "Artura Hunt" in subject and "TOP 10 CHEAPEST" in body
+    assert "$170,000" in body and body.index("$170,000") < body.index("$180,000")
+    assert "NEW" in body and "1 ok" in body

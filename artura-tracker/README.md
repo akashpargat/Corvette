@@ -47,7 +47,11 @@ Every VIN is de-duplicated across sources, so the ~220 active rows are unique ca
    `master` to get the built-in 06:00 Central cron. Until it is merged, the Claude Routine "Artura Hunt daily
    crawl + brief" kicks the crawl every morning by touching `artura-tracker/TRIGGER`.
 3. **Facebook Marketplace** – secret `FB_COOKIES_JSON` (instructions below).
-4. **Blocked marketplaces** – optional secret `SCRAPER_PROXY_URL` with a residential proxy unlocks TrueCar,
+4. **Daily email without Claude** – secrets `SMTP_USER` (your Gmail address) and `SMTP_PASS` (a Gmail *app
+   password*, Google Account → Security → 2-Step Verification → App passwords). The workflow then emails the
+   morning brief (cheapest car, top 10, changes, source health) to `BRIEF_TO` (repo variable, default
+   akashpargat@yahoo.com) at the end of every run. `python -m crawler.brief` prints the same brief locally.
+5. **Blocked marketplaces** – optional secret `SCRAPER_PROXY_URL` with a residential proxy unlocks TrueCar,
    Edmunds, Autolist, eBay and CLASSIC.COM.
 
 ## Sources
