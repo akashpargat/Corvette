@@ -13,7 +13,7 @@ from typing import Optional
 
 from .models import Listing
 
-REMOVED_AFTER_MISSING_RUNS = 2  # a car has to be missing from every source twice before we call it gone
+REMOVED_AFTER_MISSING_RUNS = 3  # a car has to be missing from every source three runs in a row before we call it gone
 
 
 def _load(path: str, default):

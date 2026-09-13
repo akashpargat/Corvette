@@ -18,6 +18,38 @@ artura-tracker/
 .github/workflows/artura-daily.yml   runs every morning, commits data, publishes GitHub Pages
 ```
 
+## Status after the first day (verified 2026-09-13, GitHub-hosted runner, no proxy)
+
+| Source | Result | Notes |
+|---|---|---|
+| McLaren Qualified CPO | ok · 12 cars | official certified pre-owned |
+| McLaren dealer sites | ok · ~90 cars from 12 sites | Boston, Chicago, Denver, Philadelphia, Tampa Bay, North Jersey, Long Island, Beverly Hills, Dallas, Houston, Rancho Mirage, Newport Beach. Scottsdale, Greenwich, San Francisco, Charlotte block datacenter IPs; several retailers have no own site |
+| Autotrader / KBB | ok · ~158 cars each | needs the headed browser (Akamai) |
+| CarGurus | ok · ~25 cars | HTML via browser |
+| CARFAX | ok · ~24 cars | HTML via browser |
+| duPont REGISTRY | ok · ~16 cars | rendered in browser |
+| Bring a Trailer | ok · 14 live/sold | sold results kept as price references only |
+| Cars & Bids | ok · 1 | |
+| Cars.com | intermittent | Cloudflare challenge passes some runs, not others |
+| TrueCar | blocked | PerimeterX press-and-hold; needs `SCRAPER_PROXY_URL` (residential) |
+| Edmunds, Autolist, eBay, CLASSIC.COM | blocked | IP-range blocks; need `SCRAPER_PROXY_URL` |
+| Hemmings | empty | no Artura listings found |
+| Facebook Marketplace | login wall | add `FB_COOKIES_JSON` (see below) |
+
+Every VIN is de-duplicated across sources, so the ~220 active rows are unique cars, most seen on 2-4 sites.
+
+## One-time setup (5 minutes)
+
+1. **GitHub Pages** – repo Settings → Pages → *Source: GitHub Actions*. The workflow's deploy job then publishes
+   `https://akashpargat.github.io/Corvette/` on every run. Until then the dashboard is the Claude artifact the
+   daily Routine republishes.
+2. **Daily schedule** – GitHub only runs `schedule:` workflows from the default branch, so merge this branch into
+   `master` to get the built-in 06:00 Central cron. Until it is merged, the Claude Routine "Artura Hunt daily
+   crawl + brief" kicks the crawl every morning by touching `artura-tracker/TRIGGER`.
+3. **Facebook Marketplace** – secret `FB_COOKIES_JSON` (instructions below).
+4. **Blocked marketplaces** – optional secret `SCRAPER_PROXY_URL` with a residential proxy unlocks TrueCar,
+   Edmunds, Autolist, eBay and CLASSIC.COM.
+
 ## Sources
 
 | Kind | Source | How |

@@ -27,7 +27,8 @@ def test_merge_new_then_drop_then_removed(tmp_path):
     # 000002 missing once: still active
     car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
     assert car2["status"] == "active" and car2["missing_runs"] == 1
-    # missing twice -> removed
+    # missing three runs in a row -> removed
+    merge(d, [_l("SBM16AEA5PW000001", 172000)], _report())
     p = merge(d, [_l("SBM16AEA5PW000001", 172000)], _report())
     car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
     assert car2["status"] == "removed"
