@@ -829,5 +829,278 @@
    "removed_today": 0,
    "cheapest_clean_price": 156635
   }
+ },
+ {
+  "started_at": "2026-09-13T00:13:00+00:00",
+  "seconds": 188.0,
+  "sources": [
+   {
+    "source": "mclaren_preowned",
+    "label": "McLaren Qualified (official CPO)",
+    "kind": "dealer",
+    "status": "ok",
+    "count": 12,
+    "seconds": 19.8,
+    "pages": 30,
+    "notes": [
+     "McLaren Qualified (official CPO): 12 vehicle pages found"
+    ],
+    "error": null
+   },
+   {
+    "source": "dealer_sites",
+    "label": "McLaren dealer websites",
+    "kind": "dealer",
+    "status": "ok",
+    "count": 97,
+    "seconds": 163.3,
+    "pages": 2,
+    "notes": [
+     "McLaren dealer websites: 48 retailer sites to crawl",
+     "McLaren Atlanta: sitemap:0, 0 listings",
+     "McLaren Austin: unreachable (dns)",
+     "McLaren Beverly Hills: sitemap:8, 6 listings",
+     "McLaren Boston: sitemap:19, 17 listings",
+     "McLaren Charlotte: unreachable (403)",
+     "McLaren Chicago: sitemap:15, 10 listings",
+     "McLaren Dallas: sitemap:8, 4 listings",
+     "McLaren Denver: sitemap:16, 14 listings",
+     "McLaren Greenwich: unreachable (403)",
+     "McLaren Houston: sitemap:11, 3 listings",
+     "McLaren Long Island: sitemap:9, 6 listings",
+     "McLaren Miami: unreachable (530)",
+     "McLaren Newport Beach: sitemap:0, 0 listings",
+     "McLaren Orlando: sitemap:0, 0 listings",
+     "McLaren Palm Beach: sitemap:0, 0 listings",
+     "McLaren Philadelphia: sitemap:28, 13 listings",
+     "McLaren Rancho Mirage: sitemap:9, 2 listings",
+     "McLaren San Diego: sitemap:0, 0 listings",
+     "McLaren San Francisco: unreachable (403)",
+     "McLaren Scottsdale: unreachable (403)",
+     "McLaren Seattle: sitemap:0, 0 listings",
+     "McLaren St. Louis: unreachable (dns)",
+     "McLaren Tampa Bay: sitemap:41, 10 listings",
+     "McLaren Washington DC: unreachable (dns)",
+     "McLaren Sterling: unreachable (530)",
+     "McLaren North Jersey: nav-links:8, 12 listings",
+     "McLaren Las Vegas: unreachable (530)",
+     "McLaren Nashville: unreachable (dns)",
+     "McLaren Detroit: unreachable (dns)",
+     "McLaren Manhattan: unreachable (dns)",
+     "McLaren Boston (retailer site): sitemap:0, 0 listings",
+     "McLaren Scottsdale (retailer site): sitemap:0, 0 listings",
+     "McLaren North Jersey (retailer site): sitemap:0, 0 listings",
+     "McLaren Chicago (retailer site): sitemap:0, 0 listings",
+     "McLaren Greenwich (retailer site): sitemap:0, 0 listings",
+     "McLaren Dallas (retailer site): sitemap:0, 0 listings",
+     "McLaren Houston (retailer site): sitemap:0, 0 listings",
+     "McLaren Philadelphia (retailer site): sitemap:0, 0 listings",
+     "McLaren Palm Beach (retailer site): sitemap:0, 0 listings"
+    ],
+    "error": null
+   },
+   {
+    "source": "cars_com",
+    "label": "Cars.com",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 17.8,
+    "pages": 2,
+    "notes": [
+     "Cars.com: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "autotrader",
+    "label": "Autotrader",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 158,
+    "seconds": 32.8,
+    "pages": 4,
+    "notes": [],
+    "error": null
+   },
+   {
+    "source": "kbb",
+    "label": "Kelley Blue Book",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 157,
+    "seconds": 34.1,
+    "pages": 4,
+    "notes": [],
+    "error": null
+   },
+   {
+    "source": "cargurus",
+    "label": "CarGurus",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 25,
+    "seconds": 34.0,
+    "pages": 3,
+    "notes": [
+     "CarGurus: JSON endpoint unavailable (200); trying HTML"
+    ],
+    "error": null
+   },
+   {
+    "source": "carfax",
+    "label": "CARFAX",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 24,
+    "seconds": 16.6,
+    "pages": 3,
+    "notes": [
+     "CARFAX: helix API unavailable (400); trying HTML"
+    ],
+    "error": null
+   },
+   {
+    "source": "truecar",
+    "label": "TrueCar",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 9.2,
+    "pages": 2,
+    "notes": [
+     "TrueCar: captcha page"
+    ],
+    "error": null
+   },
+   {
+    "source": "edmunds",
+    "label": "Edmunds",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 53.7,
+    "pages": 3,
+    "notes": [
+     "Edmunds: inventory API unavailable (akamai access denied); trying HTML",
+     "Edmunds: akamai access denied"
+    ],
+    "error": null
+   },
+   {
+    "source": "autolist",
+    "label": "Autolist",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 7.5,
+    "pages": 1,
+    "notes": [
+     "Autolist: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "dupont",
+    "label": "duPont REGISTRY",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 16,
+    "seconds": 1.1,
+    "pages": 2,
+    "notes": [],
+    "error": null
+   },
+   {
+    "source": "classic_com",
+    "label": "CLASSIC.COM",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 5.9,
+    "pages": 2,
+    "notes": [
+     "CLASSIC.COM: cloudflare challenge"
+    ],
+    "error": null
+   },
+   {
+    "source": "bringatrailer",
+    "label": "Bring a Trailer",
+    "kind": "auction",
+    "status": "ok",
+    "count": 14,
+    "seconds": 0.3,
+    "pages": 2,
+    "notes": [],
+    "error": null
+   },
+   {
+    "source": "carsandbids",
+    "label": "Cars & Bids",
+    "kind": "auction",
+    "status": "ok",
+    "count": 1,
+    "seconds": 7.9,
+    "pages": 2,
+    "notes": [],
+    "error": null
+   },
+   {
+    "source": "ebay",
+    "label": "eBay Motors",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 5.2,
+    "pages": 2,
+    "notes": [
+     "eBay Motors: http 403"
+    ],
+    "error": null
+   },
+   {
+    "source": "hemmings",
+    "label": "Hemmings",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 7.5,
+    "pages": 2,
+    "notes": [
+     "Hemmings: no listings parsed"
+    ],
+    "error": null
+   },
+   {
+    "source": "fb_marketplace",
+    "label": "Facebook Marketplace",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 24.7,
+    "pages": 0,
+    "notes": [
+     "Facebook Marketplace: login wall on 4 hubs in a row; stopping. Add FB_COOKIES_JSON secret to unlock.",
+     "Facebook Marketplace: 62 hubs searched, 4 login-walled, 0 raw cards"
+    ],
+    "error": null,
+    "extra": {
+     "login_walled_hubs": 4,
+     "hubs": 62,
+     "had_cookies": false
+    }
+   }
+  ],
+  "raw_listings": 504,
+  "zip": "10001",
+  "summary": {
+   "active": 232,
+   "clean_candidates": 182,
+   "new_today": 101,
+   "price_drops_today": 34,
+   "removed_today": 0,
+   "cheapest_clean_price": 155985
+  }
  }
 ]
