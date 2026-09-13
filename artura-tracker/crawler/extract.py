@@ -5,7 +5,7 @@ import json
 import re
 from typing import Iterable, Optional
 
-from .models import VIN_RE, parse_mileage, parse_price, parse_year
+from .models import VIN_RE, parse_mileage, parse_price, parse_year, vin_matches, is_target, current_target
 
 LDJSON_RE = re.compile(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.S | re.I)
 

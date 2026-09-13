@@ -22,7 +22,7 @@ from urllib.parse import quote
 
 from .. import config
 from ..extract import parse_json_prefix
-from ..models import Listing, parse_mileage, parse_price, parse_year
+from ..models import Listing, parse_mileage, parse_price, parse_year, is_target, current_target
 from .base import Ctx, dedupe
 
 NAME = "fb_marketplace"
@@ -56,7 +56,7 @@ def fetch(client, ctx: Ctx):
             ctx.note(f"{LABEL}: using {len(cookies)} session cookies from FB_COOKIES_JSON")
         page = context.new_page()
         for i, hub in enumerate(hubs):
-            url = SEARCH.format(hub=hub, q=quote("mclaren artura"), minp=config.FB_MIN_PRICE)
+            url = SEARCH.format(hub=hub, q=quote(ctx.target["query"]), minp=config.FB_MIN_PRICE)
             try:
                 page.goto(url, wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(2500)
@@ -82,7 +82,7 @@ def fetch(client, ctx: Ctx):
         browser.close()
     ctx.note(f"{LABEL}: {len(hubs)} hubs searched, {walled} login-walled, {len(out)} raw cards")
     ctx.extra = {"login_walled_hubs": walled, "hubs": len(hubs), "had_cookies": bool(cookies)}
-    return dedupe([l for l in out if "artura" in l.title.lower()])
+    return dedupe([l for l in out if is_target(l.title)])
 
 
 def _cookies_from_env():
@@ -148,7 +148,7 @@ def _parse_cards(page, hub: str) -> list[Listing]:
         lines = [t.strip() for t in text.split("\n") if t.strip()]
         if not lines:
             continue
-        title = next((l for l in lines if "artura" in l.lower() or "mclaren" in l.lower()), lines[min(1, len(lines) - 1)])
+        title = next((l for l in lines if is_target(l) or current_target()["make"].lower() in l.lower()), lines[min(1, len(lines) - 1)])
         price_line = next((l for l in lines if "$" in l), "")
         loc_line = next((l for l in lines if re.search(r",\s*[A-Z]{2}$", l)), None)
         miles_line = next((l for l in lines if re.search(r"\bmi(les)?\b|\bK miles", l, re.I)), "")
@@ -175,7 +175,7 @@ def _parse_embedded(html: str, hub: str) -> list[Listing]:
         if not isinstance(obj, dict):
             continue
         title = obj.get("marketplace_listing_title") or obj.get("custom_title") or ""
-        if "artura" not in title.lower():
+        if not is_target(title):
             continue
         lid = obj.get("id")
         price = (obj.get("listing_price") or {}).get("amount") or (obj.get("listing_price") or {}).get("formatted_amount")

@@ -8,15 +8,17 @@ from ..models import Listing, parse_mileage, parse_price, parse_year
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "mclaren_preowned"
+TARGET_MAKES = ("McLaren",)
 LABEL = "McLaren Qualified (official CPO)"
 KIND = "dealer"
 BASE = "https://preowned.mclaren.com"
-SEARCH = BASE + "/amn/us/en/mclaren/artura"
+SEARCH_T = BASE + "/amn/us/en/mclaren/{model_slug}"
 
 
 def fetch(client, ctx: Ctx):
     out = []
     detail_urls = []
+    SEARCH = ctx.url(SEARCH_T)
     queue = [SEARCH]
     visited = set()
     while queue and len(visited) < 8:
@@ -39,7 +41,7 @@ def fetch(client, ctx: Ctx):
             continue
         detail_urls.extend(new)
         # pagination: any link back to the same search path with a query string
-        for href in re.findall(r'href=["\']([^"\']*/amn/us/en/mclaren/artura[^"\']*[?&][^"\']*)["\']', res.text):
+        for href in re.findall(r'href=["\']([^"\']*/amn/us/en/mclaren/%s[^"\']*[?&][^"\']*)["\']' % ctx.target["model_slug"], res.text):
             u = abs_url(BASE, href.replace("&amp;", "&"))
             if u not in visited:
                 queue.append(u)
@@ -69,8 +71,8 @@ def fetch(client, ctx: Ctx):
 
 def _from_text(url: str, html: str) -> Listing:
     text = html_to_text(html)
-    title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^\n]{0,30})", text)
-    title = title_m.group(1).strip() if title_m else "McLaren Artura"
+    title_m = re.search(r"(20\d\d\s+McLaren\s+\w+[^\n]{0,30})", text)
+    title = title_m.group(1).strip() if title_m else "McLaren"
     prices = [parse_price(p) for p in re.findall(r"\$\s?[0-9]{3},[0-9]{3}", text)]
     prices = [p for p in prices if p and 60000 < p < 400000]
     return Listing(source=NAME, source_name=LABEL, url=url, title=title, year=parse_year(title),

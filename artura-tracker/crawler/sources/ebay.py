@@ -4,17 +4,17 @@ from __future__ import annotations
 import re
 from bs4 import BeautifulSoup
 
-from ..models import Listing, parse_mileage, parse_price, parse_year
+from ..models import Listing, parse_mileage, parse_price, parse_year, is_target
 from .base import Ctx, dedupe
 
 NAME = "ebay"
 LABEL = "eBay Motors"
 KIND = "marketplace"
-URL = "https://www.ebay.com/sch/i.html?_nkw=mclaren+artura&_sacat=6001&_sop=15&_ipg=120&LH_PrefLoc=1"
+URL = "https://www.ebay.com/sch/i.html?_nkw={query_plus}&_sacat=6001&_sop=15&_ipg=120&LH_PrefLoc=1"
 
 
 def fetch(client, ctx: Ctx):
-    res = client.get(URL)
+    res = client.get(ctx.url(URL))
     ctx.pages += 1
     if not res.ok:
         ctx.diagnose(res, LABEL)
@@ -27,7 +27,7 @@ def fetch(client, ctx: Ctx):
             continue
         text = item.get_text("\n", strip=True)
         title = (item.select_one(".s-item__title, .s-card__title") or a).get_text(" ", strip=True)
-        if "artura" not in title.lower() or re.search(r"\b(wheel|rim|part|model|toy|diecast|1:18|1/18|badge|brochure|key)\b", title, re.I):
+        if not is_target(title) or re.search(r"\b(wheel|rim|part|model|toy|diecast|1:18|1/18|badge|brochure|key)\b", title, re.I):
             continue
         price_el = item.select_one(".s-item__price, .s-card__price")
         l = Listing(source=NAME, source_name=LABEL, url=a["href"].split("?")[0], title=title, year=parse_year(title),

@@ -13,10 +13,12 @@ from concurrent.futures import ThreadPoolExecutor
 
 from .. import config
 from ..extract import abs_url, find_vins
+from ..models import set_target, current_target
 from ..http_client import Client
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "dealer_sites"
+MULTI_TARGET = True
 LABEL = "McLaren dealer websites"
 KIND = "dealer"
 
@@ -26,18 +28,32 @@ LOCATOR_URLS = [
     "https://retailers.mclaren.com/en",
 ]
 INVENTORY_PATHS = [
-    "/inventory/?model=Artura", "/inventory/?q=artura", "/used-inventory/index.htm?model=Artura",
-    "/new-inventory/index.htm?model=Artura", "/inventory/used/?model=Artura", "/inventory/new/?model=Artura",
-    "/searchused.aspx?Model=Artura", "/searchnew.aspx?Model=Artura", "/vehicles/?model=Artura",
-    "/cars-for-sale/mclaren/artura/", "/pre-owned/?model=Artura", "/inventory", "/used-inventory/", "/new-inventory/",
+    "/inventory/?model={model_ascii}", "/inventory/?q={model_slug}", "/used-inventory/index.htm?model={model_ascii}",
+    "/new-inventory/index.htm?model={model_ascii}", "/inventory/used/?model={model_ascii}", "/inventory/new/?model={model_ascii}",
+    "/searchused.aspx?Model={model_ascii}", "/vehicles/?model={model_ascii}", "/pre-owned/?model={model_ascii}",
+    "/inventory", "/used-inventory/", "/new-inventory/",
 ]
 
 
-CA_NAMES = {name for name, _ in config.DEALER_SITES_CA}
+ALL_TARGETS = [config.TARGETS[k] for k in config.DEFAULT_TARGETS]
+CA_NAMES = {name for t in ALL_TARGETS for name, _ in t["dealers_ca"]}
+ALIAS_ANY = re.compile("|".join(t["alias_re"] for t in ALL_TARGETS), re.I)
+SLUG_ANY = "|".join(t["model_slug"] for t in ALL_TARGETS)
+
+
+def target_for(text: str):
+    """Which target does this URL / page belong to? (first alias that matches)"""
+    for t in ALL_TARGETS:
+        if re.search(t["alias_re"], text or "", re.I):
+            return t
+    return None
 
 
 def discover_dealers(client: Client, ctx: Ctx) -> list[tuple[str, str]]:
-    dealers = {url.rstrip("/"): name for name, url in config.DEALER_SITES + config.DEALER_SITES_CA}
+    dealers = {}
+    for t in ALL_TARGETS:
+        for name, url in t["dealers"] + t["dealers_ca"]:
+            dealers.setdefault(url.rstrip("/"), name)
     for u in LOCATOR_URLS:
         res = client.get(u)
         ctx.pages += 1
@@ -69,7 +85,7 @@ def _sitemap_urls(client: Client, base: str) -> list[str]:
                 r2 = client.get(s2, retries=0)
                 if r2.ok:
                     locs += re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", r2.text)
-            urls += [l for l in locs if "artura" in l.lower() and not l.endswith(".xml")]
+            urls += [l for l in locs if ALIAS_ANY.search(l) and not l.endswith(".xml")]
     if urls:
         return list(dict.fromkeys(urls))
     for path in ("/sitemap.xml", "/sitemap_index.xml", "/sitemap-index.xml", "/vehicle-sitemap.xml", "/inventory-sitemap.xml"):
@@ -82,7 +98,7 @@ def _sitemap_urls(client: Client, base: str) -> list[str]:
             r2 = client.get(s, retries=0)
             if r2.ok:
                 locs += re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", r2.text)
-        urls += [l for l in locs if "artura" in l.lower() and not l.endswith(".xml")]
+        urls += [l for l in locs if ALIAS_ANY.search(l) and not l.endswith(".xml")]
         if urls:
             break
     return list(dict.fromkeys(urls))
@@ -101,38 +117,54 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
     pages = _sitemap_urls(client, base)
     status = f"sitemap:{len(pages)}"
     if not pages:
-        # fall back to inventory search pages
-        for p in INVENTORY_PATHS:
-            res = client.get(base + p, retries=0)
-            if res.ok and re.search(r"artura", res.text, re.I):
-                found += listings_from_jsonld(res.text, NAME, name, res.url, dealer=name)
-                found += listings_from_vin_cards(res.text, NAME, name, res.url, dealer=name)
-                # collect VDP links from the search page
-                for href in re.findall(r'href=["\']([^"\']*artura[^"\']*)["\']', res.text, re.I):
-                    pages.append(abs_url(res.url, href))
-                if found or pages:
-                    status = f"inventory-page:{p}"
-                    break
+        # fall back to inventory search pages, once per target
+        tried = set()
+        for t in ALL_TARGETS:
+            for p in INVENTORY_PATHS:
+                p = p.format(**t)
+                if p in tried:
+                    continue
+                tried.add(p)
+                res = client.get(base + p, retries=0)
+                if res.ok and ALIAS_ANY.search(res.text):
+                    set_target(target_for(res.text) or t)
+                    found += parse_any(res.text, NAME, name, res.url, dealer=name)
+                    for href in re.findall(r'href=["\']([^"\']*(?:%s)[^"\']*)["\']' % SLUG_ANY, res.text, re.I):
+                        pages.append(abs_url(res.url, href))
+                    if found or pages:
+                        status = f"inventory-page:{p}"
+                        break
+            if found or pages:
+                break
     if not pages:
         # last resort: follow the site's own inventory navigation links
         nav = [abs_url(base, h) for h in re.findall(r'href=["\']([^"\'#]+)["\']', home.text)
-               if re.search(r"inventory|vehicles|pre-?owned|used|artura|showroom", h, re.I) and not re.search(r"\.(jpg|png|pdf|css|js)$|specials|service|parts|finance|about|contact|privacy", h, re.I)]
+               if re.search(r"inventory|vehicles|pre-?owned|used|showroom|" + SLUG_ANY, h, re.I) and not re.search(r"\.(jpg|png|pdf|css|js)$|specials|service|parts|finance|about|contact|privacy", h, re.I)]
         nav = [n for n in dict.fromkeys(nav) if n.startswith(base)][:8]
         for n in nav:
             res = client.get(n, retries=0)
-            if res.ok and re.search(r"artura", res.text, re.I):
-                found += parse_any(res.text, NAME, name, res.url, dealer=name)
-                for href in re.findall(r'href=["\']([^"\']*artura[^"\']*)["\']', res.text, re.I):
+            if res.ok and ALIAS_ANY.search(res.text):
+                for t in ALL_TARGETS:
+                    if re.search(t["alias_re"], res.text, re.I):
+                        set_target(t)
+                        found += parse_any(res.text, NAME, name, res.url, dealer=name)
+                for href in re.findall(r'href=["\']([^"\']*(?:%s)[^"\']*)["\']' % SLUG_ANY, res.text, re.I):
                     pages.append(abs_url(res.url, href))
         if found or pages:
             status = f"nav-links:{len(nav)}"
     pages = [p for p in dict.fromkeys(pages) if p.startswith("http") and not re.search(r"\.(jpg|png|pdf|xml|css|js)(\?|$)", p, re.I)]
     sampled = False
-    for p in pages[:config.MAX_DETAIL_PAGES_PER_SOURCE]:
+    for p in pages[:config.MAX_DETAIL_PAGES_PER_SOURCE * 2]:
         res = client.get(p, retries=0)
         if not res.ok:
             continue
+        t = target_for(p) or target_for(res.text[:20000])
+        if not t:
+            continue
+        set_target(t)
         got = parse_any(res.text, NAME, name, res.url, dealer=name)
+        for g in got:
+            g.target = t["key"]
         if got and not sampled and not any(g.price for g in got):
             sampled = True
             ctx2 = Ctx(log)

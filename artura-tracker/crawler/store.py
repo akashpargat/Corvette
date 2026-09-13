@@ -111,6 +111,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["price"] = min(priced) if priced else None
         rec.setdefault("country", "US")
         rec.setdefault("currency", "USD")
+        rec.setdefault("target", "artura")
         rec["price_high"] = max(priced) if priced else None
         rec["sources"] = sorted({o["source"] for o in offers})
         # keep the best-known static facts from history if today's scrape is thinner
@@ -174,6 +175,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             changes["removed"].append(key)
         rec["price_history"] = history.get(key, [])[-60:]
         rec.setdefault("country", "US")
+        rec.setdefault("target", "artura")
 
     listings = list(by_key.values())
     from .scoring import score_all
@@ -182,7 +184,18 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     active = [r for r in listings if r["status"] == "active"]
     clean = [r for r in active if r.get("candidate") and r.get("title_status") != "branded"]
     cheapest = min(clean, key=lambda r: r["price"]) if clean else None
+    per_target = {}
+    for tk in sorted({r.get("target", "artura") for r in listings}):
+        ta = [r for r in active if r.get("target") == tk]
+        tc = [r for r in clean if r.get("target") == tk]
+        low = min(tc, key=lambda r: r["price"]) if tc else None
+        per_target[tk] = {"active": len(ta), "clean_candidates": len(tc), "cheapest_clean_key": low["key"] if low else None,
+                          "cheapest_clean_price": low["price"] if low else None,
+                          "new_today": sum(1 for k in changes["new"] if by_key.get(k, {}).get("target") == tk),
+                          "price_drops_today": sum(1 for k in changes["price_drop"] if by_key.get(k, {}).get("target") == tk),
+                          "market_model": model.get("per_target", {}).get(tk)}
     summary = {
+        "targets": per_target,
         "generated_at": ts, "date": d, "active": len(active), "clean_candidates": len(clean),
         "new_today": len(changes["new"]), "price_drops_today": len(changes["price_drop"]),
         "removed_today": len(changes["removed"]), "cheapest_clean_key": cheapest["key"] if cheapest else None,
@@ -192,11 +205,15 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     }
     run_report["summary"] = {k: summary[k] for k in ("active", "clean_candidates", "new_today", "price_drops_today", "removed_today", "cheapest_clean_price")}
     runs = (runs + [run_report])[-90:]
-    # daily market series for the dashboard chart
+    # daily market series for the dashboard chart (overall + per target)
     series = _load(os.path.join(data_dir, "market.json"), [])
     lows = sorted(r["price"] for r in clean)
     point = {"d": d, "cheapest": lows[0] if lows else None, "p10": lows[max(0, len(lows) // 10 - 1)] if lows else None,
-             "median": model.get("median"), "active": len(active), "clean": len(clean)}
+             "median": model.get("median"), "active": len(active), "clean": len(clean), "targets": {}}
+    for tk, ts in per_target.items():
+        tl = sorted(r["price"] for r in clean if r.get("target") == tk)
+        point["targets"][tk] = {"cheapest": tl[0] if tl else None, "median": tl[len(tl) // 2] if tl else None,
+                                "active": ts["active"], "clean": ts["clean_candidates"]}
     if series and series[-1]["d"] == d:
         series[-1] = point
     else:
@@ -237,11 +254,12 @@ def _best(group: list[Listing]) -> Listing:
 
 def _candidate(rec: dict) -> bool:
     from . import config
+    t = config.TARGETS.get(rec.get("target") or "artura") or config.TARGETS["artura"]
     p = rec.get("price")
-    if not p or not (config.PRICE_FLOOR <= p <= config.PRICE_CEILING):
+    if not p or not (t.get("price_floor", config.PRICE_FLOOR) <= p <= config.PRICE_CEILING):
         return False
     y = rec.get("year")
-    if y and not (config.YEAR_MIN <= y <= config.YEAR_MAX):
+    if y and not (t["years"][0] <= y <= t["years"][1]):
         return False
     if rec.get("extra", {}).get("reference_only"):
         return False

@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 from ..http_client import Client
 from ..models import Listing, parse_mileage, parse_price, parse_year
 from .base import Ctx, dedupe, cards_from_links
+from ..models import set_target
 
 NAME = "craigslist"
 LABEL = "Craigslist (US + Canada)"
@@ -36,14 +37,15 @@ def _sites(client: Client, ctx: Ctx):
     return list(dict.fromkeys(out)) or [(s, "US") for s in FALLBACK]
 
 
-def _one(sub_country, log):
-    sub, country = sub_country
+def _one(job, log):
+    sub, country, target = job
+    set_target(target)
     client = Client(log, delay=0.2, browser_fallback=False)
-    url = f"https://{sub}.craigslist.org/search/cta?query=mclaren+artura&min_price=40000"
+    url = f"https://{sub}.craigslist.org/search/cta?query={target['query_plus']}&min_price=40000"
     res = client.get(url, retries=0)
     if not res.ok:
         return [], res.status
-    if "artura" not in res.text.lower():
+    if not re.search(target["alias_re"], res.text, re.I):
         return [], 204 if ("cl-static-search-result" in res.text or "zero results" in res.text.lower() or "no results" in res.text.lower()) else 200
     got = cards_from_links(res.text, res.url, r"/(cto|ctd)/d/|/cars-trucks/|\.html$", NAME, LABEL, "private", country,
                            "CAD" if country == "CA" else "USD")
@@ -59,7 +61,7 @@ def fetch(client, ctx: Ctx):
     ctx.note(f"{LABEL}: {len(sites)} sites")
     out, blocked, statuses = [], 0, {}
     with ThreadPoolExecutor(max_workers=8) as ex:
-        for got, status in ex.map(lambda s: _one(s, ctx.log), sites):
+        for got, status in ex.map(lambda s: _one((s[0], s[1], ctx.target), ctx.log), sites):
             statuses[status] = statuses.get(status, 0) + 1
             if status in (403, 429, 0):
                 blocked += 1

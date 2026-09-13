@@ -48,6 +48,9 @@ h2 { font-size: 22px; font-weight: 600; }
 .brand { display: flex; gap: 14px; align-items: center; }
 .brand-mark { width: 14px; height: 44px; background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); flex: none; }
 .brand h1 { font-size: 40px; line-height: .95; font-weight: 700; text-transform: uppercase; }
+.modeltabs { display: inline-flex; gap: 6px; margin: 8px 0 2px; }
+.modeltabs button { font-family: var(--display); font-size: 15px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; padding: 6px 12px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; }
+.modeltabs button.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 70ch; font-size: 13px; }
 .masthead-meta { display: flex; gap: 22px; }
 .masthead-meta .k { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }

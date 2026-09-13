@@ -10,7 +10,10 @@
   const yearVar = (y) => `var(--y${String(y || 2023).slice(2)})`;
   const SOURCE_SHORT = { craigslist: "Craigslist", iseecars: "iSeeCars", usedcars_com: "UsedCars.com", carsforsale: "Carsforsale", carsdirect: "CarsDirect", classiccars_com: "ClassicCars", jamesedition: "JamesEdition", exoticcartrader: "Exotic Car Trader", pcarmarket: "PCARMARKET", collectingcars: "Collecting Cars", mclarenlife: "McLaren Life", autotempest: "AutoTempest", autotrader_ca: "AutoTrader.ca", kijiji: "Kijiji", cargurus_ca: "CarGurus.ca",  mclaren_preowned: "McLaren CPO", dealer_sites: "Dealer site", cars_com: "Cars.com", autotrader: "Autotrader", kbb: "KBB", cargurus: "CarGurus", carfax: "CARFAX", truecar: "TrueCar", edmunds: "Edmunds", autolist: "Autolist", dupont: "duPont", classic_com: "Classic.com", bringatrailer: "BaT", carsandbids: "Cars & Bids", ebay: "eBay", hemmings: "Hemmings", fb_marketplace: "FB Marketplace", seed: "Seed" };
 
-  const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table", country: "" };
+  const TARGETS = { artura: { model: "Artura", label: "McLaren Artura" }, huracan: { model: "Huracán", label: "Lamborghini Huracán" } };
+  const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table", country: "", model: "artura" };
+  try { const m = localStorage.getItem("artura.model"); if (m && TARGETS[m]) state.model = m; } catch (e) { }
+  const tOf = (l) => l.target || "artura";
   let DATA = { summary: {}, changes: {}, listings: [] }, RUNS = [], MARKET = [];
   let watch = new Set();
   try { watch = new Set(JSON.parse(localStorage.getItem("artura.watch") || "[]")); } catch (e) { }
@@ -27,7 +30,7 @@
   async function fetchJSON(p) { try { const r = await fetch(p, { cache: "no-store" }); return r.ok ? await r.json() : null; } catch (e) { return null; } }
 
   /* ---------- derived ---------- */
-  const active = () => DATA.listings.filter((l) => l.status === "active");
+  const active = () => DATA.listings.filter((l) => l.status === "active" && tOf(l) === state.model);
   const cleanPool = () => active().filter((l) => l.candidate && l.title_status !== "branded");
   const heroCar = () => { const p = cleanPool().sort((a, b) => a.price - b.price); return p[0] || null; };
   const daysOn = (l) => { const a = new Date(l.first_seen), b = new Date(l.last_seen || DATA.summary.date); return Math.max(0, Math.round((b - a) / 864e5)); };
@@ -37,6 +40,7 @@
   function filtered() {
     const q = state.q.trim().toLowerCase();
     let rows = DATA.listings.filter((l) => {
+      if (tOf(l) !== state.model) return false;
       if (!state.removed && l.status !== "active") return false;
       if (!l.candidate && l.status === "active" && !state.removed && state.title !== "all") return false;
       if (state.years.size && !state.years.has(l.year)) return false;
@@ -67,10 +71,14 @@
 
   /* ---------- render: masthead + hero + KPIs ---------- */
   function renderTop() {
-    const S = DATA.summary || {};
+    const S0 = DATA.summary || {};
+    const S = Object.assign({}, S0, (S0.targets && S0.targets[state.model]) || {});
     const lastRun = RUNS[RUNS.length - 1];
+    const T = TARGETS[state.model] || TARGETS.artura;
+    $("#heroEyebrow").textContent = `Cheapest clean-title ${T.model} right now`;
+    $("#marketTitle").textContent = `Cheapest clean ${T.model}, day by day`;
     $("#lastScan").textContent = S.generated_at ? new Date(S.generated_at).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "never";
-    if (lastRun) { const ok = lastRun.sources.filter((s) => s.status === "ok").length; $("#sourcesUp").textContent = `${ok} / ${lastRun.sources.length}`; }
+    if (lastRun) { const mine = lastRun.sources.filter((s) => !s.target || s.target === "all" || s.target === state.model); const ok = mine.filter((s) => s.status === "ok").length; $("#sourcesUp").textContent = `${ok} / ${mine.length}`; }
     const h = heroCar();
     $("#heroEmpty").hidden = !!h; $("#heroBody").hidden = !h;
     if (h) {
@@ -78,7 +86,7 @@
       const d = dropOf(h), delta = $("#heroDelta");
       delta.textContent = d ? `${d < 0 ? "▼" : "▲"} ${fmt$(Math.abs(d))} today` : (h.deal_pct != null ? `${Math.abs(h.deal_pct).toFixed(0)}% ${h.deal_pct >= 0 ? "under" : "over"} market model` : "");
       delta.style.color = d < 0 || (h.deal_pct || 0) > 0 ? "var(--good)" : "var(--ink-2)";
-      $("#heroTitle").textContent = h.title || `${h.year} McLaren Artura ${h.trim || ""}`;
+      $("#heroTitle").textContent = `${h.year || ""} ${T.label} ${h.trim || ""}`.trim();
       $("#heroFacts").innerHTML = [
         `<span><b>${fmtMi(h.mileage)}</b></span>`, h.color ? `<span>${esc(h.color)}</span>` : "",
         `<span>${esc(h.dealer || (h.listing_type === "private" ? "Private seller" : "Seller n/a"))}</span>`,
@@ -118,7 +126,7 @@
         const d = dropOf(l);
         return `<tr class="${l.status !== "active" ? "removed" : ""} ${hero && l.key === hero.key ? "top" : ""}" data-key="${esc(l.key)}">
           <td class="num">${l.rank_cheapest_clean || ""}</td>
-          <td><div class="car"><span class="t">${esc(l.year || "")} Artura ${esc(l.trim || "")} ${isNew(l) ? '<span class="badge new">NEW</span>' : ""} ${l.listing_type === "auction" ? '<span class="badge auction">auction</span>' : ""}</span><span class="s">${esc(l.color || "")}${l.color && l.vin ? " · " : ""}${esc(l.vin || "")}</span></div></td>
+          <td><div class="car"><span class="t">${esc(l.year || "")} ${TARGETS[tOf(l)] ? TARGETS[tOf(l)].model : ""} ${esc(l.trim || "")} ${isNew(l) ? '<span class="badge new">NEW</span>' : ""} ${l.listing_type === "auction" ? '<span class="badge auction">auction</span>' : ""}</span><span class="s">${esc(l.color || "")}${l.color && l.vin ? " · " : ""}${esc(l.vin || "")}</span></div></td>
           <td class="num"><span class="price">${fmt$(l.price)}</span>${l.price_local ? `<br><span class="s" style="color:var(--muted)">CA$${l.price_local.toLocaleString("en-US")}</span>` : (l.price_high && l.price_high !== l.price ? `<br><span class="s" style="color:var(--muted)">to ${fmt$(l.price_high)}</span>` : "")}</td>
           <td class="num">${d ? `<span class="badge ${d < 0 ? "drop" : "up"}">${d < 0 ? "▼" : "▲"}${fmtK(Math.abs(d))}</span>` : (l.deal_pct != null && l.deal_pct >= 8 ? `<span class="badge deal">${l.deal_pct.toFixed(0)}% under</span>` : "")}</td>
           <td class="num">${l.mileage != null ? l.mileage.toLocaleString("en-US") : "—"}</td>
@@ -138,7 +146,7 @@
           ${l.image ? `<img class="img" src="${esc(l.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : `<div class="img"></div>`}
           <div class="body">
             <div class="row"><span class="big">${fmt$(l.price)}</span>${d ? `<span class="badge ${d < 0 ? "drop" : "up"}">${d < 0 ? "▼" : "▲"}${fmt$(Math.abs(d))}</span>` : isNew(l) ? '<span class="badge new">NEW</span>' : ""}</div>
-            <div><strong>${esc(l.year || "")} McLaren Artura ${esc(l.trim || "")}</strong></div>
+            <div><strong>${esc(l.year || "")} ${TARGETS[tOf(l)] ? TARGETS[tOf(l)].label : ""} ${esc(l.trim || "")}</strong></div>
             <div class="meta">${fmtMi(l.mileage)}${l.color ? " · " + esc(l.color) : ""}${l.location ? " · " + esc(l.location) : ""}</div>
             <div class="meta">${esc(l.dealer || (l.listing_type === "private" ? "Private seller" : ""))}</div>
             <div class="srcs"><span class="badge ${l.title_status}">${titleWord(l)}</span>${(l.sources || [l.source]).map((s) => `<span class="src">${esc(SOURCE_SHORT[s] || s)}</span>`).join("")}</div>
@@ -192,7 +200,7 @@
   }
   function renderMarket() {
     const svg = $("#market"), W = 640, H = 340, m = { t: 14, r: 18, b: 42, l: 62 };
-    const pts = MARKET.filter((p) => p.cheapest);
+    const pts = MARKET.map((p) => (p.targets && p.targets[state.model]) ? Object.assign({}, p, p.targets[state.model]) : (state.model === "artura" ? p : null)).filter((p) => p && p.cheapest);
     $("#marketLegend").innerHTML = `<span><i class="line" style="background:var(--accent)"></i>cheapest clean</span><span><i class="line" style="background:var(--ink-2)"></i>median</span>`;
     if (pts.length < 2) { svg.innerHTML = `<text x="${W / 2}" y="${H / 2}" text-anchor="middle" fill="var(--muted)" font-size="13">${pts.length ? "One day of data so far; the line starts tomorrow." : "No daily data yet."}</text>` + (pts.length ? `<text x="${W / 2}" y="${H / 2 + 22}" text-anchor="middle" fill="var(--ink)" font-size="13" font-family="var(--mono)">${pts[0].d}: cheapest ${fmt$(pts[0].cheapest)} · median ${fmt$(pts[0].median)}</text>` : ""); return; }
     const all = pts.flatMap((p) => [p.cheapest, p.median].filter(Boolean));
@@ -222,18 +230,24 @@
   /* ---------- changes + sources ---------- */
   function renderChanges() {
     const C = DATA.changes || {}, by = Object.fromEntries(DATA.listings.map((l) => [l.key, l]));
-    const item = (k, label, cls) => { const l = by[k]; if (!l) return ""; const d = l.last_price_change; return `<li><span class="badge ${cls}">${label}</span><span>${fmt$(l.price)} · ${esc(l.year || "")} Artura ${esc(l.trim || "")}${l.mileage != null ? " · " + fmtMi(l.mileage) : ""}${l.location ? " · " + esc(l.location) : ""}${cls === "drop" || cls === "up" ? ` <span style="color:var(--muted)">(was ${fmt$(d.from)})</span>` : ""}</span><a class="rowlink" href="${esc(l.url)}" target="_blank" rel="noopener">Open ↗</a></li>`; };
+    const item = (k, label, cls) => { const l = by[k]; if (!l || tOf(l) !== state.model) return ""; const d = l.last_price_change; return `<li><span class="badge ${cls}">${label}</span><span>${fmt$(l.price)} · ${esc(l.year || "")} ${TARGETS[tOf(l)].model} ${esc(l.trim || "")}${l.mileage != null ? " · " + fmtMi(l.mileage) : ""}${l.location ? " · " + esc(l.location) : ""}${cls === "drop" || cls === "up" ? ` <span style="color:var(--muted)">(was ${fmt$(d.from)})</span>` : ""}</span><a class="rowlink" href="${esc(l.url)}" target="_blank" rel="noopener">Open ↗</a></li>`; };
     const html = [...(C.price_drop || []).map((k) => item(k, "▼ drop", "drop")), ...(C.new || []).map((k) => item(k, "new", "new")), ...(C.price_up || []).map((k) => item(k, "▲ up", "up")), ...(C.removed || []).map((k) => item(k, "gone", "removed")), ...(C.returned || []).map((k) => item(k, "back", "unknown"))].join("");
     $("#changes").innerHTML = html || `<li class="empty">Nothing changed in the last scan.</li>`;
   }
   function renderSources() {
     const run = RUNS[RUNS.length - 1];
     if (!run) { $("#sources").innerHTML = `<p style="color:var(--muted)">No run recorded yet.</p>`; return; }
-    $("#sources").innerHTML = run.sources.map((s) => { const note = s.error || (s.status !== "ok" ? (s.notes || []).slice(-1)[0] : "") || ""; return `<div class="srow"><span class="dotst ${s.status}"></span><span>${esc(s.label)}</span><span class="n">${s.count} cars · ${s.seconds}s</span><span class="st">${s.status}</span>${note ? `<span class="note">${esc(note).slice(0, 160)}</span>` : ""}</div>`; }).join("");
+    $("#sources").innerHTML = run.sources.filter((s) => !s.target || s.target === "all" || s.target === state.model).map((s) => { const note = s.error || (s.status !== "ok" ? (s.notes || []).slice(-1)[0] : "") || ""; return `<div class="srow"><span class="dotst ${s.status}"></span><span>${esc(s.label)}</span><span class="n">${s.count} cars · ${s.seconds}s</span><span class="st">${s.status}</span>${note ? `<span class="note">${esc(note).slice(0, 160)}</span>` : ""}</div>`; }).join("");
     $("#footMeta").textContent = `Last run ${run.started_at ? new Date(run.started_at).toLocaleString() : ""} took ${run.seconds}s across ${run.sources.length} sources and ${run.raw_listings} raw listings. ${RUNS.length} runs on record.`;
   }
 
   /* ---------- filters ---------- */
+  function buildTabs() {
+    const present = Object.keys(TARGETS).filter((k) => DATA.listings.some((l) => tOf(l) === k));
+    if (!present.includes(state.model)) state.model = present[0] || "artura";
+    $("#modelTabs").innerHTML = present.map((k) => `<button type="button" role="tab" data-model="${k}" class="${k === state.model ? "on" : ""}" aria-selected="${k === state.model}">${TARGETS[k].label}</button>`).join("");
+    $$("#modelTabs button").forEach((b) => b.addEventListener("click", () => { state.model = b.dataset.model; try { localStorage.setItem("artura.model", state.model); } catch (e) { } $$("#modelTabs button").forEach((x) => { x.classList.toggle("on", x === b); x.setAttribute("aria-selected", x === b); }); renderAll(); }));
+  }
   function buildFilters() {
     const years = [2020, 2021, 2022, 2023, 2024, 2025, 2026], have = new Set(DATA.listings.map((l) => l.year));
     $("#yearChips").innerHTML = years.map((y) => `<button type="button" class="chip ${state.years.has(y) ? "on" : ""}" data-year="${y}" ${have.has(y) ? "" : 'style="opacity:.45"'}>${y}</button>`).join("");
@@ -254,5 +268,5 @@
     $("#maxMilesOut").textContent = state.maxMiles >= 40000 ? "any" : fmtK(state.maxMiles) + " mi";
     renderTop(); renderResults(); renderScatter(); renderMarket(); renderChanges(); renderSources();
   }
-  load().then(() => { buildFilters(); renderAll(); });
+  load().then(() => { buildTabs(); buildFilters(); renderAll(); });
 })();

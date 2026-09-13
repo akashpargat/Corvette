@@ -1,6 +1,6 @@
-# Artura Hunt
+# Artura Hunt (McLaren Artura + Lamborghini Huracán)
 
-A daily, nationwide search for the cheapest **clean-title McLaren Artura (2020–2026) in the United States**, with a
+A daily, nationwide search for the cheapest **clean-title McLaren Artura and Lamborghini Huracán (2020–2026) in the United States and Canada**, with a
 dashboard that shows what is new, what dropped in price, and what sold.
 
 ```
@@ -119,3 +119,9 @@ GitHub Actions runs the same thing every day at 06:00 Central (`cron: 0 11 * * *
                "price_history": [{"d": "2026-09-12", "p": 160699}], "first_seen": "2026-09-12", "status": "active",
                "deal_pct": 6.2, "rank_cheapest_clean": 1}]}
 ```
+
+## Adding another car
+
+Targets live in `crawler/config.py` → `TARGETS`. Each entry gives the make/model slugs every marketplace URL is built
+from, the VIN prefixes, the trim regexes, the CarGurus entity id and CARFAX path, and the dealer network to crawl.
+Add an entry, put its key in `DEFAULT_TARGETS`, and every source, the dashboard tab, and the email pick it up.

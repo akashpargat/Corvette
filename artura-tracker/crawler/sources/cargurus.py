@@ -5,21 +5,22 @@ import re
 
 from .. import config
 from ..extract import find_script_json, walk, abs_url
-from ..models import Listing, parse_mileage, parse_price
+from ..models import Listing, parse_mileage, parse_price, is_target
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "cargurus"
 LABEL = "CarGurus"
 KIND = "marketplace"
 HOST = "https://www.cargurus.com"
-ENTITY = "d3238"  # McLaren Artura
 API = (HOST + "/Cars/searchResults.action?zip={zip}&distance=50000&entitySelectingHelper.selectedEntity={entity}"
        "&sortDir=ASC&sortType=PRICE&maxResults=100&offset={offset}&filtersModified=true&showNegotiable=true&inventorySearchWidgetType=AUTO")
-PAGE = HOST + "/Cars/l-Used-McLaren-Artura-" + ENTITY
+PAGE_T = HOST + "/Cars/l-Used-{make}-{model_ascii}-{cargurus_entity}"
 
 
 def fetch(client, ctx: Ctx):
     out = []
+    ENTITY = ctx.target["cargurus_entity"]
+    PAGE = ctx.url(PAGE_T)
     for offset in (0, 100):
         res, data = client.get_json(API.format(zip=config.SEARCH_ZIP, entity=ENTITY, offset=offset),
                                     headers={"Accept": "application/json, text/plain, */*", "Referer": PAGE,
@@ -54,12 +55,12 @@ def _parse_api(data, ctx=None) -> list[Listing]:
         if not isinstance(r, dict):
             continue
         title = r.get("listingTitle") or r.get("title") or ""
-        if "artura" not in title.lower() and "artura" not in str(r.get("modelName", "")).lower():
+        if not is_target(title + " " + str(r.get("modelName", ""))):
             continue
         lid = r.get("id") or r.get("listingId")
         loc = r.get("sellerCity") or r.get("dealerCity") or ""
         st = r.get("sellerRegion") or r.get("dealerState") or ""
-        l = Listing(source=NAME, source_name=LABEL, url=f"{HOST}/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action#listing={lid}" if lid else PAGE,
+        l = Listing(source=NAME, source_name=LABEL, url=f"{HOST}/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action#listing={lid}" if lid else HOST,
                     title=title, vin=r.get("vin"), year=r.get("carYear") or r.get("year"),
                     price=parse_price(r.get("price") or r.get("priceString")), mileage=parse_mileage(r.get("mileage") or r.get("mileageString")),
                     dealer=r.get("serviceProviderName") or r.get("sellerName") or r.get("dealerName"),

@@ -8,15 +8,16 @@ from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, pa
 NAME = "carfax"
 LABEL = "CARFAX"
 KIND = "marketplace"
-API = ("https://helix.carfax.com/search/v2/vehicles?zip={zip}&radius=5000&make=Mclaren&model=Artura"
-       "&sort=PRICE_ASC&rows={rows}&page={page}&tpQualityThreshold=0&urlInfo=Used-Mclaren-Artura_w10502")
-PAGE = "https://www.carfax.com/Used-Mclaren-Artura_w10502"
+API = ("https://helix.carfax.com/search/v2/vehicles?zip={zip}&radius=5000&make={carfax_make}&model={carfax_model}"
+       "&sort=PRICE_ASC&rows={rows}&page={page}&tpQualityThreshold=0&urlInfo={carfax_path}")
+PAGE_T = "https://www.carfax.com/{carfax_path}"
 
 
 def fetch(client, ctx: Ctx):
     out = []
+    PAGE = ctx.url(PAGE_T)
     for page in (1, 2):
-        res, data = client.get_json(API.format(zip=config.SEARCH_ZIP, rows=100, page=page),
+        res, data = client.get_json(ctx.url(API, zip=config.SEARCH_ZIP, rows=100, page=page),
                                     headers={"Accept": "application/json", "Origin": "https://www.carfax.com",
                                              "Referer": PAGE})
         if not data or not isinstance(data, dict):
@@ -43,7 +44,7 @@ def _row(r: dict) -> Listing:
     dealer = r.get("dealer") or {}
     loc = ", ".join(x for x in [dealer.get("city"), dealer.get("state")] if x)
     title = f"{r.get('year','')} {r.get('make','')} {r.get('model','')} {r.get('trim','')}".strip()
-    l = Listing(source=NAME, source_name=LABEL, url=r.get("vdpUrl") or PAGE, title=title, vin=r.get("vin"),
+    l = Listing(source=NAME, source_name=LABEL, url=r.get("vdpUrl") or "https://www.carfax.com/", title=title, vin=r.get("vin"),
                 year=r.get("year"), price=parse_price(r.get("listPrice") or r.get("currentPrice")), mileage=parse_mileage(r.get("mileage")),
                 dealer=dealer.get("name"), location=loc or None, state=dealer.get("state"),
                 image=(r.get("images") or {}).get("firstPhoto", {}).get("large") if isinstance(r.get("images"), dict) else None,

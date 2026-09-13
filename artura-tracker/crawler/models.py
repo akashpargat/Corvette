@@ -8,7 +8,28 @@ from typing import Optional
 
 from . import config
 
-VIN_RE = re.compile(r"\b(SBM[A-HJ-NPR-Z0-9]{14})\b")
+import threading
+
+_TL = threading.local()
+
+
+def set_target(t) -> None:
+    """Make `t` (a config.TARGETS entry or its key) the target for this thread."""
+    _TL.target = config.TARGETS[t] if isinstance(t, str) else t
+
+
+def current_target() -> dict:
+    return getattr(_TL, "target", None) or config.TARGETS[config.DEFAULT_TARGETS[0]]
+
+
+_ALL_WMI = sorted({pfx[:3] for t in config.TARGETS.values() for pfx in t["vin_prefixes"]})
+VIN_RE = re.compile(r"\b((?:%s)[A-HJ-NPR-Z0-9]{14})\b" % "|".join(_ALL_WMI))
+
+
+def vin_matches(vin, target=None) -> bool:
+    """Does this VIN belong to the current (or given) target model?"""
+    t = target or current_target()
+    return bool(vin) and any(vin.upper().startswith(p) for p in t["vin_prefixes"])
 PRICE_RE = re.compile(r"\$\s?([0-9]{2,3}(?:,[0-9]{3})+|[0-9]{5,7})(?!\s*/\s*mo)")
 MILES_RE = re.compile(r"([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})\s*(?:k\s*)?(?:mi\b|miles\b)", re.I)
 MILES_K_RE = re.compile(r"\b([0-9]{1,3}(?:\.[0-9])?)\s*[kK]\s*(?:mi\b|miles\b)")
@@ -22,13 +43,6 @@ BRANDED_WORDS = [
 ]
 CLEAN_WORDS = ["clean title", "clean carfax", "no accidents", "clean history", "one owner", "1-owner", "1 owner"]
 
-TRIMS = [
-    ("Spider", re.compile(r"\bspider\b", re.I)),
-    ("GT4", re.compile(r"\bgt4\b", re.I)),
-    ("Performance", re.compile(r"\bperformance\b", re.I)),
-    ("TechLux", re.compile(r"\btech\s?lux\b", re.I)),
-    ("Vision", re.compile(r"\bvision\b", re.I)),
-]
 
 US_STATES = {
     "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY",
@@ -70,6 +84,7 @@ class Listing:
     listing_type: str = "dealer"        # dealer | private | auction
     auction_end: Optional[str] = None
     image: Optional[str] = None
+    target: str = field(default_factory=lambda: current_target()["key"])
     country: str = "US"                 # US | CA
     currency: str = "USD"               # USD | CAD (price is always stored in USD; price_local keeps the original)
     price_local: Optional[int] = None
@@ -95,8 +110,9 @@ class Listing:
             self.price = round(self.price * config.CAD_TO_USD)
         if self.country == "CA":
             self.currency = self.currency or "CAD"
+        t = config.TARGETS.get(self.target) or current_target()
         if not self.trim:
-            self.trim = detect_trim(blob) or "Coupe"
+            self.trim = detect_trim(blob, t) or t["default_trim"]
         if self.title_status == "unknown":
             st, notes = detect_title_status(blob)
             self.title_status = st
@@ -122,11 +138,12 @@ class Listing:
 
     def is_candidate(self) -> bool:
         """A plausible, real, road-going Artura with a believable price."""
-        if is_junk(self.title) or self.trim == "GT4":
+        t = config.TARGETS.get(self.target) or current_target()
+        if is_junk(self.title, t) or self.trim in ("GT4", "GT3", "Super Trofeo"):
             return False
-        if self.price is None or not (config.PRICE_FLOOR <= self.price <= config.PRICE_CEILING):
+        if self.price is None or not (t.get("price_floor", config.PRICE_FLOOR) <= self.price <= config.PRICE_CEILING):
             return False
-        if self.year and not (config.YEAR_MIN <= self.year <= config.YEAR_MAX):
+        if self.year and not (t["years"][0] <= self.year <= t["years"][1]):
             return False
         return True
 
@@ -191,9 +208,10 @@ def parse_year(text: Optional[str]) -> Optional[int]:
     return int(m.group(1)) if m else None
 
 
-def detect_trim(text: str) -> Optional[str]:
-    for name, rx in TRIMS:
-        if rx.search(text or ""):
+def detect_trim(text: str, target=None) -> Optional[str]:
+    t = target or current_target()
+    for name, rx in t["trims"]:
+        if re.search(rx, text or "", re.I):
             return name
     return None
 
@@ -224,13 +242,20 @@ def extract_state(location: str) -> Optional[str]:
     return None
 
 
-JUNK_RE = re.compile(r"ride[- ]along|charity|experience|hot lap|track day|wheel set|wheels?\b|rims?\b|parts?\b|badge|brochure|key fob|model car|diecast|1:18|1/18|1:43|poster|jacket|seat\b|exhaust|spoiler|carbon fiber (?:kit|piece)|GT4 Trophy", re.I)
+JUNK_RE = re.compile(r"ride[- ]along|charity|experience|hot lap|track day|wheel set|wheels?\b|rims?\b|parts?\b|badge|brochure|key fob|model car|diecast|1:18|1/18|1:43|poster|jacket|seat\b|exhaust|spoiler|carbon fiber (?:kit|piece)", re.I)
 
 
-def is_artura(text: str) -> bool:
-    return bool(re.search(r"artura", text or "", re.I))
+def is_target(text: str, target=None) -> bool:
+    """Does the text mention the current target model (Artura, Huracán, ...)?"""
+    t = target or current_target()
+    return bool(re.search(t["alias_re"], text or "", re.I))
 
 
-def is_junk(text: str) -> bool:
-    """Accessories, experiences and race cars that mention 'Artura' but are not a road car listing."""
-    return bool(JUNK_RE.search(text or ""))
+def is_artura(text: str) -> bool:   # backwards-compatible alias
+    return is_target(text)
+
+
+def is_junk(text: str, target=None) -> bool:
+    """Accessories, experiences and race cars that mention the model but are not a road-car listing."""
+    t = target or current_target()
+    return bool(JUNK_RE.search(text or "")) or bool(t.get("junk_re") and re.search(t["junk_re"], text or "", re.I))

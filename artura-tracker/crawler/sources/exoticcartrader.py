@@ -14,8 +14,8 @@ def fetch(client, ctx: Ctx):
         for h in dict.fromkeys(re.findall(r'href="([^"]*(?:cars-for-sale|inventory|vehicles)[^"]*)"', home.text, re.I)):
             u = abs_url(HOST, h)
             if u.startswith(HOST):
-                urls += [u, u + ("&" if "?" in u else "?") + "search=artura", u + ("&" if "?" in u else "?") + "make=McLaren"]
+                urls += [u, u + ("&" if "?" in u else "?") + "search=" + ctx.target["model_slug"], u + ("&" if "?" in u else "?") + "make=McLaren"]
             if len(urls) >= 6:
                 break
-    urls = urls or [HOST + "/cars-for-sale?search=artura"]
+    urls = urls or [HOST + "/cars-for-sale?search=" + ctx.target["model_slug"]]
     return crawl_simple(client, ctx, name=NAME, label=LABEL, urls=urls[:6], href_re=r"/vehicle/|/inventory/|/listing/|/cars-for-sale/", listing_type="private")

@@ -7,8 +7,6 @@ from __future__ import annotations
 
 import os
 
-MAKE = "McLaren"
-MODEL = "Artura"
 YEAR_MIN = 2020
 YEAR_MAX = 2026
 
@@ -128,3 +126,89 @@ DEALER_SITES_CA = [
     ("Ferrari Quebec (Montreal)", "https://www.ferrariquebec.com"),
     ("Lamborghini Calgary", "https://www.lamborghinicalgary.com"),
 ]
+
+
+LAMBORGHINI_DEALERS = [
+    ("Lamborghini Beverly Hills", "https://www.lamborghinibeverlyhills.com"),
+    ("Lamborghini Newport Beach", "https://www.lamborghininewportbeach.com"),
+    ("Lamborghini Calabasas", "https://www.lamborghinicalabasas.com"),
+    ("Lamborghini San Diego", "https://www.lamborghinisandiego.com"),
+    ("Lamborghini San Francisco", "https://www.lamborghinisanfrancisco.com"),
+    ("Lamborghini Los Gatos", "https://www.lamborghinilosgatos.com"),
+    ("Lamborghini Houston", "https://www.lamborghinihouston.com"),
+    ("Lamborghini Dallas", "https://www.lamborghinidallas.com"),
+    ("Lamborghini Austin", "https://www.lamborghiniaustin.com"),
+    ("Lamborghini Miami", "https://www.lamborghinimiami.com"),
+    ("Lamborghini Palm Beach", "https://www.lamborghinipalmbeach.com"),
+    ("Lamborghini Broward", "https://www.lamborghinibroward.com"),
+    ("Lamborghini Orlando", "https://www.lamborghiniorlando.com"),
+    ("Lamborghini Sarasota", "https://www.lamborghinisarasota.com"),
+    ("Lamborghini Tampa Bay", "https://www.lamborghinitampabay.com"),
+    ("Lamborghini Atlanta", "https://www.lamborghiniatlanta.com"),
+    ("Lamborghini Charlotte", "https://www.lamborghinicharlotte.com"),
+    ("Lamborghini Nashville", "https://www.lamborghininashville.com"),
+    ("Lamborghini Chicago", "https://www.lamborghinichicago.com"),
+    ("Lamborghini St. Louis", "https://www.lamborghinistlouis.com"),
+    ("Lamborghini Denver", "https://www.lamborghinidenver.com"),
+    ("Lamborghini Las Vegas", "https://www.lamborghinilasvegas.com"),
+    ("Lamborghini Scottsdale", "https://www.lamborghiniscottsdale.com"),
+    ("Lamborghini Bellevue", "https://www.lamborghinibellevue.com"),
+    ("Lamborghini Boston", "https://www.lamborghiniboston.com"),
+    ("Lamborghini Long Island", "https://www.lamborghinilongisland.com"),
+    ("Lamborghini Paramus", "https://www.lamborghiniparamus.com"),
+    ("Manhattan Motorcars (Lamborghini)", "https://www.manhattanmotorcars.com"),
+    ("Lamborghini Palmyra NJ", "https://www.lamborghinipalmyranj.com"),
+    ("Lamborghini Sterling", "https://www.lamborghinisterling.com"),
+    ("Lamborghini Washington", "https://www.lamborghiniwashington.com"),
+    ("Lamborghini Pittsburgh", "https://www.lamborghinipittsburgh.com"),
+    ("Lamborghini Cleveland", "https://www.lamborghinicleveland.com"),
+    ("Lamborghini Troy (Detroit)", "https://www.lamborghinitroy.com"),
+    ("Lamborghini Kansas City", "https://www.lamborghinikansascity.com"),
+    ("Lamborghini Minneapolis", "https://www.lamborghiniminneapolis.com"),
+    ("Lamborghini Salt Lake City", "https://www.lamborghinisaltlakecity.com"),
+    ("Lamborghini Portland", "https://www.lamborghiniportland.com"),
+    ("Lamborghini Philadelphia", "https://www.lamborghiniphiladelphia.com"),
+    ("Lamborghini Greenwich", "https://www.lamborghinigreenwich.com"),
+    ("Lamborghini North Los Angeles", "https://www.lamborghininorthlosangeles.com"),
+]
+LAMBORGHINI_DEALERS_CA = [
+    ("Lamborghini Uptown Toronto", "https://www.lamborghiniuptowntoronto.com"),
+    ("Lamborghini Vancouver", "https://www.lamborghinivancouver.com"),
+    ("Lamborghini Montreal", "https://www.lamborghinimontreal.com"),
+    ("Lamborghini Calgary", "https://www.lamborghinicalgary.com"),
+]
+
+# ---------------------------------------------------------------------------
+# Targets: every car we hunt. Each source builds its URLs from these fields.
+# ---------------------------------------------------------------------------
+TARGETS = {
+    "artura": {
+        "key": "artura", "make": "McLaren", "model": "Artura", "model_ascii": "Artura", "label": "McLaren Artura",
+        "make_slug": "mclaren", "model_slug": "artura", "alias_re": r"artura",
+        "vin_prefixes": ("SBM16",), "years": (2020, 2026), "price_floor": 60_000,
+        "trims": [("Spider", r"\bspider\b"), ("GT4", r"\bgt4\b"), ("Performance", r"\bperformance\b"),
+                  ("TechLux", r"\btech\s?lux\b"), ("Vision", r"\bvision\b")],
+        "default_trim": "Coupe", "junk_re": r"GT4 Trophy",
+        "cargurus_entity": "d3238", "carfax_path": "Used-Mclaren-Artura_w10502", "carfax_make": "Mclaren", "carfax_model": "Artura",
+        "query": "mclaren artura", "dealers": DEALER_SITES, "dealers_ca": DEALER_SITES_CA,
+    },
+    "huracan": {
+        "key": "huracan", "make": "Lamborghini", "model": "Huracán", "model_ascii": "Huracan", "label": "Lamborghini Huracán",
+        "make_slug": "lamborghini", "model_slug": "huracan", "alias_re": r"hurac[aá]n",
+        "vin_prefixes": ("ZHWU", "ZHWE", "ZHWH", "ZHWG", "ZHWR"), "years": (2020, 2026), "price_floor": 60_000,
+        "trims": [("STO", r"\bsto\b"), ("Tecnica", r"\btecnica\b"), ("Sterrato", r"\bsterrato\b"),
+                  ("Performante Spyder", r"performante\s+spyder"), ("Performante", r"\bperformante\b"),
+                  ("EVO RWD Spyder", r"evo\s+rwd\s+spyder|rwd\s+spyder"), ("EVO Spyder", r"evo\s+spyder"),
+                  ("EVO RWD", r"evo\s+rwd|\brwd\b"), ("EVO", r"\bevo\b"),
+                  ("LP 610-4 Spyder", r"610-4\s+spyder"), ("LP 610-4", r"610-4|lp\s?610"), ("LP 580-2", r"580-2|lp\s?580"),
+                  ("Spyder", r"\bspyder\b")],
+        "default_trim": "Coupe", "junk_re": r"Super Trofeo|GT3",
+        "cargurus_entity": "d2285", "carfax_path": "Used-Lamborghini-Huracan_w749", "carfax_make": "Lamborghini", "carfax_model": "Huracan",
+        "query": "lamborghini huracan", "dealers": LAMBORGHINI_DEALERS, "dealers_ca": LAMBORGHINI_DEALERS_CA,
+    },
+}
+DEFAULT_TARGETS = ["artura", "huracan"]
+for _t in TARGETS.values():
+    _t["query_plus"] = _t["query"].replace(" ", "+")
+    _t["query_enc"] = _t["query"].replace(" ", "%20")
+    _t["model_lower"] = _t["model_ascii"].lower()

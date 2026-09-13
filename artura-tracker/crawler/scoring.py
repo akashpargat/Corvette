@@ -60,15 +60,21 @@ def expected_price(model: dict, row: dict):
 
 
 def score_all(rows: list[dict]) -> dict:
-    model = fit_market(rows)
+    """Fit one market model per target; the returned dict is the first target's model plus per_target."""
+    targets = sorted({r.get("target", "artura") for r in rows})
+    models = {tk: fit_market([r for r in rows if r.get("target", "artura") == tk]) for tk in targets}
+    model = dict(models.get(targets[0], fit_market(rows))) if targets else fit_market(rows)
+    model["per_target"] = models
     for r in rows:
-        exp = expected_price(model, r) if r.get("price") else None
+        m = models.get(r.get("target", "artura"), model)
+        exp = expected_price(m, r) if r.get("price") else None
         r["expected_price"] = round(exp) if exp else None
         r["deal_pct"] = round((exp - r["price"]) / exp * 100, 1) if exp and r.get("price") else None
         r["price_per_mile_note"] = None
     # rank among clean candidates by price
-    pool = sorted([r for r in rows if r.get("candidate") and r.get("title_status") != "branded" and r.get("status") == "active"],
-                  key=lambda r: r["price"])
-    for i, r in enumerate(pool, 1):
-        r["rank_cheapest_clean"] = i
+    for tk in targets:
+        pool = sorted([r for r in rows if r.get("target", "artura") == tk and r.get("candidate") and r.get("title_status") != "branded" and r.get("status") == "active"],
+                      key=lambda r: r["price"])
+        for i, r in enumerate(pool, 1):
+            r["rank_cheapest_clean"] = i
     return model

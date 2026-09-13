@@ -4,20 +4,20 @@ from __future__ import annotations
 import re
 
 from ..extract import find_script_json, walk, abs_url
-from ..models import Listing, parse_mileage, parse_price
+from ..models import Listing, parse_mileage, parse_price, is_target, vin_matches, current_target
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards
 
 NAME = "autotrader"
 LABEL = "Autotrader"
 KIND = "marketplace"
 HOST = "https://www.autotrader.com"
-URL = HOST + "/cars-for-sale/all-cars/mclaren/artura?searchRadius=0&sortBy=derivedpriceASC&numRecords=100&firstRecord={first}"
+URL = HOST + "/cars-for-sale/all-cars/{make_slug}/{model_slug}?searchRadius=0&sortBy=derivedpriceASC&numRecords=100&firstRecord={first}"
 
 
 def fetch(client, ctx: Ctx, host: str = HOST, url_tpl: str = URL, name: str = NAME, label: str = LABEL):
     out = []
     for first in (0, 100, 200):
-        res = client.get(url_tpl.format(first=first), headers={"Referer": host + "/"})
+        res = client.get(ctx.url(url_tpl, first=first), headers={"Referer": host + "/"})
         ctx.pages += 1
         if not res.ok:
             ctx.diagnose(res, label)
@@ -42,10 +42,10 @@ def parse_bonnet(html: str, host: str, name: str, label: str) -> list[Listing]:
     if not data:
         return []
     out = []
-    for inv in walk(data, lambda d: isinstance(d.get("vin"), str) and d.get("vin", "").startswith("SBM")):
+    for inv in walk(data, lambda d: isinstance(d.get("vin"), str) and vin_matches(d.get("vin", ""))):
         model = str(inv.get("model", ""))
-        title = inv.get("title") or f"{inv.get('year','')} McLaren {model} {inv.get('trim','')}".strip()
-        if "artura" not in (title + model).lower():
+        title = inv.get("title") or f"{inv.get('year','')} {current_target()['make']} {model} {inv.get('trim','')}".strip()
+        if not is_target(title + " " + model):
             continue
         pricing = inv.get("pricingDetail") or {}
         price = pricing.get("salePrice") or pricing.get("derived") or pricing.get("msrp") or inv.get("price")

@@ -4,20 +4,20 @@ from __future__ import annotations
 import re
 
 from ..extract import abs_url, html_to_text
-from ..models import Listing, parse_mileage, parse_price, parse_year
+from ..models import Listing, parse_mileage, parse_price, parse_year, is_target, current_target
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "classic_com"
 LABEL = "CLASSIC.COM"
 KIND = "aggregator"
 HOST = "https://www.classic.com"
-URL = HOST + "/m/mclaren/artura/?status=for-sale&sort=price-asc&page={page}"
+URL = HOST + "/m/{make_slug}/{model_slug}/?status=for-sale&sort=price-asc&page={page}"
 
 
 def fetch(client, ctx: Ctx):
     out = []
     for page in (1, 2):
-        res = client.get(URL.format(page=page))
+        res = client.get(ctx.url(URL, page=page))
         ctx.pages += 1
         if not res.ok:
             ctx.diagnose(res, LABEL)
@@ -40,10 +40,11 @@ def _cards(html: str, base: str) -> list[Listing]:
         href = m.group(1)
         chunk = html[m.start(): m.start() + 5000]
         text = html_to_text(chunk)
-        if "artura" not in text.lower():
+        if not is_target(text):
             continue
-        title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^\n]{0,40})", text)
-        l = Listing(source=NAME, source_name=LABEL, url=abs_url(base, href), title=title_m.group(1).strip() if title_m else "McLaren Artura",
+        t = current_target()
+        title_m = re.search(r"(20\d\d\s+%s\s+%s[^\n]{0,40})" % (t["make"], t["alias_re"]), text, re.I)
+        l = Listing(source=NAME, source_name=LABEL, url=abs_url(base, href), title=title_m.group(1).strip() if title_m else t["label"],
                     year=parse_year(title_m.group(1) if title_m else text), price=parse_price(text), mileage=parse_mileage(text),
                     listing_type="auction" if re.search(r"auction|bid", text, re.I) else "dealer", extra={"description": text[:300]})
         loc = re.search(r"\n\s*([A-Z][A-Za-z .]+,\s*[A-Z]{2})\b", text)

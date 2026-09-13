@@ -39,60 +39,89 @@ def _car(l: dict) -> str:
     return f"{l.get('year') or '?'} Artura {l.get('trim') or ''}{local} · {miles} · {seller}{where}{flag}"
 
 
+def _target_label(tk: str) -> str:
+    from . import config
+    return config.TARGETS.get(tk, {}).get("label", tk)
+
+
+def _car(l: dict) -> str:  # noqa: F811 - model-aware version
+    where = f" · {l['location']}" if l.get("location") else (f" · {l['state']}" if l.get("state") else "")
+    seller = l.get("dealer") or ("private seller" if l.get("listing_type") == "private" else "seller n/a")
+    miles = f"{l['mileage']:,} mi" if l.get("mileage") is not None else "miles n/a"
+    flag = " 🇨🇦" if l.get("country") == "CA" else ""
+    local = f" (CA${l['price_local']:,})" if l.get("price_local") else ""
+    from . import config
+    model = config.TARGETS.get(l.get("target", "artura"), {}).get("model", "Artura")
+    return f"{l.get('year') or '?'} {model} {l.get('trim') or ''}{local} · {miles} · {seller}{where}{flag}"
+
+
 def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
+    from . import config
     d = json.load(open(os.path.join(data_dir, "listings.json")))
     runs = json.load(open(os.path.join(data_dir, "runs.json")))
     market = json.load(open(os.path.join(data_dir, "market.json")))
     today = d["summary"]["date"]
     by = {l["key"]: l for l in d["listings"]}
-    pool = sorted([l for l in d["listings"] if l["status"] == "active" and l.get("candidate") and l.get("title_status") != "branded" and l.get("price")],
-                  key=lambda l: l["price"])
-    top = pool[:top_n]
-    lines = []
-    if top:
-        h = top[0]
-        prev = market[-2]["cheapest"] if len(market) > 1 else None
-        delta = "" if prev is None else (" (unchanged from yesterday)" if prev == h["price"] else f" (yesterday's low was {_money(prev)})")
-        lines.append(f"Cheapest clean-title Artura today: {_money(h['price'])} — {_car(h)}{delta}")
-    else:
-        lines.append("No clean-title candidates in today's data.")
-    lines += ["", "TOP 10 CHEAPEST"]
-    for i, l in enumerate(top, 1):
-        tags = []
-        if l.get("first_seen") == today:
-            tags.append("NEW")
-        pc = l.get("last_price_change") or {}
-        if pc.get("date") == today and pc.get("delta", 0) < 0:
-            tags.append(f"▼ {_money(-pc['delta'])}")
-        title = "verified clean" if l.get("title_status") == "clean" else "unverified"
-        tag = f" [{' · '.join(tags)}]" if tags else ""
-        srcs = ", ".join(SHORT.get(s, s) for s in l.get("sources", []))
-        lines.append(f"{i}. {_money(l['price'])} — {_car(l)} · title {title}{tag} · on {srcs}")
-        lines.append(f"   {l['url']}")
     c = d.get("changes", {})
-    lines += ["", "CHANGES"]
-    def _list(keys, fmt):
-        rows = [by[k] for k in keys if k in by]
-        return [fmt(r) for r in rows[:15]] or ["   none"]
-    lines.append(f"New today ({len(c.get('new', []))}):")
-    lines += _list(c.get("new", []), lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
-    lines.append(f"Price drops ({len(c.get('price_drop', []))}):")
-    lines += _list(c.get("price_drop", []), lambda r: f"   {_money(r['last_price_change']['from'])} -> {_money(r['price'])} — {_car(r)}")
-    lines.append(f"Sold or removed ({len(c.get('removed', []))}):")
-    lines += _list(c.get("removed", []), lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
+    targets = [k for k in config.DEFAULT_TARGETS if any(l.get("target", "artura") == k for l in d["listings"])] or ["artura"]
+    lines = []
+    for tk in targets:
+        label = _target_label(tk)
+        pool = sorted([l for l in d["listings"] if l.get("target", "artura") == tk and l["status"] == "active" and l.get("candidate")
+                       and l.get("title_status") != "branded" and l.get("price")], key=lambda l: l["price"])
+        top = pool[:top_n]
+        lines += ["=" * 8 + f" {label.upper()} " + "=" * 8]
+        if top:
+            h = top[0]
+            prev = None
+            if len(market) > 1:
+                pm = market[-2]
+                prev = (pm.get("targets") or {}).get(tk, {}).get("cheapest") if pm.get("targets") else (pm.get("cheapest") if tk == "artura" else None)
+            delta = "" if prev is None else (" (unchanged from yesterday)" if prev == h["price"] else f" (yesterday's low was {_money(prev)})")
+            lines.append(f"Cheapest clean-title {config.TARGETS[tk]['model']} today: {_money(h['price'])} — {_car(h)}{delta}")
+        else:
+            lines.append(f"No clean-title {label} candidates in today's data.")
+        lines += ["", f"TOP {top_n} CHEAPEST {config.TARGETS[tk]['model'].upper()}"]
+        for i, l in enumerate(top, 1):
+            tags = []
+            if l.get("first_seen") == today:
+                tags.append("NEW")
+            pc = l.get("last_price_change") or {}
+            if pc.get("date") == today and pc.get("delta", 0) < 0:
+                tags.append(f"▼ {_money(-pc['delta'])}")
+            title = "verified clean" if l.get("title_status") == "clean" else "unverified"
+            tag = f" [{' · '.join(tags)}]" if tags else ""
+            srcs = ", ".join(SHORT.get(s, s) for s in l.get("sources", []))
+            lines.append(f"{i}. {_money(l['price'])} — {_car(l)} · title {title}{tag} · on {srcs}")
+            lines.append(f"   {l['url']}")
+        def _list(keys, fmt):
+            rows = [by[k] for k in keys if k in by and by[k].get("target", "artura") == tk]
+            return [fmt(r) for r in rows[:15]] or ["   none"]
+        lines += ["", f"CHANGES ({config.TARGETS[tk]['model']})"]
+        new_k = [k for k in c.get("new", []) if by.get(k, {}).get("target", "artura") == tk]
+        drop_k = [k for k in c.get("price_drop", []) if by.get(k, {}).get("target", "artura") == tk]
+        gone_k = [k for k in c.get("removed", []) if by.get(k, {}).get("target", "artura") == tk]
+        lines.append(f"New today ({len(new_k)}):")
+        lines += _list(new_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
+        lines.append(f"Price drops ({len(drop_k)}):")
+        lines += _list(drop_k, lambda r: f"   {_money(r['last_price_change']['from'])} -> {_money(r['price'])} — {_car(r)}")
+        lines.append(f"Sold or removed ({len(gone_k)}):")
+        lines += _list(gone_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
+        lines.append("")
     run = runs[-1]
     ok = [s for s in run["sources"] if s["status"] == "ok"]
     empty = [s for s in run["sources"] if s["status"] == "empty"]
     blocked = [s for s in run["sources"] if s["status"] in ("blocked", "failed")]
-    lines += ["", "SOURCES", f"{len(ok)} ok · {len(empty)} empty · {len(blocked)} blocked — {d['summary']['active']} unique cars tracked",
-              "ok: " + ", ".join(f"{s.get('label', s['source'])} ({s['count']})" for s in ok),
-              "blocked: " + ", ".join(s.get("label", s["source"]) for s in blocked)]
+    lines += ["SOURCES", f"{len(ok)} ok · {len(empty)} empty · {len(blocked)} blocked source runs — {d['summary']['active']} unique cars tracked",
+              "ok: " + ", ".join(f"{s.get('label', s['source'])}{'/' + s['target'] if s.get('target') not in (None, 'all') else ''} ({s['count']})" for s in ok),
+              "blocked: " + ", ".join(sorted({s.get("label", s["source"]) for s in blocked}))]
     fb = next((s for s in run["sources"] if s["source"] == "fb_marketplace"), None)
     if fb and fb["status"] != "ok" and not (fb.get("extra") or {}).get("had_cookies"):
         lines.append("Facebook Marketplace is login-walled; add the FB_COOKIES_JSON repository secret to unlock it.")
     lines += ["", "Unverified = no source flagged salvage/rebuilt/flood/lemon, but no history report confirmed it. Pull a CARFAX and get a PPI before wiring money.",
               f"Dashboard: {DASHBOARD}"]
-    subject = f"Artura Hunt — top 10 cheapest clean-title McLaren Arturas ({datetime.now(timezone.utc).strftime('%b %-d')})"
+    names = " + ".join(config.TARGETS[t]["model"] for t in targets)
+    subject = f"Supercar Hunt — top 10 cheapest clean-title {names} ({datetime.now(timezone.utc).strftime('%b %-d')})"
     return subject, "\n".join(lines)
 
 

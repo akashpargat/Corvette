@@ -53,7 +53,7 @@ def test_brief_builds_from_merged_data(tmp_path):
     d = str(tmp_path)
     merge(d, [_l("SBM16AEA5PW000001", 180000), _l("SBM16AEA5PW000002", 170000)], _report())
     subject, body = build(d)
-    assert "Artura Hunt" in subject and "TOP 10 CHEAPEST" in body
+    assert "Supercar Hunt" in subject and "TOP 10 CHEAPEST" in body
     assert "$170,000" in body and body.index("$170,000") < body.index("$180,000")
     assert "NEW" in body and "1 ok" in body
 

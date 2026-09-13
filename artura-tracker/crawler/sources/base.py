@@ -7,7 +7,7 @@ from typing import Optional
 
 from ..extract import find_jsonld, vehicles_from_jsonld, html_to_text, find_vins, abs_url, vin_dicts_from_html, vehicle_from_vin_dict
 from ..http_client import Client, FetchResult, page_title, sentinel_keys, visible_text
-from ..models import Listing, parse_mileage, parse_price, parse_year, is_artura, VIN_RE
+from ..models import Listing, parse_mileage, parse_price, parse_year, is_artura, is_target, vin_matches, current_target, set_target, VIN_RE
 
 
 @dataclass
@@ -16,6 +16,11 @@ class Ctx:
     log: object
     notes: list = field(default_factory=list)
     pages: int = 0
+    target: dict = field(default_factory=current_target)
+
+    def url(self, template: str, **kw) -> str:
+        """Fill {make_slug}, {model_slug}, {query_plus}... from the target plus any extra keys."""
+        return template.format(**{**self.target, **kw})
 
     def note(self, msg: str):
         self.notes.append(msg)
@@ -32,15 +37,16 @@ class Ctx:
             scripts = re.findall(r"<script([^>]{0,160})>", res.text)
             ids = [re.sub(r"\s+", " ", a).strip()[:90] for a in scripts if ("id=" in a or "type=" in a)]
             self.log.warning("  scripts(%d): %s", len(scripts), " | ".join(dict.fromkeys(ids))[:1200])
-            hrefs = list(dict.fromkeys(re.findall(r'href="([^"]*[Aa]rtura[^"]*)"', res.text)))[:6]
+            slug = current_target()["model_slug"]
+            hrefs = list(dict.fromkeys(re.findall(r'href="([^"]*%s[^"]*)"' % slug, res.text, re.I)))[:6]
             if hrefs:
-                self.log.warning("  artura hrefs: %s", hrefs)
-            hits = [m.start() for m in re.finditer(r"[Aa]rtura", res.text)][:200]
+                self.log.warning("  %s hrefs: %s", slug, hrefs)
+            hits = [m.start() for m in re.finditer(current_target()["alias_re"], res.text, re.I)][:200]
             shown = 0
             for h in hits:
                 ctx = res.text[max(0, h - 160): h + 220].replace("\n", " ")
                 if "$" in ctx or "price" in ctx.lower() or "vin" in ctx.lower():
-                    self.log.warning("  artura@%d: %s", h, ctx)
+                    self.log.warning("  hit@%d: %s", h, ctx)
                     shown += 1
                 if shown >= 4:
                     break
@@ -64,7 +70,7 @@ def listings_from_jsonld(html: str, source: str, source_name: str, base_url: str
     out = []
     for v in vehicles_from_jsonld(find_jsonld(html)):
         text = f"{v['name']} {v['model']} {v['description']}"
-        if not is_artura(text) and not (v["vin"] or "").startswith("SBM16"):
+        if not is_target(text) and not vin_matches(v["vin"]):
             continue
         url = v["url"] or base_url
         if url and not url.startswith("http"):
@@ -75,7 +81,7 @@ def listings_from_jsonld(html: str, source: str, source_name: str, base_url: str
             cond = "new"
         elif "used" in c or "refurb" in c:
             cond = "used"
-        lst = Listing(source=source, source_name=source_name, url=url or base_url, title=v["name"] or "McLaren Artura",
+        lst = Listing(source=source, source_name=source_name, url=url or base_url, title=v["name"] or current_target()["label"],
                       vin=v["vin"], year=v["year"], price=v["price"], mileage=v["mileage"], color=v["color"],
                       dealer=v["seller"] or dealer, image=v["image"], listing_type=listing_type, condition=cond,
                       extra={"description": (v["description"] or "")[:600]})
@@ -100,15 +106,16 @@ def listings_from_vin_cards(html: str, source: str, source_name: str, base_url: 
         lo, hi = max(0, m.start() - 6000), min(len(html), m.end() + 6000)
         chunk = html[lo:hi]
         text = html_to_text(chunk)
-        if not is_artura(text):
+        if not is_target(text) or not vin_matches(vin):
             continue
-        title_m = re.search(r"(20(?:1[5-9]|2[0-9])\s+(?:New\s+|Used\s+|Certified\s+)?McLaren\s+Artura(?:\s+(?:Spider|Performance|TechLux|Vision|GT4|Coupe))*)", text, re.I)
-        title = title_m.group(1).strip() if title_m else "McLaren Artura"
+        t = current_target()
+        title_m = re.search(r"(20(?:1[5-9]|2[0-9])\s+(?:New\s+|Used\s+|Certified\s+)?%s\s+%s[^\n$|]{0,30})" % (t["make"], t["alias_re"]), text, re.I)
+        title = title_m.group(1).strip() if title_m else t["label"]
         prices = [parse_price(p) for p in re.findall(r"\$\s?[0-9]{2,3}(?:,[0-9]{3})+", text)]
         prices = [p for p in prices if p and 40000 <= p <= 500000]
         # nearest link to a VDP that contains the vin or 'artura'
         link_m = (re.search(r'href=["\']([^"\']*%s[^"\']*)["\']' % vin, chunk, re.I)
-                  or re.search(r'href=["\']([^"\']*artura[^"\']*)["\']', chunk, re.I)
+                  or re.search(r'href=["\']([^"\']*%s[^"\']*)["\']' % t["model_slug"], chunk, re.I)
                   or re.search(r'href=["\']([^"\']*/(?:used|new|inventory|vehicle|vdp|certified|pre-owned)[^"\']*)["\']', chunk, re.I))
         url = abs_url(base_url, link_m.group(1)) if link_m else base_url
         lst = Listing(source=source, source_name=source_name, url=url, title=title, vin=vin,
@@ -124,17 +131,19 @@ def listings_from_embedded_json(html: str, source: str, source_name: str, base_u
     out = []
     for o in vin_dicts_from_html(html):
         v = vehicle_from_vin_dict(o)
-        if not v["vin"] or not v["vin"].startswith("SBM16"):
+        if not v["vin"] or not vin_matches(v["vin"]):
             continue
         text = f"{v['title']} {v['trim'] or ''} {json_snippet(o)}"
-        if not is_artura(text) and not v["vin"].startswith("SBM16"):
+        # the model name is usually in the JSON; otherwise trust a page whose URL names the model
+        if not is_target(text) and not re.search(current_target()["model_slug"], base_url or "", re.I):
             continue
         url = v["url"] or base_url
         if url and not str(url).startswith("http"):
             url = abs_url(base_url, str(url))
         loc = ", ".join(x for x in [v["city"], v["state"]] if x) or None
-        l = Listing(source=source, source_name=source_name, url=url, title=v["title"] or "McLaren Artura", vin=v["vin"],
-                    year=v["year"], trim=v["trim"] if v["trim"] and re.search(r"spider|performance|techlux|vision|gt4", v["trim"], re.I) else None,
+        from ..models import detect_trim
+        l = Listing(source=source, source_name=source_name, url=url, title=v["title"] or current_target()["label"], vin=v["vin"],
+                    year=v["year"], trim=detect_trim(v["trim"] or "") if v["trim"] else None,
                     price=v["price"], mileage=v["mileage"], color=v["color"], dealer=v["dealer"] or dealer, location=loc,
                     image=v["image"], listing_type=listing_type, condition=v["condition"],
                     extra={"accidents": v["accidents"], "owners": v["owners"], "from": "embedded-json"})
@@ -234,15 +243,16 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
         key = href.split("?")[0]
         if key in seen:
             continue
+        alias = current_target()["alias_re"]
         node, text = a, a.get_text("\n", strip=True)
         for _ in range(max_up):
-            if re.search(r"\$\s?\d", text) and re.search(r"artura", text, re.I):
+            if re.search(r"\$\s?\d", text) and re.search(alias, text, re.I):
                 break
             node = node.parent
             if node is None:
                 break
             text = node.get_text("\n", strip=True)
-        if node is None or not re.search(r"artura", text, re.I):
+        if node is None or not re.search(alias, text, re.I):
             continue
         if len(text) > 4000:      # climbed to the whole page; not a card
             continue
@@ -250,7 +260,7 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
             continue                # container holds several cars; would mix prices
         seen.add(key)
         lines = [t for t in text.split("\n") if t.strip()]
-        title = next((t for t in lines if re.search(r"20\d\d.*artura|artura.*20\d\d", t, re.I)), next((t for t in lines if re.search(r"artura", t, re.I)), "McLaren Artura"))
+        title = next((t for t in lines if re.search(r"20\d\d.*%s|%s.*20\d\d" % (alias, alias), t, re.I)), next((t for t in lines if re.search(alias, t, re.I)), current_target()["label"]))
         price_line = next((t for t in lines if re.search(r"(?:CA?\$|US\$|\$)\s?\d{2,3},?\d{3}", t) and not re.search(r"/\s?mo|month|down|deposit|save|off\b|msrp|was\b", t, re.I)), "")
         mile_line = next((t for t in lines if re.search(r"\b(mi|miles|km)\b", t, re.I) and re.search(r"\d", t)), "")
         loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t)), None)

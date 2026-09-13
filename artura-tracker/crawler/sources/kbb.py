@@ -6,7 +6,7 @@ NAME = "kbb"
 LABEL = "Kelley Blue Book"
 KIND = "marketplace"
 HOST = "https://www.kbb.com"
-URL = HOST + "/cars-for-sale/all/mclaren/artura?searchRadius=0&sortBy=derivedpriceASC&numRecords=100&firstRecord={first}"
+URL = HOST + "/cars-for-sale/all/{make_slug}/{model_slug}?searchRadius=0&sortBy=derivedpriceASC&numRecords=100&firstRecord={first}"
 
 
 def fetch(client, ctx: Ctx):

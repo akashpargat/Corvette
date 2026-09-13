@@ -46,3 +46,16 @@ def test_vin_year_and_cents():
     assert parse_price(33320000) == 333200 and parse_price("$3,332,000") == 3332000 // 100 * 1 if False else parse_price(33320000) == 333200
     l = Listing(source="x", source_name="X", url="u", title="McLaren Artura", vin="SBM16AEA8RW002123", price=18444900).finalize()
     assert l.year == 2024 and l.price == 184449
+
+
+def test_huracan_target():
+    from crawler.models import set_target, current_target, Listing, detect_trim, vin_matches
+    set_target("huracan")
+    try:
+        l = Listing(source="x", source_name="X", url="u", title="2022 Lamborghini Huracán EVO RWD Spyder VIN ZHWUT4ZF9NLA12345", price=249000, mileage=8000).finalize()
+        assert l.target == "huracan" and l.vin == "ZHWUT4ZF9NLA12345" and l.trim == "EVO RWD Spyder" and l.year == 2022 and l.is_candidate()
+        assert detect_trim("Huracan STO") == "STO" and vin_matches("ZHWUC1ZF5KLA00001") and not vin_matches("SBM16AEA5PW001931")
+        race = Listing(source="x", source_name="X", url="u", title="2021 Lamborghini Huracan Super Trofeo EVO race car", price=200000).finalize()
+        assert not race.is_candidate()
+    finally:
+        set_target("artura")

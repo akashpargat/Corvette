@@ -4,20 +4,20 @@ from __future__ import annotations
 import re
 
 from ..extract import abs_url, next_data, walk
-from ..models import Listing, parse_mileage, parse_price, parse_year
+from ..models import Listing, parse_mileage, parse_price, parse_year, is_target, current_target
 from .base import Ctx, dedupe, listings_from_jsonld, listings_from_vin_cards, parse_any
 
 NAME = "dupont"
 LABEL = "duPont REGISTRY"
 KIND = "marketplace"
 HOST = "https://www.dupontregistry.com"
-URL = HOST + "/autos/results/mclaren/artura/all?sort=price_asc&page={page}"
+URL = HOST + "/autos/results/{make_slug}/{model_slug}/all?sort=price_asc&page={page}"
 
 
 def fetch(client, ctx: Ctx):
     out = []
     for page in (1, 2, 3):
-        res = client.get(URL.format(page=page))
+        res = client.get(ctx.url(URL, page=page))
         ctx.pages += 1
         if not res.ok:
             ctx.diagnose(res, LABEL)
@@ -26,7 +26,7 @@ def fetch(client, ctx: Ctx):
         nd = next_data(res.text)
         if nd:
             ctx.sample('dupont-nextdata-keys', list((nd.get("props", {}).get("pageProps", {}) or {}).keys()))
-            for r in walk(nd, lambda d: ("artura" in str(d.get("model", "")).lower() or "artura" in str(d.get("title", "")).lower()) and ("price" in d or "askingPrice" in d)):
+            for r in walk(nd, lambda d: is_target(str(d.get("model", "")) + " " + str(d.get("title", ""))) and ("price" in d or "askingPrice" in d)):
                 ctx.sample('dupont', r)
                 got.append(_row(r))
         got += parse_any(res.text, NAME, LABEL, res.url)
@@ -34,7 +34,7 @@ def fetch(client, ctx: Ctx):
             got = _links(res.text, res.url)
         if not got and page == 1:
             from ..browser import browser_get
-            b = browser_get(URL.format(page=page), scroll=4, wait_ms=5000)
+            b = browser_get(ctx.url(URL, page=page), scroll=4, wait_ms=5000)
             ctx.log.info("%s: browser render -> %s bytes, %s", LABEL, len(b.html), b.error or "ok")
             if b.html:
                 got = parse_any(b.html, NAME, LABEL, res.url) + _links(b.html, res.url)
@@ -55,7 +55,7 @@ def _row(r: dict) -> Listing:
         dealer = {"name": str(dealer)}
     loc = ", ".join(x for x in [r.get("city") or dealer.get("city"), r.get("state") or dealer.get("state")] if x)
     href = r.get("url") or r.get("slug") or r.get("link") or ""
-    return Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, href) if href else HOST, title=r.get("title") or f"{r.get('year','')} McLaren Artura",
+    return Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, href) if href else HOST, title=r.get("title") or f"{r.get('year','')} {current_target()['label']}",
                    vin=r.get("vin"), year=r.get("year"), price=parse_price(r.get("price") or r.get("askingPrice")),
                    mileage=parse_mileage(r.get("mileage") or r.get("odometer")), dealer=dealer.get("name"), location=loc or None,
                    image=(r.get("image") or r.get("photo") or (r.get("images") or [None])[0]) if isinstance(r.get("images", []), list) else None,
@@ -64,10 +64,11 @@ def _row(r: dict) -> Listing:
 
 def _links(html: str, base: str) -> list[Listing]:
     out = []
-    for m in re.finditer(r'href="([^"]*/(?:autos/listing|autos/details|listing|vehicle)[^"]*artura[^"]*)"', html, re.I):
+    t = current_target()
+    for m in re.finditer(r'href="([^"]*/(?:autos/listing|autos/details|listing|vehicle)[^"]*%s[^"]*)"' % t["model_slug"], html, re.I):
         chunk = html[max(0, m.start() - 3000): m.end() + 3000]
         text = re.sub(r"<[^>]+>", " ", chunk)
-        title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^<]{0,30})", text)
-        out.append(Listing(source=NAME, source_name=LABEL, url=abs_url(base, m.group(1)), title=title_m.group(1).strip() if title_m else "McLaren Artura",
+        title_m = re.search(r"(20\d\d\s+%s\s+%s[^<]{0,30})" % (t["make"], t["alias_re"]), text, re.I)
+        out.append(Listing(source=NAME, source_name=LABEL, url=abs_url(base, m.group(1)), title=title_m.group(1).strip() if title_m else t["label"],
                            year=parse_year(title_m.group(1) if title_m else ""), price=parse_price(text), mileage=parse_mileage(text)).finalize())
     return out
