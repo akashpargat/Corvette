@@ -48,8 +48,8 @@
     "model": "Huracán",
     "model_ascii": "Huracan",
     "years": [
-      2020,
-      2024
+      2015,
+      2019
     ],
     "price_floor": 60000,
     "vin_prefixes": [
@@ -121,6 +121,16 @@
     "dealer_network": "lamborghini",
     "enabled": true,
     "price_ceiling": 700000,
-    "exclude_re": "temerario|urus|revuelto|aventador|gallardo|countach|sian|murcielago"
+    "exclude_re": "temerario|urus|revuelto|aventador|gallardo|countach|sian|murcielago",
+    "exclude_trims": [
+      "EVO",
+      "EVO Spyder",
+      "EVO RWD",
+      "EVO RWD Spyder",
+      "STO",
+      "Tecnica",
+      "Sterrato"
+    ],
+    "note": "First-generation Huracán only: LP 610-4, LP 580-2, Performante and their Spyders. EVO/STO/Tecnica/Sterrato are tracked but never ranked."
   }
 }

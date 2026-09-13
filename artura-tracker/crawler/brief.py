@@ -70,7 +70,10 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         pool = sorted([l for l in d["listings"] if l.get("target", "artura") == tk and l["status"] == "active" and l.get("rankable", l.get("candidate"))
                        and l.get("title_status") != "branded" and l.get("price")], key=lambda l: l["price"])
         top = pool[:top_n]
-        lines += ["=" * 8 + f" {label.upper()} " + "=" * 8]
+        yrs = config.TARGETS[tk]["years"]
+        lines += ["=" * 8 + f" {label.upper()} ({yrs[0]}-{yrs[1]}) " + "=" * 8]
+        if config.TARGETS[tk].get("exclude_trims"):
+            lines.append("Excluded from ranking: " + ", ".join(sorted(config.TARGETS[tk]["exclude_trims"])))
         if top:
             h = top[0]
             prev = None

@@ -214,7 +214,7 @@ def load_targets(path: str = TARGETS_FILE) -> dict:
             "vin_prefixes": tuple(t.get("vin_prefixes") or ()), "years": tuple(t.get("years") or (YEAR_MIN, YEAR_MAX)),
             "price_floor": t.get("price_floor", PRICE_FLOOR), "price_ceiling": t.get("price_ceiling", PRICE_CEILING),
             "trims": [(n, rx) for n, rx in t.get("trims", [])], "default_trim": t.get("default_trim", "Coupe"),
-            "junk_re": t.get("junk_re") or "", "exclude_re": t.get("exclude_re") or "", "cargurus_entity": t.get("cargurus_entity") or "",
+            "junk_re": t.get("junk_re") or "", "exclude_re": t.get("exclude_re") or "", "exclude_trims": set(t.get("exclude_trims") or []), "cargurus_entity": t.get("cargurus_entity") or "",
             "carfax_path": t.get("carfax_path") or f"Used-{make}-{model_ascii.replace(' ', '-')}",
             "carfax_make": t.get("carfax_make") or make, "carfax_model": t.get("carfax_model") or model_ascii,
             "query": f"{make} {model_ascii}".lower(), "dealers": net["us"], "dealers_ca": net["ca"],

@@ -53,7 +53,9 @@ def test_huracan_target():
     set_target("huracan")
     try:
         l = Listing(source="x", source_name="X", url="u", title="2022 Lamborghini Huracán EVO RWD Spyder VIN ZHWUT4ZF9NLA12345", price=249000, mileage=8000).finalize()
-        assert l.target == "huracan" and l.vin == "ZHWUT4ZF9NLA12345" and l.trim == "EVO RWD Spyder" and l.year == 2022 and l.is_candidate()
+        assert l.target == "huracan" and l.vin == "ZHWUT4ZF9NLA12345" and l.trim == "EVO RWD Spyder" and l.year == 2022 and not l.is_candidate()
+        g1 = Listing(source="x", source_name="X", url="u", title="2017 Lamborghini Huracan LP 610-4 Coupe", price=189000, mileage=12000, year=2017).finalize()
+        assert g1.trim == "LP 610-4" and g1.is_candidate()
         assert detect_trim("Huracan STO") == "STO" and vin_matches("ZHWUC1ZF5KLA00001") and not vin_matches("SBM16AEA5PW001931")
         race = Listing(source="x", source_name="X", url="u", title="2021 Lamborghini Huracan Super Trofeo EVO race car", price=200000).finalize()
         assert not race.is_candidate()

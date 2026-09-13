@@ -202,7 +202,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     from . import config as _cfg
     summary = {
         "targets": per_target,
-        "target_labels": {k: {"model": t["model"], "label": t["label"]} for k, t in _cfg.TARGETS.items()},
+        "target_labels": {k: {"model": t["model"], "label": f"{t['label']} {t['years'][0]}–{t['years'][1]}"} for k, t in _cfg.TARGETS.items()},
         "generated_at": ts, "date": d, "active": len(active), "clean_candidates": len(clean),
         "new_today": len(changes["new"]), "price_drops_today": len(changes["price_drop"]),
         "removed_today": len(changes["removed"]), "cheapest_clean_key": cheapest["key"] if cheapest else None,
@@ -279,6 +279,8 @@ def _candidate(rec: dict) -> bool:
         return False
     y = rec.get("year")
     if not y or not (t["years"][0] <= y <= t["years"][1]):
+        return False
+    if rec.get("trim") in t.get("exclude_trims", set()):
         return False
     import re as _re
     if t.get("exclude_re") and _re.search(t["exclude_re"], f"{rec.get('title','')} {rec.get('url','')}", _re.I) and not _re.search(t["alias_re"], rec.get("title", "") or "", _re.I):

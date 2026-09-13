@@ -139,7 +139,7 @@ class Listing:
     def is_candidate(self) -> bool:
         """A plausible, real, road-going Artura with a believable price."""
         t = config.TARGETS.get(self.target) or current_target()
-        if is_junk(self.title, t) or self.trim in ("GT4", "GT3", "Super Trofeo"):
+        if is_junk(self.title, t) or self.trim in ("GT4", "GT3", "Super Trofeo") or self.trim in t.get("exclude_trims", set()):
             return False
         if is_other_model(f"{self.title} {self.url}", t) and not is_target(self.title, t):
             return False
