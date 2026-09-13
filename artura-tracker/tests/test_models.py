@@ -59,3 +59,15 @@ def test_huracan_target():
         assert not race.is_candidate()
     finally:
         set_target("artura")
+
+
+def test_sibling_models_are_excluded():
+    from crawler.models import set_target, Listing
+    set_target("huracan")
+    try:
+        t = Listing(source="dealer_sites", source_name="d", url="https://x/2026-lamborghini-temerario-zhwuc1zc6tla01419", title="2026 Lamborghini", vin="ZHWUC1ZC6TLA01419", price=202609, year=2026).finalize()
+        assert not t.is_candidate()
+    finally:
+        set_target("artura")
+    a = Listing(source="x", source_name="x", url="https://x/2024-mclaren-750s", title="2024 McLaren 750S Spider", price=300000, year=2024).finalize()
+    assert not a.is_candidate()

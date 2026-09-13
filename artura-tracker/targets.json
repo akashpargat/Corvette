@@ -40,7 +40,8 @@
     "carfax_path": "Used-Mclaren-Artura_w10502",
     "dealer_network": "mclaren",
     "enabled": true,
-    "price_ceiling": 400000
+    "price_ceiling": 400000,
+    "exclude_re": "\\b(720s|750s|765lt|570s|600lt|620r|gts|senna|elva|speedtail|w1|solus|mclaren gt\\b)"
   },
   "huracan": {
     "make": "Lamborghini",
@@ -48,7 +49,7 @@
     "model_ascii": "Huracan",
     "years": [
       2020,
-      2026
+      2024
     ],
     "price_floor": 60000,
     "vin_prefixes": [
@@ -119,6 +120,7 @@
     "carfax_path": "Used-Lamborghini-Huracan_w749",
     "dealer_network": "lamborghini",
     "enabled": true,
-    "price_ceiling": 700000
+    "price_ceiling": 700000,
+    "exclude_re": "temerario|urus|revuelto|aventador|gallardo|countach|sian|murcielago"
   }
 }

@@ -42,9 +42,9 @@ SLUG_ANY = "|".join(t["model_slug"] for t in ALL_TARGETS)
 
 
 def target_for(text: str):
-    """Which target does this URL / page belong to? (first alias that matches)"""
+    """Which target does this URL / page belong to? (first alias that matches and no sibling model named)"""
     for t in ALL_TARGETS:
-        if re.search(t["alias_re"], text or "", re.I):
+        if re.search(t["alias_re"], text or "", re.I) and not (t.get("exclude_re") and re.search(t["exclude_re"], text or "", re.I)):
             return t
     return None
 
@@ -162,7 +162,8 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
         if not t:
             continue
         set_target(t)
-        got = parse_any(res.text, NAME, name, res.url, dealer=name)
+        got = [g for g in parse_any(res.text, NAME, name, res.url, dealer=name)
+               if not (t.get("exclude_re") and re.search(t["exclude_re"], f"{g.title} {g.url}", re.I))]
         for g in got:
             g.target = t["key"]
         if got and not sampled and not any(g.price for g in got):

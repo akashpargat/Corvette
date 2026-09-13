@@ -141,6 +141,8 @@ class Listing:
         t = config.TARGETS.get(self.target) or current_target()
         if is_junk(self.title, t) or self.trim in ("GT4", "GT3", "Super Trofeo"):
             return False
+        if is_other_model(f"{self.title} {self.url}", t) and not is_target(self.title, t):
+            return False
         if self.price is None or not (t.get("price_floor", config.PRICE_FLOOR) <= self.price <= t.get("price_ceiling", config.PRICE_CEILING)):
             return False
         if not self.year:
@@ -256,6 +258,12 @@ def is_target(text: str, target=None) -> bool:
     """Does the text mention the current target model (Artura, Huracán, ...)?"""
     t = target or current_target()
     return bool(re.search(t["alias_re"], text or "", re.I))
+
+
+def is_other_model(text: str, target=None) -> bool:
+    """Does the text name a sibling model (Temerario, 750S...) that must not be counted as the target?"""
+    t = target or current_target()
+    return bool(t.get("exclude_re")) and bool(re.search(t["exclude_re"], text or "", re.I))
 
 
 def is_artura(text: str) -> bool:   # backwards-compatible alias

@@ -19,7 +19,7 @@ from .http_client import Client
 from .sources import load_sources
 from .sources.base import Ctx
 from .store import merge, now_iso
-from .models import set_target, is_target, vin_matches
+from .models import set_target, is_target, vin_matches, is_other_model
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_DATA = os.path.join(os.path.dirname(HERE), "data")
@@ -37,7 +37,8 @@ def run_source(mod, log, target: dict) -> tuple[dict, list]:
     try:
         listings = [l for l in mod.fetch(client, ctx) if l is not None]
         if not multi:
-            listings = [l for l in listings if is_target(l.title or "", target) or vin_matches(l.vin, target)]
+            listings = [l for l in listings if (is_target(l.title or "", target) or vin_matches(l.vin, target))
+                        and not (is_other_model(f"{l.title} {l.url}", target) and not is_target(l.title or "", target))]
             for l in listings:
                 l.target = target["key"]
         report["count"] = len(listings)

@@ -259,7 +259,7 @@ def _best(group: list[Listing]) -> Listing:
     return max(group, key=score)
 
 
-UNRELIABLE_ALONE = {"autotempest"}   # meta-search cards: fine as corroboration, not as the only price
+UNRELIABLE_ALONE = {"autotempest", "iseecars"}   # aggregator cards: fine as corroboration, not as the only price
 
 
 def _rankable(rec: dict) -> bool:
@@ -279,6 +279,9 @@ def _candidate(rec: dict) -> bool:
         return False
     y = rec.get("year")
     if not y or not (t["years"][0] <= y <= t["years"][1]):
+        return False
+    import re as _re
+    if t.get("exclude_re") and _re.search(t["exclude_re"], f"{rec.get('title','')} {rec.get('url','')}", _re.I) and not _re.search(t["alias_re"], rec.get("title", "") or "", _re.I):
         return False
     if rec.get("extra", {}).get("reference_only"):
         return False
