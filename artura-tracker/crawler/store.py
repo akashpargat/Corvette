@@ -143,7 +143,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["last_seen_at"] = ts
         rec["status"] = "active"
         rec["candidate"] = _candidate(rec)
-        rec["rankable"] = rec["candidate"] and rec.get("listing_type") != "auction"
+        rec["rankable"] = _rankable(rec)
         # price history (one point per day, lowest price of the day)
         hist = history.setdefault(key, [])
         if rec["price"]:
@@ -180,7 +180,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         if not rec.get("target"):
             rec["target"] = "artura"
         rec["candidate"] = _candidate(rec)
-        rec["rankable"] = rec["candidate"] and rec.get("listing_type") != "auction"
+        rec["rankable"] = _rankable(rec)
 
     listings = list(by_key.values())
     from .scoring import score_all
@@ -257,6 +257,18 @@ def _best(group: list[Listing]) -> Listing:
     def score(l: Listing):
         return sum(1 for f in (l.vin, l.price, l.mileage, l.year, l.dealer, l.location, l.image, l.color) if f) + (2 if l.source in ("carfax", "cargurus", "mclaren_preowned") else 0)
     return max(group, key=score)
+
+
+UNRELIABLE_ALONE = {"autotempest"}   # meta-search cards: fine as corroboration, not as the only price
+
+
+def _rankable(rec: dict) -> bool:
+    if not rec.get("candidate") or rec.get("listing_type") == "auction":
+        return False
+    srcs = set(rec.get("sources") or [rec.get("source")])
+    if srcs and srcs <= UNRELIABLE_ALONE and not rec.get("vin"):
+        return False
+    return True
 
 
 def _candidate(rec: dict) -> bool:
