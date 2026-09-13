@@ -8,9 +8,9 @@
   const fmtMi = (n) => n == null ? "— mi" : n.toLocaleString("en-US") + " mi";
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const yearVar = (y) => `var(--y${String(y || 2023).slice(2)})`;
-  const SOURCE_SHORT = { mclaren_preowned: "McLaren CPO", dealer_sites: "Dealer site", cars_com: "Cars.com", autotrader: "Autotrader", kbb: "KBB", cargurus: "CarGurus", carfax: "CARFAX", truecar: "TrueCar", edmunds: "Edmunds", autolist: "Autolist", dupont: "duPont", classic_com: "Classic.com", bringatrailer: "BaT", carsandbids: "Cars & Bids", ebay: "eBay", hemmings: "Hemmings", fb_marketplace: "FB Marketplace", seed: "Seed" };
+  const SOURCE_SHORT = { craigslist: "Craigslist", iseecars: "iSeeCars", usedcars_com: "UsedCars.com", carsforsale: "Carsforsale", carsdirect: "CarsDirect", classiccars_com: "ClassicCars", jamesedition: "JamesEdition", exoticcartrader: "Exotic Car Trader", pcarmarket: "PCARMARKET", collectingcars: "Collecting Cars", mclarenlife: "McLaren Life", autotempest: "AutoTempest", autotrader_ca: "AutoTrader.ca", kijiji: "Kijiji", cargurus_ca: "CarGurus.ca", clutch_canada: "CA exotic dealer", mclaren_preowned: "McLaren CPO", dealer_sites: "Dealer site", cars_com: "Cars.com", autotrader: "Autotrader", kbb: "KBB", cargurus: "CarGurus", carfax: "CARFAX", truecar: "TrueCar", edmunds: "Edmunds", autolist: "Autolist", dupont: "duPont", classic_com: "Classic.com", bringatrailer: "BaT", carsandbids: "Cars & Bids", ebay: "eBay", hemmings: "Hemmings", fb_marketplace: "FB Marketplace", seed: "Seed" };
 
-  const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table" };
+  const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table", country: "" };
   let DATA = { summary: {}, changes: {}, listings: [] }, RUNS = [], MARKET = [];
   let watch = new Set();
   try { watch = new Set(JSON.parse(localStorage.getItem("artura.watch") || "[]")); } catch (e) { }
@@ -46,6 +46,7 @@
       if (state.title === "notbranded" && l.title_status === "branded") return false;
       if (state.type !== "all" && l.listing_type !== state.type) return false;
       if (state.st && l.state !== state.st) return false;
+      if (state.country && (l.country || "US") !== state.country) return false;
       if (state.src && !(l.sources || [l.source]).includes(state.src)) return false;
       if (state.onlyWatch && !watch.has(l.key)) return false;
       if (q) { const hay = [l.title, l.vin, l.dealer, l.location, l.color, l.trim, (l.sources || []).join(" ")].join(" ").toLowerCase(); if (!hay.includes(q)) return false; }
@@ -118,12 +119,12 @@
         return `<tr class="${l.status !== "active" ? "removed" : ""} ${hero && l.key === hero.key ? "top" : ""}" data-key="${esc(l.key)}">
           <td class="num">${l.rank_cheapest_clean || ""}</td>
           <td><div class="car"><span class="t">${esc(l.year || "")} Artura ${esc(l.trim || "")} ${isNew(l) ? '<span class="badge new">NEW</span>' : ""} ${l.listing_type === "auction" ? '<span class="badge auction">auction</span>' : ""}</span><span class="s">${esc(l.color || "")}${l.color && l.vin ? " · " : ""}${esc(l.vin || "")}</span></div></td>
-          <td class="num"><span class="price">${fmt$(l.price)}</span>${l.price_high && l.price_high !== l.price ? `<br><span class="s" style="color:var(--muted)">to ${fmt$(l.price_high)}</span>` : ""}</td>
+          <td class="num"><span class="price">${fmt$(l.price)}</span>${l.price_local ? `<br><span class="s" style="color:var(--muted)">CA$${l.price_local.toLocaleString("en-US")}</span>` : (l.price_high && l.price_high !== l.price ? `<br><span class="s" style="color:var(--muted)">to ${fmt$(l.price_high)}</span>` : "")}</td>
           <td class="num">${d ? `<span class="badge ${d < 0 ? "drop" : "up"}">${d < 0 ? "▼" : "▲"}${fmtK(Math.abs(d))}</span>` : (l.deal_pct != null && l.deal_pct >= 8 ? `<span class="badge deal">${l.deal_pct.toFixed(0)}% under</span>` : "")}</td>
           <td class="num">${l.mileage != null ? l.mileage.toLocaleString("en-US") : "—"}</td>
           <td><span class="badge ${l.title_status}">${titleWord(l)}</span></td>
           <td>${esc(l.dealer || (l.listing_type === "private" ? "Private" : "—"))}</td>
-          <td>${esc(l.location || l.state || "—")}</td>
+          <td>${(l.country === "CA") ? "🇨🇦 " : ""}${esc(l.location || l.state || "—")}</td>
           <td><div class="srcs">${(l.sources || [l.source]).map((s) => `<span class="src">${esc(SOURCE_SHORT[s] || s)}</span>`).join("")}</div></td>
           <td class="num">${daysOn(l)}</td>
           <td><svg class="spark" viewBox="0 0 96 28" preserveAspectRatio="none">${sparkPath(l.price_history || [], 96, 28)}</svg></td>
@@ -243,7 +244,7 @@
     $("#sourceFilter").innerHTML = `<option value="">Any</option>` + srcs.map((s) => `<option value="${s}">${SOURCE_SHORT[s] || s}</option>`).join("");
     const bind = (id, key, fn) => $(id).addEventListener("input", (e) => { state[key] = fn ? fn(e.target) : e.target.value; renderAll(); });
     bind("#maxPrice", "maxPrice", (t) => +t.value); bind("#maxMiles", "maxMiles", (t) => +t.value);
-    bind("#titleFilter", "title"); bind("#typeFilter", "type"); bind("#stateFilter", "st"); bind("#sourceFilter", "src"); bind("#q", "q"); bind("#sort", "sort");
+    bind("#titleFilter", "title"); bind("#typeFilter", "type"); bind("#countryFilter", "country"); bind("#stateFilter", "st"); bind("#sourceFilter", "src"); bind("#q", "q"); bind("#sort", "sort");
     bind("#showRemoved", "removed", (t) => t.checked); bind("#onlyWatch", "onlyWatch", (t) => t.checked);
     $$(".viewtoggle button").forEach((b) => b.addEventListener("click", () => { state.view = b.dataset.view; try { localStorage.setItem("artura.view", state.view); } catch (e) { } $$(".viewtoggle button").forEach((x) => x.classList.toggle("on", x === b)); renderResults(); }));
     $$(".viewtoggle button").forEach((x) => x.classList.toggle("on", x.dataset.view === state.view));

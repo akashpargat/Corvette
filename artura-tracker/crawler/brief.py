@@ -19,7 +19,11 @@ DASHBOARD = "https://claude.ai/code/artifact/f23488b2-3815-4a16-acf0-7abfe702ce8
 SHORT = {"mclaren_preowned": "McLaren CPO", "dealer_sites": "dealer site", "cars_com": "Cars.com", "autotrader": "Autotrader",
          "kbb": "KBB", "cargurus": "CarGurus", "carfax": "CARFAX", "truecar": "TrueCar", "edmunds": "Edmunds", "autolist": "Autolist",
          "dupont": "duPont", "classic_com": "Classic.com", "bringatrailer": "BaT", "carsandbids": "Cars & Bids", "ebay": "eBay",
-         "hemmings": "Hemmings", "fb_marketplace": "FB Marketplace"}
+         "hemmings": "Hemmings", "fb_marketplace": "FB Marketplace", "craigslist": "Craigslist", "iseecars": "iSeeCars",
+         "usedcars_com": "UsedCars.com", "carsforsale": "Carsforsale", "carsdirect": "CarsDirect", "classiccars_com": "ClassicCars",
+         "jamesedition": "JamesEdition", "exoticcartrader": "Exotic Car Trader", "pcarmarket": "PCARMARKET", "collectingcars": "Collecting Cars",
+         "mclarenlife": "McLaren Life", "autotempest": "AutoTempest", "autotrader_ca": "AutoTrader.ca", "kijiji": "Kijiji", "cargurus_ca": "CarGurus.ca",
+         "clutch_canada": "CA exotic dealer"}
 
 
 def _money(n):
@@ -30,7 +34,9 @@ def _car(l: dict) -> str:
     where = f" · {l['location']}" if l.get("location") else (f" · {l['state']}" if l.get("state") else "")
     seller = l.get("dealer") or ("private seller" if l.get("listing_type") == "private" else "seller n/a")
     miles = f"{l['mileage']:,} mi" if l.get("mileage") is not None else "miles n/a"
-    return f"{l.get('year') or '?'} Artura {l.get('trim') or ''} · {miles} · {seller}{where}"
+    flag = " 🇨🇦" if l.get("country") == "CA" else ""
+    local = f" (CA${l['price_local']:,})" if l.get("price_local") else ""
+    return f"{l.get('year') or '?'} Artura {l.get('trim') or ''}{local} · {miles} · {seller}{where}{flag}"
 
 
 def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:

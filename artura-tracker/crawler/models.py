@@ -70,6 +70,9 @@ class Listing:
     listing_type: str = "dealer"        # dealer | private | auction
     auction_end: Optional[str] = None
     image: Optional[str] = None
+    country: str = "US"                 # US | CA
+    currency: str = "USD"               # USD | CAD (price is always stored in USD; price_local keeps the original)
+    price_local: Optional[int] = None
     extra: dict = field(default_factory=dict)
 
     def finalize(self) -> "Listing":
@@ -87,6 +90,11 @@ class Listing:
             self.year = year_from_vin(self.vin)
         if self.price is not None:
             self.price = _sane(self.price)
+        if self.currency == "CAD" and self.price and not self.price_local:
+            self.price_local = self.price
+            self.price = round(self.price * config.CAD_TO_USD)
+        if self.country == "CA":
+            self.currency = self.currency or "CAD"
         if not self.trim:
             self.trim = detect_trim(blob) or "Coupe"
         if self.title_status == "unknown":

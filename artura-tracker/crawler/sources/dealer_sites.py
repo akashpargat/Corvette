@@ -33,8 +33,11 @@ INVENTORY_PATHS = [
 ]
 
 
+CA_NAMES = {name for name, _ in config.DEALER_SITES_CA}
+
+
 def discover_dealers(client: Client, ctx: Ctx) -> list[tuple[str, str]]:
-    dealers = {url.rstrip("/"): name for name, url in config.DEALER_SITES}
+    dealers = {url.rstrip("/"): name for name, url in config.DEALER_SITES + config.DEALER_SITES_CA}
     for u in LOCATOR_URLS:
         res = client.get(u)
         ctx.pages += 1
@@ -143,6 +146,8 @@ def _crawl_dealer(name: str, base: str, log) -> tuple[str, list, str]:
     found = dedupe(found)
     for l in found:
         l.extra["dealer_site"] = base
+        if name in CA_NAMES:
+            l.country, l.currency = "CA", "CAD"
         if not l.location:
             l.location = name.replace("McLaren ", "")
         l.finalize()

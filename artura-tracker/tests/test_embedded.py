@@ -38,3 +38,15 @@ def test_location_from_description():
     from crawler.models import Listing
     l = Listing(source="t", source_name="T", url="u", title="Used 2023 McLaren Artura", extra={"description": "Location: Indianapolis, IN. This 2023 McLaren Artura is listed for $174550"}).finalize()
     assert l.location == "Indianapolis, IN" and l.state == "IN"
+
+
+def test_cards_from_links_and_cad_conversion():
+    from crawler.sources.base import cards_from_links
+    html = '''<ul><li><a href="/a/mclaren/artura/toronto/on/5_12345"><h2>2023 McLaren Artura Performance</h2></a>
+    <span>CA$239,900</span><span>8,200 km</span><span>Toronto, ON</span></li>
+    <li><a href="/a/mclaren/720s/x/1"><h2>2020 McLaren 720S</h2></a><span>CA$300,000</span></li></ul>'''
+    ls = cards_from_links(html, "https://www.autotrader.ca/", r"/a/mclaren/artura/", "t", "T", country="CA", currency="CAD")
+    assert len(ls) == 1
+    l = ls[0]
+    assert l.price_local == 239900 and l.price == round(239900 * 0.73) and l.mileage == round(8200 * 0.621371)
+    assert l.year == 2023 and l.trim == "Performance" and l.url.startswith("https://www.autotrader.ca/a/")

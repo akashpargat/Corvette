@@ -40,7 +40,7 @@ def fetch(client, ctx: Ctx):
     cookies = _cookies_from_env()
     out = []
     walled = 0
-    hubs = config.FB_HUBS
+    hubs = config.FB_HUBS + config.FB_HUBS_CA
     with sync_playwright() as p:
         launch = {"headless": os.environ.get("HEADLESS", "1") != "0", "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox"]}
         if config.PROXY_URL:
@@ -152,10 +152,11 @@ def _parse_cards(page, hub: str) -> list[Listing]:
         price_line = next((l for l in lines if "$" in l), "")
         loc_line = next((l for l in lines if re.search(r",\s*[A-Z]{2}$", l)), None)
         miles_line = next((l for l in lines if re.search(r"\bmi(les)?\b|\bK miles", l, re.I)), "")
+        ca = hub in config.FB_HUBS_CA or "CA$" in price_line
         l = Listing(source=NAME, source_name=LABEL, url=f"https://www.facebook.com/marketplace/item/{m.group(1)}/", title=title,
                     year=parse_year(title), price=parse_price(price_line), mileage=parse_mileage(miles_line) if miles_line else None,
-                    location=loc_line, listing_type="private", condition="used",
-                    extra={"hub": hub, "description": " | ".join(lines)[:300]})
+                    location=loc_line, listing_type="private", condition="used", country="CA" if ca else "US",
+                    currency="CAD" if ca else "USD", extra={"hub": hub, "description": " | ".join(lines)[:300]})
         try:
             img = a.query_selector("img")
             if img:

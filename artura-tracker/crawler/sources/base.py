@@ -216,3 +216,86 @@ def dedupe(listings: list[Listing]) -> list[Listing]:
         if score(l) > score(cur):
             best[k] = l
     return list(best.values())
+
+
+def cards_from_links(html: str, base_url: str, href_re: str, source: str, source_name: str,
+                     listing_type: str = "dealer", country: str = "US", currency: str = "USD",
+                     max_up: int = 6) -> list[Listing]:
+    """Selector-free card parser: every link matching href_re, then the smallest ancestor
+    whose text shows a price and mentions Artura."""
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "lxml")
+    out, seen = [], set()
+    rx = re.compile(href_re, re.I)
+    for a in soup.find_all("a", href=True):
+        href = a["href"].split("#")[0]
+        if not rx.search(href):
+            continue
+        key = href.split("?")[0]
+        if key in seen:
+            continue
+        node, text = a, a.get_text("\n", strip=True)
+        for _ in range(max_up):
+            if re.search(r"\$\s?\d", text) and re.search(r"artura", text, re.I):
+                break
+            node = node.parent
+            if node is None:
+                break
+            text = node.get_text("\n", strip=True)
+        if node is None or not re.search(r"artura", text, re.I):
+            continue
+        if len(text) > 4000:      # climbed to the whole page; not a card
+            continue
+        seen.add(key)
+        lines = [t for t in text.split("\n") if t.strip()]
+        title = next((t for t in lines if re.search(r"20\d\d.*artura|artura.*20\d\d", t, re.I)), next((t for t in lines if re.search(r"artura", t, re.I)), "McLaren Artura"))
+        price_line = next((t for t in lines if re.search(r"(?:CA?\$|US\$|\$)\s?\d{2,3},?\d{3}", t)), "")
+        mile_line = next((t for t in lines if re.search(r"\b(mi|miles|km)\b", t, re.I) and re.search(r"\d", t)), "")
+        loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t)), None)
+        img = node.find("img") if hasattr(node, "find") else None
+        cur = "CAD" if ("CA$" in price_line or "C$" in price_line or country == "CA") else currency
+        mileage = parse_mileage(mile_line) if mile_line else None
+        if mileage and re.search(r"\bkm\b", mile_line, re.I):
+            mileage = round(mileage * 0.621371)
+        l = Listing(source=source, source_name=source_name, url=abs_url(base_url, href), title=title[:120], year=parse_year(title),
+                    price=parse_price(price_line), mileage=mileage, location=loc, listing_type=listing_type,
+                    image=(img.get("data-src") or img.get("src")) if img else None, country=country, currency=cur,
+                    condition="used", extra={"description": " | ".join(lines)[:400]})
+        out.append(l.finalize())
+    return out
+
+
+def crawl_simple(client, ctx: "Ctx", *, name: str, label: str, urls: list, href_re: str, listing_type: str = "dealer",
+                 country: str = "US", currency: str = "USD", use_browser: bool = False, scroll: int = 3,
+                 wait_for: Optional[str] = None) -> list[Listing]:
+    """The whole recipe for a plain listing site: fetch (browser if needed), generic parsers, card parser."""
+    from ..browser import browser_get
+    from ..http_client import FetchResult
+    out = []
+    for url in urls:
+        if use_browser:
+            b = browser_get(url, scroll=scroll, network_idle=True, wait_for=wait_for, wait_ms=4000)
+            res = FetchResult(url=b.url or url, status=b.status, text=b.html, elapsed=0.0, error=b.error)
+        else:
+            res = client.get(url)
+        ctx.pages += 1
+        if not res.ok:
+            ctx.diagnose(res, label)
+            continue
+        got = parse_any(res.text, name, label, res.url, listing_type=listing_type)
+        got += cards_from_links(res.text, res.url, href_re, name, label, listing_type, country, currency)
+        if not got and not use_browser:
+            b = browser_get(url, scroll=scroll, network_idle=True, wait_for=wait_for, wait_ms=4000)
+            if b.html and not b.error:
+                res = FetchResult(url=b.url or url, status=200, text=b.html, elapsed=0.0)
+                got = parse_any(res.text, name, label, res.url, listing_type=listing_type)
+                got += cards_from_links(res.text, res.url, href_re, name, label, listing_type, country, currency)
+        if not got:
+            ctx.diagnose(res, label)
+        for l in got:
+            l.country = country
+            if country == "CA" and l.currency == "USD" and not l.price_local:
+                l.currency = "CAD"
+                l.finalize()
+        out += got
+    return merge_by_vin(dedupe(out))

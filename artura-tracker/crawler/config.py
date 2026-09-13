@@ -18,6 +18,9 @@ YEAR_MAX = 2026
 PRICE_FLOOR = 60_000
 PRICE_CEILING = 400_000
 
+# Canadian listings are converted to USD for ranking; the CAD figure is kept as price_local.
+CAD_TO_USD = float(os.environ.get("CAD_TO_USD", "0.73"))
+
 # Search anchor. Radius is set to "nationwide" on every source that
 # supports it; the zip only matters for sources that require one.
 SEARCH_ZIP = os.environ.get("ARTURA_ZIP", "").strip() or "10001"
@@ -107,4 +110,15 @@ FB_HUBS = [
     "sanjuan", "boise", "charleston", "westpalmbeach", "fortlauderdale",
     "scottsdale", "palmsprings", "newportbeach", "greenwich",
 ]
+FB_HUBS_CA = ["toronto", "vancouver", "montreal", "calgary", "edmonton", "ottawa", "winnipeg", "quebec", "hamilton", "halifax", "victoria", "kelowna", "london"]
 FB_MIN_PRICE = 40_000
+
+DEALER_SITES_CA = [
+    ("McLaren Toronto", "https://www.mclarentoronto.com"),
+    ("McLaren Vancouver", "https://www.mclarenvancouver.com"),
+    ("McLaren Montreal", "https://www.mclarenmontreal.com"),
+    ("McLaren Calgary", "https://www.mclarencalgary.com"),
+    ("McLaren Toronto (retailer site)", "https://toronto.mclaren.com"),
+    ("McLaren Vancouver (retailer site)", "https://vancouver.mclaren.com"),
+    ("McLaren Montreal (retailer site)", "https://montreal.mclaren.com"),
+]
