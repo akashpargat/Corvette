@@ -26,3 +26,15 @@ def test_carfax_preloaded_state_title_flags():
     ls = parse_any(CFX, "carfax", "CARFAX", "https://www.carfax.com/x")
     l = ls[0]
     assert l.price == 156635 and l.title_status == "clean" and l.dealer == "Da Vinci Automotive" and l.state == "NY"
+
+
+def test_location_keys_do_not_match_battery_capacity():
+    html = '<script>var x={"vin":"SBM16AEA2PW001840","price":164795,"batteryCapacity":"7.4 kWh","sellerRegion":"IL","sellerCity":"Naperville","accidentHistory":{"text":"No accidents or damage reported to CARFAX"}};</script>'
+    l = parse_any(html, "t", "T", "https://x/")[0]
+    assert l.location == "Naperville, IL" and l.state == "IL" and l.title_status == "clean"
+
+
+def test_location_from_description():
+    from crawler.models import Listing
+    l = Listing(source="t", source_name="T", url="u", title="Used 2023 McLaren Artura", extra={"description": "Location: Indianapolis, IN. This 2023 McLaren Artura is listed for $174550"}).finalize()
+    assert l.location == "Indianapolis, IN" and l.state == "IN"

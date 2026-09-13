@@ -300,8 +300,12 @@ def vehicle_from_vin_dict(o: dict) -> dict:
     trim = _first_key(flat, r"^trim(name)?$|^vehicleTrim$|^series$", "str")
     color = _first_key(flat, r"exterior_?colou?r(name|simple)?$|^colou?r$|^normalizedExteriorColor$", "str")
     dealer = _first_key(flat, r"dealer(ship)?_?name|seller_?name|^dealer\.name$|serviceProviderName|ownerName|^retailer(name)?$", "str")
-    city = _first_key(flat, r"(dealer|seller|location)?\.?city$|^dealerCity$|^sellerCity$", "str")
-    state = _first_key(flat, r"(dealer|seller|location)?\.?(state|stateCode|region)$|^dealerState$|^sellerRegion$", "str")
+    city = _first_key(flat, r"(^|[._])(city|dealer_?city|seller_?city|city_?name)$", "str")
+    state = _first_key(flat, r"(^|[._])(state|state_?code|region|dealer_?state|seller_?region|province)$", "str")
+    if city and (len(str(city)) > 40 or re.search(r"\d", str(city))):
+        city = None
+    if state and not (re.fullmatch(r"[A-Za-z]{2}", str(state)) or re.fullmatch(r"[A-Za-z .]{4,20}", str(state))):
+        state = None
     url = _first_key(flat, r"^(vdp_?url|vdpBaseUrl|url|link|href|detail_?url|listing_?url|canonical_?url|vdpLink|vdp)$", "str")
     image = _first_key(flat, r"image|photo|thumbnail|picture", "str")
     if image and not str(image).startswith("http"):
@@ -310,11 +314,12 @@ def vehicle_from_vin_dict(o: dict) -> dict:
     condition = "cpo" if "cert" in cond or flat.get("certified") or flat.get("isCertified") else "new" if cond == "new" or cond.startswith("new") else "used" if "used" in cond or "pre" in cond else "unknown"
     branded = any(v for k, v in flat.items() if re.search(r"salvage|branded|lemon|flood|rebuilt|frameDamage|totalLoss", k, re.I) and v is True)
     clean = any(v for k, v in flat.items() if re.search(r"noAccidents?|accidentFree|isCleanTitle|clean_?title", k, re.I) and v is True)
-    acc = _first_key(flat, r"^accident(s|Count|History|Text)?$")
-    if acc in (0, "0", "None reported", "No accidents", "no accidents reported") or (isinstance(acc, str) and re.search(r"no accident", acc, re.I)):
+    acc = _first_key(flat, r"^accident(s|Count|History|Text)?$|^has_?accidents?$|accident.*(text|summary|status|count|label)$")
+    acc_s = str(acc) if acc is not None else ""
+    if acc in (0, "0", False) or re.search(r"no (reported )?accidents?|none reported|accident.?free|no damage", acc_s, re.I):
         clean = clean or not branded
-    if isinstance(acc, (int, float)) and acc > 0:
-        pass
+    elif re.search(r"salvage|rebuilt|total loss|lemon|flood", acc_s, re.I):
+        branded = True
     title = _first_key(flat, r"^(title|listing_?title|name|heading|display_?name|vehicle_?title)$", "str") or ""
     return {"vin": vin, "price": price, "mileage": mileage, "year": year, "trim": trim, "color": color, "dealer": dealer,
             "city": city, "state": state, "url": url, "image": image, "condition": condition,

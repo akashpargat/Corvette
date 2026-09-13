@@ -93,6 +93,12 @@ class Listing:
             st, notes = detect_title_status(blob)
             self.title_status = st
             self.title_notes = sorted(set(self.title_notes + notes))
+        if not self.location:
+            m = re.search(r"(?:Location:|located in|in)\s*([A-Z][A-Za-z.' ]{2,30},\s*[A-Z]{2})\b", blob)
+            if m:
+                self.location = m.group(1).strip()
+        if self.location and (re.fullmatch(r"[\d .]+", self.location) or "kwh" in self.location.lower()):
+            self.location = None
         if self.location and not self.state:
             self.state = extract_state(self.location)
         if self.title:

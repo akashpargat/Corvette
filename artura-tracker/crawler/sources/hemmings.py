@@ -28,7 +28,9 @@ def fetch(client, ctx: Ctx):
                                vin=r.get("vin"), year=r.get("year"), price=parse_price(r.get("price") or r.get("askingPrice")),
                                mileage=parse_mileage(r.get("mileage") or r.get("odometer")), location=r.get("location") or None,
                                listing_type="auction" if r.get("isAuction") else "dealer").finalize())
-    for m in re.finditer(r'href="([^"]*/listing/[^"]*artura[^"]*)"', res.text, re.I):
+    for m in re.finditer(r'href="([^"]*/(?:classifieds|auction)/listing/[^"]*)"', res.text, re.I):
+        if not re.search(r"artura", html_to_text(res.text[m.start(): m.start() + 2500]), re.I):
+            continue
         text = html_to_text(res.text[m.start(): m.start() + 3000])
         title_m = re.search(r"(20\d\d\s+McLaren\s+Artura[^\n]{0,40})", text)
         out.append(Listing(source=NAME, source_name=LABEL, url=abs_url(HOST, m.group(1)), title=title_m.group(1).strip() if title_m else "McLaren Artura",

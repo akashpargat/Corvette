@@ -25,7 +25,7 @@ class BrowserResult:
 
 
 def browser_get(url: str, *, wait_ms: int = 3500, challenge_wait_s: int = 20, scroll: int = 0,
-                referer: Optional[str] = None) -> BrowserResult:
+                referer: Optional[str] = None, wait_for: Optional[str] = None, network_idle: bool = False) -> BrowserResult:
     try:
         from playwright.sync_api import sync_playwright
     except Exception as e:  # pragma: no cover
@@ -70,6 +70,16 @@ def browser_get(url: str, *, wait_ms: int = 3500, challenge_wait_s: int = 20, sc
                 if not CHALLENGE_RE.search(title) and not (len(body) < 30000 and CHALLENGE_RE.search(body[:5000])):
                     break
                 page.wait_for_timeout(1500)
+            if network_idle:
+                try:
+                    page.wait_for_load_state("networkidle", timeout=15000)
+                except Exception:
+                    pass
+            if wait_for:
+                try:
+                    page.wait_for_selector(wait_for, timeout=15000)
+                except Exception:
+                    pass
             for _ in range(scroll):
                 page.mouse.wheel(0, 2200)
                 page.wait_for_timeout(700)
