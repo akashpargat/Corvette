@@ -1168,22 +1168,11 @@
      "listing_type": "dealer",
      "condition": "used",
      "seen": "2026-09-13"
-    },
-    {
-     "source": "autotrader_ca",
-     "source_name": "AutoTrader.ca",
-     "url": "https://www.autotrader.ca/offers/mclaren-artura-2dr-coupe-gas-electric-hybrid-white-cat_ma51519gr202641-7d67275a-0605-44a0-97f5-e522ec8d1cfe",
-     "price": 160596,
-     "dealer": "Boulevard Cars",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-13"
     }
    ],
    "price_high": 160596,
    "sources": [
     "autotrader",
-    "autotrader_ca",
     "carfax",
     "cars_com",
     "kbb"

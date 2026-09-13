@@ -75,15 +75,15 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             for o in r.get("offers", []) or [{"url": r.get("url")}]:
                 url_to_key.setdefault(norm(o.get("url")), r["key"])
     groups: dict[str, list[Listing]] = {}
-    fp_index: list[tuple[str, int, int, Optional[int]]] = []   # (key, mileage, price, year) of VIN groups
+    fp_index: list[tuple] = []   # (key, mileage, price, year, country) of VIN groups
     for l in fresh:
         if l.vin:
             groups.setdefault(l.key, []).append(l)
             if l.mileage and l.price:
-                fp_index.append((l.key, l.mileage, l.price, l.year))
+                fp_index.append((l.key, l.mileage, l.price, l.year, l.country))
     for r in prev.get("listings", []):
         if r.get("vin") and r.get("mileage") and r.get("price") and r.get("status") == "active":
-            fp_index.append((r["key"], r["mileage"], r["price"], r.get("year")))
+            fp_index.append((r["key"], r["mileage"], r["price"], r.get("year"), r.get("country", "US")))
     for l in fresh:
         if l.vin:
             continue
@@ -91,7 +91,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         if not k:
             k = l.key
             if l.mileage and l.price:
-                fp_index.append((k, l.mileage, l.price, l.year))
+                fp_index.append((k, l.mileage, l.price, l.year, l.country))
         groups.setdefault(k, []).append(l)
 
     changes = {"new": [], "price_drop": [], "price_up": [], "removed": [], "returned": []}
@@ -216,13 +216,15 @@ def fingerprint_match(l: Listing, index) -> Optional[str]:
     if not (l.mileage and l.price):
         return None
     best, best_diff = None, None
-    for key, miles, price, year in index:
+    for key, miles, price, year, country in index:
+        if country != l.country:
+            continue
         if year and l.year and year != l.year:
             continue
-        if abs(miles - l.mileage) > max(15, miles * 0.01):
+        if abs(miles - l.mileage) > max(10, miles * 0.005):
             continue
         diff = abs(price - l.price) / max(price, 1)
-        if diff <= 0.035 and (best_diff is None or diff < best_diff):
+        if diff <= 0.02 and (best_diff is None or diff < best_diff):
             best, best_diff = key, diff
     return best
 
