@@ -29,7 +29,8 @@ def _solve3(A, b):
 
 def fit_market(rows: list[dict]) -> dict:
     pts = [(r["price"], r.get("mileage") or 0, (r.get("year") or 2023) - 2023) for r in rows
-           if r.get("price") and r.get("candidate") and r.get("title_status") != "branded" and r.get("listing_type") != "auction"]
+           if r.get("price") and r.get("candidate") and r.get("title_status") != "branded" and r.get("listing_type") != "auction"
+           and r.get("condition") != "new" and (r.get("mileage") or 0) >= 100 and r.get("status", "active") == "active"]
     model = {"n": len(pts), "intercept": None, "per_mile": None, "per_year": None,
              "median": median([p for p, _, _ in pts]) if pts else None}
     if len(pts) < 8:
