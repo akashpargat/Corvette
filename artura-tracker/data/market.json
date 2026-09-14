@@ -28,5 +28,27 @@
     "clean": 179
    }
   }
+ },
+ {
+  "d": "2026-09-14",
+  "cheapest": 155985,
+  "p10": 178991,
+  "median": 187900,
+  "active": 881,
+  "clean": 394,
+  "targets": {
+   "artura": {
+    "cheapest": 155985,
+    "median": 234996,
+    "active": 307,
+    "clean": 215
+   },
+   "huracan": {
+    "cheapest": 160596,
+    "median": 239900,
+    "active": 574,
+    "clean": 179
+   }
+  }
  }
 ]
