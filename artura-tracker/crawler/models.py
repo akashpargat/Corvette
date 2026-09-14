@@ -31,7 +31,8 @@ def vin_matches(vin, target=None) -> bool:
     t = target or current_target()
     return bool(vin) and any(vin.upper().startswith(p) for p in t["vin_prefixes"])
 PRICE_RE = re.compile(r"\$\s?([0-9]{2,3}(?:,[0-9]{3})+|[0-9]{5,7})(?!\s*/\s*mo)")
-MILES_RE = re.compile(r"([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})\s*(?:k\s*)?(?:mi\b|miles\b)", re.I)
+MILES_RE = re.compile(r"([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})[ \t]*(?:k[ \t]*)?(?:mi\b|miles\b)", re.I)
+MILES_LABEL_RE = re.compile(r"(?:miles?|mileage|odometer)\s*[:=]\s*([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})", re.I)
 MILES_K_RE = re.compile(r"\b([0-9]{1,3}(?:\.[0-9])?)\s*[kK]\s*(?:mi\b|miles\b)")
 YEAR_RE = re.compile(r"\b(20(?:1[5-9]|2[0-9]))\b")
 
@@ -200,6 +201,9 @@ def parse_mileage(text: Optional[str]) -> Optional[int]:
     if isinstance(text, (int, float)):
         return int(text)
     s = str(text)
+    m = MILES_LABEL_RE.search(s)
+    if m:
+        return int(m.group(1).replace(",", ""))
     m = MILES_K_RE.search(s)
     if m:
         return int(float(m.group(1)) * 1000)

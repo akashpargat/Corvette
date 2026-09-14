@@ -83,3 +83,14 @@ def test_vinless_card_joins_by_mileage_and_price_fingerprint(tmp_path):
     assert len(active) == 2
     joined = next(r for r in active if r["key"] == "SBM16AEA0PW000718")
     assert sorted(joined["sources"]) == ["carfax", "cars_com"]
+
+
+def test_aggregator_offer_never_sets_price_when_a_real_source_exists(tmp_path):
+    d = str(tmp_path)
+    a = _l("SBM16AEA5PW000555", 249900, source="autotrader")
+    b = Listing(source="autotempest", source_name="AutoTempest", url="https://www.autotrader.com/cars-for-sale/vehicle/x",
+                title="2025 McLaren Artura Spider", price=155985, year=2025, mileage=5000).finalize()
+    a.url = "https://www.autotrader.com/cars-for-sale/vehicle/x"
+    p = merge(d, [a, b], _report(("autotrader", "autotempest")))
+    car = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000555")
+    assert car["price"] == 249900 and len(car["offers"]) == 2

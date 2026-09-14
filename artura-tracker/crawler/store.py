@@ -104,7 +104,8 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         best = _best(group)
         rec = best.to_dict()
         rec["offers"] = offers
-        priced = [o["price"] for o in offers if o["price"]]
+        reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE]
+        priced = reliable or [o["price"] for o in offers if o["price"]]   # aggregator cards only when nothing better
         if len(priced) >= 2:
             hi = max(priced)
             priced = [p for p in priced if p >= hi * 0.6] or priced   # a card that scraped a neighbour's price

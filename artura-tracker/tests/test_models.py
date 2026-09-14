@@ -73,3 +73,8 @@ def test_sibling_models_are_excluded():
         set_target("artura")
     a = Listing(source="x", source_name="x", url="https://x/2024-mclaren-750s", title="2024 McLaren 750S Spider", price=300000, year=2024).finalize()
     assert not a.is_candidate()
+
+
+def test_mileage_label_beats_year_line():
+    assert parse_mileage("Year: 2023\nMiles: 14,948\nBrand: McLaren") == 14948
+    assert parse_mileage("2023 McLaren Artura\n12,670 mi") == 12670
