@@ -82,7 +82,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             if l.mileage and l.price:
                 fp_index.append((l.key, l.mileage, l.price, l.year, l.country))
     for r in prev.get("listings", []):
-        if r.get("vin") and r.get("mileage") and r.get("price") and r.get("status") == "active":
+        if r.get("mileage") and r.get("price") and r.get("status") == "active":
             fp_index.append((r["key"], r["mileage"], r["price"], r.get("year"), r.get("country", "US")))
     for l in fresh:
         if l.vin:
