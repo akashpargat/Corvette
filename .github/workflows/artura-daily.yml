@@ -43,8 +43,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
-          cache-dependency-path: artura-tracker/requirements.txt
 
       - name: Install
         run: |
@@ -90,22 +88,21 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
-      - name: Upload dashboard
+      # The only artifact this workflow keeps: the Pages bundle (~0.5 MB, 1-day retention).
+      # It is optional: if the account's Actions storage is full, the crawl and the data
+      # commit above have already succeeded and this step just reports a warning.
+      - name: Upload dashboard for GitHub Pages
+        id: pages_upload
+        continue-on-error: true
         uses: actions/upload-pages-artifact@v3
         with:
           path: artura-tracker/site
-
-      - name: Upload run data (debug)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: artura-data-${{ github.run_number }}
-          path: artura-tracker/data
-          retention-days: 14
+          retention-days: 1
 
   deploy:
     name: Publish to GitHub Pages
     needs: crawl
+    if: needs.crawl.result == 'success'
     runs-on: ubuntu-latest
     continue-on-error: true
     environment:
