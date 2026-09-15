@@ -84,10 +84,20 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     for r in prev.get("listings", []):
         if r.get("mileage") and r.get("price") and r.get("status") == "active":
             fp_index.append((r["key"], r["mileage"], r["price"], r.get("year"), r.get("country", "US")))
+    prev_by_url = {}
+    for r in prev.get("listings", []):
+        for o in r.get("offers", []) or [{"url": r.get("url")}]:
+            if o.get("url"):
+                prev_by_url.setdefault(norm(o["url"]), r)
     for l in fresh:
         if l.vin:
             continue
-        k = url_to_key.get(norm(l.url)) or fingerprint_match(l, fp_index)
+        old = prev_by_url.get(norm(l.url))
+        if old:   # a thin card today (no miles/price/year) still fingerprints with what we knew yesterday
+            for f in ("mileage", "price", "year"):
+                if not getattr(l, f) and old.get(f):
+                    setattr(l, f, old[f])
+        k = url_to_key.get(norm(l.url)) or fingerprint_match(l, [x for x in fp_index if not old or x[0] != old["key"]])
         if not k:
             k = l.key
             if l.mileage and l.price:

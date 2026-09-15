@@ -44,7 +44,7 @@
   },
   "generated_at": "2026-09-15T12:13:23+00:00",
   "date": "2026-09-15",
-  "active": 885,
+  "active": 884,
   "clean_candidates": 400,
   "new_today": 68,
   "price_drops_today": 44,
@@ -155,53 +155,11 @@
    "ZHWUS4ZF8JLA11008",
    "ZHWUA6ZX4MLA17495",
    "SBM16BEA1SW003061",
-   "SBM16BEA9SW002806",
-   "SBM16BEA7SW003727",
-   "ZHWUD4ZF8JLA11116",
-   "ZHWUF5ZF0MLA16606",
-   "ZHWUC2ZFXHLA05674",
-   "ZHWUC2ZF0HLA08017",
-   "ZHWUC2ZF8JLA10541",
-   "ZHWUC1ZF6FLA00706",
    "ZHWCB6ZF4PLA21714",
    "ZHWCC2ZF4JLA09558",
-   "autotempest:fe88c7daaad3",
-   "carsandbids:0c316a4afc7d",
    "carsandbids:a50940d1b8a9",
-   "carsandbids:a9088e1003c8",
-   "carsandbids:0a43e2d4202a",
-   "carsandbids:6e75be368004",
-   "carsandbids:f13039f81f23",
-   "carsandbids:8f0d2cc14a48",
-   "carsandbids:0502b3560a38",
-   "carsandbids:f185006abeb7",
-   "carsandbids:2a066463851c",
-   "carsandbids:f993678118e2",
-   "carsandbids:1da02eec8b5c",
-   "carsandbids:0792be4f2f7e",
-   "carsandbids:119efefca0d1",
-   "carsandbids:8d4f65055d18",
-   "carsandbids:d649a37837e1",
-   "carsandbids:2bea16fe7a03",
-   "carsandbids:332c744e9564",
-   "carsandbids:ba2587907b07",
-   "carsandbids:7bf941e54243",
-   "carsandbids:dc0f018b2b5f",
-   "carsandbids:d518a0692007",
-   "carsandbids:bd958b073261",
-   "carsandbids:6a2d703dcae2",
-   "carsandbids:d00bb259f818",
-   "carsandbids:9b7dc5626107",
-   "carsandbids:bc2dd5c616b6",
-   "carsandbids:66a6c8f2dd2e",
-   "carsandbids:82e32a506c9c",
-   "carsandbids:1c3bdc835e1b",
-   "carsandbids:316fefe08885",
    "jamesedition:c667dc84b59f",
-   "autotempest:b7cdd5c6799c",
-   "autotempest:deddb234aaa4",
-   "autotempest:44ea104b85cd",
-   "autotempest:843d6a4a79d7"
+   "autotempest:deddb234aaa4"
   ],
   "price_drop": [
    "SBM16BEA2SW003795",
@@ -231,11 +189,6 @@
    "ZHWUS4ZF9JLA11132",
    "ZHWUR2ZF5HLA07850",
    "ZHWUR2ZF8KLA12354",
-   "SBM16BEA6SW003198",
-   "ZHWUF5ZF7MLA16568",
-   "ZHWUB6ZF1PLA22968",
-   "ZHWUA6ZX7MLA17250",
-   "ZHWUB6ZF5PLA25615",
    "ZHWCT5ZF8MLA16891",
    "jamesedition:b1168b7ae4ab",
    "jamesedition:9492df247be0",
@@ -246,8 +199,7 @@
    "jamesedition:51964e0efaec",
    "jamesedition:34c2f065f86d",
    "jamesedition:29697175f7c5",
-   "jamesedition:6f6313339b50",
-   "autotempest:367e41b2fc8d"
+   "jamesedition:6f6313339b50"
   ],
   "price_up": [
    "SBM16AEA5PW001931",
@@ -276,9 +228,6 @@
    "SBM16AEA5RW002161",
    "SBM16AEA6RW002136",
    "SBM16AEA9SW002699",
-   "ZHWUA6ZX2RLA25649",
-   "ZHWUT5ZF6MLA17784",
-   "ZHWUR2ZF5HLA07508",
    "ZHWUA6ZX9NLA20281"
   ],
   "removed": [
@@ -294,8 +243,7 @@
   ],
   "returned": [
    "ZHWUR1ZF9HLA08008",
-   "ZHWUC1ZF6GLA03736",
-   "autotempest:f1f865d62a12"
+   "ZHWUC1ZF6GLA03736"
   ]
  },
  "listings": [
@@ -364,7 +312,7 @@
      "p": 3200
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 98.0,
    "price_per_mile_note": null
   },
@@ -424,7 +372,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -486,7 +434,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -548,7 +496,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -610,7 +558,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -672,7 +620,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -734,7 +682,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -796,7 +744,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -858,7 +806,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -920,7 +868,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -982,7 +930,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1044,7 +992,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1106,7 +1054,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1168,7 +1116,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1230,7 +1178,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1292,7 +1240,7 @@
      "p": 10000
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": 93.6,
    "price_per_mile_note": null,
    "target": "artura",
@@ -1363,7 +1311,7 @@
      "p": 21000
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 88.8,
    "price_per_mile_note": null
   },
@@ -1687,7 +1635,7 @@
      "p": 149900
     }
    ],
-   "expected_price": 181301,
+   "expected_price": 181275,
    "deal_pct": 17.3,
    "price_per_mile_note": null
   },
@@ -1815,8 +1763,8 @@
      "p": 153300
     }
    ],
-   "expected_price": 211896,
-   "deal_pct": 27.7,
+   "expected_price": 211874,
+   "deal_pct": 27.6,
    "price_per_mile_note": null
   },
   {
@@ -1992,8 +1940,8 @@
      "p": 155985
     }
    ],
-   "expected_price": 163518,
-   "deal_pct": 4.6,
+   "expected_price": 163378,
+   "deal_pct": 4.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 1
   },
@@ -2062,7 +2010,7 @@
      "p": 157000
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 16.0,
    "price_per_mile_note": null
   },
@@ -2128,7 +2076,7 @@
      "p": 160596
     }
    ],
-   "expected_price": 163436,
+   "expected_price": 163296,
    "deal_pct": 1.7,
    "price_per_mile_note": null
   },
@@ -2338,7 +2286,7 @@
      "p": 160699
     }
    ],
-   "expected_price": 173241,
+   "expected_price": 173163,
    "deal_pct": 7.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 2
@@ -2427,7 +2375,7 @@
      "p": 164795
     }
    ],
-   "expected_price": 177228,
+   "expected_price": 177176,
    "deal_pct": 7.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 3
@@ -2667,8 +2615,8 @@
      "p": 164958
     }
    ],
-   "expected_price": 167094,
-   "deal_pct": 1.3,
+   "expected_price": 166977,
+   "deal_pct": 1.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 4
   },
@@ -2737,7 +2685,7 @@
      "p": 166000
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 11.2,
    "price_per_mile_note": null
   },
@@ -2806,7 +2754,7 @@
      "p": 167500
     }
    ],
-   "expected_price": 216991,
+   "expected_price": 217001,
    "deal_pct": 22.8,
    "price_per_mile_note": null
   },
@@ -2874,77 +2822,10 @@
      "p": 167635
     }
    ],
-   "expected_price": 165340,
-   "deal_pct": -1.4,
+   "expected_price": 165213,
+   "deal_pct": -1.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 5
-  },
-  {
-   "source": "autotrader_ca",
-   "source_name": "AutoTrader.ca",
-   "url": "https://www.autotrader.ca/offers/mclaren-artura-coupe-gas-electric-hybrid-white-cat_ma51519gr202641-eb5c7716-18c4-4d81-8ff7-746d2f21c3c4",
-   "title": "McLaren Artura Coupe",
-   "vin": "SBM16AEA5PW001623",
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 167827,
-   "mileage": 12500,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "Vehicle-Direct",
-   "location": "Etobicoke, ON",
-   "state": null,
-   "color": "WHITE",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://prod.pictures.autoscout24.net/listing-images/eb5c7716-18c4-4d81-8ff7-746d2f21c3c4_700bfc80-ac50-4e40-9541-71d9d42e56ab.jpg/250x188.webp",
-   "target": "artura",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 229900,
-   "extra": {
-    "description": ""
-   },
-   "key": "autotrader_ca:4db28032ed2f",
-   "candidate": true,
-   "rankable": true,
-   "offers": [
-    {
-     "source": "autotrader_ca",
-     "source_name": "AutoTrader.ca",
-     "url": "https://www.autotrader.ca/offers/mclaren-artura-coupe-gas-electric-hybrid-white-cat_ma51519gr202641-eb5c7716-18c4-4d81-8ff7-746d2f21c3c4",
-     "price": 167827,
-     "dealer": "Vehicle-Direct",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-15"
-    }
-   ],
-   "price_high": 167827,
-   "sources": [
-    "autotrader_ca"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": null,
-   "last_seen": "2026-09-15",
-   "last_seen_at": "2026-09-15T12:13:23+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 167827
-    },
-    {
-     "d": "2026-09-15",
-     "p": 167827
-    }
-   ],
-   "expected_price": 167361,
-   "deal_pct": -0.3,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 6
   },
   {
    "source": "cargurus_ca",
@@ -2986,10 +2867,21 @@
      "listing_type": "dealer",
      "condition": "used",
      "seen": "2026-09-15"
+    },
+    {
+     "source": "autotrader_ca",
+     "source_name": "AutoTrader.ca",
+     "url": "https://www.autotrader.ca/offers/mclaren-artura-coupe-gas-electric-hybrid-white-cat_ma51519gr202641-eb5c7716-18c4-4d81-8ff7-746d2f21c3c4",
+     "price": 167827,
+     "dealer": "Vehicle-Direct",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-15"
     }
    ],
    "price_high": 167827,
    "sources": [
+    "autotrader_ca",
     "cargurus_ca"
    ],
    "first_seen": "2026-09-13",
@@ -3008,10 +2900,10 @@
      "p": 167827
     }
    ],
-   "expected_price": 167361,
+   "expected_price": 167246,
    "deal_pct": -0.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 7
+   "rank_cheapest_clean": 6
   },
   {
    "source": "bringatrailer",
@@ -3078,7 +2970,7 @@
      "p": 169005
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 9.6,
    "price_per_mile_note": null
   },
@@ -3265,10 +3157,10 @@
      "p": 169980
     }
    ],
-   "expected_price": 181628,
+   "expected_price": 181603,
    "deal_pct": 6.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8
+   "rank_cheapest_clean": 7
   },
   {
    "source": "cargurus",
@@ -3465,10 +3357,10 @@
      "p": 170000
     }
    ],
-   "expected_price": 179659,
+   "expected_price": 179622,
    "deal_pct": 5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 9
+   "rank_cheapest_clean": 8
   },
   {
    "source": "autotrader",
@@ -3570,10 +3462,10 @@
      "p": 170549
     }
    ],
-   "expected_price": 177222,
-   "deal_pct": 3.8,
+   "expected_price": 177170,
+   "deal_pct": 3.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 10
+   "rank_cheapest_clean": 9
   },
   {
    "source": "bringatrailer",
@@ -3640,7 +3532,7 @@
      "p": 171000
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": 30.8,
    "price_per_mile_note": null
   },
@@ -3748,10 +3640,10 @@
      "p": 171000
     }
    ],
-   "expected_price": 178709,
+   "expected_price": 178666,
    "deal_pct": 4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 11
+   "rank_cheapest_clean": 10
   },
   {
    "source": "autotrader_ca",
@@ -3815,8 +3707,8 @@
      "p": 171477
     }
    ],
-   "expected_price": 158145,
-   "deal_pct": -8.4,
+   "expected_price": 157971,
+   "deal_pct": -8.5,
    "price_per_mile_note": null
   },
   {
@@ -3914,10 +3806,10 @@
      "p": 172000
     }
    ],
-   "expected_price": 167732,
-   "deal_pct": -2.5,
+   "expected_price": 167619,
+   "deal_pct": -2.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 12
+   "rank_cheapest_clean": 11
   },
   {
    "source": "iseecars",
@@ -3986,8 +3878,8 @@
      "p": 172412
     }
    ],
-   "expected_price": 177878,
-   "deal_pct": 3.1,
+   "expected_price": 177830,
+   "deal_pct": 3.0,
    "price_per_mile_note": null
   },
   {
@@ -4074,10 +3966,10 @@
      "p": 172999
     }
    ],
-   "expected_price": 163513,
-   "deal_pct": -5.8,
+   "expected_price": 163373,
+   "deal_pct": -5.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 13
+   "rank_cheapest_clean": 12
   },
   {
    "source": "bringatrailer",
@@ -4144,7 +4036,7 @@
      "p": 173015
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 7.5,
    "price_per_mile_note": null
   },
@@ -4219,10 +4111,10 @@
      "p": 173929
     }
    ],
-   "expected_price": 146833,
+   "expected_price": 146778,
    "deal_pct": -18.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 14
+   "rank_cheapest_clean": 13
   },
   {
    "source": "cargurus",
@@ -4324,10 +4216,10 @@
      "p": 174550
     }
    ],
-   "expected_price": 176500,
+   "expected_price": 176443,
    "deal_pct": 1.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 15
+   "rank_cheapest_clean": 14
   },
   {
    "source": "dealer_sites",
@@ -4419,10 +4311,10 @@
      "p": 174991
     }
    ],
-   "expected_price": 168383,
-   "deal_pct": -3.9,
+   "expected_price": 168275,
+   "deal_pct": -4.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 16
+   "rank_cheapest_clean": 15
   },
   {
    "source": "autotrader",
@@ -4534,10 +4426,10 @@
      "p": 174995
     }
    ],
-   "expected_price": 178116,
-   "deal_pct": 1.8,
+   "expected_price": 178069,
+   "deal_pct": 1.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 17
+   "rank_cheapest_clean": 16
   },
   {
    "source": "cargurus",
@@ -4666,10 +4558,10 @@
      "p": 175000
     }
    ],
-   "expected_price": 180657,
+   "expected_price": 180627,
    "deal_pct": 3.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 18
+   "rank_cheapest_clean": 17
   },
   {
    "source": "autotrader",
@@ -4766,10 +4658,10 @@
      "p": 175000
     }
    ],
-   "expected_price": 177239,
-   "deal_pct": 1.3,
+   "expected_price": 177187,
+   "deal_pct": 1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 19
+   "rank_cheapest_clean": 18
   },
   {
    "source": "cargurus",
@@ -4866,10 +4758,10 @@
      "p": 175000
     }
    ],
-   "expected_price": 202082,
+   "expected_price": 201997,
    "deal_pct": 13.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 20
+   "rank_cheapest_clean": 19
   },
   {
    "source": "pcarmarket",
@@ -5021,10 +4913,10 @@
      "p": 175118
     }
    ],
-   "expected_price": 176577,
+   "expected_price": 176521,
    "deal_pct": 0.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 21
+   "rank_cheapest_clean": 20
   },
   {
    "source": "cargurus_ca",
@@ -5209,10 +5101,10 @@
      "p": 175578
     }
    ],
-   "expected_price": 197908,
-   "deal_pct": 11.3,
+   "expected_price": 197796,
+   "deal_pct": 11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 22
+   "rank_cheapest_clean": 21
   },
   {
    "source": "autotrader",
@@ -5303,10 +5195,10 @@
      "p": 175990
     }
    ],
-   "expected_price": 174607,
+   "expected_price": 174538,
    "deal_pct": -0.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 23
+   "rank_cheapest_clean": 22
   },
   {
    "source": "autotrader",
@@ -5381,10 +5273,10 @@
      "p": 176000
     }
    ],
-   "expected_price": 172385,
+   "expected_price": 172302,
    "deal_pct": -2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 24
+   "rank_cheapest_clean": 23
   },
   {
    "source": "mclaren_preowned",
@@ -5524,10 +5416,10 @@
      "p": 177449
     }
    ],
-   "expected_price": 181580,
+   "expected_price": 181556,
    "deal_pct": 2.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 25
+   "rank_cheapest_clean": 24
   },
   {
    "source": "autotrader",
@@ -5628,10 +5520,10 @@
      "p": 178990
     }
    ],
-   "expected_price": 174610,
+   "expected_price": 174541,
    "deal_pct": -2.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 26
+   "rank_cheapest_clean": 25
   },
   {
    "source": "mclaren_preowned",
@@ -5717,10 +5609,10 @@
      "p": 178991
     }
    ],
-   "expected_price": 171773,
-   "deal_pct": -4.2,
+   "expected_price": 171686,
+   "deal_pct": -4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 27
+   "rank_cheapest_clean": 26
   },
   {
    "source": "carfax",
@@ -5854,10 +5746,10 @@
      "p": 178991
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 28
+   "rank_cheapest_clean": 27
   },
   {
    "source": "mclaren_preowned",
@@ -5997,10 +5889,10 @@
      "p": 179449
     }
    ],
-   "expected_price": 183286,
+   "expected_price": 183272,
    "deal_pct": 2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 29
+   "rank_cheapest_clean": 28
   },
   {
    "source": "mclaren_preowned",
@@ -6140,10 +6032,10 @@
      "p": 179449
     }
    ],
-   "expected_price": 175994,
+   "expected_price": 175934,
    "deal_pct": -2.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 30
+   "rank_cheapest_clean": 29
   },
   {
    "source": "mclaren_preowned",
@@ -6252,10 +6144,10 @@
      "p": 179699
     }
    ],
-   "expected_price": 201027,
+   "expected_price": 200936,
    "deal_pct": 10.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 31
+   "rank_cheapest_clean": 30
   },
   {
    "source": "mclaren_preowned",
@@ -6341,10 +6233,10 @@
      "p": 179890
     }
    ],
-   "expected_price": 177032,
+   "expected_price": 176979,
    "deal_pct": -1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 32
+   "rank_cheapest_clean": 31
   },
   {
    "source": "autotrader",
@@ -6440,10 +6332,10 @@
      "p": 179900
     }
    ],
-   "expected_price": 175891,
+   "expected_price": 175830,
    "deal_pct": -2.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 33
+   "rank_cheapest_clean": 32
   },
   {
    "source": "autotempest",
@@ -6594,10 +6486,10 @@
      "p": 179985
     }
    ],
-   "expected_price": 175891,
-   "deal_pct": -2.3,
+   "expected_price": 175830,
+   "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 34
+   "rank_cheapest_clean": 33
   },
   {
    "source": "jamesedition",
@@ -6911,10 +6803,10 @@
      "p": 179999
     }
    ],
-   "expected_price": 170284,
-   "deal_pct": -5.7,
+   "expected_price": 170188,
+   "deal_pct": -5.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 35
+   "rank_cheapest_clean": 34
   },
   {
    "source": "bringatrailer",
@@ -6981,8 +6873,8 @@
      "p": 180000
     }
    ],
-   "expected_price": 216991,
-   "deal_pct": 17.0,
+   "expected_price": 217001,
+   "deal_pct": 17.1,
    "price_per_mile_note": null
   },
   {
@@ -7080,10 +6972,10 @@
      "p": 180000
     }
    ],
-   "expected_price": 183461,
+   "expected_price": 183449,
    "deal_pct": 1.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 36
+   "rank_cheapest_clean": 35
   },
   {
    "source": "carsandbids",
@@ -7567,7 +7459,7 @@
      "p": 182499
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 2.4,
    "price_per_mile_note": null
   },
@@ -7696,10 +7588,10 @@
      "p": 182705
     }
    ],
-   "expected_price": 184937,
+   "expected_price": 184934,
    "deal_pct": 1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 37
+   "rank_cheapest_clean": 36
   },
   {
    "source": "autotrader",
@@ -7785,10 +7677,10 @@
      "p": 183213
     }
    ],
-   "expected_price": 175054,
+   "expected_price": 174988,
    "deal_pct": -4.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 38
+   "rank_cheapest_clean": 37
   },
   {
    "source": "autotrader",
@@ -7894,10 +7786,10 @@
      "p": 183499
     }
    ],
-   "expected_price": 179064,
+   "expected_price": 179023,
    "deal_pct": -2.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 39
+   "rank_cheapest_clean": 38
   },
   {
    "source": "mclaren_preowned",
@@ -8037,10 +7929,10 @@
      "p": 183888
     }
    ],
-   "expected_price": 177230,
+   "expected_price": 177178,
    "deal_pct": -3.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 40
+   "rank_cheapest_clean": 39
   },
   {
    "source": "autotrader",
@@ -8146,10 +8038,10 @@
      "p": 183990
     }
    ],
-   "expected_price": 181402,
+   "expected_price": 181376,
    "deal_pct": -1.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 41
+   "rank_cheapest_clean": 40
   },
   {
    "source": "jamesedition",
@@ -8222,10 +8114,10 @@
      "p": 183990
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 42
+   "rank_cheapest_clean": 41
   },
   {
    "source": "mclaren_preowned",
@@ -8358,10 +8250,10 @@
      "p": 184449
     }
    ],
-   "expected_price": 206164,
+   "expected_price": 206105,
    "deal_pct": 10.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 43
+   "rank_cheapest_clean": 42
   },
   {
    "source": "carsandbids",
@@ -8541,10 +8433,10 @@
      "p": 184900
     }
    ],
-   "expected_price": 200603,
+   "expected_price": 200509,
    "deal_pct": 7.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 44
+   "rank_cheapest_clean": 43
   },
   {
    "source": "autotrader",
@@ -8650,10 +8542,10 @@
      "p": 184989
     }
    ],
-   "expected_price": 185341,
+   "expected_price": 185340,
    "deal_pct": 0.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 45
+   "rank_cheapest_clean": 44
   },
   {
    "source": "cars_com",
@@ -8717,10 +8609,10 @@
      "p": 185076
     }
    ],
-   "expected_price": 167383,
+   "expected_price": 167268,
    "deal_pct": -10.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 46
+   "rank_cheapest_clean": 45
   },
   {
    "source": "cars_com",
@@ -8784,10 +8676,10 @@
      "p": 185085
     }
    ],
-   "expected_price": 175950,
+   "expected_price": 175890,
    "deal_pct": -5.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 47
+   "rank_cheapest_clean": 46
   },
   {
    "source": "autotrader",
@@ -8882,10 +8774,10 @@
      "p": 185092
     }
    ],
-   "expected_price": 178999,
+   "expected_price": 178959,
    "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 48
+   "rank_cheapest_clean": 47
   },
   {
    "source": "kbb",
@@ -9085,10 +8977,10 @@
      "p": 185800
     }
    ],
-   "expected_price": 209285,
+   "expected_price": 209246,
    "deal_pct": 11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 49
+   "rank_cheapest_clean": 48
   },
   {
    "source": "usedcars_com",
@@ -9148,10 +9040,10 @@
      "p": 185800
     }
    ],
-   "expected_price": 216991,
+   "expected_price": 217001,
    "deal_pct": 14.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 50
+   "rank_cheapest_clean": 49
   },
   {
    "source": "bringatrailer",
@@ -9218,7 +9110,7 @@
      "p": 185823
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 0.6,
    "price_per_mile_note": null
   },
@@ -9362,10 +9254,10 @@
      "p": 185888
     }
    ],
-   "expected_price": 184030,
+   "expected_price": 184021,
    "deal_pct": -1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 51
+   "rank_cheapest_clean": 50
   },
   {
    "source": "autotrader",
@@ -9473,10 +9365,10 @@
      "p": 185888
     }
    ],
-   "expected_price": 176403,
+   "expected_price": 176345,
    "deal_pct": -5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 52
+   "rank_cheapest_clean": 51
   },
   {
    "source": "autotrader_ca",
@@ -9540,8 +9432,8 @@
      "p": 185982
     }
    ],
-   "expected_price": 185887,
-   "deal_pct": -0.1,
+   "expected_price": 185890,
+   "deal_pct": -0.0,
    "price_per_mile_note": null
   },
   {
@@ -9611,7 +9503,7 @@
      "p": 186063
     }
    ],
-   "expected_price": 176403,
+   "expected_price": 176345,
    "deal_pct": -5.5,
    "price_per_mile_note": null
   },
@@ -9742,10 +9634,10 @@
      "p": 186800
     }
    ],
-   "expected_price": 181921,
+   "expected_price": 181899,
    "deal_pct": -2.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 53
+   "rank_cheapest_clean": 52
   },
   {
    "source": "usedcars_com",
@@ -9805,10 +9697,10 @@
      "p": 186800
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": 0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 54
+   "rank_cheapest_clean": 53
   },
   {
    "source": "autotrader",
@@ -9935,10 +9827,10 @@
      "p": 186990
     }
    ],
-   "expected_price": 214200,
+   "expected_price": 214192,
    "deal_pct": 12.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 55
+   "rank_cheapest_clean": 54
   },
   {
    "source": "autotrader",
@@ -10065,10 +9957,10 @@
      "p": 187795
     }
    ],
-   "expected_price": 211542,
+   "expected_price": 211517,
    "deal_pct": 11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 56
+   "rank_cheapest_clean": 55
   },
   {
    "source": "autotrader",
@@ -10174,10 +10066,10 @@
      "p": 187900
     }
    ],
-   "expected_price": 211863,
+   "expected_price": 211841,
    "deal_pct": 11.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 57
+   "rank_cheapest_clean": 56
   },
   {
    "source": "autotrader",
@@ -10274,10 +10166,10 @@
      "p": 187990
     }
    ],
-   "expected_price": 179139,
-   "deal_pct": -4.9,
+   "expected_price": 179099,
+   "deal_pct": -5.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 58
+   "rank_cheapest_clean": 57
   },
   {
    "source": "jamesedition",
@@ -10341,10 +10233,10 @@
      "p": 187990
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": -0.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 59
+   "rank_cheapest_clean": 58
   },
   {
    "source": "mclaren_preowned",
@@ -10408,10 +10300,10 @@
      "p": 187995
     }
    ],
-   "expected_price": 181913,
-   "deal_pct": -3.3,
+   "expected_price": 181891,
+   "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 60
+   "rank_cheapest_clean": 59
   },
   {
    "source": "jamesedition",
@@ -10475,10 +10367,10 @@
      "p": 187995
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": -0.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 61
+   "rank_cheapest_clean": 60
   },
   {
    "source": "mclaren_preowned",
@@ -10620,10 +10512,10 @@
      "p": 188449
     }
    ],
-   "expected_price": 206279,
+   "expected_price": 206221,
    "deal_pct": 8.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 62
+   "rank_cheapest_clean": 61
   },
   {
    "source": "autotempest",
@@ -10812,10 +10704,10 @@
      "p": 189000
     }
    ],
-   "expected_price": 175861,
+   "expected_price": 175800,
    "deal_pct": -7.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 63
+   "rank_cheapest_clean": 62
   },
   {
    "source": "iseecars",
@@ -11015,10 +10907,10 @@
      "p": 189449
     }
    ],
-   "expected_price": 213652,
+   "expected_price": 213640,
    "deal_pct": 11.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 64
+   "rank_cheapest_clean": 63
   },
   {
    "source": "autotempest",
@@ -11102,10 +10994,10 @@
      "p": 189498
     }
    ],
-   "expected_price": 211141,
-   "deal_pct": 10.3,
+   "expected_price": 211114,
+   "deal_pct": 10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 65
+   "rank_cheapest_clean": 64
   },
   {
    "source": "autotempest",
@@ -11174,8 +11066,8 @@
      "p": 189498
     }
    ],
-   "expected_price": 211141,
-   "deal_pct": 10.3,
+   "expected_price": 211114,
+   "deal_pct": 10.2,
    "price_per_mile_note": null
   },
   {
@@ -11345,10 +11237,10 @@
      "p": 189990
     }
    ],
-   "expected_price": 211637,
+   "expected_price": 211613,
    "deal_pct": 10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 66
+   "rank_cheapest_clean": 65
   },
   {
    "source": "autotrader",
@@ -11445,10 +11337,10 @@
      "p": 189990
     }
    ],
-   "expected_price": 179723,
+   "expected_price": 179687,
    "deal_pct": -5.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 67
+   "rank_cheapest_clean": 66
   },
   {
    "source": "jamesedition",
@@ -11512,10 +11404,10 @@
      "p": 189990
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": -1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 68
+   "rank_cheapest_clean": 67
   },
   {
    "source": "carsandbids",
@@ -11661,10 +11553,10 @@
      "p": 191498
     }
    ],
-   "expected_price": 213920,
+   "expected_price": 213911,
    "deal_pct": 10.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 69
+   "rank_cheapest_clean": 68
   },
   {
    "source": "autotempest",
@@ -11748,10 +11640,10 @@
      "p": 191498
     }
    ],
-   "expected_price": 215608,
+   "expected_price": 215609,
    "deal_pct": 11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 70
+   "rank_cheapest_clean": 69
   },
   {
    "source": "autotempest",
@@ -11820,7 +11712,7 @@
      "p": 191498
     }
    ],
-   "expected_price": 215608,
+   "expected_price": 215609,
    "deal_pct": 11.2,
    "price_per_mile_note": null
   },
@@ -11891,7 +11783,7 @@
      "p": 191498
     }
    ],
-   "expected_price": 213920,
+   "expected_price": 213911,
    "deal_pct": 10.5,
    "price_per_mile_note": null
   },
@@ -11957,10 +11849,10 @@
      "p": 191905
     }
    ],
-   "expected_price": 183182,
+   "expected_price": 183168,
    "deal_pct": -4.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 71
+   "rank_cheapest_clean": 70
   },
   {
    "source": "autotrader",
@@ -12046,10 +11938,10 @@
      "p": 191977
     }
    ],
-   "expected_price": 173837,
-   "deal_pct": -10.4,
+   "expected_price": 173764,
+   "deal_pct": -10.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 72
+   "rank_cheapest_clean": 71
   },
   {
    "source": "carsandbids",
@@ -12193,10 +12085,10 @@
      "p": 192991
     }
    ],
-   "expected_price": 208254,
+   "expected_price": 208208,
    "deal_pct": 7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 73
+   "rank_cheapest_clean": 72
   },
   {
    "source": "jamesedition",
@@ -12269,10 +12161,10 @@
      "p": 193328
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 74
+   "rank_cheapest_clean": 73
   },
   {
    "source": "autotrader_ca",
@@ -12336,7 +12228,7 @@
      "p": 193377
     }
    ],
-   "expected_price": 352964,
+   "expected_price": 352885,
    "deal_pct": 45.2,
    "price_per_mile_note": null
   },
@@ -12617,10 +12509,10 @@
      "p": 195498
     }
    ],
-   "expected_price": 216038,
+   "expected_price": 216042,
    "deal_pct": 9.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 75
+   "rank_cheapest_clean": 74
   },
   {
    "source": "autotrader",
@@ -12695,10 +12587,10 @@
      "p": 195998
     }
    ],
-   "expected_price": 184427,
+   "expected_price": 184421,
    "deal_pct": -6.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 76
+   "rank_cheapest_clean": 75
   },
   {
    "source": "cargurus_ca",
@@ -13004,10 +12896,10 @@
      "p": 197413
     }
    ],
-   "expected_price": 216991,
+   "expected_price": 217001,
    "deal_pct": 9.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 77
+   "rank_cheapest_clean": 76
   },
   {
    "source": "kbb",
@@ -13542,10 +13434,10 @@
      "p": 202609
     }
    ],
-   "expected_price": 276932,
+   "expected_price": 276941,
    "deal_pct": 26.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 78
+   "rank_cheapest_clean": 77
   },
   {
    "source": "autotrader",
@@ -13647,10 +13539,10 @@
      "p": 202609
     }
    ],
-   "expected_price": 276970,
-   "deal_pct": 26.8,
+   "expected_price": 276979,
+   "deal_pct": 26.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 79
+   "rank_cheapest_clean": 78
   },
   {
    "source": "autotrader",
@@ -13741,10 +13633,10 @@
      "p": 202609
     }
    ],
-   "expected_price": 276977,
+   "expected_price": 276987,
    "deal_pct": 26.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 80
+   "rank_cheapest_clean": 79
   },
   {
    "source": "kbb",
@@ -13978,7 +13870,7 @@
      "p": 203300
     }
    ],
-   "expected_price": 244955,
+   "expected_price": 244952,
    "deal_pct": 17.0,
    "price_per_mile_note": null
   },
@@ -14464,10 +14356,10 @@
      "p": 205900
     }
    ],
-   "expected_price": 238067,
+   "expected_price": 238021,
    "deal_pct": 13.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 81
+   "rank_cheapest_clean": 80
   },
   {
    "source": "cargurus",
@@ -14895,10 +14787,10 @@
      "p": 209990
     }
    ],
-   "expected_price": 242696,
+   "expected_price": 242678,
    "deal_pct": 13.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 82
+   "rank_cheapest_clean": 81
   },
   {
    "source": "kbb",
@@ -15241,10 +15133,10 @@
      "p": 209999
     }
    ],
-   "expected_price": 215176,
+   "expected_price": 215175,
    "deal_pct": 2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 83
+   "rank_cheapest_clean": 82
   },
   {
    "source": "cars_com",
@@ -15532,7 +15424,7 @@
      "p": 211000
     }
    ],
-   "expected_price": 186986,
+   "expected_price": 186996,
    "deal_pct": -12.8,
    "price_per_mile_note": null
   },
@@ -15612,7 +15504,7 @@
      "p": 211676
     }
    ],
-   "expected_price": 242255,
+   "expected_price": 242234,
    "deal_pct": 12.6,
    "price_per_mile_note": null
   },
@@ -15800,10 +15692,10 @@
      "p": 212500
     }
    ],
-   "expected_price": 244118,
-   "deal_pct": 13.0,
+   "expected_price": 244110,
+   "deal_pct": 12.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 84
+   "rank_cheapest_clean": 83
   },
   {
    "source": "kbb",
@@ -15985,10 +15877,10 @@
      "p": 213498
     }
    ],
-   "expected_price": 243778,
+   "expected_price": 243767,
    "deal_pct": 12.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 85
+   "rank_cheapest_clean": 84
   },
   {
    "source": "autotempest",
@@ -16057,7 +15949,7 @@
      "p": 213498
     }
    ],
-   "expected_price": 243778,
+   "expected_price": 243767,
    "deal_pct": 12.4,
    "price_per_mile_note": null
   },
@@ -16177,10 +16069,10 @@
      "p": 214449
     }
    ],
-   "expected_price": 241672,
+   "expected_price": 241648,
    "deal_pct": 11.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 86
+   "rank_cheapest_clean": 85
   },
   {
    "source": "cargurus",
@@ -16266,10 +16158,10 @@
      "p": 214990
     }
    ],
-   "expected_price": 242953,
+   "expected_price": 242938,
    "deal_pct": 11.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 87
+   "rank_cheapest_clean": 86
   },
   {
    "source": "cargurus",
@@ -16366,10 +16258,10 @@
      "p": 214990
     }
    ],
-   "expected_price": 235006,
+   "expected_price": 234940,
    "deal_pct": 8.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 88
+   "rank_cheapest_clean": 87
   },
   {
    "source": "kbb",
@@ -16828,10 +16720,10 @@
      "p": 217997
     }
    ],
-   "expected_price": 240185,
+   "expected_price": 240152,
    "deal_pct": 9.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 89
+   "rank_cheapest_clean": 88
   },
   {
    "source": "autotrader",
@@ -16947,10 +16839,10 @@
      "p": 219000
     }
    ],
-   "expected_price": 211896,
+   "expected_price": 211874,
    "deal_pct": -3.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 90
+   "rank_cheapest_clean": 89
   },
   {
    "source": "cargurus",
@@ -17067,10 +16959,10 @@
      "p": 219800
     }
    ],
-   "expected_price": 273922,
+   "expected_price": 273913,
    "deal_pct": 19.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 91
+   "rank_cheapest_clean": 90
   },
   {
    "source": "usedcars_com",
@@ -17130,10 +17022,10 @@
      "p": 219800
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": 20.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 92
+   "rank_cheapest_clean": 91
   },
   {
    "source": "cars_com",
@@ -18031,10 +17923,10 @@
      "p": 222980
     }
    ],
-   "expected_price": 246421,
+   "expected_price": 246428,
    "deal_pct": 9.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 93
+   "rank_cheapest_clean": 92
   },
   {
    "source": "kbb",
@@ -18526,10 +18418,10 @@
      "p": 224800
     }
    ],
-   "expected_price": 241548,
+   "expected_price": 241523,
    "deal_pct": 6.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 94
+   "rank_cheapest_clean": 93
   },
   {
    "source": "usedcars_com",
@@ -18589,10 +18481,10 @@
      "p": 224800
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": 9.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 95
+   "rank_cheapest_clean": 94
   },
   {
    "source": "kbb",
@@ -19027,7 +18919,7 @@
      "p": 225000
     }
    ],
-   "expected_price": 241972,
+   "expected_price": 241950,
    "deal_pct": 7.0,
    "price_per_mile_note": null
   },
@@ -19332,10 +19224,10 @@
      "p": 227989
     }
    ],
-   "expected_price": 233240,
-   "deal_pct": 2.3,
+   "expected_price": 233162,
+   "deal_pct": 2.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 96
+   "rank_cheapest_clean": 95
   },
   {
    "source": "cars_com",
@@ -20279,10 +20171,10 @@
      "p": 229999
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": 6.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 97
+   "rank_cheapest_clean": 96
   },
   {
    "source": "usedcars_com",
@@ -21637,10 +21529,10 @@
      "p": 234996
     }
    ],
-   "expected_price": 242581,
+   "expected_price": 242563,
    "deal_pct": 3.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 98
+   "rank_cheapest_clean": 97
   },
   {
    "source": "kbb",
@@ -22223,10 +22115,10 @@
      "p": 235000
     }
    ],
-   "expected_price": 244179,
+   "expected_price": 244171,
    "deal_pct": 3.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 99
+   "rank_cheapest_clean": 98
   },
   {
    "source": "kbb",
@@ -22543,10 +22435,10 @@
      "p": 235534
     }
    ],
-   "expected_price": 216991,
+   "expected_price": 217001,
    "deal_pct": -8.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 100
+   "rank_cheapest_clean": 99
   },
   {
    "source": "carfax",
@@ -22717,10 +22609,10 @@
      "p": 235890
     }
    ],
-   "expected_price": 239631,
-   "deal_pct": 1.6,
+   "expected_price": 239594,
+   "deal_pct": 1.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 101
+   "rank_cheapest_clean": 100
   },
   {
    "source": "autotrader",
@@ -22800,10 +22692,10 @@
      "p": 235990
     }
    ],
-   "expected_price": 239126,
+   "expected_price": 239085,
    "deal_pct": 1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 102
+   "rank_cheapest_clean": 101
   },
   {
    "source": "usedcars_com",
@@ -23257,10 +23149,10 @@
      "p": 238900
     }
    ],
-   "expected_price": 242079,
+   "expected_price": 242057,
    "deal_pct": 1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 103
+   "rank_cheapest_clean": 102
   },
   {
    "source": "iseecars",
@@ -24314,10 +24206,10 @@
      "p": 239999
     }
    ],
-   "expected_price": 242514,
+   "expected_price": 242495,
    "deal_pct": 1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 104
+   "rank_cheapest_clean": 103
   },
   {
    "source": "carsandbids",
@@ -24763,7 +24655,7 @@
      "p": 243000
     }
    ],
-   "expected_price": 242286,
+   "expected_price": 242266,
    "deal_pct": -0.3,
    "price_per_mile_note": null
   },
@@ -25115,10 +25007,10 @@
      "p": 244500
     }
    ],
-   "expected_price": 241518,
+   "expected_price": 241493,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 105
+   "rank_cheapest_clean": 104
   },
   {
    "source": "autotrader",
@@ -25214,10 +25106,10 @@
      "p": 244800
     }
    ],
-   "expected_price": 239127,
+   "expected_price": 239087,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 106
+   "rank_cheapest_clean": 105
   },
   {
    "source": "usedcars_com",
@@ -25277,10 +25169,10 @@
      "p": 244800
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": 0.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 107
+   "rank_cheapest_clean": 106
   },
   {
    "source": "autotempest",
@@ -25373,7 +25265,7 @@
      "p": 244800
     }
    ],
-   "expected_price": 241952,
+   "expected_price": 241929,
    "deal_pct": -1.2,
    "price_per_mile_note": null
   },
@@ -25644,10 +25536,10 @@
      "p": 244995
     }
    ],
-   "expected_price": 238378,
+   "expected_price": 238333,
    "deal_pct": -2.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 108
+   "rank_cheapest_clean": 107
   },
   {
    "source": "hemmings",
@@ -25882,7 +25774,7 @@
      "p": 280076
     }
    ],
-   "expected_price": 237794,
+   "expected_price": 237746,
    "deal_pct": -3.2,
    "price_per_mile_note": null
   },
@@ -26045,10 +25937,10 @@
      "p": 245991
     }
    ],
-   "expected_price": 232692,
-   "deal_pct": -5.7,
+   "expected_price": 232611,
+   "deal_pct": -5.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 109
+   "rank_cheapest_clean": 108
   },
   {
    "source": "cargurus_ca",
@@ -26352,10 +26244,10 @@
      "p": 247996
     }
    ],
-   "expected_price": 241309,
+   "expected_price": 241283,
    "deal_pct": -2.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 110
+   "rank_cheapest_clean": 109
   },
   {
    "source": "kbb",
@@ -26978,10 +26870,10 @@
      "p": 249449
     }
    ],
-   "expected_price": 244514,
+   "expected_price": 244508,
    "deal_pct": -2.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 111
+   "rank_cheapest_clean": 110
   },
   {
    "source": "autotrader",
@@ -27097,10 +26989,10 @@
      "p": 249449
     }
    ],
-   "expected_price": 241769,
+   "expected_price": 241746,
    "deal_pct": -3.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 112
+   "rank_cheapest_clean": 111
   },
   {
    "source": "autotrader",
@@ -27216,10 +27108,10 @@
      "p": 249449
     }
    ],
-   "expected_price": 243583,
+   "expected_price": 243571,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 113
+   "rank_cheapest_clean": 112
   },
   {
    "source": "autotrader",
@@ -27331,10 +27223,10 @@
      "p": 249449
     }
    ],
-   "expected_price": 244415,
+   "expected_price": 244408,
    "deal_pct": -2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 114
+   "rank_cheapest_clean": 113
   },
   {
    "source": "autotrader",
@@ -27446,10 +27338,10 @@
      "p": 249449
     }
    ],
-   "expected_price": 242146,
+   "expected_price": 242125,
    "deal_pct": -3.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 115
+   "rank_cheapest_clean": 114
   },
   {
    "source": "autotrader",
@@ -27524,10 +27416,10 @@
      "p": 249864
     }
    ],
-   "expected_price": 238339,
-   "deal_pct": -4.8,
+   "expected_price": 238294,
+   "deal_pct": -4.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 116
+   "rank_cheapest_clean": 115
   },
   {
    "source": "kbb",
@@ -27689,10 +27581,10 @@
      "p": 249900
     }
    ],
-   "expected_price": 240303,
+   "expected_price": 240270,
    "deal_pct": -4.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 117
+   "rank_cheapest_clean": 116
   },
   {
    "source": "dupont",
@@ -27779,10 +27671,10 @@
      "p": 249900
     }
    ],
-   "expected_price": 178855,
-   "deal_pct": -39.7,
+   "expected_price": 178813,
+   "deal_pct": -39.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 118
+   "rank_cheapest_clean": 117
   },
   {
    "source": "autotrader",
@@ -27939,8 +27831,8 @@
      "p": 249900
     }
    ],
-   "expected_price": 240873,
-   "deal_pct": -3.7,
+   "expected_price": 240844,
+   "deal_pct": -3.8,
    "price_per_mile_note": null
   },
   {
@@ -28772,10 +28664,10 @@
      "p": 249997
     }
    ],
-   "expected_price": 244531,
+   "expected_price": 244525,
    "deal_pct": -2.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 119
+   "rank_cheapest_clean": 118
   },
   {
    "source": "kbb",
@@ -29228,10 +29120,10 @@
      "p": 250000
     }
    ],
-   "expected_price": 238009,
-   "deal_pct": -5.0,
+   "expected_price": 237962,
+   "deal_pct": -5.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 120
+   "rank_cheapest_clean": 119
   },
   {
    "source": "carsandbids",
@@ -29617,10 +29509,10 @@
      "p": 250886
     }
    ],
-   "expected_price": 243292,
+   "expected_price": 243279,
    "deal_pct": -3.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 121
+   "rank_cheapest_clean": 120
   },
   {
    "source": "cargurus",
@@ -31341,7 +31233,7 @@
      "p": 258000
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": -4.5,
    "price_per_mile_note": null
   },
@@ -31816,10 +31708,10 @@
      "p": 259996
     }
    ],
-   "expected_price": 243652,
+   "expected_price": 243641,
    "deal_pct": -6.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 122
+   "rank_cheapest_clean": 121
   },
   {
    "source": "autotrader",
@@ -31894,10 +31786,10 @@
      "p": 259998
     }
    ],
-   "expected_price": 276918,
+   "expected_price": 276927,
    "deal_pct": 6.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 123
+   "rank_cheapest_clean": 122
   },
   {
    "source": "autotrader",
@@ -31972,10 +31864,10 @@
      "p": 260795
     }
    ],
-   "expected_price": 246599,
+   "expected_price": 246606,
    "deal_pct": -5.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 124
+   "rank_cheapest_clean": 123
   },
   {
    "source": "carsandbids",
@@ -32133,10 +32025,10 @@
      "p": 261519
     }
    ],
-   "expected_price": 246831,
-   "deal_pct": -6.0,
+   "expected_price": 246840,
+   "deal_pct": -5.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 125
+   "rank_cheapest_clean": 124
   },
   {
    "source": "iseecars",
@@ -32627,7 +32519,7 @@
      "p": 263076
     }
    ],
-   "expected_price": 243652,
+   "expected_price": 243641,
    "deal_pct": -8.0,
    "price_per_mile_note": null
   },
@@ -32866,10 +32758,10 @@
      "p": 265695
     }
    ],
-   "expected_price": 243784,
+   "expected_price": 243773,
    "deal_pct": -9.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 126
+   "rank_cheapest_clean": 125
   },
   {
    "source": "kbb",
@@ -33288,10 +33180,10 @@
      "p": 269250
     }
    ],
-   "expected_price": 275247,
+   "expected_price": 275246,
    "deal_pct": 2.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 127
+   "rank_cheapest_clean": 126
   },
   {
    "source": "autotrader",
@@ -33377,10 +33269,10 @@
      "p": 269750
     }
    ],
-   "expected_price": 276894,
+   "expected_price": 276904,
    "deal_pct": 2.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 128
+   "rank_cheapest_clean": 127
   },
   {
    "source": "kbb",
@@ -33641,10 +33533,10 @@
      "p": 269990
     }
    ],
-   "expected_price": 246390,
+   "expected_price": 246396,
    "deal_pct": -9.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 129
+   "rank_cheapest_clean": 128
   },
   {
    "source": "kbb",
@@ -34805,10 +34697,10 @@
      "p": 272990
     }
    ],
-   "expected_price": 276566,
+   "expected_price": 276573,
    "deal_pct": 1.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 130
+   "rank_cheapest_clean": 129
   },
   {
    "source": "kbb",
@@ -35247,7 +35139,7 @@
      "p": 275000
     }
    ],
-   "expected_price": 186972,
+   "expected_price": 186982,
    "deal_pct": -47.1,
    "price_per_mile_note": null
   },
@@ -35478,10 +35370,10 @@
      "p": 276361
     }
    ],
-   "expected_price": 276679,
+   "expected_price": 276687,
    "deal_pct": 0.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 131
+   "rank_cheapest_clean": 130
   },
   {
    "source": "autotrader_ca",
@@ -35908,10 +35800,10 @@
      "p": 279991
     }
    ],
-   "expected_price": 237794,
-   "deal_pct": -17.7,
+   "expected_price": 237746,
+   "deal_pct": -17.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 132
+   "rank_cheapest_clean": 131
   },
   {
    "source": "autotrader",
@@ -36483,10 +36375,10 @@
      "p": 282680
     }
    ],
-   "expected_price": 276940,
+   "expected_price": 276949,
    "deal_pct": -2.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 133
+   "rank_cheapest_clean": 132
   },
   {
    "source": "kbb",
@@ -37495,10 +37387,10 @@
      "p": 289200
     }
    ],
-   "expected_price": 276985,
+   "expected_price": 276995,
    "deal_pct": -4.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 134
+   "rank_cheapest_clean": 133
   },
   {
    "source": "autotrader",
@@ -37584,10 +37476,10 @@
      "p": 289250
     }
    ],
-   "expected_price": 276858,
+   "expected_price": 276867,
    "deal_pct": -4.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 135
+   "rank_cheapest_clean": 134
   },
   {
    "source": "autotrader",
@@ -37673,10 +37565,10 @@
      "p": 289864
     }
    ],
-   "expected_price": 242052,
+   "expected_price": 242031,
    "deal_pct": -19.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 136
+   "rank_cheapest_clean": 135
   },
   {
    "source": "kbb",
@@ -38325,10 +38217,10 @@
      "p": 289996
     }
    ],
-   "expected_price": 240925,
+   "expected_price": 240896,
    "deal_pct": -20.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 137
+   "rank_cheapest_clean": 136
   },
   {
    "source": "kbb",
@@ -38500,10 +38392,10 @@
      "p": 290000
     }
    ],
-   "expected_price": 276448,
+   "expected_price": 276455,
    "deal_pct": -4.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 138
+   "rank_cheapest_clean": 137
   },
   {
    "source": "kbb",
@@ -38732,10 +38624,10 @@
      "p": 291900
     }
    ],
-   "expected_price": 276915,
+   "expected_price": 276924,
    "deal_pct": -5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 139
+   "rank_cheapest_clean": 138
   },
   {
    "source": "cargurus_ca",
@@ -39053,10 +38945,10 @@
      "p": 293197
     }
    ],
-   "expected_price": 241815,
-   "deal_pct": -21.2,
+   "expected_price": 241792,
+   "deal_pct": -21.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 140
+   "rank_cheapest_clean": 139
   },
   {
    "source": "jamesedition",
@@ -39120,10 +39012,10 @@
      "p": 293950
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -6.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 141
+   "rank_cheapest_clean": 140
   },
   {
    "source": "autotrader",
@@ -39212,7 +39104,7 @@
    "expected_price": 275513,
    "deal_pct": -6.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 142
+   "rank_cheapest_clean": 141
   },
   {
    "source": "autotrader",
@@ -39298,10 +39190,10 @@
      "p": 294950
     }
    ],
-   "expected_price": 243192,
+   "expected_price": 243178,
    "deal_pct": -21.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 143
+   "rank_cheapest_clean": 142
   },
   {
    "source": "jamesedition",
@@ -39442,10 +39334,10 @@
      "p": 295650
     }
    ],
-   "expected_price": 276938,
+   "expected_price": 276948,
    "deal_pct": -6.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 144
+   "rank_cheapest_clean": 143
   },
   {
    "source": "kbb",
@@ -39611,10 +39503,10 @@
      "p": 295950
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -6.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 145
+   "rank_cheapest_clean": 144
   },
   {
    "source": "kbb",
@@ -39812,10 +39704,10 @@
      "p": 297150
     }
    ],
-   "expected_price": 276932,
+   "expected_price": 276941,
    "deal_pct": -7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 146
+   "rank_cheapest_clean": 145
   },
   {
    "source": "autotrader",
@@ -39906,10 +39798,10 @@
      "p": 297200
     }
    ],
-   "expected_price": 276846,
-   "deal_pct": -7.4,
+   "expected_price": 276855,
+   "deal_pct": -7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 147
+   "rank_cheapest_clean": 146
   },
   {
    "source": "autotrader",
@@ -39995,10 +39887,10 @@
      "p": 297400
     }
    ],
-   "expected_price": 276918,
+   "expected_price": 276927,
    "deal_pct": -7.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 148
+   "rank_cheapest_clean": 147
   },
   {
    "source": "autotrader",
@@ -40089,10 +39981,10 @@
      "p": 297950
     }
    ],
-   "expected_price": 276904,
+   "expected_price": 276913,
    "deal_pct": -7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 149
+   "rank_cheapest_clean": 148
   },
   {
    "source": "jamesedition",
@@ -40156,10 +40048,10 @@
      "p": 297950
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 150
+   "rank_cheapest_clean": 149
   },
   {
    "source": "cargurus_ca",
@@ -40306,10 +40198,10 @@
      "p": 298730
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -7.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 151
+   "rank_cheapest_clean": 150
   },
   {
    "source": "kbb",
@@ -40860,10 +40752,10 @@
      "p": 299199
     }
    ],
-   "expected_price": 276948,
+   "expected_price": 276957,
    "deal_pct": -8.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 152
+   "rank_cheapest_clean": 151
   },
   {
    "source": "kijiji",
@@ -41069,10 +40961,10 @@
      "p": 299380
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -8.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 153
+   "rank_cheapest_clean": 152
   },
   {
    "source": "pcarmarket",
@@ -41224,10 +41116,10 @@
      "p": 299800
     }
    ],
-   "expected_price": 276952,
+   "expected_price": 276962,
    "deal_pct": -8.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 154
+   "rank_cheapest_clean": 153
   },
   {
    "source": "autotrader",
@@ -41329,10 +41221,10 @@
      "p": 299800
     }
    ],
-   "expected_price": 276951,
-   "deal_pct": -8.3,
+   "expected_price": 276960,
+   "deal_pct": -8.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 155
+   "rank_cheapest_clean": 154
   },
   {
    "source": "kbb",
@@ -41488,7 +41380,7 @@
      "p": 299975
     }
    ],
-   "expected_price": 276951,
+   "expected_price": 276960,
    "deal_pct": -8.3,
    "price_per_mile_note": null
   },
@@ -41839,10 +41731,10 @@
      "p": 300650
     }
    ],
-   "expected_price": 276977,
+   "expected_price": 276987,
    "deal_pct": -8.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 156
+   "rank_cheapest_clean": 155
   },
   {
    "source": "jamesedition",
@@ -41906,10 +41798,10 @@
      "p": 301780
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -8.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 157
+   "rank_cheapest_clean": 156
   },
   {
    "source": "autotrader",
@@ -41995,10 +41887,10 @@
      "p": 302750
     }
    ],
-   "expected_price": 276897,
+   "expected_price": 276907,
    "deal_pct": -9.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 158
+   "rank_cheapest_clean": 157
   },
   {
    "source": "autotrader",
@@ -42073,10 +41965,10 @@
      "p": 303800
     }
    ],
-   "expected_price": 276948,
+   "expected_price": 276957,
    "deal_pct": -9.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 159
+   "rank_cheapest_clean": 158
   },
   {
    "source": "jamesedition",
@@ -42140,10 +42032,10 @@
      "p": 303800
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -9.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 160
+   "rank_cheapest_clean": 159
   },
   {
    "source": "kbb",
@@ -42392,10 +42284,10 @@
      "p": 304450
     }
    ],
-   "expected_price": 276944,
+   "expected_price": 276954,
    "deal_pct": -9.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 161
+   "rank_cheapest_clean": 160
   },
   {
    "source": "kbb",
@@ -42705,10 +42597,10 @@
      "p": 305299
     }
    ],
-   "expected_price": 276954,
+   "expected_price": 276964,
    "deal_pct": -10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 162
+   "rank_cheapest_clean": 161
   },
   {
    "source": "autotempest",
@@ -42787,7 +42679,7 @@
      "p": 305436
     }
    ],
-   "expected_price": 276954,
+   "expected_price": 276964,
    "deal_pct": -10.3,
    "price_per_mile_note": null
   },
@@ -43032,10 +42924,10 @@
      "p": 306499
     }
    ],
-   "expected_price": 276970,
+   "expected_price": 276979,
    "deal_pct": -10.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 163
+   "rank_cheapest_clean": 162
   },
   {
    "source": "autotempest",
@@ -43104,7 +42996,7 @@
      "p": 307057
     }
    ],
-   "expected_price": 246607,
+   "expected_price": 246614,
    "deal_pct": -24.5,
    "price_per_mile_note": null
   },
@@ -43186,10 +43078,10 @@
      "p": 307113
     }
    ],
-   "expected_price": 246607,
+   "expected_price": 246614,
    "deal_pct": -24.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 164
+   "rank_cheapest_clean": 163
   },
   {
    "source": "cargurus_ca",
@@ -43439,10 +43331,10 @@
      "p": 307990
     }
    ],
-   "expected_price": 276811,
+   "expected_price": 276820,
    "deal_pct": -11.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 165
+   "rank_cheapest_clean": 164
   },
   {
    "source": "autotrader",
@@ -43517,10 +43409,10 @@
      "p": 307995
     }
    ],
-   "expected_price": 276888,
+   "expected_price": 276897,
    "deal_pct": -11.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 166
+   "rank_cheapest_clean": 165
   },
   {
    "source": "autotrader",
@@ -43595,10 +43487,10 @@
      "p": 308995
     }
    ],
-   "expected_price": 276938,
+   "expected_price": 276948,
    "deal_pct": -11.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 167
+   "rank_cheapest_clean": 166
   },
   {
    "source": "kbb",
@@ -44480,8 +44372,8 @@
      "p": 311599
     }
    ],
-   "expected_price": 276850,
-   "deal_pct": -12.6,
+   "expected_price": 276859,
+   "deal_pct": -12.5,
    "price_per_mile_note": null
   },
   {
@@ -44562,10 +44454,10 @@
      "p": 311655
     }
    ],
-   "expected_price": 276850,
+   "expected_price": 276859,
    "deal_pct": -12.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 168
+   "rank_cheapest_clean": 167
   },
   {
    "source": "autotempest",
@@ -44634,7 +44526,7 @@
      "p": 312049
     }
    ],
-   "expected_price": 276951,
+   "expected_price": 276960,
    "deal_pct": -12.7,
    "price_per_mile_note": null
   },
@@ -44716,10 +44608,10 @@
      "p": 312105
     }
    ],
-   "expected_price": 276951,
+   "expected_price": 276960,
    "deal_pct": -12.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 169
+   "rank_cheapest_clean": 168
   },
   {
    "source": "autotrader",
@@ -44805,10 +44697,10 @@
      "p": 313250
     }
    ],
-   "expected_price": 276943,
+   "expected_price": 276953,
    "deal_pct": -13.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 170
+   "rank_cheapest_clean": 169
   },
   {
    "source": "jamesedition",
@@ -44872,10 +44764,10 @@
      "p": 313600
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -13.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 171
+   "rank_cheapest_clean": 170
   },
   {
    "source": "autotrader_ca",
@@ -45093,10 +44985,10 @@
      "p": 314250
     }
    ],
-   "expected_price": 273955,
+   "expected_price": 273946,
    "deal_pct": -14.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 172
+   "rank_cheapest_clean": 171
   },
   {
    "source": "kbb",
@@ -45516,10 +45408,10 @@
      "p": 315049
     }
    ],
-   "expected_price": 276968,
+   "expected_price": 276978,
    "deal_pct": -13.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 173
+   "rank_cheapest_clean": 172
   },
   {
    "source": "kbb",
@@ -45674,7 +45566,7 @@
      "p": 315848
     }
    ],
-   "expected_price": 276968,
+   "expected_price": 276978,
    "deal_pct": -14.0,
    "price_per_mile_note": null
   },
@@ -45762,10 +45654,10 @@
      "p": 316750
     }
    ],
-   "expected_price": 276839,
+   "expected_price": 276848,
    "deal_pct": -14.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 174
+   "rank_cheapest_clean": 173
   },
   {
    "source": "autotempest",
@@ -45834,7 +45726,7 @@
      "p": 317407
     }
    ],
-   "expected_price": 242292,
+   "expected_price": 242272,
    "deal_pct": -31.0,
    "price_per_mile_note": null
   },
@@ -45916,10 +45808,10 @@
      "p": 317407
     }
    ],
-   "expected_price": 242292,
+   "expected_price": 242272,
    "deal_pct": -31.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 175
+   "rank_cheapest_clean": 174
   },
   {
    "source": "hemmings",
@@ -46478,10 +46370,10 @@
      "p": 319350
     }
    ],
-   "expected_price": 276944,
+   "expected_price": 276954,
    "deal_pct": -15.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 176
+   "rank_cheapest_clean": 175
   },
   {
    "source": "kbb",
@@ -46761,10 +46653,10 @@
      "p": 320250
     }
    ],
-   "expected_price": 276869,
+   "expected_price": 276878,
    "deal_pct": -15.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 177
+   "rank_cheapest_clean": 176
   },
   {
    "source": "autotrader",
@@ -46855,10 +46747,10 @@
      "p": 320400
     }
    ],
-   "expected_price": 276868,
+   "expected_price": 276877,
    "deal_pct": -15.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 178
+   "rank_cheapest_clean": 177
   },
   {
    "source": "autotrader_ca",
@@ -47169,10 +47061,10 @@
      "p": 322950
     }
    ],
-   "expected_price": 276962,
+   "expected_price": 276972,
    "deal_pct": -16.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 179
+   "rank_cheapest_clean": 178
   },
   {
    "source": "carsandbids",
@@ -47309,10 +47201,10 @@
      "p": 323191
     }
    ],
-   "expected_price": 276803,
+   "expected_price": 276812,
    "deal_pct": -16.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 180
+   "rank_cheapest_clean": 179
   },
   {
    "source": "kbb",
@@ -47547,10 +47439,10 @@
      "p": 325189
     }
    ],
-   "expected_price": 276910,
+   "expected_price": 276919,
    "deal_pct": -17.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 181
+   "rank_cheapest_clean": 180
   },
   {
    "source": "autotrader",
@@ -47655,10 +47547,10 @@
      "p": 325500
     }
    ],
-   "expected_price": 246224,
+   "expected_price": 246229,
    "deal_pct": -32.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 182
+   "rank_cheapest_clean": 181
   },
   {
    "source": "jamesedition",
@@ -47788,10 +47680,10 @@
      "p": 326950
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -18.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 183
+   "rank_cheapest_clean": 182
   },
   {
    "source": "autotrader",
@@ -47882,10 +47774,10 @@
      "p": 327000
     }
    ],
-   "expected_price": 276913,
+   "expected_price": 276923,
    "deal_pct": -18.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 184
+   "rank_cheapest_clean": 183
   },
   {
    "source": "autotrader",
@@ -47971,10 +47863,10 @@
      "p": 327250
     }
    ],
-   "expected_price": 276949,
+   "expected_price": 276959,
    "deal_pct": -18.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 185
+   "rank_cheapest_clean": 184
   },
   {
    "source": "dealer_sites",
@@ -48060,10 +47952,10 @@
      "p": 327284
     }
    ],
-   "expected_price": 242584,
+   "expected_price": 242566,
    "deal_pct": -34.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 186
+   "rank_cheapest_clean": 185
   },
   {
    "source": "dealer_sites",
@@ -48128,10 +48020,10 @@
      "p": 328339
     }
    ],
-   "expected_price": 276908,
+   "expected_price": 276918,
    "deal_pct": -18.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 187
+   "rank_cheapest_clean": 186
   },
   {
    "source": "autotrader",
@@ -48226,10 +48118,10 @@
      "p": 328650
     }
    ],
-   "expected_price": 276993,
+   "expected_price": 277003,
    "deal_pct": -18.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 188
+   "rank_cheapest_clean": 187
   },
   {
    "source": "kbb",
@@ -48635,7 +48527,7 @@
      "p": 329924
     }
    ],
-   "expected_price": 244946,
+   "expected_price": 244943,
    "deal_pct": -34.7,
    "price_per_mile_note": null
   },
@@ -48717,10 +48609,10 @@
      "p": 329980
     }
    ],
-   "expected_price": 244946,
+   "expected_price": 244943,
    "deal_pct": -34.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 189
+   "rank_cheapest_clean": 188
   },
   {
    "source": "autotempest",
@@ -49529,10 +49421,10 @@
      "p": 330194
     }
    ],
-   "expected_price": 276795,
+   "expected_price": 276804,
    "deal_pct": -19.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 190
+   "rank_cheapest_clean": 189
   },
   {
    "source": "cargurus_ca",
@@ -49596,10 +49488,10 @@
      "p": 330280
     }
    ],
-   "expected_price": 246996,
+   "expected_price": 247006,
    "deal_pct": -33.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 191
+   "rank_cheapest_clean": 190
   },
   {
    "source": "autotempest",
@@ -49745,10 +49637,10 @@
      "p": 330600
     }
    ],
-   "expected_price": 276718,
+   "expected_price": 276727,
    "deal_pct": -19.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 192
+   "rank_cheapest_clean": 191
   },
   {
    "source": "autotrader",
@@ -49874,10 +49766,10 @@
      "p": 331100
     }
    ],
-   "expected_price": 276993,
+   "expected_price": 277003,
    "deal_pct": -19.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 193
+   "rank_cheapest_clean": 192
   },
   {
    "source": "kbb",
@@ -50105,10 +49997,10 @@
      "p": 333200
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -20.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 194
+   "rank_cheapest_clean": 193
   },
   {
    "source": "jamesedition",
@@ -50172,10 +50064,10 @@
      "p": 334400
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -20.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 195
+   "rank_cheapest_clean": 194
   },
   {
    "source": "jamesedition",
@@ -50248,10 +50140,10 @@
      "p": 334531
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -20.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 196
+   "rank_cheapest_clean": 195
   },
   {
    "source": "kbb",
@@ -50800,10 +50692,10 @@
      "p": 335668
     }
    ],
-   "expected_price": 246764,
+   "expected_price": 246772,
    "deal_pct": -36.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 197
+   "rank_cheapest_clean": 196
   },
   {
    "source": "autotrader",
@@ -50878,10 +50770,10 @@
      "p": 336600
     }
    ],
-   "expected_price": 276929,
+   "expected_price": 276938,
    "deal_pct": -21.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 198
+   "rank_cheapest_clean": 197
   },
   {
    "source": "kbb",
@@ -51053,10 +50945,10 @@
      "p": 337405
     }
    ],
-   "expected_price": 276864,
+   "expected_price": 276874,
    "deal_pct": -21.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 199
+   "rank_cheapest_clean": 198
   },
   {
    "source": "autotrader",
@@ -51162,10 +51054,10 @@
      "p": 337800
     }
    ],
-   "expected_price": 276910,
+   "expected_price": 276919,
    "deal_pct": -22.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 200
+   "rank_cheapest_clean": 199
   },
   {
    "source": "autotempest",
@@ -51234,8 +51126,8 @@
      "p": 337975
     }
    ],
-   "expected_price": 276910,
-   "deal_pct": -22.1,
+   "expected_price": 276919,
+   "deal_pct": -22.0,
    "price_per_mile_note": null
   },
   {
@@ -51311,10 +51203,10 @@
      "p": 338067
     }
    ],
-   "expected_price": 246618,
+   "expected_price": 246625,
    "deal_pct": -37.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 201
+   "rank_cheapest_clean": 200
   },
   {
    "source": "autotrader",
@@ -51400,10 +51292,10 @@
      "p": 338099
     }
    ],
-   "expected_price": 276966,
+   "expected_price": 276976,
    "deal_pct": -22.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 202
+   "rank_cheapest_clean": 201
   },
   {
    "source": "autotrader",
@@ -51498,10 +51390,10 @@
      "p": 338199
     }
    ],
-   "expected_price": 276971,
+   "expected_price": 276981,
    "deal_pct": -22.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 203
+   "rank_cheapest_clean": 202
   },
   {
    "source": "dealer_sites",
@@ -51575,10 +51467,10 @@
      "p": 338589
     }
    ],
-   "expected_price": 276750,
+   "expected_price": 276758,
    "deal_pct": -22.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 204
+   "rank_cheapest_clean": 203
   },
   {
    "source": "autotempest",
@@ -51657,7 +51549,7 @@
      "p": 338898
     }
    ],
-   "expected_price": 276971,
+   "expected_price": 276981,
    "deal_pct": -22.4,
    "price_per_mile_note": null
   },
@@ -51878,10 +51770,10 @@
      "p": 339339
     }
    ],
-   "expected_price": 276866,
+   "expected_price": 276875,
    "deal_pct": -22.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 205
+   "rank_cheapest_clean": 204
   },
   {
    "source": "kbb",
@@ -52412,10 +52304,10 @@
      "p": 341381
     }
    ],
-   "expected_price": 276951,
+   "expected_price": 276960,
    "deal_pct": -23.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 206
+   "rank_cheapest_clean": 205
   },
   {
    "source": "autotrader",
@@ -52490,10 +52382,10 @@
      "p": 342299
     }
    ],
-   "expected_price": 276955,
+   "expected_price": 276965,
    "deal_pct": -23.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 207
+   "rank_cheapest_clean": 206
   },
   {
    "source": "dealer_sites",
@@ -52588,10 +52480,10 @@
      "p": 342655
     }
    ],
-   "expected_price": 276706,
+   "expected_price": 276714,
    "deal_pct": -23.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 208
+   "rank_cheapest_clean": 207
   },
   {
    "source": "autotrader",
@@ -52666,10 +52558,10 @@
      "p": 343200
     }
    ],
-   "expected_price": 276927,
+   "expected_price": 276937,
    "deal_pct": -23.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 209
+   "rank_cheapest_clean": 208
   },
   {
    "source": "kbb",
@@ -53160,10 +53052,10 @@
      "p": 345949
     }
    ],
-   "expected_price": 276968,
+   "expected_price": 276978,
    "deal_pct": -24.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 210
+   "rank_cheapest_clean": 209
   },
   {
    "source": "autotempest",
@@ -53232,7 +53124,7 @@
      "p": 346748
     }
    ],
-   "expected_price": 276968,
+   "expected_price": 276978,
    "deal_pct": -25.2,
    "price_per_mile_note": null
   },
@@ -55038,10 +54930,10 @@
      "p": 356571
     }
    ],
-   "expected_price": 277001,
+   "expected_price": 277011,
    "deal_pct": -28.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 211
+   "rank_cheapest_clean": 210
   },
   {
    "source": "carsandbids",
@@ -56070,10 +55962,10 @@
      "p": 361297
     }
    ],
-   "expected_price": 276824,
+   "expected_price": 276832,
    "deal_pct": -30.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 212
+   "rank_cheapest_clean": 211
   },
   {
    "source": "carfax",
@@ -61440,7 +61332,7 @@
      "p": 406927
     }
    ],
-   "expected_price": 246701,
+   "expected_price": 246709,
    "deal_pct": -64.9,
    "price_per_mile_note": null
   },
@@ -61527,7 +61419,7 @@
      "p": 406983
     }
    ],
-   "expected_price": 246660,
+   "expected_price": 246668,
    "deal_pct": -65.0,
    "price_per_mile_note": null
   },
@@ -72329,7 +72221,7 @@
    "last_seen_at": "2026-09-13T02:39:47+00:00",
    "status": "removed",
    "price_history": [],
-   "expected_price": 167094,
+   "expected_price": 166977,
    "deal_pct": 1.1,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 5,
@@ -72461,8 +72353,8 @@
    "last_seen_at": "2026-09-13T02:39:47+00:00",
    "status": "removed",
    "price_history": [],
-   "expected_price": 197908,
-   "deal_pct": 11.3,
+   "expected_price": 197796,
+   "deal_pct": 11.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 23,
    "rankable": false,
@@ -72531,7 +72423,7 @@
      "p": 175995
     }
    ],
-   "expected_price": 174068,
+   "expected_price": 173996,
    "deal_pct": -1.1,
    "price_per_mile_note": null,
    "removed_on": "2026-09-15"
@@ -72599,7 +72491,7 @@
      "p": 176444
     }
    ],
-   "expected_price": 174068,
+   "expected_price": 173996,
    "deal_pct": -1.4,
    "price_per_mile_note": null,
    "removed_on": "2026-09-14"
@@ -72725,7 +72617,7 @@
      "p": 183499
     }
    ],
-   "expected_price": 156981,
+   "expected_price": 156991,
    "deal_pct": -16.9,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 36,
@@ -72786,7 +72678,7 @@
      "p": 183499
     }
    ],
-   "expected_price": 96971,
+   "expected_price": 96981,
    "deal_pct": -89.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 37,
@@ -72852,7 +72744,7 @@
      "p": 191676
     }
    ],
-   "expected_price": 211637,
+   "expected_price": 211613,
    "deal_pct": 9.4,
    "price_per_mile_note": null,
    "removed_on": "2026-09-13"
@@ -72915,7 +72807,7 @@
      "p": 195498
     }
    ],
-   "expected_price": 216038,
+   "expected_price": 216042,
    "deal_pct": 9.5,
    "price_per_mile_note": null,
    "removed_on": "2026-09-13"
@@ -72976,7 +72868,7 @@
      "p": 195498
     }
    ],
-   "expected_price": 216038,
+   "expected_price": 216042,
    "deal_pct": 9.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 84,
@@ -73039,7 +72931,7 @@
      "p": 199977
     }
    ],
-   "expected_price": 212703,
+   "expected_price": 212686,
    "deal_pct": 6.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 62,
@@ -73875,7 +73767,7 @@
      "p": 245999
     }
    ],
-   "expected_price": 242514,
+   "expected_price": 242495,
    "deal_pct": -1.4,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 120,
@@ -74200,7 +74092,7 @@
      "p": 250412
     }
    ],
-   "expected_price": 238009,
+   "expected_price": 237962,
    "deal_pct": -5.2,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 127,
@@ -74745,7 +74637,7 @@
    "last_seen_at": "2026-09-13T02:39:47+00:00",
    "status": "removed",
    "price_history": [],
-   "expected_price": 246831,
+   "expected_price": 246840,
    "deal_pct": -6.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 124,
@@ -75070,8 +74962,8 @@
      "p": 290412
     }
    ],
-   "expected_price": 276448,
-   "deal_pct": -5.1,
+   "expected_price": 276455,
+   "deal_pct": -5.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 152,
    "removed_on": "2026-09-13",
@@ -75199,7 +75091,7 @@
      "p": 293996
     }
    ],
-   "expected_price": 241815,
+   "expected_price": 241792,
    "deal_pct": -21.6,
    "price_per_mile_note": null,
    "removed_on": "2026-09-13"
@@ -75597,7 +75489,7 @@
      "p": 328800
     }
    ],
-   "expected_price": 276935,
+   "expected_price": 276945,
    "deal_pct": -18.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 194,
@@ -75983,7 +75875,7 @@
      "p": 342599
     }
    ],
-   "expected_price": 276706,
+   "expected_price": 276714,
    "deal_pct": -23.8,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 223,
@@ -76246,7 +76138,7 @@
      "p": 361241
     }
    ],
-   "expected_price": 276824,
+   "expected_price": 276832,
    "deal_pct": -30.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 213,
