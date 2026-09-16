@@ -56,5 +56,10 @@ def test_canada_search_returning_a_us_card_stays_usd():
     from crawler.sources.base import cards_from_links
     html = '''<div><a href="/cars/lamborghini/huracan/2017-lamborghini-huracan-rwd-for-sale-1"><h2>2017 Lamborghini Huracan RWD</h2></a>
     <span>$179,990</span><span>West hollywood, CA, United States</span></div>'''
-    l = cards_from_links(html, "https://www.jamesedition.com/", r"/cars/lamborghini/huracan/", "t", "T", country="CA", currency="CAD")[0]
+    from crawler.models import set_target
+    set_target("huracan")
+    try:
+        l = cards_from_links(html, "https://www.jamesedition.com/", r"/cars/lamborghini/huracan/", "t", "T", country="CA", currency="CAD")[0]
+    finally:
+        set_target("artura")
     assert l.country == "US" and l.currency == "USD" and l.price == 179990 and l.price_local is None

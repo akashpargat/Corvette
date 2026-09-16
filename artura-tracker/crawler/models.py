@@ -154,7 +154,7 @@ class Listing:
 
     def is_rankable(self) -> bool:
         """Counts toward 'cheapest': a candidate with an asking price, not a live auction bid."""
-        return self.is_candidate() and self.listing_type != "auction"
+        return self.is_candidate() and self.listing_type != "auction" and self.mileage is not None
 
     def to_dict(self) -> dict:
         d = asdict(self)

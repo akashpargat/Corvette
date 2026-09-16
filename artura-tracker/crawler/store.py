@@ -276,6 +276,8 @@ UNRELIABLE_ALONE = {"autotempest", "iseecars"}   # aggregator cards: fine as cor
 def _rankable(rec: dict) -> bool:
     if not rec.get("candidate") or rec.get("listing_type") == "auction":
         return False
+    if rec.get("mileage") is None:
+        return False          # a car with no odometer reading cannot be called "the cheapest"
     srcs = set(rec.get("sources") or [rec.get("source")])
     if srcs and srcs <= UNRELIABLE_ALONE:
         return False
