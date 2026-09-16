@@ -266,7 +266,11 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
         from ..models import extract_state
         loc = next((t for t in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b", t) and (extract_state(t) or re.search(r",\s*(ON|QC|BC|AB|MB|SK|NS|NB|PE|NL)\b", t))), None)
         img = node.find("img") if hasattr(node, "find") else None
-        cur = "CAD" if ("CA$" in price_line or "C$" in price_line or country == "CA") else currency
+        # trust the card over the URL: a "Canada" search that returns a US-located car stays USD
+        card_country = country
+        if country == "CA" and re.search(r"United States|\bUSA\b|,\s*[A-Z]{2},\s*United", text) and "CA$" not in price_line and "C$" not in price_line:
+            card_country = "US"
+        cur = "CAD" if ("CA$" in price_line or "C$" in price_line or card_country == "CA") else "USD"
         mileage = parse_mileage(mile_line) if mile_line else None
         if mileage and re.search(r"\bkm\b", mile_line, re.I):
             mileage = round(mileage * 0.621371)
@@ -306,6 +310,8 @@ def crawl_simple(client, ctx: "Ctx", *, name: str, label: str, urls: list, href_
         if not got:
             ctx.diagnose(res, label)
         for l in got:
+            if l.country == "US" and country == "CA":
+                continue          # the card itself said United States
             l.country = country
             if country == "CA" and l.currency == "USD" and not l.price_local:
                 l.currency = "CAD"

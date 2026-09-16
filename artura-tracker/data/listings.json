@@ -19,8 +19,8 @@
    "huracan": {
     "active": 564,
     "clean_candidates": 192,
-    "cheapest_clean_key": "jamesedition:65477a7ce3bb",
-    "cheapest_clean_price": 131393,
+    "cheapest_clean_key": "ZHWUR2ZF3HLA06373",
+    "cheapest_clean_price": 160596,
     "new_today": 70,
     "price_drops_today": 40,
     "market_model": {
@@ -221,52 +221,33 @@
    "autotempest:8ab7d36ded60"
   ],
   "price_drop": [
-   "SBM16AEA2PW001465",
-   "SBM16AEA4PW001466",
-   "ZHWUC2ZF7HLA06412",
-   "ZHWUC1ZF5FLA02317",
-   "ZHWUR2ZF1KLA11515",
-   "ZHWUR2ZF9HLA06944",
-   "ZHWUC1ZF4FLA02146",
-   "ZHWUR2ZF8KLA12354",
-   "ZHWUF5ZF4MLA15913",
-   "ZHWUB6ZFXPLA21849",
-   "ZHWUC2ZF2HLA08214",
-   "ZHWUR1ZFXJLA09951",
-   "SBM16BEA4SW003300",
-   "SBM16AEA7RW002114",
-   "ZHWUF5ZF2MLA17739",
-   "ZHWUR2ZF5HLA07508",
-   "ZHWUR2ZF8HLA07423",
-   "carsandbids:6beefab4d8e3",
-   "jamesedition:b1168b7ae4ab",
-   "jamesedition:8b2a5b2ed706",
-   "jamesedition:c667dc84b59f",
-   "jamesedition:1b1961254ade",
-   "jamesedition:2e33ba0d182e",
-   "jamesedition:e146beaff674",
-   "jamesedition:6c1eea0fe373",
-   "jamesedition:65477a7ce3bb",
-   "jamesedition:9d5de0a49673",
-   "jamesedition:dd69bea446c7",
-   "jamesedition:a4c6ae701649",
-   "jamesedition:aaa7ce75b5a7",
-   "jamesedition:ef2ea5cb6828",
-   "jamesedition:666b2c8ee8ba",
-   "jamesedition:80de7c4ff8ca",
-   "jamesedition:7e652a901092",
-   "jamesedition:aa9e1bb249a2",
-   "jamesedition:f1f5180f3877",
-   "jamesedition:cb24b8759992",
-   "jamesedition:40869be0063a",
-   "jamesedition:504529882691",
-   "jamesedition:51964e0efaec",
-   "jamesedition:19f9e3f92358",
-   "jamesedition:34c2f065f86d",
    "jamesedition:29697175f7c5",
-   "jamesedition:f303020c30bd",
+   "SBM16AEA4PW001466",
+   "jamesedition:b1168b7ae4ab",
+   "SBM16AEA2PW001465",
+   "SBM16AEA7RW002114",
+   "jamesedition:7e652a901092",
+   "ZHWUR2ZF8KLA12354",
    "jamesedition:6f6313339b50",
-   "jamesedition:00b2762b1b37"
+   "autotempest:5223bf6c4713",
+   "jamesedition:9d5de0a49673",
+   "autotempest:3539485ec575",
+   "ZHWUC2ZF2HLA08214",
+   "ZHWUC1ZF4FLA02146",
+   "ZHWUR2ZF9HLA06944",
+   "ZHWUC2ZF7HLA06412",
+   "ZHWUR2ZF5HLA07508",
+   "ZHWUR2ZF1KLA11515",
+   "ZHWUC1ZF5FLA02317",
+   "SBM16BEA4SW003300",
+   "carsandbids:6beefab4d8e3",
+   "jamesedition:34c2f065f86d",
+   "ZHWUR1ZFXJLA09951",
+   "jamesedition:51964e0efaec",
+   "ZHWUF5ZF4MLA15913",
+   "jamesedition:40869be0063a",
+   "jamesedition:8b2a5b2ed706",
+   "ZHWUB6ZFXPLA21849"
   ],
   "price_up": [
    "SBM16AEA8SW003178",
@@ -557,22 +538,22 @@
    "vin": null,
    "year": 2017,
    "trim": "Coupe",
-   "price": 131393,
+   "price": 179990,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "West hollywood, CA, United States",
-   "state": "CA",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/24/11/54/01/b8a7ac6f-3b1b-461d-adc9-2061cb11f6cf/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 179990,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 26 | View 26 photos | $179,990 | 2017 Lamborghini Huracan | West hollywood, CA, United States | Contact"
    },
@@ -584,7 +565,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2017-lamborghini-huracan-rwd-for-sale-18716911",
-     "price": 131393,
+     "price": 179990,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -597,12 +578,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 179990,
-    "to": 131393,
-    "delta": -48597
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -617,13 +593,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 131393
+     "p": 179990
     }
    ],
    "expected_price": 314143,
-   "deal_pct": 58.2,
+   "deal_pct": 42.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 1
+   "rank_cheapest_clean": 5
   },
   {
    "source": "autotrader_ca",
@@ -699,22 +675,22 @@
    "vin": null,
    "year": 2015,
    "trim": "Coupe",
-   "price": 145996,
+   "price": 199995,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Saint louis, MO, United States",
-   "state": "MO",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 199995,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 10 | View 10 photos | $199,995 | 2015 Lamborghini Huracan | Saint louis, MO, United States | Contact"
    },
@@ -726,7 +702,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2015-lamborghini-huracan-lp610-4-for-sale-14966549",
-     "price": 145996,
+     "price": 199995,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -739,12 +715,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 199995,
-    "to": 145996,
-    "delta": -53999
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -759,13 +730,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 145996
+     "p": 199995
     }
    ],
    "expected_price": 280459,
-   "deal_pct": 47.9,
+   "deal_pct": 28.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 2
+   "rank_cheapest_clean": 19
   },
   {
    "source": "carsandbids",
@@ -1147,22 +1118,22 @@
    "vin": null,
    "year": 2017,
    "trim": "Coupe",
-   "price": 156949,
+   "price": 214999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Sacramento, CA, United States",
-   "state": "CA",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 214999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 42 | View 42 photos | $214,999 | 2017 Lamborghini Huracan | Sacramento, CA, United States | Contact"
    },
@@ -1174,7 +1145,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2017-lamborghini-huracan-lp-580-2-coupe-2d-for-sale-17885509",
-     "price": 156949,
+     "price": 214999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -1187,12 +1158,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 214999,
-    "to": 156949,
-    "delta": -58050
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -1207,13 +1173,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 156949
+     "p": 214999
     }
    ],
    "expected_price": 314143,
-   "deal_pct": 50.0,
+   "deal_pct": 31.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 3
+   "rank_cheapest_clean": 36
   },
   {
    "source": "bringatrailer",
@@ -1447,7 +1413,7 @@
    "expected_price": 165921,
    "deal_pct": 3.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 4
+   "rank_cheapest_clean": 1
   },
   {
    "source": "mclaren_preowned",
@@ -1573,22 +1539,22 @@
    "vin": null,
    "year": 2016,
    "trim": "Coupe",
-   "price": 164246,
+   "price": 224995,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Saint louis, MO, United States",
-   "state": "MO",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 224995,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 46 | View 46 photos | $224,995 | 2016 Lamborghini Huracan | Saint louis, MO, United States | Contact"
    },
@@ -1600,7 +1566,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2016-lamborghini-huracan-lp610-4-for-sale-13870277",
-     "price": 164246,
+     "price": 224995,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -1613,12 +1579,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 224995,
-    "to": 164246,
-    "delta": -60749
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -1633,13 +1594,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 164246
+     "p": 224995
     }
    ],
    "expected_price": 297301,
-   "deal_pct": 44.8,
+   "deal_pct": 24.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 5
+   "rank_cheapest_clean": 49
   },
   {
    "source": "autotrader",
@@ -2112,7 +2073,7 @@
    "expected_price": 280459,
    "deal_pct": 40.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 6
+   "rank_cheapest_clean": 2
   },
   {
    "source": "bringatrailer",
@@ -2803,7 +2764,7 @@
    "expected_price": 141693,
    "deal_pct": -20.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 7
+   "rank_cheapest_clean": 3
   },
   {
    "source": "carfax",
@@ -4514,7 +4475,7 @@
    "expected_price": 180639,
    "deal_pct": 3.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 8
+   "rank_cheapest_clean": 4
   },
   {
    "source": "autotrader",
@@ -6033,7 +5994,7 @@
    "expected_price": 127221,
    "deal_pct": -41.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 9
+   "rank_cheapest_clean": 6
   },
   {
    "source": "autotempest",
@@ -6718,7 +6679,7 @@
    "expected_price": 111056,
    "deal_pct": -62.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 10
+   "rank_cheapest_clean": 7
   },
   {
    "source": "carsandbids",
@@ -6790,7 +6751,7 @@
    "vin": null,
    "year": 2017,
    "trim": "Coupe",
-   "price": 182464,
+   "price": 249950,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
@@ -6803,9 +6764,9 @@
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 249950,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 105 | View 105 photos | $249,950 | 2017 Lamborghini Huracan | Chatsworth, United States | Contact"
    },
@@ -6817,7 +6778,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2017-lamborghini-huracan-lp-580-2-spyder-1-owner-6-847-original-miles-for-sale-16737955",
-     "price": 182464,
+     "price": 249950,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -6830,12 +6791,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 249950,
-    "to": 182464,
-    "delta": -67486
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -6850,13 +6806,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 182464
+     "p": 249950
     }
    ],
    "expected_price": 314143,
-   "deal_pct": 41.9,
+   "deal_pct": 20.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 11
+   "rank_cheapest_clean": 115
   },
   {
    "source": "jamesedition",
@@ -6866,22 +6822,22 @@
    "vin": null,
    "year": 2018,
    "trim": "Coupe",
-   "price": 182494,
+   "price": 249992,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Pompano beach, FL, United States",
-   "state": "FL",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 249992,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 43 | View 43 photos | $249,992 | 2018 Lamborghini Huracan | Pompano beach, FL, United States | Contact"
    },
@@ -6893,7 +6849,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2018-lamborghini-huracan-for-sale-17058710",
-     "price": 182494,
+     "price": 249992,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -6906,12 +6862,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 249992,
-    "to": 182494,
-    "delta": -67498
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -6926,13 +6877,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 182494
+     "p": 249992
     }
    ],
    "expected_price": 330985,
-   "deal_pct": 44.9,
+   "deal_pct": 24.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 12
+   "rank_cheapest_clean": 119
   },
   {
    "source": "cargurus_ca",
@@ -7031,7 +6982,7 @@
    "expected_price": 231184,
    "deal_pct": 21.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 13
+   "rank_cheapest_clean": 8
   },
   {
    "source": "autotrader_ca",
@@ -7164,7 +7115,7 @@
    "expected_price": 252865,
    "deal_pct": 27.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 14
+   "rank_cheapest_clean": 9
   },
   {
    "source": "jamesedition",
@@ -7174,22 +7125,22 @@
    "vin": null,
    "year": 2019,
    "trim": "Coupe",
-   "price": 182499,
+   "price": 249999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Pompano beach, FL, United States",
-   "state": "FL",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/09/15/14/00/36/16b29aa7-3806-45ad-83e2-ba18979bc519/je/507x312xc.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 249999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "New 20 hours ago | 1 | / 40 | View 40 photos | $249,999 | 2019 Lamborghini Huracan | Pompano beach, FL, United States | Contact"
    },
@@ -7201,7 +7152,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2019-lamborghini-huracan-for-sale-18871266",
-     "price": 182499,
+     "price": 249999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -7221,13 +7172,13 @@
    "price_history": [
     {
      "d": "2026-09-16",
-     "p": 182499
+     "p": 249999
     }
    ],
    "expected_price": 347827,
-   "deal_pct": 47.5,
+   "deal_pct": 28.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 15
+   "rank_cheapest_clean": 123
   },
   {
    "source": "cargurus",
@@ -7314,7 +7265,7 @@
    "expected_price": 245216,
    "deal_pct": 25.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 16
+   "rank_cheapest_clean": 10
   },
   {
    "source": "cargurus",
@@ -8845,7 +8796,7 @@
    "expected_price": 234431,
    "deal_pct": 21.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 17
+   "rank_cheapest_clean": 11
   },
   {
    "source": "cargurus",
@@ -9506,22 +9457,22 @@
    "vin": null,
    "year": 2016,
    "trim": "Coupe",
-   "price": 186143,
+   "price": 254990,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Thousand oaks, CA, United States",
-   "state": "CA",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 254990,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 20 | View 20 photos | $254,990 | 2016 Lamborghini Huracan | Thousand oaks, CA, United States | Contact"
    },
@@ -9533,7 +9484,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2016-lamborghini-huracan-lp580-2-for-sale-18606645",
-     "price": 186143,
+     "price": 254990,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -9546,12 +9497,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 254990,
-    "to": 186143,
-    "delta": -68847
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -9566,13 +9512,13 @@
     },
     {
      "d": "2026-09-16",
-     "p": 186143
+     "p": 254990
     }
    ],
    "expected_price": 297301,
-   "deal_pct": 37.4,
+   "deal_pct": 14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 18
+   "rank_cheapest_clean": 135
   },
   {
    "source": "cargurus",
@@ -10653,7 +10599,7 @@
    "expected_price": 205643,
    "deal_pct": 8.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 19
+   "rank_cheapest_clean": 12
   },
   {
    "source": "autotrader",
@@ -12448,7 +12394,7 @@
    "expected_price": 261461,
    "deal_pct": 25.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 20
+   "rank_cheapest_clean": 13
   },
   {
    "source": "autotrader",
@@ -12542,7 +12488,7 @@
    "expected_price": 176907,
    "deal_pct": -10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 21
+   "rank_cheapest_clean": 14
   },
   {
    "source": "autotempest",
@@ -12803,7 +12749,7 @@
    "expected_price": 211237,
    "deal_pct": 7.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 22
+   "rank_cheapest_clean": 15
   },
   {
    "source": "jamesedition",
@@ -12959,7 +12905,7 @@
    "expected_price": 314143,
    "deal_pct": 37.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 23
+   "rank_cheapest_clean": 16
   },
   {
    "source": "autotrader",
@@ -13042,7 +12988,7 @@
    "expected_price": 148495,
    "deal_pct": -34.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 24
+   "rank_cheapest_clean": 17
   },
   {
    "source": "autotrader",
@@ -13120,7 +13066,7 @@
    "expected_price": 154158,
    "deal_pct": -29.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 25
+   "rank_cheapest_clean": 18
   },
   {
    "source": "carsandbids",
@@ -13260,7 +13206,7 @@
    "expected_price": 272818,
    "deal_pct": 26.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 26
+   "rank_cheapest_clean": 20
   },
   {
    "source": "cargurus",
@@ -13340,7 +13286,7 @@
    "expected_price": 224739,
    "deal_pct": 10.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 27
+   "rank_cheapest_clean": 21
   },
   {
    "source": "autotrader",
@@ -13722,7 +13668,7 @@
    "expected_price": 267923,
    "deal_pct": 24.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 28
+   "rank_cheapest_clean": 22
   },
   {
    "source": "bringatrailer",
@@ -13880,7 +13826,7 @@
    "expected_price": 188909,
    "deal_pct": -7.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 29
+   "rank_cheapest_clean": 23
   },
   {
    "source": "cargurus_ca",
@@ -13968,7 +13914,7 @@
    "expected_price": 308200,
    "deal_pct": 33.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 30
+   "rank_cheapest_clean": 24
   },
   {
    "source": "autotrader_ca",
@@ -14134,7 +14080,7 @@
    "expected_price": 197042,
    "deal_pct": -4.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 31
+   "rank_cheapest_clean": 25
   },
   {
    "source": "pcarmarket",
@@ -14299,22 +14245,22 @@
    "vin": null,
    "year": 2020,
    "trim": "Coupe",
-   "price": 206444,
+   "price": 282800,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "East brunswick, NJ, United States",
-   "state": "NJ",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/12/10/43/11/d8632875-0fec-4c5a-acc8-33c1dbb227c1/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 282800,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 35 | View 35 photos | $282,800 | 2020 Lamborghini Huracan | East brunswick, NJ, United States | Contact"
    },
@@ -14326,7 +14272,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2020-lamborghini-huracan-evo-spyder-convertible-2d-for-sale-18641108",
-     "price": 206444,
+     "price": 282800,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -14339,12 +14285,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 282800,
-    "to": 206444,
-    "delta": -76356
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -14359,11 +14300,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 206444
+     "p": 282800
     }
    ],
    "expected_price": 364669,
-   "deal_pct": 43.4,
+   "deal_pct": 22.5,
    "price_per_mile_note": null
   },
   {
@@ -14546,7 +14487,7 @@
    "expected_price": 237578,
    "deal_pct": 11.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 32
+   "rank_cheapest_clean": 26
   },
   {
    "source": "usedcars_com",
@@ -14609,7 +14550,7 @@
    "expected_price": 297301,
    "deal_pct": 29.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 33
+   "rank_cheapest_clean": 27
   },
   {
    "source": "autotrader",
@@ -14817,7 +14758,7 @@
    "expected_price": 205007,
    "deal_pct": -2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 34
+   "rank_cheapest_clean": 28
   },
   {
    "source": "cars_com",
@@ -14880,7 +14821,7 @@
    "expected_price": 215179,
    "deal_pct": 2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 35
+   "rank_cheapest_clean": 29
   },
   {
    "source": "cargurus",
@@ -14949,7 +14890,7 @@
    "expected_price": 215179,
    "deal_pct": 2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 36
+   "rank_cheapest_clean": 30
   },
   {
    "source": "cargurus",
@@ -15157,7 +15098,7 @@
    "expected_price": 245921,
    "deal_pct": 14.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 37
+   "rank_cheapest_clean": 31
   },
   {
    "source": "autotempest",
@@ -15231,7 +15172,7 @@
    "expected_price": 213077,
    "deal_pct": 1.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 38
+   "rank_cheapest_clean": 32
   },
   {
    "source": "autotempest",
@@ -15815,7 +15756,7 @@
    "expected_price": 243127,
    "deal_pct": 12.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 39
+   "rank_cheapest_clean": 33
   },
   {
    "source": "autotrader",
@@ -15889,7 +15830,7 @@
    "expected_price": 211433,
    "deal_pct": -0.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 40
+   "rank_cheapest_clean": 34
   },
   {
    "source": "autotrader",
@@ -15987,7 +15928,7 @@
    "expected_price": 235181,
    "deal_pct": 9.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 41
+   "rank_cheapest_clean": 35
   },
   {
    "source": "autotempest",
@@ -16515,7 +16456,7 @@
    "expected_price": 218414,
    "deal_pct": 1.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 42
+   "rank_cheapest_clean": 37
   },
   {
    "source": "ebay",
@@ -16653,22 +16594,22 @@
    "vin": null,
    "year": 2020,
    "trim": "Coupe",
-   "price": 215240,
+   "price": 294850,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Enumclaw, WA, United States",
-   "state": "WA",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/13/16/08/46/309ef70c-78a8-4c43-927d-a504db803a80/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 294850,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 38 | View 38 photos | $294,850 | 2020 Lamborghini Huracan | Enumclaw, WA, United States | Contact"
    },
@@ -16680,7 +16621,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2020-lamborghini-huracan-evo-spyder-convertible-2d-for-sale-18655730",
-     "price": 215240,
+     "price": 294850,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -16696,8 +16637,8 @@
    "last_price_change": {
     "date": "2026-09-16",
     "from": 295050,
-    "to": 215240,
-    "delta": -79810
+    "to": 294850,
+    "delta": -200
    },
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
@@ -16713,11 +16654,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 215240
+     "p": 294850
     }
    ],
    "expected_price": 364669,
-   "deal_pct": 41.0,
+   "deal_pct": 19.1,
    "price_per_mile_note": null
   },
   {
@@ -16805,7 +16746,7 @@
    "expected_price": 268240,
    "deal_pct": 19.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 43
+   "rank_cheapest_clean": 38
   },
   {
    "source": "autotrader",
@@ -17475,7 +17416,7 @@
    "expected_price": 217380,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 44
+   "rank_cheapest_clean": 39
   },
   {
    "source": "carfax",
@@ -17555,7 +17496,7 @@
    "expected_price": 292379,
    "deal_pct": 24.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 45
+   "rank_cheapest_clean": 40
   },
   {
    "source": "hemmings",
@@ -17620,7 +17561,7 @@
    "expected_price": 347827,
    "deal_pct": 36.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 46
+   "rank_cheapest_clean": 41
   },
   {
    "source": "classiccars_com",
@@ -17687,7 +17628,7 @@
    "expected_price": 347827,
    "deal_pct": 36.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 47
+   "rank_cheapest_clean": 42
   },
   {
    "source": "autotrader",
@@ -17765,7 +17706,7 @@
    "expected_price": 225329,
    "deal_pct": 2.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 48
+   "rank_cheapest_clean": 43
   },
   {
    "source": "pcarmarket",
@@ -18059,7 +18000,7 @@
    "expected_price": 233343,
    "deal_pct": 5.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 49
+   "rank_cheapest_clean": 44
   },
   {
    "source": "jamesedition",
@@ -18069,22 +18010,22 @@
    "vin": null,
    "year": 2023,
    "trim": "Coupe",
-   "price": 221919,
+   "price": 303998,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Pompano beach, FL, United States",
-   "state": "FL",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 303998,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 37 | View 37 photos | $303,998 | 2023 Lamborghini Huracan | Pompano beach, FL, United States | Contact"
    },
@@ -18096,7 +18037,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2023-lamborghini-huracan-evo-for-sale-18610793",
-     "price": 221919,
+     "price": 303998,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -18109,12 +18050,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 303998,
-    "to": 221919,
-    "delta": -82079
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -18129,11 +18065,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 221919
+     "p": 303998
     }
    ],
    "expected_price": 415195,
-   "deal_pct": 46.6,
+   "deal_pct": 26.8,
    "price_per_mile_note": null
   },
   {
@@ -18307,7 +18243,7 @@
    "expected_price": 251853,
    "deal_pct": 11.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 50
+   "rank_cheapest_clean": 45
   },
   {
    "source": "autotrader",
@@ -18398,7 +18334,7 @@
    "expected_price": 262610,
    "deal_pct": 15.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 51
+   "rank_cheapest_clean": 46
   },
   {
    "source": "carsandbids",
@@ -18711,7 +18647,7 @@
    "expected_price": 196471,
    "deal_pct": -14.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 52
+   "rank_cheapest_clean": 47
   },
   {
    "source": "cargurus",
@@ -18993,7 +18929,7 @@
    "expected_price": 250407,
    "deal_pct": 10.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 53
+   "rank_cheapest_clean": 48
   },
   {
    "source": "autotrader",
@@ -19071,7 +19007,7 @@
    "expected_price": 242548,
    "deal_pct": 7.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 54
+   "rank_cheapest_clean": 50
   },
   {
    "source": "cars_com",
@@ -19138,7 +19074,7 @@
    "expected_price": 243620,
    "deal_pct": 7.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 55
+   "rank_cheapest_clean": 51
   },
   {
    "source": "cars_com",
@@ -19205,7 +19141,7 @@
    "expected_price": 202667,
    "deal_pct": -11.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 56
+   "rank_cheapest_clean": 52
   },
   {
    "source": "bringatrailer",
@@ -19384,7 +19320,7 @@
    "expected_price": 259350,
    "deal_pct": 13.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 57
+   "rank_cheapest_clean": 53
   },
   {
    "source": "jamesedition",
@@ -19394,22 +19330,22 @@
    "vin": null,
    "year": 2021,
    "trim": "Coupe",
-   "price": 226227,
+   "price": 309900,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Fort lauderdale, FL, United States",
-   "state": "FL",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/09/04/15/15/08/098b2ec1-4ec1-42ad-81ea-4a709a21e210/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 309900,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 43 | View 43 photos | $309,900 | 2021 Lamborghini Huracan | Fort lauderdale, FL, United States | Contact"
    },
@@ -19421,7 +19357,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/lamborghini-huracan-evo-for-sale-18731061",
-     "price": 226227,
+     "price": 309900,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -19434,12 +19370,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 309900,
-    "to": 226227,
-    "delta": -83673
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -19454,11 +19385,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 226227
+     "p": 309900
     }
    ],
    "expected_price": 381511,
-   "deal_pct": 40.7,
+   "deal_pct": 18.8,
    "price_per_mile_note": null
   },
   {
@@ -19733,7 +19664,7 @@
    "expected_price": 229247,
    "deal_pct": 0.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 58
+   "rank_cheapest_clean": 54
   },
   {
    "source": "cars_com",
@@ -19800,7 +19731,7 @@
    "expected_price": 234100,
    "deal_pct": 2.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 59
+   "rank_cheapest_clean": 55
   },
   {
    "source": "autotrader",
@@ -19894,7 +19825,7 @@
    "expected_price": 269815,
    "deal_pct": 15.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 60
+   "rank_cheapest_clean": 56
   },
   {
    "source": "usedcars_com",
@@ -19961,7 +19892,7 @@
    "expected_price": 330985,
    "deal_pct": 30.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 61
+   "rank_cheapest_clean": 57
   },
   {
    "source": "usedcars_com",
@@ -20024,7 +19955,7 @@
    "expected_price": 330985,
    "deal_pct": 30.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 62
+   "rank_cheapest_clean": 58
   },
   {
    "source": "autotrader",
@@ -20118,7 +20049,7 @@
    "expected_price": 274550,
    "deal_pct": 16.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 63
+   "rank_cheapest_clean": 59
   },
   {
    "source": "usedcars_com",
@@ -20181,7 +20112,7 @@
    "expected_price": 347827,
    "deal_pct": 34.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 64
+   "rank_cheapest_clean": 60
   },
   {
    "source": "autotrader",
@@ -20259,7 +20190,7 @@
    "expected_price": 265542,
    "deal_pct": 13.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 65
+   "rank_cheapest_clean": 61
   },
   {
    "source": "autotrader",
@@ -20358,7 +20289,7 @@
    "expected_price": 235908,
    "deal_pct": 2.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 66
+   "rank_cheapest_clean": 62
   },
   {
    "source": "jamesedition",
@@ -20368,22 +20299,22 @@
    "vin": null,
    "year": 2021,
    "trim": "Coupe",
-   "price": 229949,
+   "price": 314999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 314999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $314,999 | 2021 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -20395,7 +20326,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2021-lamborghini-huracan-evo-rwd-for-sale-18640790",
-     "price": 229949,
+     "price": 314999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -20408,12 +20339,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 314999,
-    "to": 229949,
-    "delta": -85050
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -20428,11 +20354,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 229949
+     "p": 314999
     }
    ],
    "expected_price": 381511,
-   "deal_pct": 39.7,
+   "deal_pct": 17.4,
    "price_per_mile_note": null
   },
   {
@@ -20513,7 +20439,7 @@
    "expected_price": 281079,
    "deal_pct": 18.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 67
+   "rank_cheapest_clean": 63
   },
   {
    "source": "cargurus",
@@ -20589,7 +20515,7 @@
    "expected_price": 245777,
    "deal_pct": 6.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 68
+   "rank_cheapest_clean": 64
   },
   {
    "source": "autotrader",
@@ -20683,7 +20609,7 @@
    "expected_price": 267614,
    "deal_pct": 14.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 69
+   "rank_cheapest_clean": 65
   },
   {
    "source": "jamesedition",
@@ -20813,7 +20739,7 @@
    "expected_price": 314143,
    "deal_pct": 26.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 70
+   "rank_cheapest_clean": 66
   },
   {
    "source": "autotrader",
@@ -20891,7 +20817,7 @@
    "expected_price": 240887,
    "deal_pct": 4.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 71
+   "rank_cheapest_clean": 67
   },
   {
    "source": "cargurus",
@@ -20965,7 +20891,7 @@
    "expected_price": 251260,
    "deal_pct": 8.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 72
+   "rank_cheapest_clean": 68
   },
   {
    "source": "autotrader",
@@ -21048,7 +20974,7 @@
    "expected_price": 285380,
    "deal_pct": 19.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 73
+   "rank_cheapest_clean": 69
   },
   {
    "source": "usedcars_com",
@@ -21115,7 +21041,7 @@
    "expected_price": 330985,
    "deal_pct": 30.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 74
+   "rank_cheapest_clean": 70
   },
   {
    "source": "autotrader",
@@ -21227,7 +21153,7 @@
    "expected_price": 258005,
    "deal_pct": 9.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 75
+   "rank_cheapest_clean": 71
   },
   {
    "source": "autotrader",
@@ -21318,7 +21244,7 @@
    "expected_price": 222759,
    "deal_pct": -4.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 76
+   "rank_cheapest_clean": 72
   },
   {
    "source": "autotrader",
@@ -21405,7 +21331,7 @@
    "expected_price": 218043,
    "deal_pct": -6.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 77
+   "rank_cheapest_clean": 73
   },
   {
    "source": "dupont",
@@ -21474,7 +21400,7 @@
    "expected_price": 290009,
    "deal_pct": 19.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 78
+   "rank_cheapest_clean": 74
   },
   {
    "source": "usedcars_com",
@@ -21541,7 +21467,7 @@
    "expected_price": 330985,
    "deal_pct": 29.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 79
+   "rank_cheapest_clean": 75
   },
   {
    "source": "usedcars_com",
@@ -21604,7 +21530,7 @@
    "expected_price": 330985,
    "deal_pct": 29.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 80
+   "rank_cheapest_clean": 76
   },
   {
    "source": "autotrader",
@@ -21709,7 +21635,7 @@
    "expected_price": 279335,
    "deal_pct": 16.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 81
+   "rank_cheapest_clean": 77
   },
   {
    "source": "usedcars_com",
@@ -21776,7 +21702,7 @@
    "expected_price": 330985,
    "deal_pct": 29.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 82
+   "rank_cheapest_clean": 78
   },
   {
    "source": "usedcars_com",
@@ -21839,7 +21765,7 @@
    "expected_price": 330985,
    "deal_pct": 29.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 83
+   "rank_cheapest_clean": 79
   },
   {
    "source": "cargurus",
@@ -21937,7 +21863,7 @@
    "expected_price": 286627,
    "deal_pct": 18.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 84
+   "rank_cheapest_clean": 80
   },
   {
    "source": "autotrader",
@@ -22036,7 +21962,7 @@
    "expected_price": 210678,
    "deal_pct": -11.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 85
+   "rank_cheapest_clean": 81
   },
   {
    "source": "autotrader",
@@ -22114,7 +22040,7 @@
    "expected_price": 276646,
    "deal_pct": 15.1,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 86
+   "rank_cheapest_clean": 82
   },
   {
    "source": "cargurus",
@@ -22359,7 +22285,7 @@
    "expected_price": 235792,
    "deal_pct": 0.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 87
+   "rank_cheapest_clean": 83
   },
   {
    "source": "autotrader",
@@ -22458,7 +22384,7 @@
    "expected_price": 291238,
    "deal_pct": 19.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 88
+   "rank_cheapest_clean": 84
   },
   {
    "source": "pcarmarket",
@@ -22591,7 +22517,7 @@
    "expected_price": 256687,
    "deal_pct": 8.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 89
+   "rank_cheapest_clean": 85
   },
   {
    "source": "cars_com",
@@ -22658,7 +22584,7 @@
    "expected_price": 189886,
    "deal_pct": -23.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 90
+   "rank_cheapest_clean": 86
   },
   {
    "source": "cargurus",
@@ -22849,7 +22775,7 @@
    "expected_price": 314143,
    "deal_pct": 25.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 91
+   "rank_cheapest_clean": 87
   },
   {
    "source": "usedcars_com",
@@ -22916,7 +22842,7 @@
    "expected_price": 280459,
    "deal_pct": 16.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 92
+   "rank_cheapest_clean": 88
   },
   {
    "source": "carfax",
@@ -22998,7 +22924,7 @@
    "expected_price": 298019,
    "deal_pct": 21.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 93
+   "rank_cheapest_clean": 89
   },
   {
    "source": "jamesedition",
@@ -23141,7 +23067,7 @@
    "expected_price": 275050,
    "deal_pct": 14.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 94
+   "rank_cheapest_clean": 90
   },
   {
    "source": "autotrader",
@@ -23427,7 +23353,7 @@
    "expected_price": 277546,
    "deal_pct": 14.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 95
+   "rank_cheapest_clean": 91
   },
   {
    "source": "iseecars",
@@ -23593,7 +23519,7 @@
    "expected_price": 275560,
    "deal_pct": 14.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 96
+   "rank_cheapest_clean": 92
   },
   {
    "source": "autotrader",
@@ -23684,7 +23610,7 @@
    "expected_price": 249254,
    "deal_pct": 4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 97
+   "rank_cheapest_clean": 93
   },
   {
    "source": "autotrader",
@@ -23840,7 +23766,7 @@
    "expected_price": 236736,
    "deal_pct": -1.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 98
+   "rank_cheapest_clean": 94
   },
   {
    "source": "autotrader",
@@ -23961,7 +23887,7 @@
    "expected_price": 306484,
    "deal_pct": 21.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 99
+   "rank_cheapest_clean": 95
   },
   {
    "source": "cargurus",
@@ -24055,7 +23981,7 @@
    "expected_price": 218195,
    "deal_pct": -9.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 100
+   "rank_cheapest_clean": 96
   },
   {
    "source": "autotrader",
@@ -24166,7 +24092,7 @@
    "expected_price": 237125,
    "deal_pct": -1.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 101
+   "rank_cheapest_clean": 97
   },
   {
    "source": "autotrader",
@@ -24439,7 +24365,7 @@
    "expected_price": 219292,
    "deal_pct": -9.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 102
+   "rank_cheapest_clean": 98
   },
   {
    "source": "autotrader",
@@ -25223,22 +25149,22 @@
    "vin": null,
    "year": 2022,
    "trim": "Coupe",
-   "price": 242360,
+   "price": 332000,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Palm beach, FL, United States",
-   "state": "FL",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/dealer_listings_logos/2019/11/07/16/08/47/0970247e-36bb-4c0c-be89-dd3e3501bddc/je/320x160xs.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 332000,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 36 | View 36 photos | $332,000 | 2022 Lamborghini Huracan | Palm beach, FL, United States | Contact"
    },
@@ -25250,7 +25176,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/lamborghini-huracan-evo-for-sale-15116757",
-     "price": 242360,
+     "price": 332000,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -25263,12 +25189,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 332000,
-    "to": 242360,
-    "delta": -89640
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -25283,11 +25204,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 242360
+     "p": 332000
     }
    ],
    "expected_price": 398353,
-   "deal_pct": 39.2,
+   "deal_pct": 16.7,
    "price_per_mile_note": null
   },
   {
@@ -25371,7 +25292,7 @@
    "expected_price": 274862,
    "deal_pct": 11.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 103
+   "rank_cheapest_clean": 99
   },
   {
    "source": "cargurus",
@@ -25469,7 +25390,7 @@
    "expected_price": 326186,
    "deal_pct": 25.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 104
+   "rank_cheapest_clean": 100
   },
   {
    "source": "usedcars_com",
@@ -25536,7 +25457,7 @@
    "expected_price": 314143,
    "deal_pct": 22.6,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 105
+   "rank_cheapest_clean": 101
   },
   {
    "source": "autotrader",
@@ -25657,7 +25578,7 @@
    "expected_price": 301649,
    "deal_pct": 19.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 106
+   "rank_cheapest_clean": 102
   },
   {
    "source": "autotrader",
@@ -25744,7 +25665,7 @@
    "expected_price": 231408,
    "deal_pct": -5.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 107
+   "rank_cheapest_clean": 103
   },
   {
    "source": "usedcars_com",
@@ -25811,7 +25732,7 @@
    "expected_price": 347827,
    "deal_pct": 29.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 108
+   "rank_cheapest_clean": 104
   },
   {
    "source": "carsandbids",
@@ -26307,7 +26228,7 @@
    "expected_price": 271720,
    "deal_pct": 9.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 109
+   "rank_cheapest_clean": 105
   },
   {
    "source": "autotrader",
@@ -26417,7 +26338,7 @@
    "expected_price": 240236,
    "deal_pct": -2.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 110
+   "rank_cheapest_clean": 106
   },
   {
    "source": "autotrader",
@@ -26590,7 +26511,7 @@
    "expected_price": 232676,
    "deal_pct": -5.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 111
+   "rank_cheapest_clean": 107
   },
   {
    "source": "hemmings",
@@ -26655,7 +26576,7 @@
    "expected_price": 314143,
    "deal_pct": 22.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 112
+   "rank_cheapest_clean": 108
   },
   {
    "source": "carfax",
@@ -26898,7 +26819,7 @@
    "expected_price": 242701,
    "deal_pct": -2.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 113
+   "rank_cheapest_clean": 109
   },
   {
    "source": "cargurus",
@@ -27095,7 +27016,7 @@
    "expected_price": 317278,
    "deal_pct": 21.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 114
+   "rank_cheapest_clean": 110
   },
   {
    "source": "autotrader",
@@ -27178,7 +27099,7 @@
    "expected_price": 259326,
    "deal_pct": 4.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 115
+   "rank_cheapest_clean": 111
   },
   {
    "source": "autotrader_ca",
@@ -27404,7 +27325,7 @@
    "expected_price": 284540,
    "deal_pct": 12.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 116
+   "rank_cheapest_clean": 112
   },
   {
    "source": "autotrader",
@@ -27487,7 +27408,7 @@
    "expected_price": 320958,
    "deal_pct": 22.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 117
+   "rank_cheapest_clean": 113
   },
   {
    "source": "autotrader",
@@ -28252,7 +28173,7 @@
    "expected_price": 259836,
    "deal_pct": 3.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 118
+   "rank_cheapest_clean": 114
   },
   {
    "source": "autotrader",
@@ -28582,7 +28503,7 @@
    "expected_price": 314143,
    "deal_pct": 20.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 119
+   "rank_cheapest_clean": 116
   },
   {
    "source": "classiccars_com",
@@ -28649,7 +28570,7 @@
    "expected_price": 314143,
    "deal_pct": 20.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 120
+   "rank_cheapest_clean": 117
   },
   {
    "source": "autotrader",
@@ -28727,7 +28648,7 @@
    "expected_price": 299285,
    "deal_pct": 16.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 121
+   "rank_cheapest_clean": 118
   },
   {
    "source": "autotrader",
@@ -28984,7 +28905,7 @@
    "expected_price": 249285,
    "deal_pct": -0.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 122
+   "rank_cheapest_clean": 120
   },
   {
    "source": "autotrader",
@@ -29067,7 +28988,7 @@
    "expected_price": 289867,
    "deal_pct": 13.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 123
+   "rank_cheapest_clean": 121
   },
   {
    "source": "cargurus",
@@ -29289,7 +29210,7 @@
    "expected_price": 256329,
    "deal_pct": 2.5,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 124
+   "rank_cheapest_clean": 122
   },
   {
    "source": "autotrader",
@@ -29380,7 +29301,7 @@
    "expected_price": 232676,
    "deal_pct": -7.4,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 125
+   "rank_cheapest_clean": 124
   },
   {
    "source": "autotrader",
@@ -29458,7 +29379,7 @@
    "expected_price": 231443,
    "deal_pct": -8.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 126
+   "rank_cheapest_clean": 125
   },
   {
    "source": "autotrader",
@@ -29557,7 +29478,7 @@
    "expected_price": 321516,
    "deal_pct": 22.2,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 127
+   "rank_cheapest_clean": 126
   },
   {
    "source": "autotrader",
@@ -30072,7 +29993,7 @@
    "expected_price": 304421,
    "deal_pct": 17.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 128
+   "rank_cheapest_clean": 127
   },
   {
    "source": "cargurus",
@@ -30236,7 +30157,7 @@
    "expected_price": 270135,
    "deal_pct": 7.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 129
+   "rank_cheapest_clean": 128
   },
   {
    "source": "jamesedition",
@@ -30246,22 +30167,22 @@
    "vin": null,
    "year": 2022,
    "trim": "Coupe",
-   "price": 251849,
+   "price": 344999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 344999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $344,999 | 2022 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -30273,7 +30194,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2022-lamborghini-huracan-evo-spyder-rwd-for-sale-18632072",
-     "price": 251849,
+     "price": 344999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -30286,12 +30207,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 344999,
-    "to": 251849,
-    "delta": -93150
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -30306,11 +30222,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 251849
+     "p": 344999
     }
    ],
    "expected_price": 398353,
-   "deal_pct": 36.8,
+   "deal_pct": 13.4,
    "price_per_mile_note": null
   },
   {
@@ -30376,7 +30292,7 @@
    "expected_price": 280459,
    "deal_pct": 10.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 130
+   "rank_cheapest_clean": 129
   },
   {
    "source": "autotrader",
@@ -30465,7 +30381,7 @@
    "expected_price": 236401,
    "deal_pct": -7.0,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 131
+   "rank_cheapest_clean": 130
   },
   {
    "source": "autotrader",
@@ -30584,7 +30500,7 @@
    "expected_price": 251320,
    "deal_pct": -0.7,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 132
+   "rank_cheapest_clean": 131
   },
   {
    "source": "jamesedition",
@@ -30594,22 +30510,22 @@
    "vin": null,
    "year": 2022,
    "trim": "Coupe",
-   "price": 254039,
+   "price": 347999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 347999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $347,999 | 2022 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -30621,7 +30537,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2022-lamborghini-huracan-evo-fluo-capsule-for-sale-18432479",
-     "price": 254039,
+     "price": 347999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -30634,12 +30550,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 347999,
-    "to": 254039,
-    "delta": -93960
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -30654,11 +30565,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 254039
+     "p": 347999
     }
    ],
    "expected_price": 398353,
-   "deal_pct": 36.2,
+   "deal_pct": 12.6,
    "price_per_mile_note": null
   },
   {
@@ -30727,7 +30638,7 @@
    "expected_price": 279270,
    "deal_pct": 8.9,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 133
+   "rank_cheapest_clean": 132
   },
   {
    "source": "cargurus",
@@ -30816,7 +30727,7 @@
    "expected_price": 274773,
    "deal_pct": 7.3,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 134
+   "rank_cheapest_clean": 133
   },
   {
    "source": "autotempest",
@@ -30912,7 +30823,7 @@
    "expected_price": 230115,
    "deal_pct": -10.8,
    "price_per_mile_note": null,
-   "rank_cheapest_clean": 135
+   "rank_cheapest_clean": 134
   },
   {
    "source": "autotrader",
@@ -32575,22 +32486,22 @@
    "vin": null,
    "year": 2023,
    "trim": "Coupe",
-   "price": 262069,
+   "price": 358999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/28/16/03/10/7e32c35d-2181-410d-ab2d-c79fcf752329/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 358999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $358,999 | 2023 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -32602,7 +32513,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2023-lamborghini-huracan-tecnica-for-sale-18760057",
-     "price": 262069,
+     "price": 358999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -32615,12 +32526,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 358999,
-    "to": 262069,
-    "delta": -96930
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -32635,11 +32541,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 262069
+     "p": 358999
     }
    ],
    "expected_price": 415195,
-   "deal_pct": 36.9,
+   "deal_pct": 13.5,
    "price_per_mile_note": null
   },
   {
@@ -33382,22 +33288,22 @@
    "vin": null,
    "year": 2022,
    "trim": "Coupe",
-   "price": 266449,
+   "price": 364999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": null,
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 364999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $364,999 | 2022 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -33409,7 +33315,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2022-lamborghini-huracan-evo-awd-for-sale-18620583",
-     "price": 266449,
+     "price": 364999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -33422,12 +33328,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 364999,
-    "to": 266449,
-    "delta": -98550
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -33442,11 +33343,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 266449
+     "p": 364999
     }
    ],
    "expected_price": 398353,
-   "deal_pct": 33.1,
+   "deal_pct": 8.4,
    "price_per_mile_note": null
   },
   {
@@ -34830,22 +34731,22 @@
    "vin": null,
    "year": 2023,
    "trim": "Coupe",
-   "price": 270099,
+   "price": 369999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/28/09/09/57/4eed70b0-f4b3-4bf4-a638-0fccd141407f/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 369999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $369,999 | 2023 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -34857,7 +34758,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2023-lamborghini-huracan-evo-spyder-rwd-for-sale-18747567",
-     "price": 270099,
+     "price": 369999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -34870,12 +34771,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 369999,
-    "to": 270099,
-    "delta": -99900
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -34890,11 +34786,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 270099
+     "p": 369999
     }
    ],
    "expected_price": 415195,
-   "deal_pct": 34.9,
+   "deal_pct": 10.9,
    "price_per_mile_note": null
   },
   {
@@ -41029,22 +40925,22 @@
    "vin": null,
    "year": 2023,
    "trim": "Coupe",
-   "price": 299299,
+   "price": 409999,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Richardson, TX, United States",
-   "state": "TX",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/09/09/08/47/21/df4c14b7-7174-4510-a049-0e0de9c75ca1/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 409999,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 40 | View 40 photos | $409,999 | 2023 Lamborghini Huracan | Richardson, TX, United States | Contact"
    },
@@ -41056,7 +40952,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2023-lamborghini-huracan-evo-spyder-awd-for-sale-18817148",
-     "price": 299299,
+     "price": 409999,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -41069,12 +40965,7 @@
    ],
    "first_seen": "2026-09-15",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 409999,
-    "to": 299299,
-    "delta": -110700
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -41085,11 +40976,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 299299
+     "p": 409999
     }
    ],
    "expected_price": 415195,
-   "deal_pct": 27.9,
+   "deal_pct": 1.3,
    "price_per_mile_note": null
   },
   {
@@ -44961,22 +44852,22 @@
    "vin": null,
    "year": 2024,
    "trim": "Coupe",
-   "price": 313893,
+   "price": 429990,
    "mileage": null,
    "condition": "used",
    "title_status": "unknown",
    "title_notes": [],
    "dealer": null,
    "location": "Beverly hills, CA, United States",
-   "state": "CA",
+   "state": null,
    "color": null,
    "listing_type": "dealer",
    "auction_end": null,
    "image": "https://img.jamesedition.com/listing_images/2026/08/28/16/03/10/c0f1ec7f-e8da-40eb-811e-1110b5cd8131/je/556x342xcxm.jpg",
    "target": "huracan",
-   "country": "CA",
-   "currency": "CAD",
-   "price_local": 429990,
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
    "extra": {
     "description": "1 | / 24 | View 24 photos | $429,990 | 2024 Lamborghini Huracan | Beverly hills, CA, United States | Contact"
    },
@@ -44988,7 +44879,7 @@
      "source": "jamesedition",
      "source_name": "JamesEdition",
      "url": "https://www.jamesedition.com/cars/lamborghini/huracan/2024-lamborghini-huracan-evo-base-spyder-awd-for-sale-18757386",
-     "price": 313893,
+     "price": 429990,
      "dealer": null,
      "listing_type": "dealer",
      "condition": "used",
@@ -45001,12 +44892,7 @@
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-16",
-    "from": 429990,
-    "to": 313893,
-    "delta": -116097
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-16",
    "last_seen_at": "2026-09-16T12:21:52+00:00",
    "status": "active",
@@ -45021,11 +44907,11 @@
     },
     {
      "d": "2026-09-16",
-     "p": 313893
+     "p": 429990
     }
    ],
    "expected_price": 432037,
-   "deal_pct": 27.3,
+   "deal_pct": 0.5,
    "price_per_mile_note": null
   },
   {
