@@ -276,7 +276,7 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
             mileage = round(mileage * 0.621371)
         l = Listing(source=source, source_name=source_name, url=abs_url(base_url, href), title=title[:120], year=parse_year(title),
                     price=parse_price(price_line), mileage=mileage, location=loc, listing_type=listing_type,
-                    image=(img.get("data-src") or img.get("src")) if img else None, country=country, currency=cur,
+                    image=(img.get("data-src") or img.get("src")) if img else None, country=card_country, currency=cur,
                     condition="used", extra={"description": " | ".join(lines)[:400]})
         out.append(l.finalize())
     return out
