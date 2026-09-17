@@ -277,7 +277,7 @@ def cards_from_links(html: str, base_url: str, href_re: str, source: str, source
         l = Listing(source=source, source_name=source_name, url=abs_url(base_url, href), title=title[:120], year=parse_year(title),
                     price=parse_price(price_line), mileage=mileage, location=loc, listing_type=listing_type,
                     image=(img.get("data-src") or img.get("src")) if img else None, country=card_country, currency=cur,
-                    condition="used", extra={"description": " | ".join(lines)[:400]})
+                    condition="used", extra={"description": " | ".join(lines)[:400], "country_from_card": True})
         out.append(l.finalize())
     return out
 
@@ -310,7 +310,7 @@ def crawl_simple(client, ctx: "Ctx", *, name: str, label: str, urls: list, href_
         if not got:
             ctx.diagnose(res, label)
         for l in got:
-            if l.country == "US" and country == "CA":
+            if l.country == "US" and country == "CA" and (l.extra or {}).get("country_from_card"):
                 continue          # the card itself said United States
             l.country = country
             if country == "CA" and l.currency == "USD" and not l.price_local:
