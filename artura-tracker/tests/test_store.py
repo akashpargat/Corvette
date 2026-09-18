@@ -94,3 +94,36 @@ def test_aggregator_offer_never_sets_price_when_a_real_source_exists(tmp_path):
     p = merge(d, [a, b], _report(("autotrader", "autotempest")))
     car = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000555")
     assert car["price"] == 249900 and len(car["offers"]) == 2
+
+
+def test_url_keyed_row_that_learned_its_vin_folds_into_the_vin_row(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEAXPW001732"
+    # yesterday's state: the same car twice, once under its VIN and once under a Cars.com URL hash that carries the VIN
+    prev = {"listings": [
+        {"key": vin, "vin": vin, "source": "autotrader", "url": "https://www.autotrader.com/cars-for-sale/vehicle/1", "price": 164158,
+         "mileage": 12670, "year": 2023, "target": "artura", "country": "US", "status": "active", "first_seen": "2026-09-14", "last_seen": "2026-09-17",
+         "sources": ["autotrader"], "offers": [{"source": "autotrader", "url": "https://www.autotrader.com/cars-for-sale/vehicle/1", "price": 164158, "seen": "2026-09-17"}],
+         "title_status": "clean", "title_notes": ["CARFAX clean"]},
+        {"key": "cars_com:c3e098108f0a", "vin": vin, "source": "cars_com", "url": "https://www.cars.com/vehicledetail/abc/", "price": 164383,
+         "mileage": 12670, "year": 2023, "target": "artura", "country": "US", "status": "active", "first_seen": "2026-09-13", "last_seen": "2026-09-17",
+         "sources": ["cars_com"], "offers": [{"source": "cars_com", "url": "https://www.cars.com/vehicledetail/abc/", "price": 164383, "seen": "2026-09-17"}],
+         "title_status": "unknown"},
+    ]}
+    os.makedirs(d, exist_ok=True)
+    json.dump(prev, open(os.path.join(d, "listings.json"), "w"))
+    json.dump({vin: [{"d": "2026-09-14", "p": 164733}, {"d": "2026-09-17", "p": 164158}],
+               "cars_com:c3e098108f0a": [{"d": "2026-09-13", "p": 165183}]}, open(os.path.join(d, "history.json"), "w"))
+    fresh_vin = _l(vin, 164158, source="autotrader")
+    fresh_vin.url = "https://www.autotrader.com/cars-for-sale/vehicle/1"
+    card = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/abc/", title="Used 2023 McLaren Artura",
+                   price=164383, mileage=12670, year=2023).finalize()
+    p = merge(d, [fresh_vin, card], _report(("autotrader", "cars_com")))
+    active = [r for r in p["listings"] if r["status"] == "active"]
+    assert [r["key"] for r in active] == [vin]
+    car = active[0]
+    assert car["price"] == 164158 and car["first_seen"] == "2026-09-13" and car["title_status"] == "clean"
+    assert set(car["sources"]) == {"autotrader", "cars_com"}
+    hist = json.load(open(os.path.join(d, "history.json")))
+    assert "cars_com:c3e098108f0a" not in hist and hist[vin][0] == {"d": "2026-09-13", "p": 165183}
+    assert car["key"] not in p["changes"]["new"]

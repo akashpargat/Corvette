@@ -48,7 +48,8 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     prev = _load(lpath, {"listings": []})
     history = _load(hpath, {})
     runs = _load(rpath, [])
-    by_key = {r["key"]: r for r in prev.get("listings", [])}
+    prev["listings"] = fold_vin_rows(prev.get("listings", []), history)
+    by_key = {r["key"]: r for r in prev["listings"]}
     d = today()
     ts = now_iso()
     sources_ok = {s["source"] for s in run_report["sources"] if s["status"] == "ok"} | {"seed"}
@@ -244,6 +245,72 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     _save(rpath, runs)
     _save(os.path.join(data_dir, "market.json"), series)
     return payload
+
+
+def fold_vin_rows(listings: list[dict], history: dict) -> list[dict]:
+    """A row keyed by a URL hash that later learned its VIN belongs under the VIN key.
+
+    Folds it into the VIN row (offers, sources, earliest first_seen, lowest reliable
+    price, price history) or re-keys it when no VIN row exists yet, so the same car is
+    never two rows."""
+    out: dict[str, dict] = {}
+    order: list[str] = []
+    for r in listings:
+        key = r.get("vin") or r["key"]
+        cur = out.get(key)
+        if cur is None:
+            if key != r["key"]:
+                _move_history(history, r["key"], key)
+                r["key"] = key
+            out[key] = r
+            order.append(key)
+            continue
+        old_key = r["key"]
+        seen = {(o.get("source"), _norm_url(o.get("url"))) for o in cur.get("offers", [])}
+        for o in r.get("offers", []):
+            if (o.get("source"), _norm_url(o.get("url"))) not in seen:
+                cur.setdefault("offers", []).append(o)
+                seen.add((o.get("source"), _norm_url(o.get("url"))))
+        cur["sources"] = sorted({o["source"] for o in cur.get("offers", [])} | set(cur.get("sources", [])) | set(r.get("sources", [])))
+        for f in ("year", "trim", "mileage", "dealer", "location", "state", "color", "image", "title", "target"):
+            if not cur.get(f) and r.get(f):
+                cur[f] = r[f]
+        if cur.get("title_status") in (None, "unknown") and r.get("title_status") not in (None, "unknown"):
+            cur["title_status"], cur["title_notes"] = r["title_status"], r.get("title_notes", [])
+        cur["first_seen"] = min(x for x in (cur.get("first_seen"), r.get("first_seen")) if x) if (cur.get("first_seen") or r.get("first_seen")) else None
+        if r.get("status") == "active" and cur.get("status") != "active":
+            cur.update({"status": "active", "missing_runs": r.get("missing_runs", 0), "last_seen": r.get("last_seen"), "last_seen_at": r.get("last_seen_at")})
+            cur.pop("removed_on", None)
+        elif r.get("status") == cur.get("status") == "active":
+            cur["missing_runs"] = min(cur.get("missing_runs", 0), r.get("missing_runs", 0))
+            cur["last_seen"] = max(x for x in (cur.get("last_seen"), r.get("last_seen")) if x)
+        reliable = [o["price"] for o in cur["offers"] if o.get("price") and o.get("source") not in UNRELIABLE_ALONE and o.get("seen") == cur.get("last_seen")]
+        if reliable:
+            hi = max(reliable)
+            reliable = [p for p in reliable if p >= hi * 0.6] or reliable
+            cur["price"] = min(reliable)
+            cur["price_high"] = max(reliable)
+        _move_history(history, old_key, key)
+        cur["price_history"] = history.get(key, [])[-60:]
+    return [out[k] for k in order]
+
+
+def _norm_url(u):
+    return (u or "").split("?")[0].split("#")[0].rstrip("/").lower()
+
+
+def _move_history(history: dict, old_key: str, key: str):
+    if old_key == key or old_key not in history:
+        return
+    pts = {(p["d"], p["p"]): p for p in history.get(key, []) + history.pop(old_key)}
+    merged = sorted(pts.values(), key=lambda p: p["d"])
+    out = []
+    for p in merged:   # one point per day: keep the lowest price of that day
+        if out and out[-1]["d"] == p["d"]:
+            out[-1]["p"] = min(out[-1]["p"], p["p"])
+        else:
+            out.append(p)
+    history[key] = out
 
 
 def fingerprint_match(l: Listing, index) -> Optional[str]:
