@@ -147,3 +147,23 @@ def test_group_joined_by_yesterdays_url_keeps_the_vin_key(tmp_path):
     # and the day after, still one row
     p = merge(d, [card2], _report(("autotrader", "cars_com")))
     assert [r["key"] for r in p["listings"] if r["status"] == "active"] == [vin]
+
+
+def test_aggregator_only_prices_follow_yesterdays_reliable_price(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA7PW001588"
+    dupont = _l(vin, 247900, source="dupont")
+    merge(d, [dupont], _report(("dupont",)))
+    # next day duPont's card has no price and two AutoTempest cards disagree (one absorbed a neighbour's price)
+    dupont2 = _l(vin, None, source="dupont")
+    cards = [Listing(source="autotempest", source_name="AutoTempest", url=f"https://www.cars.com/vehicledetail/x/?aff=atempest&n={i}",
+                     title="2023 McLaren Artura", price=p, mileage=5179, year=2023, vin=vin).finalize() for i, p in enumerate((169980, 247900))]
+    p = merge(d, [dupont2] + cards, _report(("dupont", "autotempest")))
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 247900 and car["price_confirmed"] is False and vin not in p["changes"]["price_drop"]
+    # a single aggregator price within 15% of yesterday's is accepted as a drop
+    card = Listing(source="autotempest", source_name="AutoTempest", url="https://www.cars.com/vehicledetail/x/?aff=atempest",
+                   title="2023 McLaren Artura", price=239900, mileage=5179, year=2023, vin=vin).finalize()
+    p = merge(d, [dupont2, card], _report(("dupont", "autotempest")))
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 239900 and vin in p["changes"]["price_drop"]

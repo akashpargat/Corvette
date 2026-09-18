@@ -106,7 +106,7 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         lines += ["", f"CHANGES ({config.TARGETS[tk]['model']}, {config.TARGETS[tk]['years'][0]}-{config.TARGETS[tk]['years'][1]} candidates only)"]
         new_k = [k for k in c.get("new", []) if _keep(k)]
         drop_k = [k for k in c.get("price_drop", []) if _keep(k)]
-        gone_k = [k for k in c.get("removed", []) if _keep(k) or (by.get(k, {}).get("target", "artura") == tk)]
+        gone_k = [k for k in c.get("removed", []) if _keep(k)]
         lines.append(f"New today ({len(new_k)}):")
         lines += _list(new_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
         lines.append(f"Price drops ({len(drop_k)}):")

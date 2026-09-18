@@ -116,12 +116,20 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec = best.to_dict()
         rec["key"] = key   # the group's key (a VIN yesterday's URL join found), never the best card's URL hash
         rec["offers"] = offers
+        old = by_key.get(key)
         reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE]
         priced = reliable or [o["price"] for o in offers if o["price"]]   # aggregator cards only when nothing better
         if len(priced) >= 2:
             hi = max(priced)
             priced = [p for p in priced if p >= hi * 0.6] or priced   # a card that scraped a neighbour's price
         rec["price"] = min(priced) if priced else None
+        rec["price_confirmed"] = bool(reliable)
+        if not reliable and priced and old and old.get("price"):
+            # only aggregator cards priced it today: an AutoTempest card regularly absorbs the
+            # neighbouring card's price, so take the card closest to yesterday's price and
+            # keep yesterday's price when none is within 15% of it
+            near = min(priced, key=lambda p: abs(p - old["price"]))
+            rec["price"] = near if abs(near - old["price"]) <= old["price"] * 0.15 else old["price"]
         rec.setdefault("country", "US")
         rec.setdefault("currency", "USD")
         if not rec.get("target"):
@@ -129,7 +137,6 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["price_high"] = max(priced) if priced else None
         rec["sources"] = sorted({o["source"] for o in offers})
         # keep the best-known static facts from history if today's scrape is thinner
-        old = by_key.get(key)
         if old:
             for f in ("vin", "year", "trim", "mileage", "dealer", "location", "state", "color", "image", "title"):
                 if not rec.get(f) and old.get(f):

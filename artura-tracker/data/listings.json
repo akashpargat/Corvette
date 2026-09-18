@@ -7,7 +7,7 @@
     "cheapest_clean_key": "SBM16AEA0PW000718",
     "cheapest_clean_price": 155985,
     "new_today": 4,
-    "price_drops_today": 2,
+    "price_drops_today": 1,
     "market_model": {
      "n": 119,
      "intercept": 185384,
@@ -47,7 +47,7 @@
   "active": 816,
   "clean_candidates": 328,
   "new_today": 41,
-  "price_drops_today": 21,
+  "price_drops_today": 20,
   "removed_today": 19,
   "cheapest_clean_key": "SBM16AEA0PW000718",
   "cheapest_clean_price": 155985,
@@ -186,7 +186,6 @@
    "ZHWUT4ZF3RLA28646",
    "ZHWUC2ZF2HLA08214",
    "ZHWUR1ZFXJLA09951",
-   "SBM16AEA7PW001588",
    "ZHWUF5ZF2MLA17739",
    "ZHWUB6ZF1PLA22968",
    "ZHWUR2ZF5HLA07508",
@@ -2589,109 +2588,6 @@
    "deal_pct": 2.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 9
-  },
-  {
-   "source": "dupont",
-   "source_name": "duPont REGISTRY",
-   "url": "https://www.dupontregistry.com/used-mclaren-artura-for-sale",
-   "title": "McLaren Artura",
-   "vin": "SBM16AEA7PW001588",
-   "year": 2023,
-   "trim": "Coupe",
-   "price": 169980,
-   "mileage": 5179,
-   "condition": "unknown",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "Pagani of Beverly Hills",
-   "location": "Beverly Hills, CA",
-   "state": "CA",
-   "color": null,
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://d2ujs0u2ekt0bo.cloudfront.net/cache/width_1920/car/car-617147/photo/2023-mclaren-artura-179990-1439219632.webp",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "accidents": null,
-    "owners": null,
-    "from": "embedded-json"
-   },
-   "key": "SBM16AEA7PW001588",
-   "candidate": true,
-   "rankable": true,
-   "offers": [
-    {
-     "source": "dupont",
-     "source_name": "duPont REGISTRY",
-     "url": "https://www.dupontregistry.com/used-mclaren-artura-for-sale",
-     "price": null,
-     "dealer": "Pagani of Beverly Hills",
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-18"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/2b5f7364-49e9-4b51-b4dd-ceffa5d56451/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 169980,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-18"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/2b5f7364-49e9-4b51-b4dd-ceffa5d56451/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 247900,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-18"
-    }
-   ],
-   "price_high": 247900,
-   "sources": [
-    "autotempest",
-    "dupont"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-18",
-    "from": 247900,
-    "to": 169980,
-    "delta": -77920
-   },
-   "last_seen": "2026-09-18",
-   "last_seen_at": "2026-09-18T12:38:51+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 249900
-    },
-    {
-     "d": "2026-09-16",
-     "p": 249900
-    },
-    {
-     "d": "2026-09-17",
-     "p": 247900
-    },
-    {
-     "d": "2026-09-18",
-     "p": 169980
-    }
-   ],
-   "expected_price": 178548,
-   "deal_pct": 4.8,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 10
   },
   {
    "source": "bringatrailer",
@@ -25125,6 +25021,110 @@
    "deal_pct": 6.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 81
+  },
+  {
+   "source": "dupont",
+   "source_name": "duPont REGISTRY",
+   "url": "https://www.dupontregistry.com/used-mclaren-artura-for-sale",
+   "title": "McLaren Artura",
+   "vin": "SBM16AEA7PW001588",
+   "year": 2023,
+   "trim": "Coupe",
+   "price": 247900,
+   "mileage": 5179,
+   "condition": "unknown",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Pagani of Beverly Hills",
+   "location": "Beverly Hills, CA",
+   "state": "CA",
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://d2ujs0u2ekt0bo.cloudfront.net/cache/width_1920/car/car-617147/photo/2023-mclaren-artura-179990-1439219632.webp",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "accidents": null,
+    "owners": null,
+    "from": "embedded-json"
+   },
+   "key": "SBM16AEA7PW001588",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "dupont",
+     "source_name": "duPont REGISTRY",
+     "url": "https://www.dupontregistry.com/used-mclaren-artura-for-sale",
+     "price": null,
+     "dealer": "Pagani of Beverly Hills",
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-18"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/2b5f7364-49e9-4b51-b4dd-ceffa5d56451/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 169980,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-18"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/2b5f7364-49e9-4b51-b4dd-ceffa5d56451/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 247900,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-18"
+    }
+   ],
+   "price_high": 247900,
+   "sources": [
+    "autotempest",
+    "dupont"
+   ],
+   "first_seen": "2026-09-13",
+   "missing_runs": 0,
+   "last_price_change": {
+    "date": "2026-09-17",
+    "from": 249900,
+    "to": 247900,
+    "delta": -2000
+   },
+   "last_seen": "2026-09-18",
+   "last_seen_at": "2026-09-18T12:38:51+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 249900
+    },
+    {
+     "d": "2026-09-16",
+     "p": 249900
+    },
+    {
+     "d": "2026-09-17",
+     "p": 247900
+    },
+    {
+     "d": "2026-09-18",
+     "p": 247900
+    }
+   ],
+   "expected_price": 178548,
+   "deal_pct": 4.8,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 10,
+   "price_confirmed": false
   },
   {
    "source": "autotempest",
