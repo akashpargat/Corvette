@@ -127,3 +127,23 @@ def test_url_keyed_row_that_learned_its_vin_folds_into_the_vin_row(tmp_path):
     hist = json.load(open(os.path.join(d, "history.json")))
     assert "cars_com:c3e098108f0a" not in hist and hist[vin][0] == {"d": "2026-09-13", "p": 165183}
     assert car["key"] not in p["changes"]["new"]
+
+
+def test_group_joined_by_yesterdays_url_keeps_the_vin_key(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA3PW001443"
+    a = _l(vin, 179900, source="autotrader")
+    a.url = "https://www.autotrader.com/cars-for-sale/vehicle/2"
+    card = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/xyz/", title="Used 2023 McLaren Artura",
+                   price=179985, mileage=5000, year=2023).finalize()
+    merge(d, [a, card], _report(("autotrader", "cars_com")))
+    # next day only the VIN-less Cars.com card shows up; it joins the VIN row by URL and must stay keyed by the VIN
+    card2 = Listing(source="cars_com", source_name="Cars.com", url="https://www.cars.com/vehicledetail/xyz/", title="Used 2023 McLaren Artura",
+                    price=179985, mileage=5000, year=2023).finalize()
+    p = merge(d, [card2], _report(("autotrader", "cars_com")))
+    active = [r for r in p["listings"] if r["status"] == "active"]
+    assert [r["key"] for r in active] == [vin] and active[0]["vin"] == vin
+    assert vin in p["changes"]["price_up"] and vin not in p["changes"]["new"]
+    # and the day after, still one row
+    p = merge(d, [card2], _report(("autotrader", "cars_com")))
+    assert [r["key"] for r in p["listings"] if r["status"] == "active"] == [vin]

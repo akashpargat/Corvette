@@ -114,6 +114,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
                            "dealer": l.dealer, "listing_type": l.listing_type, "condition": l.condition, "seen": d})
         best = _best(group)
         rec = best.to_dict()
+        rec["key"] = key   # the group's key (a VIN yesterday's URL join found), never the best card's URL hash
         rec["offers"] = offers
         reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE]
         priced = reliable or [o["price"] for o in offers if o["price"]]   # aggregator cards only when nothing better
