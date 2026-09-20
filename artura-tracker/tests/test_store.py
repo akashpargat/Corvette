@@ -167,3 +167,12 @@ def test_aggregator_only_prices_follow_yesterdays_reliable_price(tmp_path):
     p = merge(d, [dupont2, card], _report(("dupont", "autotempest")))
     car = [r for r in p["listings"] if r["key"] == vin][0]
     assert car["price"] == 239900 and vin in p["changes"]["price_drop"]
+
+
+def test_race_car_is_never_a_candidate(tmp_path):
+    d = str(tmp_path)
+    race = Listing(source="ebay", source_name="eBay Motors", url="https://www.ebay.com/itm/188951499356", title="2023 McLaren Artura GT4 Race Car",
+                   price=280411, mileage=0, year=2023, listing_type="private").finalize()
+    p = merge(d, [race], _report(("ebay",)))
+    car = p["listings"][0]
+    assert car["trim"] == "GT4" and car["candidate"] is False and car["rankable"] is False

@@ -3,7 +3,7 @@
   "targets": {
    "artura": {
     "active": 273,
-    "clean_candidates": 194,
+    "clean_candidates": 193,
     "cheapest_clean_key": "SBM16AEA0PW000718",
     "cheapest_clean_price": 155985,
     "new_today": 8,
@@ -45,7 +45,7 @@
   "generated_at": "2026-09-20T12:13:10+00:00",
   "date": "2026-09-20",
   "active": 842,
-  "clean_candidates": 358,
+  "clean_candidates": 357,
   "new_today": 64,
   "price_drops_today": 26,
   "removed_today": 4,
@@ -36877,8 +36877,8 @@
     "description": "New Listing\n2023 McLaren Artura GT4 Race Car\nOpens in a new window or tab\n80+ Photos, click 'READ MORE'\nPre-Owned\n$280,411.00\nor Best Offer\nLocated in United States\nDelivery or pickup available\nYear: 2023\nMiles: 0\nBrand: McLaren\nchicagomotorcars\n100% positive (1.6K)\nSecure Purchase\nderosnopS"
    },
    "key": "ebay:9d3a0a0d6c74",
-   "candidate": true,
-   "rankable": true,
+   "candidate": false,
+   "rankable": false,
    "offers": [
     {
      "source": "ebay",
@@ -36942,7 +36942,7 @@
     "country_from_card": true
    },
    "key": "autotempest:f5c2a9271ed4",
-   "candidate": true,
+   "candidate": false,
    "rankable": false,
    "offers": [
     {
@@ -62898,7 +62898,7 @@
     "country_from_card": true
    },
    "key": "pcarmarket:23e27eb29806",
-   "candidate": true,
+   "candidate": false,
    "rankable": false,
    "offers": [
     {

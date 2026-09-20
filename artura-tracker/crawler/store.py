@@ -345,6 +345,7 @@ def _best(group: list[Listing]) -> Listing:
     return max(group, key=score)
 
 
+RACE_TRIMS = {"GT4", "GT3", "Super Trofeo"}   # track-only cars are never "the cheapest road car"
 UNRELIABLE_ALONE = {"autotempest", "iseecars"}   # aggregator cards: fine as corroboration, not as the only price
 
 
@@ -368,7 +369,10 @@ def _candidate(rec: dict) -> bool:
     y = rec.get("year")
     if not y or not (t["years"][0] <= y <= t["years"][1]):
         return False
-    if rec.get("trim") in t.get("exclude_trims", set()):
+    if rec.get("trim") in t.get("exclude_trims", set()) or rec.get("trim") in RACE_TRIMS:
+        return False
+    from .models import is_junk
+    if is_junk(rec.get("title", ""), t):
         return False
     import re as _re
     if t.get("exclude_re") and _re.search(t["exclude_re"], f"{rec.get('title','')} {rec.get('url','')}", _re.I) and not _re.search(t["alias_re"], rec.get("title", "") or "", _re.I):
