@@ -124,18 +124,25 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             priced = [p for p in priced if p >= hi * 0.6] or priced   # a card that scraped a neighbour's price
         rec["price"] = min(priced) if priced else None
         rec["price_confirmed"] = bool(reliable)
+        # sources whose crawl did not run OK today are not evidence the car left them
+        carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
         if not reliable and priced and old and old.get("price"):
-            # only aggregator cards priced it today: an AutoTempest card regularly absorbs the
-            # neighbouring card's price, so take the card closest to yesterday's price and
-            # keep yesterday's price when none is within 15% of it
-            near = min(priced, key=lambda p: abs(p - old["price"]))
-            rec["price"] = near if abs(near - old["price"]) <= old["price"] * 0.15 else old["price"]
+            if carried:
+                # its real source(s) failed today and only aggregator cards priced it: keep the confirmed price
+                rec["price"] = old["price"]
+                rec["price_confirmed"] = bool(old.get("price_confirmed", True))
+            else:
+                # only aggregator cards priced it today: an AutoTempest card regularly absorbs the
+                # neighbouring card's price, so take the card closest to yesterday's price and
+                # keep yesterday's price when none is within 15% of it
+                near = min(priced, key=lambda p: abs(p - old["price"]))
+                rec["price"] = near if abs(near - old["price"]) <= old["price"] * 0.15 else old["price"]
         rec.setdefault("country", "US")
         rec.setdefault("currency", "USD")
         if not rec.get("target"):
             rec["target"] = "artura"
         rec["price_high"] = max(priced) if priced else None
-        rec["sources"] = sorted({o["source"] for o in offers})
+        rec["sources"] = sorted({o["source"] for o in offers} | carried)
         # keep the best-known static facts from history if today's scrape is thinner
         if old:
             for f in ("vin", "year", "trim", "mileage", "dealer", "location", "state", "color", "image", "title"):

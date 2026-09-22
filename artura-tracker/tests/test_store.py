@@ -176,3 +176,19 @@ def test_race_car_is_never_a_candidate(tmp_path):
     p = merge(d, [race], _report(("ebay",)))
     car = p["listings"][0]
     assert car["trim"] == "GT4" and car["candidate"] is False and car["rankable"] is False
+
+
+def test_failed_reliable_source_is_carried_and_its_price_kept(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA5PW001931"
+    cpo = _l(vin, 160699, source="mclaren_preowned")
+    merge(d, [cpo], _report(("mclaren_preowned", "autotempest")))
+    # next day McLaren CPO comes back empty and only an AutoTempest card (slightly different price) sees the car
+    card = Listing(source="autotempest", source_name="AutoTempest", url="https://www.cars.com/vehicledetail/x/?aff=atempest",
+                   title="2023 McLaren Artura", price=161498, mileage=5000, year=2023, vin=vin).finalize()
+    rep = {"started_at": "t", "seconds": 1, "sources": [{"source": "mclaren_preowned", "status": "empty", "count": 0},
+                                                       {"source": "autotempest", "status": "ok", "count": 1}]}
+    p = merge(d, [card], rep)
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert set(car["sources"]) == {"autotempest", "mclaren_preowned"}
+    assert car["price"] == 160699 and car["rankable"] is True and vin not in p["changes"]["price_up"]

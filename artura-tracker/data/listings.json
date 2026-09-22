@@ -3,7 +3,7 @@
   "targets": {
    "artura": {
     "active": 268,
-    "clean_candidates": 189,
+    "clean_candidates": 193,
     "cheapest_clean_key": "SBM16AEA0PW000718",
     "cheapest_clean_price": 155985,
     "new_today": 8,
@@ -18,7 +18,7 @@
    },
    "huracan": {
     "active": 559,
-    "clean_candidates": 159,
+    "clean_candidates": 161,
     "cheapest_clean_key": "ZHWUR2ZF3HLA06373",
     "cheapest_clean_price": 160596,
     "new_today": 42,
@@ -45,7 +45,7 @@
   "generated_at": "2026-09-22T12:12:47+00:00",
   "date": "2026-09-22",
   "active": 827,
-  "clean_candidates": 348,
+  "clean_candidates": 354,
   "new_today": 50,
   "price_drops_today": 31,
   "removed_today": 8,
@@ -230,9 +230,6 @@
    "ZHWUR2ZF5HLA07850",
    "ZHWUS4ZF9JLA11132",
    "ZHWUT4ZF3RLA28646",
-   "SBM16AEA5PW001931",
-   "ZHWUF5ZF0MLA16606",
-   "ZHWUC1ZF7FLA01850",
    "usedcars_com:eb3f0c34846b"
   ],
   "removed": [
@@ -875,6 +872,7 @@
    "sources": [
     "autotrader",
     "carfax",
+    "cars_com",
     "ebay",
     "kbb"
    ],
@@ -1071,7 +1069,7 @@
    "vin": "SBM16AEA5PW001931",
    "year": 2023,
    "trim": "Coupe",
-   "price": 161498,
+   "price": 160699,
    "mileage": 8755,
    "condition": "used",
    "title_status": "unknown",
@@ -1093,7 +1091,7 @@
    },
    "key": "SBM16AEA5PW001931",
    "candidate": true,
-   "rankable": false,
+   "rankable": true,
    "offers": [
     {
      "source": "autotempest",
@@ -1116,17 +1114,19 @@
      "seen": "2026-09-22"
     }
    ],
-   "price_confirmed": false,
+   "price_confirmed": true,
    "price_high": 161498,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "cars_com",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
    "last_price_change": {
-    "date": "2026-09-22",
-    "from": 160699,
-    "to": 161498,
+    "date": "2026-09-15",
+    "from": 159900,
+    "to": 160699,
     "delta": 799
    },
    "last_seen": "2026-09-22",
@@ -1155,7 +1155,7 @@
     },
     {
      "d": "2026-09-22",
-     "p": 161498
+     "p": 160699
     }
    ],
    "expected_price": 173237,
@@ -1228,6 +1228,7 @@
    "price_high": 164650,
    "sources": [
     "autotrader",
+    "cars_com",
     "ebay",
     "kbb"
    ],
@@ -1329,6 +1330,7 @@
    "price_high": 164795,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -1630,7 +1632,8 @@
    "price_confirmed": true,
    "price_high": 167635,
    "sources": [
-    "carfax"
+    "carfax",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -1978,7 +1981,9 @@
     "autotempest",
     "autotrader",
     "carfax",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -2144,6 +2149,7 @@
    "sources": [
     "autotrader",
     "carfax",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-16",
@@ -2272,6 +2278,7 @@
     "autotempest",
     "autotrader",
     "carfax",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -2802,6 +2809,7 @@
    "price_high": 172999,
    "sources": [
     "autotrader",
+    "cars_com",
     "dupont",
     "kbb"
    ],
@@ -2973,7 +2981,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -3882,6 +3892,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -3978,6 +3989,7 @@
    "price_high": 176000,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -4124,8 +4136,10 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -4331,7 +4345,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -4551,7 +4567,9 @@
     "autotrader",
     "cargurus",
     "dupont",
-    "kbb"
+    "kbb",
+    "mclaren_preowned",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -4662,7 +4680,9 @@
     "autotempest",
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -4783,8 +4803,10 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -4915,7 +4937,7 @@
    },
    "key": "ZHWUR2ZF6HLA07646",
    "candidate": true,
-   "rankable": false,
+   "rankable": true,
    "offers": [
     {
      "source": "autotempest",
@@ -4941,7 +4963,8 @@
    "price_confirmed": false,
    "price_high": 179750,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "cars_com"
    ],
    "first_seen": "2026-09-20",
    "missing_runs": 0,
@@ -5030,7 +5053,8 @@
    "sources": [
     "autotrader",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -5119,6 +5143,7 @@
    "price_high": 179900,
    "sources": [
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -5513,8 +5538,10 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dupont",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -6011,7 +6038,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -6132,8 +6161,10 @@
     "autotempest",
     "autotrader",
     "carfax",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -6256,6 +6287,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -6833,7 +6865,9 @@
    "price_high": 183092,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -6945,6 +6979,7 @@
    "price_high": 183213,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -7153,8 +7188,10 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -7264,6 +7301,7 @@
    "price_high": 183990,
    "sources": [
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -7470,7 +7508,9 @@
     "autotempest",
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -7756,6 +7796,7 @@
    "price_high": 184900,
    "sources": [
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -7810,7 +7851,7 @@
    },
    "key": "SBM16AEA7PW001610",
    "candidate": true,
-   "rankable": false,
+   "rankable": true,
    "offers": [
     {
      "source": "autotempest",
@@ -7836,7 +7877,8 @@
    "price_confirmed": false,
    "price_high": 185085,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "cars_com"
    ],
    "first_seen": "2026-09-16",
    "missing_runs": 0,
@@ -7939,7 +7981,9 @@
    "price_high": 185224,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -8238,7 +8282,7 @@
    },
    "key": "SBM16AEA1RW002187",
    "candidate": true,
-   "rankable": false,
+   "rankable": true,
    "offers": [
     {
      "source": "autotempest",
@@ -8264,7 +8308,8 @@
    "price_confirmed": false,
    "price_high": 186076,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "cars_com"
    ],
    "first_seen": "2026-09-22",
    "missing_runs": 0,
@@ -8352,6 +8397,7 @@
    "price_high": 186800,
    "sources": [
     "autotrader",
+    "cars_com",
     "dupont",
     "kbb"
    ],
@@ -8531,8 +8577,10 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -8751,6 +8799,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -9029,8 +9078,10 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "mclaren_preowned"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -9237,6 +9288,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -9364,6 +9416,7 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -9470,6 +9523,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -9688,6 +9742,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -9848,7 +9903,8 @@
    "price_high": 189991,
    "sources": [
     "autotempest",
-    "carfax"
+    "carfax",
+    "cars_com"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -9981,7 +10037,7 @@
    },
    "key": "SBM16AEA6RW002136",
    "candidate": true,
-   "rankable": false,
+   "rankable": true,
    "offers": [
     {
      "source": "autotempest",
@@ -10007,7 +10063,8 @@
    "price_confirmed": false,
    "price_high": 191498,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "cars_com"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -10200,6 +10257,7 @@
    "price_high": 191977,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -10526,7 +10584,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -10690,6 +10750,7 @@
    "price_high": 195000,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -11041,7 +11102,9 @@
    "price_high": 198985,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -11136,7 +11199,9 @@
    "sources": [
     "autotrader",
     "carfax",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -11242,6 +11307,7 @@
    "price_high": 199958,
    "sources": [
     "autotrader",
+    "cars_com",
     "ebay",
     "kbb"
    ],
@@ -11364,6 +11430,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -11460,6 +11527,7 @@
    "price_high": 199990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -11738,6 +11806,7 @@
    "price_high": 201099,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -12376,6 +12445,7 @@
    "price_high": 204995,
    "sources": [
     "autotrader",
+    "cars_com",
     "dupont",
     "ebay",
     "kbb"
@@ -12525,6 +12595,7 @@
    "price_high": 205900,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -12703,8 +12774,10 @@
    "sources": [
     "autotrader",
     "cargurus",
+    "cars_com",
     "dupont",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -12788,6 +12861,7 @@
    "price_high": 209990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -12876,6 +12950,7 @@
    "price_high": 209995,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -13014,6 +13089,7 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "dupont",
     "kbb"
    ],
@@ -13356,6 +13432,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -13416,7 +13493,7 @@
    "vin": "ZHWUF5ZF0MLA16606",
    "year": 2021,
    "trim": "EVO",
-   "price": 212473,
+   "price": 212293,
    "mileage": 16127,
    "condition": "used",
    "title_status": "unknown",
@@ -13461,19 +13538,15 @@
      "seen": "2026-09-22"
     }
    ],
-   "price_confirmed": false,
+   "price_confirmed": true,
    "price_high": 212473,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "truecar"
    ],
    "first_seen": "2026-09-21",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-22",
-    "from": 212293,
-    "to": 212473,
-    "delta": 180
-   },
+   "last_price_change": null,
    "last_seen": "2026-09-22",
    "last_seen_at": "2026-09-22T12:12:47+00:00",
    "status": "active",
@@ -13496,7 +13569,7 @@
     },
     {
      "d": "2026-09-22",
-     "p": 212473
+     "p": 212293
     }
    ],
    "expected_price": 337812,
@@ -13569,6 +13642,7 @@
    "price_high": 212500,
    "sources": [
     "autotrader",
+    "cars_com",
     "dealer_sites",
     "kbb"
    ],
@@ -13658,6 +13732,7 @@
    "price_high": 212990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -13760,8 +13835,10 @@
    "price_high": 212995,
    "sources": [
     "autotrader",
+    "cars_com",
     "ebay",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-16",
    "missing_runs": 0,
@@ -13872,6 +13949,7 @@
     "autotempest",
     "autotrader",
     "cargurus",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -14273,7 +14351,9 @@
    "price_high": 218500,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-15",
    "missing_runs": 0,
@@ -14530,6 +14610,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -15151,6 +15232,7 @@
    "price_high": 219999,
    "sources": [
     "carfax",
+    "cars_com",
     "dupont"
    ],
    "first_seen": "2026-09-13",
@@ -15707,7 +15789,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -15894,6 +15978,7 @@
    "price_high": 222990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -15986,6 +16071,7 @@
    "price_high": 222990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -16341,6 +16427,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "dupont",
     "kbb"
    ],
@@ -16618,7 +16705,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -16718,6 +16807,7 @@
    "price_high": 224947,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -17443,7 +17533,8 @@
     "autotrader",
     "carfax",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -17675,7 +17766,9 @@
    "price_high": 228999,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -17838,7 +17931,9 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -18111,6 +18206,7 @@
    "sources": [
     "autotrader",
     "carfax",
+    "cars_com",
     "dupont",
     "kbb"
    ],
@@ -18304,7 +18400,9 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -18685,7 +18783,9 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -18940,6 +19040,7 @@
    "price_high": 232990,
    "sources": [
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -19032,7 +19133,9 @@
    "price_high": 232991,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -19120,7 +19223,9 @@
    "price_high": 232991,
    "sources": [
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -19407,8 +19512,10 @@
    "sources": [
     "autotrader",
     "cargurus",
+    "cars_com",
     "dupont",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -19503,7 +19610,9 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -19832,7 +19941,9 @@
     "autotempest",
     "autotrader",
     "cargurus",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-15",
    "missing_runs": 0,
@@ -20053,7 +20164,9 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "cars_com",
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -20158,6 +20271,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "kbb"
    ],
    "first_seen": "2026-09-13",
@@ -20586,6 +20700,7 @@
    "sources": [
     "autotempest",
     "autotrader",
+    "cars_com",
     "exoticcartrader",
     "kbb"
    ],
@@ -20846,7 +20961,8 @@
    "price_confirmed": true,
    "price_high": 235370,
    "sources": [
-    "carfax"
+    "carfax",
+    "cars_com"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -21650,6 +21766,94 @@
    "deal_pct": -0.0,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 70
+  },
+  {
+   "source": "autotempest",
+   "source_name": "AutoTempest",
+   "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+   "title": "2015 Lamborghini Huracan LP610-4",
+   "vin": "ZHWUC1ZF7FLA01850",
+   "year": 2015,
+   "trim": "LP 610-4",
+   "price": 239900,
+   "mileage": 28700,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "West State Motorsport LLC",
+   "location": "Federal Way, WA",
+   "state": "WA",
+   "color": "White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
+   "target": "huracan",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "2015 Lamborghini Huracan LP610-4 | $240,100 | Fair Deal | 28,700 mi. | 19 days ago | Federal Way, WA | (2404 mi. from 10001) | West State Motorsport | 12V power outlets 1 12V power outlet,4WD | type Full-time AWD,ABS (4-WHEEL),ABS Br | akes 4-whe | el antilock (ABS) brakes,ABS Brakes Four channel ABS brakes,AIR CONDIT | ... | Read More | Share | +2 sites",
+    "country_from_card": true
+   },
+   "key": "ZHWUC1ZF7FLA01850",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 236299,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-22"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 240100,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-22"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 240100,
+   "sources": [
+    "autotempest",
+    "truecar"
+   ],
+   "first_seen": "2026-09-13",
+   "missing_runs": 0,
+   "last_price_change": {
+    "date": "2026-09-13",
+    "from": 240100,
+    "to": 239900,
+    "delta": -200
+   },
+   "last_seen": "2026-09-22",
+   "last_seen_at": "2026-09-22T12:12:47+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 239900
+    },
+    {
+     "d": "2026-09-21",
+     "p": 239900
+    },
+    {
+     "d": "2026-09-22",
+     "p": 239900
+    }
+   ],
+   "expected_price": 226684,
+   "deal_pct": -5.9,
+   "price_per_mile_note": null
   },
   {
    "source": "autotrader",
@@ -22751,93 +22955,6 @@
    "price_per_mile_note": null
   },
   {
-   "source": "autotempest",
-   "source_name": "AutoTempest",
-   "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-   "title": "2015 Lamborghini Huracan LP610-4",
-   "vin": "ZHWUC1ZF7FLA01850",
-   "year": 2015,
-   "trim": "LP 610-4",
-   "price": 240100,
-   "mileage": 28700,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "West State Motorsport LLC",
-   "location": "Federal Way, WA",
-   "state": "WA",
-   "color": "White",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
-   "target": "huracan",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "2015 Lamborghini Huracan LP610-4 | $240,100 | Fair Deal | 28,700 mi. | 19 days ago | Federal Way, WA | (2404 mi. from 10001) | West State Motorsport | 12V power outlets 1 12V power outlet,4WD | type Full-time AWD,ABS (4-WHEEL),ABS Br | akes 4-whe | el antilock (ABS) brakes,ABS Brakes Four channel ABS brakes,AIR CONDIT | ... | Read More | Share | +2 sites",
-    "country_from_card": true
-   },
-   "key": "ZHWUC1ZF7FLA01850",
-   "candidate": true,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 236299,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-22"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/db5a5584-d251-4a42-a853-9bc4f4ff450b/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 240100,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-22"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": 240100,
-   "sources": [
-    "autotempest"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-22",
-    "from": 239900,
-    "to": 240100,
-    "delta": 200
-   },
-   "last_seen": "2026-09-22",
-   "last_seen_at": "2026-09-22T12:12:47+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 239900
-    },
-    {
-     "d": "2026-09-21",
-     "p": 239900
-    },
-    {
-     "d": "2026-09-22",
-     "p": 240100
-    }
-   ],
-   "expected_price": 226684,
-   "deal_pct": -5.9,
-   "price_per_mile_note": null
-  },
-  {
    "source": "carsandbids",
    "source_name": "Cars & Bids",
    "url": "https://carsandbids.com/auctions/9Qq4mLAx/2019-lamborghini-huracan-lp-580-2-spyder?ss_id=0d93a2fe-039b-4a22-aa16-3401744633e5&amp;ref=pr_1_7",
@@ -23084,7 +23201,8 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -24114,7 +24232,8 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -25233,7 +25352,8 @@
    "price_high": 247991,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -25431,7 +25551,8 @@
    "price_high": 247993,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -25609,7 +25730,8 @@
    "price_high": 247999,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -26139,7 +26261,8 @@
    "price_high": 248292,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-18",
    "missing_runs": 0,
@@ -26218,7 +26341,8 @@
    "price_high": 249000,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -27759,7 +27883,8 @@
    "price_high": 250886,
    "sources": [
     "carfax",
-    "cargurus"
+    "cargurus",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -28275,7 +28400,8 @@
    "price_confirmed": true,
    "price_high": 249999,
    "sources": [
-    "carfax"
+    "carfax",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -28594,7 +28720,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -28958,7 +29085,8 @@
     "autotempest",
     "autotrader",
     "dealer_sites",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -29098,7 +29226,8 @@
     "autotempest",
     "autotrader",
     "dupont",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-19",
    "missing_runs": 0,
@@ -30766,7 +30895,8 @@
    "sources": [
     "autotrader",
     "carfax",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -30861,7 +30991,8 @@
    "price_high": 259500,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-19",
    "missing_runs": 0,
@@ -32500,7 +32631,8 @@
    "price_high": 264992,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -32979,7 +33111,8 @@
     "autotempest",
     "autotrader",
     "dupont",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-16",
    "missing_runs": 0,
@@ -33252,7 +33385,8 @@
    "price_high": 267995,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -33450,7 +33584,8 @@
    "price_high": 268995,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -33810,7 +33945,8 @@
    "price_high": 269500,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -34608,7 +34744,8 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -35023,7 +35160,8 @@
    "price_confirmed": false,
    "price_high": 270899,
    "sources": [
-    "autotempest"
+    "autotempest",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -35867,7 +36005,8 @@
    "price_high": 275999,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -36687,7 +36826,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -37244,7 +37384,8 @@
    "price_high": 284991,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -37816,7 +37957,8 @@
    "price_high": 286888,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -38360,7 +38502,8 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -38700,7 +38843,8 @@
    "price_high": 290000,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-12",
    "missing_runs": 0,
@@ -38799,7 +38943,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -43756,7 +43901,8 @@
    "price_high": 309900,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -44730,7 +44876,8 @@
    "price_high": 314799,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -46148,7 +46295,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -46508,7 +46656,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -47630,7 +47779,8 @@
    "sources": [
     "autotrader",
     "cargurus",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -47752,7 +47902,8 @@
     "autotrader",
     "carfax",
     "ebay",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -48432,7 +48583,8 @@
    "price_high": 327991,
    "sources": [
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-13",
    "missing_runs": 0,
@@ -48896,7 +49048,8 @@
    "sources": [
     "autotempest",
     "autotrader",
-    "kbb"
+    "kbb",
+    "truecar"
    ],
    "first_seen": "2026-09-16",
    "missing_runs": 0,
