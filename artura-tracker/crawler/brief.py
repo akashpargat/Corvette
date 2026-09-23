@@ -39,6 +39,18 @@ def _car(l: dict) -> str:
     return f"{l.get('year') or '?'} Artura {l.get('trim') or ''}{local} · {miles} · {seller}{where}{flag}"
 
 
+def recent_sales(data_dir: str, tk: str) -> list[dict]:
+    """Ended auctions for this model, in its year range and without the excluded trims, newest first."""
+    from . import config
+    p = os.path.join(data_dir, "sales.json")
+    if not os.path.exists(p):
+        return []
+    t = config.TARGETS[tk]
+    rows = [r for r in json.load(open(p)) if r.get("target") == tk and r.get("year") and t["years"][0] <= r["year"] <= t["years"][1]
+            and r.get("trim") not in t.get("exclude_trims", set()) and r.get("trim") not in ("GT4", "GT3", "Super Trofeo")]
+    return sorted(rows, key=lambda r: (r.get("ended") or "", r.get("first_seen") or ""), reverse=True)
+
+
 def _target_label(tk: str) -> str:
     from . import config
     return config.TARGETS.get(tk, {}).get("label", tk)
@@ -113,6 +125,14 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         lines += _list(drop_k, lambda r: f"   {_money(r['last_price_change']['from'])} -> {_money(r['price'])} — {_car(r)}")
         lines.append(f"Sold or removed ({len(gone_k)}):")
         lines += _list(gone_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
+        comps = recent_sales(data_dir, tk)
+        if comps:
+            lines += ["", f"RECENT AUCTION RESULTS ({config.TARGETS[tk]['model']}, {yrs[0]}-{yrs[1]}, what these cars actually sold for)"]
+            for r in comps[:6]:
+                what = f"sold {_money(r['price'])}" if r.get("sold") and r.get("price") else (f"bid to {_money(r['price'])}, not sold" if r.get("price") else "no sale")
+                mi = f" · {r['mileage']:,} mi" if r.get("mileage") else ""
+                lines.append(f"   {what} — {r.get('year') or ''} {config.TARGETS[tk]['model']} {r.get('trim') or ''}{mi}{' · ended ' + r['ended'] if r.get('ended') else ''} · {r.get('source_name', '')}")
+                lines.append(f"   {r['url']}")
         lines.append("")
     run = runs[-1]
     ok = [s for s in run["sources"] if s["status"] == "ok"]

@@ -18,7 +18,7 @@ from . import config
 from .http_client import Client
 from .sources import load_sources
 from .sources.base import Ctx
-from .store import merge, now_iso
+from .store import merge, now_iso, record_sales
 from .models import set_target, is_target, vin_matches, is_other_model
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -71,6 +71,7 @@ def main(argv=None):
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--targets", default=",".join(config.DEFAULT_TARGETS), help="comma-separated target keys (artura,huracan)")
     ap.add_argument("-v", "--verbose", action="store_true")
+    ap.add_argument("--dry-run", action="store_true", help="print what the sources parsed and stop before touching data/")
     args = ap.parse_args(argv)
 
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
@@ -114,6 +115,19 @@ def main(argv=None):
 
     run_report = {"started_at": now_iso(), "seconds": round(time.time() - t0, 1), "sources": reports,
                   "raw_listings": len(fresh), "zip": config.SEARCH_ZIP, "targets": [t["key"] for t in targets]}
+    if args.dry_run:
+        import json as _json
+        for l in fresh:
+            print(_json.dumps({"source": l.source, "target": l.target, "type": l.listing_type, "title": l.title, "year": l.year, "trim": l.trim,
+                               "price": l.price, "mileage": l.mileage, "vin": l.vin, "location": l.location, "url": l.url,
+                               "extra": {k: v for k, v in l.extra.items() if k in ("sold", "ended", "description")}}, default=str))
+        log.info("dry run: %d listings from %s; data/ untouched", len(fresh), ", ".join(sorted({l.source for l in fresh})))
+        return 0
+    sales = [l for l in fresh if l.listing_type == "sold"]
+    fresh = [l for l in fresh if l.listing_type != "sold"]
+    if sales:
+        record_sales(args.data, sales)
+        log.info("Recorded %d ended-auction results", len(sales))
     payload = merge(args.data, fresh, run_report)
     s = payload["summary"]
     log.info("Done in %.0fs: %d raw -> %d active listings, %d clean candidates, cheapest clean $%s, new %d, drops %d",

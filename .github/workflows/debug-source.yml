@@ -1,0 +1,40 @@
+name: Debug source (dry run)
+
+# Push a file artura-tracker/DEBUG whose first line is the source(s) and second line the
+# target(s); the job prints what those sources parse and never touches data/.
+on:
+  push:
+    branches: [claude/mclaren-artura-tracker-0lqn5g]
+    paths: ["artura-tracker/DEBUG"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: artura-debug
+  cancel-in-progress: true
+
+jobs:
+  dry:
+    name: Dry-run source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: artura-tracker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          sudo apt-get install -y -qq xvfb >/dev/null
+      - name: Dry run
+        env:
+          HEADLESS: "0"
+        run: |
+          SRC="$(sed -n 1p DEBUG)"; TGT="$(sed -n 2p DEBUG)"
+          xvfb-run -a --server-args="-screen 0 1366x900x24" python -m crawler.main --sources "$SRC" --targets "${TGT:-artura,huracan}" --dry-run -v

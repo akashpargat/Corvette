@@ -262,6 +262,26 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     return payload
 
 
+def record_sales(data_dir: str, sales: list[Listing], keep: int = 600) -> list[dict]:
+    """Ended auctions (listing_type == "sold") are comps, not cars for sale: keep them in
+    data/sales.json keyed by URL, newest ending first."""
+    path = os.path.join(data_dir, "sales.json")
+    rows = {r["url"]: r for r in _load(path, [])}
+    d = today()
+    for l in sales:
+        if not l.url or l.listing_type != "sold":
+            continue
+        rec = rows.get(l.url) or {"url": l.url, "first_seen": d}
+        rec.update({"target": l.target, "source": l.source, "source_name": l.source_name, "title": l.title, "year": l.year,
+                    "trim": l.trim, "mileage": l.mileage if l.mileage is not None else rec.get("mileage"),
+                    "price": l.price, "sold": bool(l.extra.get("sold")), "ended": l.extra.get("ended") or rec.get("ended"),
+                    "location": l.location or rec.get("location"), "image": l.image or rec.get("image"), "last_seen": d})
+        rows[l.url] = rec
+    out = sorted(rows.values(), key=lambda r: (r.get("ended") or "", r.get("first_seen") or ""), reverse=True)[:keep]
+    _save(path, out)
+    return out
+
+
 def fold_vin_rows(listings: list[dict], history: dict) -> list[dict]:
     """A row keyed by a URL hash that later learned its VIN belongs under the VIN key.
 

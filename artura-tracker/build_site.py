@@ -28,7 +28,7 @@ def build(out_dir: str = SITE, inline: bool = True) -> str:
     html = html.replace('<script src="app.js"></script>', f"<script>\n{js}\n</script>")
     if inline:
         blocks = []
-        for name in ("listings", "runs", "market"):
+        for name in ("listings", "runs", "market", "sales"):
             p = os.path.join(HERE, "data", f"{name}.json")
             if os.path.exists(p):
                 raw = open(p, encoding="utf-8").read().replace("</script", "<\\/script")

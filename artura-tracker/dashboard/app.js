@@ -14,7 +14,7 @@
   const state = { years: new Set(), maxPrice: 400000, maxMiles: 40000, title: "notbranded", type: "all", st: "", src: "", q: "", sort: "price", removed: false, onlyWatch: false, view: "table", country: "", model: "artura" };
   try { const m = localStorage.getItem("artura.model"); if (m && TARGETS[m]) state.model = m; } catch (e) { }
   const tOf = (l) => l.target || "artura";
-  let DATA = { summary: {}, changes: {}, listings: [] }, RUNS = [], MARKET = [];
+  let DATA = { summary: {}, changes: {}, listings: [] }, RUNS = [], MARKET = [], SALES = [];
   let watch = new Set();
   try { watch = new Set(JSON.parse(localStorage.getItem("artura.watch") || "[]")); } catch (e) { }
   try { const v = localStorage.getItem("artura.view"); if (v) state.view = v; } catch (e) { }
@@ -25,6 +25,7 @@
     DATA = inline("data-listings") || await fetchJSON("data/listings.json") || DATA;
     RUNS = inline("data-runs") || await fetchJSON("data/runs.json") || [];
     MARKET = inline("data-market") || await fetchJSON("data/market.json") || [];
+    SALES = inline("data-sales") || await fetchJSON("data/sales.json") || [];
     if (!Array.isArray(DATA.listings)) DATA.listings = [];
     if (DATA.summary && DATA.summary.target_labels) TARGETS = Object.assign({}, TARGETS, DATA.summary.target_labels);
     DATA.listings.forEach((l) => { if (!TARGETS[l.target || "artura"]) TARGETS[l.target] = { model: l.target, label: l.target }; });
@@ -230,6 +231,12 @@
   function hideTip() { $("#tip").hidden = true; }
 
   /* ---------- changes + sources ---------- */
+  function renderSales() {
+    const el = $("#sales"); if (!el) return;
+    const rows = SALES.filter((r) => r.target === state.model).slice(0, 12);
+    $("#salesTitle").textContent = `Recent auction results · ${TARGETS[state.model] ? TARGETS[state.model].model : ""}`;
+    el.innerHTML = rows.length ? rows.map((r) => { const what = r.sold && r.price ? `<span class="badge new">SOLD</span>` : `<span class="badge removed">NO SALE</span>`; return `<li>${what}<span>${r.price ? fmt$(r.price) : "no bids"}${r.sold ? "" : (r.price ? " (bid to)" : "")} · ${esc(r.year || "")} ${TARGETS[r.target] ? TARGETS[r.target].model : ""} ${esc(r.trim || "")}${r.mileage != null ? " · " + fmtMi(r.mileage) : ""}${r.ended ? ` <span style="color:var(--muted)">ended ${esc(r.ended)}</span>` : ""}</span><a class="rowlink" href="${esc(r.url)}" target="_blank" rel="noopener">Open ↗</a></li>`; }).join("") : `<li><span style="color:var(--muted)">No ended auctions recorded yet.</span></li>`;
+  }
   function renderChanges() {
     const C = DATA.changes || {}, by = Object.fromEntries(DATA.listings.map((l) => [l.key, l]));
     const item = (k, label, cls) => { const l = by[k]; if (!l || tOf(l) !== state.model) return ""; const d = l.last_price_change; return `<li><span class="badge ${cls}">${label}</span><span>${fmt$(l.price)} · ${esc(l.year || "")} ${TARGETS[tOf(l)].model} ${esc(l.trim || "")}${l.mileage != null ? " · " + fmtMi(l.mileage) : ""}${l.location ? " · " + esc(l.location) : ""}${cls === "drop" || cls === "up" ? ` <span style="color:var(--muted)">(was ${fmt$(d.from)})</span>` : ""}</span><a class="rowlink" href="${esc(l.url)}" target="_blank" rel="noopener">Open ↗</a></li>`; };
@@ -268,7 +275,7 @@
   function renderAll() {
     $("#maxPriceOut").textContent = state.maxPrice >= 400000 ? "any" : fmt$(state.maxPrice);
     $("#maxMilesOut").textContent = state.maxMiles >= 40000 ? "any" : fmtK(state.maxMiles) + " mi";
-    renderTop(); renderResults(); renderScatter(); renderMarket(); renderChanges(); renderSources();
+    renderTop(); renderResults(); renderScatter(); renderMarket(); renderSales(); renderChanges(); renderSources();
   }
   load().then(() => { buildTabs(); buildFilters(); renderAll(); });
 })();

@@ -189,3 +189,4 @@ h2 { font-size: 22px; font-weight: 600; }
 @media (prefers-reduced-motion: no-preference) {
   .grid tr td { transition: background .12s; }
 }
+.hint { margin: -4px 0 10px; color: var(--muted); font-size: 13px; }
