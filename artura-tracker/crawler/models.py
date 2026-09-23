@@ -33,7 +33,7 @@ def vin_matches(vin, target=None) -> bool:
 PRICE_RE = re.compile(r"\$\s?([0-9]{2,3}(?:,[0-9]{3})+|[0-9]{5,7})(?!\s*/\s*mo)")
 MILES_RE = re.compile(r"([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})[ \t]*(?:k[ \t]*)?(?:mi\b|miles\b)", re.I)
 MILES_LABEL_RE = re.compile(r"(?:miles?|mileage|odometer)\s*[:=]\s*([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{1,6})", re.I)
-MILES_K_RE = re.compile(r"\b([0-9]{1,3}(?:\.[0-9])?)\s*[kK]\s*(?:mi\b|miles\b)")
+MILES_K_RE = re.compile(r"\b([0-9]{1,3}(?:\.[0-9])?)\s*[kK]\s*(?:mi\b|miles\b)", re.I)
 YEAR_RE = re.compile(r"\b(20(?:1[5-9]|2[0-9]))\b")
 
 BRANDED_WORDS = [
@@ -113,7 +113,8 @@ class Listing:
             self.currency = self.currency or "CAD"
         t = config.TARGETS.get(self.target) or current_target()
         if not self.trim:
-            self.trim = detect_trim(blob, t) or t["default_trim"]
+            self.trim = detect_trim(self.title, t) or detect_trim(blob, t) or t["default_trim"]
+        self.trim = trim_for_year(self.trim, self.year, t)
         if self.title_status == "unknown":
             st, notes = detect_title_status(blob)
             self.title_status = st
@@ -227,6 +228,15 @@ def detect_trim(text: str, target=None) -> Optional[str]:
         if re.search(rx, text or "", re.I):
             return name
     return None
+
+
+def trim_for_year(trim: Optional[str], year: Optional[int], t: dict) -> Optional[str]:
+    """A 2017 Huracán cannot be an 'EVO RWD': when a detected trim did not exist in that model
+    year, use the target's fallback for it (EVO RWD -> LP 580-2) instead of excluding the car."""
+    yrs = (t.get("trim_years") or {}).get(trim)
+    if not trim or not year or not yrs or yrs[0] <= year <= yrs[1]:
+        return trim
+    return (t.get("trim_fallback") or {}).get(trim) or t.get("default_trim") or trim
 
 
 def detect_title_status(text: str) -> tuple[str, list]:

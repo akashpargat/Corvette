@@ -71,13 +71,13 @@ def parse_cards(html: str, base_url: str = HOST, target: dict | None = None) -> 
         if not title:
             continue
         title = re.sub(r"\s*(Watch|Featured)$", "", title, flags=re.I)
-        sold = re.search(r"Sold for\s*\$?\s*([\d,]+)", text, re.I)
+        sold = re.search(r"Sold (?:After )?for\s*\$?\s*([\d,]+)", text, re.I)
         bid_to = re.search(r"Bid to\s*\$?\s*([\d,]+)", text, re.I)
         live = re.search(r"(?:Current\s*)?Bid:?\s*\$\s*([\d,]+)", text, re.I)
         ended = _ended_date(text)
-        mile_m = re.search(r"~?\s*([\d,]{3,7})\s*(?:Miles|mi\b)", text, re.I)
+        mile_m = re.search(r"~?\s*(\d[\d,]*(?:\.\d)?k?)\s*(?:Miles|mi\b)", text, re.I)
         mileage = parse_mileage(mile_m.group(0)) if mile_m else None
-        loc = next((x for x in lines if re.search(r"^[A-Z][A-Za-z .'-]+,\s*[A-Z]{2}$", x) and extract_state(x)), None)
+        loc = None   # the cards do not show a location; the auction page does
         img = node.find("img")
         href = abs_url(base_url, a["href"].split("?")[0].split("#")[0])
         desc = " | ".join(lines)[:400]

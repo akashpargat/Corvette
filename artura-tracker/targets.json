@@ -62,6 +62,10 @@
     "alias_re": "hurac[aá]n",
     "trims": [
       [
+        "Super Trofeo",
+        "super\\s+trofeo"
+      ],
+      [
         "STO",
         "\\bsto\\b"
       ],
@@ -106,6 +110,10 @@
         "610-4|lp\\s?610"
       ],
       [
+        "LP 580-2 Spyder",
+        "580-2\\s+spyder|lp\\s?580.{0,3}spyder"
+      ],
+      [
         "LP 580-2",
         "580-2|lp\\s?580"
       ],
@@ -131,6 +139,45 @@
       "Tecnica",
       "Sterrato"
     ],
-    "note": "First-generation Huracán only: LP 610-4, LP 580-2, Performante and their Spyders. EVO/STO/Tecnica/Sterrato are tracked but never ranked."
+    "note": "First-generation Huracán only: LP 610-4, LP 580-2, Performante and their Spyders. EVO/STO/Tecnica/Sterrato are tracked but never ranked.",
+    "trim_years": {
+      "EVO": [
+        2020,
+        2024
+      ],
+      "EVO Spyder": [
+        2020,
+        2024
+      ],
+      "EVO RWD": [
+        2020,
+        2024
+      ],
+      "EVO RWD Spyder": [
+        2020,
+        2024
+      ],
+      "STO": [
+        2021,
+        2024
+      ],
+      "Tecnica": [
+        2022,
+        2024
+      ],
+      "Sterrato": [
+        2023,
+        2024
+      ]
+    },
+    "trim_fallback": {
+      "EVO RWD": "LP 580-2",
+      "EVO RWD Spyder": "LP 580-2 Spyder",
+      "EVO": "Coupe",
+      "EVO Spyder": "Spyder",
+      "STO": "Coupe",
+      "Tecnica": "Coupe",
+      "Sterrato": "Coupe"
+    }
   }
 }
