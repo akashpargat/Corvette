@@ -25568,5 +25568,906 @@
    "removed_today": 25,
    "cheapest_clean_price": 98900
   }
+ },
+ {
+  "started_at": "2026-09-23T05:59:09+00:00",
+  "seconds": 572.5,
+  "sources": [
+   {
+    "source": "mclaren_preowned",
+    "label": "McLaren Qualified (official CPO)",
+    "kind": "dealer",
+    "status": "empty",
+    "count": 0,
+    "seconds": 0.3,
+    "pages": 2,
+    "notes": [
+     "McLaren Qualified (official CPO): no listings parsed",
+     "McLaren Qualified (official CPO): 0 vehicle pages found"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "dealer_sites",
+    "label": "McLaren dealer websites",
+    "kind": "dealer",
+    "status": "ok",
+    "count": 155,
+    "seconds": 463.9,
+    "pages": 2,
+    "notes": [
+     "McLaren dealer websites: 105 retailer sites to crawl",
+     "McLaren Atlanta: sitemap:0, 0 listings",
+     "McLaren Austin: unreachable (dns)",
+     "McLaren Beverly Hills: sitemap:8, 6 listings",
+     "McLaren Boston: sitemap:18, 8 listings",
+     "McLaren Charlotte: sitemap:21, 10 listings",
+     "McLaren Chicago: sitemap:13, 9 listings",
+     "McLaren Dallas: sitemap:7, 1 listings",
+     "McLaren Denver: sitemap:19, 15 listings",
+     "McLaren Greenwich: sitemap:92, 0 listings",
+     "McLaren Houston: sitemap:15, 2 listings",
+     "McLaren Long Island: sitemap:9, 6 listings",
+     "McLaren Miami: unreachable (530)",
+     "McLaren Newport Beach: sitemap:0, 0 listings",
+     "McLaren Orlando: sitemap:0, 0 listings",
+     "McLaren Palm Beach: sitemap:0, 0 listings",
+     "McLaren Philadelphia: sitemap:30, 12 listings",
+     "McLaren Rancho Mirage: sitemap:11, 2 listings",
+     "McLaren San Diego: sitemap:0, 0 listings",
+     "McLaren San Francisco: sitemap:0, 0 listings",
+     "McLaren Scottsdale: unreachable (403)",
+     "McLaren Seattle: sitemap:0, 0 listings",
+     "McLaren St. Louis: unreachable (dns)",
+     "McLaren Tampa Bay: sitemap:41, 9 listings",
+     "McLaren Washington DC: unreachable (dns)",
+     "McLaren Sterling: unreachable (530)",
+     "McLaren North Jersey: nav-links:8, 12 listings",
+     "McLaren Las Vegas: unreachable (530)",
+     "McLaren Nashville: unreachable (dns)",
+     "McLaren Detroit: unreachable (dns)",
+     "McLaren Manhattan: unreachable (dns)",
+     "McLaren Boston (retailer site): sitemap:0, 0 listings",
+     "McLaren Scottsdale (retailer site): sitemap:0, 0 listings",
+     "McLaren North Jersey (retailer site): sitemap:0, 0 listings",
+     "McLaren Chicago (retailer site): sitemap:0, 0 listings",
+     "McLaren Greenwich (retailer site): sitemap:0, 0 listings",
+     "McLaren Dallas (retailer site): sitemap:0, 0 listings",
+     "McLaren Houston (retailer site): sitemap:0, 0 listings",
+     "McLaren Philadelphia (retailer site): sitemap:0, 0 listings",
+     "McLaren Palm Beach (retailer site): sitemap:0, 0 listings"
+    ],
+    "error": null,
+    "target": "all"
+   },
+   {
+    "source": "cars_com",
+    "label": "Cars.com",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 48,
+    "seconds": 40.3,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "cars_com",
+    "label": "Cars.com",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 48,
+    "seconds": 38.5,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "autotrader",
+    "label": "Autotrader",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 157,
+    "seconds": 34.5,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "autotrader",
+    "label": "Autotrader",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 296,
+    "seconds": 43.0,
+    "pages": 6,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "kbb",
+    "label": "Kelley Blue Book",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 157,
+    "seconds": 27.5,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "kbb",
+    "label": "Kelley Blue Book",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 296,
+    "seconds": 33.1,
+    "pages": 6,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "cargurus",
+    "label": "CarGurus",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 23,
+    "seconds": 20.0,
+    "pages": 3,
+    "notes": [
+     "CarGurus: JSON endpoint unavailable (200); trying HTML"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "cargurus",
+    "label": "CarGurus",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 22,
+    "seconds": 18.6,
+    "pages": 3,
+    "notes": [
+     "CarGurus: JSON endpoint unavailable (200); trying HTML"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "carfax",
+    "label": "CARFAX",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 24,
+    "seconds": 2.1,
+    "pages": 3,
+    "notes": [
+     "CARFAX: helix API unavailable (400); trying HTML"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "carfax",
+    "label": "CARFAX",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 24,
+    "seconds": 9.7,
+    "pages": 3,
+    "notes": [
+     "CARFAX: helix API unavailable (400); trying HTML"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "truecar",
+    "label": "TrueCar",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 13,
+    "seconds": 3.1,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "truecar",
+    "label": "TrueCar",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 61,
+    "seconds": 2.2,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "edmunds",
+    "label": "Edmunds",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 76.6,
+    "pages": 3,
+    "notes": [
+     "Edmunds: inventory API unavailable (200); trying HTML",
+     "Edmunds: akamai access denied"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "edmunds",
+    "label": "Edmunds",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 76.4,
+    "pages": 3,
+    "notes": [
+     "Edmunds: inventory API unavailable (200); trying HTML",
+     "Edmunds: akamai access denied"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "autolist",
+    "label": "Autolist",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 19.5,
+    "pages": 1,
+    "notes": [
+     "Autolist: http 403"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "autolist",
+    "label": "Autolist",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 19.2,
+    "pages": 1,
+    "notes": [
+     "Autolist: http 403"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "dupont",
+    "label": "duPont REGISTRY",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 14,
+    "seconds": 0.6,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "dupont",
+    "label": "duPont REGISTRY",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 17,
+    "seconds": 0.6,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "classic_com",
+    "label": "CLASSIC.COM",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 19.9,
+    "pages": 2,
+    "notes": [
+     "CLASSIC.COM: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "classic_com",
+    "label": "CLASSIC.COM",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 71.2,
+    "pages": 2,
+    "notes": [
+     "CLASSIC.COM: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "bringatrailer",
+    "label": "Bring a Trailer",
+    "kind": "auction",
+    "status": "ok",
+    "count": 14,
+    "seconds": 0.3,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "bringatrailer",
+    "label": "Bring a Trailer",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 0.6,
+    "pages": 2,
+    "notes": [
+     "Bring a Trailer: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "carsandbids",
+    "label": "Cars & Bids",
+    "kind": "auction",
+    "status": "ok",
+    "count": 1,
+    "seconds": 8.6,
+    "pages": 3,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "carsandbids",
+    "label": "Cars & Bids",
+    "kind": "auction",
+    "status": "ok",
+    "count": 30,
+    "seconds": 9.0,
+    "pages": 3,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "ebay",
+    "label": "eBay Motors",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 7,
+    "seconds": 8.3,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "ebay",
+    "label": "eBay Motors",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 71,
+    "seconds": 7.9,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "hemmings",
+    "label": "Hemmings",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 7.6,
+    "pages": 2,
+    "notes": [
+     "Hemmings: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "hemmings",
+    "label": "Hemmings",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 5,
+    "seconds": 7.4,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "craigslist",
+    "label": "Craigslist (US + Canada)",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 3.5,
+    "pages": 36,
+    "notes": [
+     "Craigslist (US + Canada): sites page status 200, 89793 bytes",
+     "Craigslist (US + Canada): 35 sites",
+     "Craigslist (US + Canada): http statuses {200: 35}"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "craigslist",
+    "label": "Craigslist (US + Canada)",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 3.1,
+    "pages": 36,
+    "notes": [
+     "Craigslist (US + Canada): sites page status 200, 89793 bytes",
+     "Craigslist (US + Canada): 35 sites",
+     "Craigslist (US + Canada): http statuses {200: 35}"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "iseecars",
+    "label": "iSeeCars",
+    "kind": "aggregator",
+    "status": "ok",
+    "count": 7,
+    "seconds": 26.7,
+    "pages": 2,
+    "notes": [
+     "iSeeCars: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "iseecars",
+    "label": "iSeeCars",
+    "kind": "aggregator",
+    "status": "ok",
+    "count": 3,
+    "seconds": 42.0,
+    "pages": 2,
+    "notes": [
+     "iSeeCars: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "usedcars_com",
+    "label": "UsedCars.com",
+    "kind": "aggregator",
+    "status": "empty",
+    "count": 0,
+    "seconds": 10.1,
+    "pages": 2,
+    "notes": [
+     "UsedCars.com: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "usedcars_com",
+    "label": "UsedCars.com",
+    "kind": "aggregator",
+    "status": "empty",
+    "count": 0,
+    "seconds": 9.6,
+    "pages": 2,
+    "notes": [
+     "UsedCars.com: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "carsforsale",
+    "label": "Carsforsale.com",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 72.2,
+    "pages": 2,
+    "notes": [
+     "Carsforsale.com: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "carsforsale",
+    "label": "Carsforsale.com",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 71.7,
+    "pages": 2,
+    "notes": [
+     "Carsforsale.com: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "carsdirect",
+    "label": "CarsDirect",
+    "kind": "aggregator",
+    "status": "empty",
+    "count": 0,
+    "seconds": 11.8,
+    "pages": 2,
+    "notes": [
+     "CarsDirect: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "carsdirect",
+    "label": "CarsDirect",
+    "kind": "aggregator",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 23.0,
+    "pages": 2,
+    "notes": [
+     "CarsDirect: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "classiccars_com",
+    "label": "ClassicCars.com",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 61.2,
+    "pages": 4,
+    "notes": [
+     "ClassicCars.com: no listings parsed",
+     "ClassicCars.com: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "classiccars_com",
+    "label": "ClassicCars.com",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 6,
+    "seconds": 2.2,
+    "pages": 4,
+    "notes": [
+     "ClassicCars.com: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "jamesedition",
+    "label": "JamesEdition",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 18,
+    "seconds": 51.9,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "jamesedition",
+    "label": "JamesEdition",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 150.2,
+    "pages": 4,
+    "notes": [
+     "JamesEdition: cloudflare challenge",
+     "JamesEdition: cloudflare challenge"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "exoticcartrader",
+    "label": "Exotic Car Trader",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 110.0,
+    "pages": 14,
+    "notes": [
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "exoticcartrader",
+    "label": "Exotic Car Trader",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 2,
+    "seconds": 93.1,
+    "pages": 14,
+    "notes": [
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed",
+     "Exotic Car Trader: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "pcarmarket",
+    "label": "PCARMARKET",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 46.4,
+    "pages": 2,
+    "notes": [
+     "PCARMARKET: no listings parsed",
+     "PCARMARKET: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "pcarmarket",
+    "label": "PCARMARKET",
+    "kind": "auction",
+    "status": "ok",
+    "count": 23,
+    "seconds": 31.0,
+    "pages": 2,
+    "notes": [
+     "PCARMARKET: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "collectingcars",
+    "label": "Collecting Cars",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 26.6,
+    "pages": 3,
+    "notes": [
+     "Collecting Cars: no listings parsed",
+     "Collecting Cars: no listings parsed",
+     "Collecting Cars: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "collectingcars",
+    "label": "Collecting Cars",
+    "kind": "auction",
+    "status": "empty",
+    "count": 0,
+    "seconds": 25.4,
+    "pages": 3,
+    "notes": [
+     "Collecting Cars: no listings parsed",
+     "Collecting Cars: no listings parsed",
+     "Collecting Cars: no listings parsed"
+    ],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "mclarenlife",
+    "label": "McLaren Life classifieds",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 22.1,
+    "pages": 4,
+    "notes": [
+     "McLaren Life classifieds: no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "autotempest",
+    "label": "AutoTempest",
+    "kind": "aggregator",
+    "status": "ok",
+    "count": 154,
+    "seconds": 10.1,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "autotempest",
+    "label": "AutoTempest",
+    "kind": "aggregator",
+    "status": "ok",
+    "count": 222,
+    "seconds": 11.0,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "autotrader_ca",
+    "label": "AutoTrader.ca",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 8,
+    "seconds": 1.2,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "autotrader_ca",
+    "label": "AutoTrader.ca",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 20,
+    "seconds": 0.8,
+    "pages": 2,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "kijiji",
+    "label": "Kijiji (Canada)",
+    "kind": "marketplace",
+    "status": "empty",
+    "count": 0,
+    "seconds": 28.0,
+    "pages": 4,
+    "notes": [
+     "Kijiji (Canada): no listings parsed",
+     "Kijiji (Canada): no listings parsed"
+    ],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "kijiji",
+    "label": "Kijiji (Canada)",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 12,
+    "seconds": 3.5,
+    "pages": 4,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "cargurus_ca",
+    "label": "CarGurus.ca",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 5,
+    "seconds": 17.9,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "artura"
+   },
+   {
+    "source": "cargurus_ca",
+    "label": "CarGurus.ca",
+    "kind": "marketplace",
+    "status": "ok",
+    "count": 24,
+    "seconds": 25.8,
+    "pages": 1,
+    "notes": [],
+    "error": null,
+    "target": "huracan"
+   },
+   {
+    "source": "fb_marketplace",
+    "label": "Facebook Marketplace",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 23.2,
+    "pages": 0,
+    "notes": [
+     "Facebook Marketplace: login wall on 4 hubs in a row; stopping. Add FB_COOKIES_JSON secret to unlock.",
+     "Facebook Marketplace: 75 hubs searched, 4 login-walled, 0 raw cards"
+    ],
+    "error": null,
+    "target": "artura",
+    "extra": {
+     "login_walled_hubs": 4,
+     "hubs": 75,
+     "had_cookies": false
+    }
+   },
+   {
+    "source": "fb_marketplace",
+    "label": "Facebook Marketplace",
+    "kind": "marketplace",
+    "status": "blocked",
+    "count": 0,
+    "seconds": 23.2,
+    "pages": 0,
+    "notes": [
+     "Facebook Marketplace: login wall on 4 hubs in a row; stopping. Add FB_COOKIES_JSON secret to unlock.",
+     "Facebook Marketplace: 75 hubs searched, 4 login-walled, 0 raw cards"
+    ],
+    "error": null,
+    "target": "huracan",
+    "extra": {
+     "login_walled_hubs": 4,
+     "hubs": 75,
+     "had_cookies": false
+    }
+   }
+  ],
+  "raw_listings": 1987,
+  "zip": "10001",
+  "targets": [
+   "artura",
+   "huracan"
+  ],
+  "summary": {
+   "active": 768,
+   "clean_candidates": 350,
+   "new_today": 6,
+   "price_drops_today": 10,
+   "removed_today": 7,
+   "cheapest_clean_price": 98900
+  }
  }
 ]

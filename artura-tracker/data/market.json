@@ -230,22 +230,22 @@
  {
   "d": "2026-09-23",
   "cheapest": 98900,
-  "p10": 179449,
-  "median": 195498,
-  "active": 770,
-  "clean": 347,
+  "p10": 179750,
+  "median": 191905,
+  "active": 768,
+  "clean": 350,
   "targets": {
    "artura": {
     "cheapest": 155985,
-    "median": 244995,
-    "active": 264,
-    "clean": 185
+    "median": 247996,
+    "active": 263,
+    "clean": 189
    },
    "huracan": {
     "cheapest": 98900,
-    "median": 244664,
-    "active": 506,
-    "clean": 162
+    "median": 242991,
+    "active": 505,
+    "clean": 161
    }
   }
  }
