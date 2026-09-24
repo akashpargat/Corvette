@@ -220,3 +220,14 @@ def test_lone_low_price_does_not_beat_two_agreeing_sources(tmp_path):
     e.price = 172000
     p = merge(d, [a, k, e], _report(("autotrader", "kbb", "ebay")))
     assert p["listings"][0]["price"] == 172000 and p["listings"][0]["price_low_unconfirmed"] is None
+
+
+def test_three_cars_a_dealer_really_prices_the_same_keep_their_price(tmp_path):
+    d = str(tmp_path)
+    fresh = []
+    for i, vin in enumerate(("SBM16BEA6SW003170", "SBM16BEA2SW003389", "SBM16BEA9SW003079")):
+        a = _l(vin, 249449, source="autotrader"); a.url = f"https://www.autotrader.com/cars-for-sale/vehicle/{i}"
+        k = _l(vin, 249449, source="kbb"); k.url = f"https://www.kbb.com/cars-for-sale/vehicle/{i}"
+        fresh += [a, k]
+    p = merge(d, fresh, _report(("autotrader", "kbb")))
+    assert [r["price"] for r in p["listings"]] == [249449, 249449, 249449]

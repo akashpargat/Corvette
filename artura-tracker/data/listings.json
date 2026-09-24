@@ -3,11 +3,11 @@
   "targets": {
    "artura": {
     "active": 267,
-    "clean_candidates": 186,
-    "cheapest_clean_key": "SBM16AEA0RW002116",
-    "cheapest_clean_price": 125230,
+    "clean_candidates": 189,
+    "cheapest_clean_key": "SBM16AEA0PW000718",
+    "cheapest_clean_price": 155985,
     "new_today": 7,
-    "price_drops_today": 6,
+    "price_drops_today": 5,
     "market_model": {
      "n": 120,
      "intercept": 189134,
@@ -45,9 +45,9 @@
   "generated_at": "2026-09-24T12:27:05+00:00",
   "date": "2026-09-24",
   "active": 788,
-  "clean_candidates": 347,
+  "clean_candidates": 350,
   "new_today": 30,
-  "price_drops_today": 27,
+  "price_drops_today": 26,
   "removed_today": 8,
   "cheapest_clean_key": "ZHWUR2ZF2HLA07627",
   "cheapest_clean_price": 98900,
@@ -170,7 +170,6 @@
    "SBM16AEA3SW002973",
    "SBM16AEA9SW002699",
    "SBM16AEA4PW002004",
-   "SBM16AEA0RW002116",
    "ZHWUT5ZF5NLA19284",
    "ZHWUR1ZF2HLA07606",
    "ZHWUR2ZF8HLA06806",
@@ -210,8 +209,7 @@
    "ZHWUR2ZF5HLA07850",
    "ZHWUC1ZF6FLA03427",
    "SBM16AEA0TW004326",
-   "SBM16AEA7TW004663",
-   "SBM16BEA6SW003170"
+   "SBM16AEA7TW004663"
   ],
   "removed": [
    "autotrader_ca:966cd844ff76",
@@ -447,122 +445,6 @@
    ],
    "expected_price": 246682,
    "deal_pct": 59.9,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 1
-  },
-  {
-   "source": "autotrader",
-   "source_name": "Autotrader",
-   "url": "https://www.autotrader.com/cars-for-sale/vehicle/791698351",
-   "title": "Used 2024 McLaren Artura",
-   "vin": "SBM16AEA0RW002116",
-   "year": 2024,
-   "trim": "Coupe",
-   "price": 125230,
-   "mileage": 6823,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "ILUSSO LLC",
-   "location": "Boynton Beach, FL",
-   "state": "FL",
-   "color": "Red",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://images.autotrader.com/hn/c/a0a58a7efe124ceda6720e8036e6dec5.jpg",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "Location: Boynton Beach, FL. This 2024 McLaren Artura is listed for $178900"
-   },
-   "key": "SBM16AEA0RW002116",
-   "candidate": true,
-   "rankable": true,
-   "offers": [
-    {
-     "source": "autotrader",
-     "source_name": "Autotrader",
-     "url": "https://www.autotrader.com/cars-for-sale/vehicle/791698351",
-     "price": 178900,
-     "dealer": "ILUSSO LLC",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "kbb",
-     "source_name": "Kelley Blue Book",
-     "url": "https://www.kbb.com/cars-for-sale/vehicle/791698351",
-     "price": 178900,
-     "dealer": "ILUSSO LLC",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
-     "price": 125230,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "ebay",
-     "source_name": "eBay Motors",
-     "url": "https://www.ebay.com/itm/377519321862",
-     "price": 125230,
-     "dealer": null,
-     "listing_type": "auction",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.ebay.com/itm/377519321862?hash=item57e5e7b306%3Ag%3AuwoAAeSwRzdqtN8U&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5337650957&customid=&toolid=10049",
-     "price": 125230,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": true,
-   "price_high": 178900,
-   "sources": [
-    "autotempest",
-    "autotrader",
-    "ebay",
-    "kbb"
-   ],
-   "first_seen": "2026-09-23",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-24",
-    "from": 178900,
-    "to": 125230,
-    "delta": -53670
-   },
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-23",
-     "p": 178900
-    },
-    {
-     "d": "2026-09-24",
-     "p": 125230
-    }
-   ],
-   "expected_price": 203183,
-   "deal_pct": 38.4,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 1
   },
@@ -4611,6 +4493,118 @@
   {
    "source": "autotrader",
    "source_name": "Autotrader",
+   "url": "https://www.autotrader.com/cars-for-sale/vehicle/791698351",
+   "title": "Used 2024 McLaren Artura",
+   "vin": "SBM16AEA0RW002116",
+   "year": 2024,
+   "trim": "Coupe",
+   "price": 178900,
+   "mileage": 6823,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "ILUSSO LLC",
+   "location": "Boynton Beach, FL",
+   "state": "FL",
+   "color": "Red",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://images.autotrader.com/hn/c/a0a58a7efe124ceda6720e8036e6dec5.jpg",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "Location: Boynton Beach, FL. This 2024 McLaren Artura is listed for $178900"
+   },
+   "key": "SBM16AEA0RW002116",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotrader",
+     "source_name": "Autotrader",
+     "url": "https://www.autotrader.com/cars-for-sale/vehicle/791698351",
+     "price": 178900,
+     "dealer": "ILUSSO LLC",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "kbb",
+     "source_name": "Kelley Blue Book",
+     "url": "https://www.kbb.com/cars-for-sale/vehicle/791698351",
+     "price": 178900,
+     "dealer": "ILUSSO LLC",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
+     "price": 125230,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "ebay",
+     "source_name": "eBay Motors",
+     "url": "https://www.ebay.com/itm/377519321862",
+     "price": 125230,
+     "dealer": null,
+     "listing_type": "auction",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.ebay.com/itm/377519321862?hash=item57e5e7b306%3Ag%3AuwoAAeSwRzdqtN8U&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5337650957&customid=&toolid=10049",
+     "price": 125230,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 178900,
+   "sources": [
+    "autotempest",
+    "autotrader",
+    "ebay",
+    "kbb"
+   ],
+   "first_seen": "2026-09-23",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-23",
+     "p": 178900
+    },
+    {
+     "d": "2026-09-24",
+     "p": 178900
+    }
+   ],
+   "expected_price": 203183,
+   "deal_pct": 38.4,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 1,
+   "price_low_unconfirmed": 125230
+  },
+  {
+   "source": "autotrader",
+   "source_name": "Autotrader",
    "url": "https://www.autotrader.com/cars-for-sale/vehicle/783747662",
    "title": "Used 2024 McLaren Artura",
    "vin": "SBM16AEA5RW002127",
@@ -8083,6 +8077,99 @@
    "expected_price": 187748,
    "deal_pct": 0.9,
    "price_per_mile_note": null
+  },
+  {
+   "source": "autotempest",
+   "source_name": "AutoTempest",
+   "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+   "title": "2024 McLaren Artura Performance",
+   "vin": "SBM16AEA1RW002187",
+   "year": 2024,
+   "trim": "Performance",
+   "price": 186076,
+   "mileage": 8005,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren San Francisco",
+   "location": "Palo Alto, CA",
+   "state": "CA",
+   "color": "Amaranth Red",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "2024 McLaren Artura Performance | $186,076 | Great Deal | 8,005 mi. | 4 days ago | Palo Alto, CA | (2560 mi. from 10001) | Mclaren San Francisco | 4-Wheel Disc Brakes, 5 Speakers, ABS br | akes, Adaptive suspension, Air Condition | ing, Alloy | wheels, Apple CarPlay/Android Auto, Auto tilt-away steering wheel, Au | ... | Read More | Share",
+    "country_from_card": true
+   },
+   "key": "SBM16AEA1RW002187",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 170412,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 186076,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 186076,
+   "sources": [
+    "autotempest",
+    "cars_com"
+   ],
+   "first_seen": "2026-09-23",
+   "missing_runs": 0,
+   "last_price_change": {
+    "date": "2026-09-23",
+    "from": 185991,
+    "to": 186076,
+    "delta": 85
+   },
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-20",
+     "p": 186076
+    },
+    {
+     "d": "2026-09-22",
+     "p": 186076
+    },
+    {
+     "d": "2026-09-23",
+     "p": 185991
+    },
+    {
+     "d": "2026-09-24",
+     "p": 186076
+    }
+   ],
+   "expected_price": 200843,
+   "deal_pct": 7.4,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 47
   },
   {
    "source": "autotrader",
@@ -24274,6 +24361,100 @@
    "rank_cheapest_clean": 93
   },
   {
+   "source": "autotempest",
+   "source_name": "AutoTempest",
+   "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&utm_campaign=atempst&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+   "title": "2025 McLaren Artura",
+   "vin": null,
+   "year": 2025,
+   "trim": "Spider",
+   "price": 246500,
+   "mileage": 3900,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": null,
+   "location": "NEWPORT BEACH, CA",
+   "state": "CA",
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "2025 McLaren Artura | $246,500 | 3,900 mi. | 27 days ago | NEWPORT BEACH, CA | (2439 mi. from 10001) | 2025 Mclaren Artura Spider Techlux Clean | Title Title In Hand Color-Onyx Black (G | old Flakes | in the black paint) Orange Calipers $2,200 Technology package $7,800 | ... | Read More | Share",
+    "country_from_card": true
+   },
+   "key": "SBM16BEA7SW003727",
+   "candidate": true,
+   "rankable": false,
+   "offers": [
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&amp;utm_campaign=atempst&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 125230,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&utm_campaign=atempst&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 246500,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": false,
+   "price_high": 246500,
+   "sources": [
+    "autotempest"
+   ],
+   "first_seen": "2026-09-24",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 249900
+    },
+    {
+     "d": "2026-09-15",
+     "p": 249900
+    },
+    {
+     "d": "2026-09-16",
+     "p": 184063
+    },
+    {
+     "d": "2026-09-17",
+     "p": 247900
+    },
+    {
+     "d": "2026-09-23",
+     "p": 247900
+    },
+    {
+     "d": "2026-09-24",
+     "p": 246500
+    }
+   ],
+   "expected_price": 236530,
+   "deal_pct": -4.2,
+   "price_per_mile_note": null
+  },
+  {
    "source": "cargurus_ca",
    "source_name": "CarGurus.ca",
    "url": "https://www.cargurus.ca/details/453001614",
@@ -25424,6 +25605,132 @@
   {
    "source": "cargurus",
    "source_name": "CarGurus",
+   "url": "https://www.cargurus.com/details/431439801",
+   "title": "2025 McLaren Artura",
+   "vin": "SBM16BEA6SW003170",
+   "year": 2025,
+   "trim": "Coupe",
+   "price": 249449,
+   "mileage": 1581,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Boston",
+   "location": "Norwell, MA",
+   "state": "MA",
+   "color": "Volcano Blue",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://static.cargurus.com/images/forsale/2026/08/01/05/37/2025_mclaren_artura-pic-462616677536956320-1024x768.jpeg",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "Used 2025 McLaren Artura for sale - $250,640, 1581 mi"
+   },
+   "key": "SBM16BEA6SW003170",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotrader",
+     "source_name": "Autotrader",
+     "url": "https://www.autotrader.com/cars-for-sale/vehicle/763986521",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "kbb",
+     "source_name": "Kelley Blue Book",
+     "url": "https://www.kbb.com/cars-for-sale/vehicle/763986521",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "cargurus",
+     "source_name": "CarGurus",
+     "url": "https://www.cargurus.com/details/431439801",
+     "price": 250640,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Boston",
+     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-f917f00cac181c7e4de34a10deb77212.htm",
+     "price": 259548,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
+     "price": 177998,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cargurus.com/Cars/listing/431439801?sourceContext=autotempest&cgfv=1.24&cgfr=5&cgfab=Q&px8324=p110&dnetworktype=r&cgfdate=2026923&cgfloc=en",
+     "price": 249998,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 259548,
+   "sources": [
+    "autotempest",
+    "autotrader",
+    "cargurus",
+    "dealer_sites",
+    "kbb"
+   ],
+   "first_seen": "2026-09-13",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 177998
+    },
+    {
+     "d": "2026-09-14",
+     "p": 249449
+    },
+    {
+     "d": "2026-09-24",
+     "p": 249449
+    }
+   ],
+   "expected_price": 241122,
+   "deal_pct": -3.5,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 96
+  },
+  {
+   "source": "cargurus",
+   "source_name": "CarGurus",
    "url": "https://www.cargurus.com/details/427425100",
    "title": "2025 McLaren Artura",
    "vin": "SBM16BEA6SW002794",
@@ -25534,6 +25841,137 @@
   {
    "source": "cargurus",
    "source_name": "CarGurus",
+   "url": "https://www.cargurus.com/details/455605962",
+   "title": "2025 McLaren Artura",
+   "vin": "SBM16BEA2SW003389",
+   "year": 2025,
+   "trim": "Coupe",
+   "price": 249449,
+   "mileage": 2174,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Boston",
+   "location": "Norwell, MA",
+   "state": "MA",
+   "color": "MSO Bespoke Volcano Red",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://static.cargurus.com/images/forsale/2026/08/07/17/32/2025_mclaren_artura-pic-6840729932164946281-1024x768.jpeg",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "Used 2025 McLaren Artura for sale - $250,640, 2174 mi"
+   },
+   "key": "SBM16BEA2SW003389",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotrader",
+     "source_name": "Autotrader",
+     "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181151",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "kbb",
+     "source_name": "Kelley Blue Book",
+     "url": "https://www.kbb.com/cars-for-sale/vehicle/790181151",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "cargurus",
+     "source_name": "CarGurus",
+     "url": "https://www.cargurus.com/details/455605962",
+     "price": 250640,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Boston",
+     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-dc51c20dac18490df7541314d24fc8dd.htm",
+     "price": 249998,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
+     "price": 214998,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cargurus.com/Cars/listing/455605962?sourceContext=autotempest&cgfv=1.24&cgfr=5&cgfab=Q&px8324=p110&dnetworktype=r&cgfdate=2026923&cgfloc=en",
+     "price": 249998,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 250640,
+   "sources": [
+    "autotempest",
+    "autotrader",
+    "cargurus",
+    "dealer_sites",
+    "kbb"
+   ],
+   "first_seen": "2026-09-13",
+   "missing_runs": 0,
+   "last_price_change": {
+    "date": "2026-09-14",
+    "from": 214998,
+    "to": 249449,
+    "delta": 34451
+   },
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 175578
+    },
+    {
+     "d": "2026-09-14",
+     "p": 249449
+    },
+    {
+     "d": "2026-09-24",
+     "p": 249449
+    }
+   ],
+   "expected_price": 239947,
+   "deal_pct": -4.0,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 98
+  },
+  {
+   "source": "cargurus",
+   "source_name": "CarGurus",
    "url": "https://www.cargurus.com/details/417980501",
    "title": "2025 McLaren Artura",
    "vin": "SBM16BEA4SW003748",
@@ -25636,6 +26074,122 @@
    "deal_pct": -3.5,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 99
+  },
+  {
+   "source": "autotrader",
+   "source_name": "Autotrader",
+   "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181148",
+   "title": "Used 2025 McLaren Artura Spider",
+   "vin": "SBM16BEA9SW003079",
+   "year": 2025,
+   "trim": "Spider",
+   "price": 249449,
+   "mileage": 3089,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "McLaren Boston",
+   "location": "Norwell, MA",
+   "state": "MA",
+   "color": "Black",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://images.autotrader.com/hn/c/dd1a3aa66bb34762922798122532c6c9.jpg",
+   "target": "artura",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "Location: Norwell, MA. This 2025 McLaren Artura is listed for $249449"
+   },
+   "key": "SBM16BEA9SW003079",
+   "candidate": true,
+   "rankable": true,
+   "offers": [
+    {
+     "source": "autotrader",
+     "source_name": "Autotrader",
+     "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181148",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "kbb",
+     "source_name": "Kelley Blue Book",
+     "url": "https://www.kbb.com/cars-for-sale/vehicle/790181148",
+     "price": 249449,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "dealer_sites",
+     "source_name": "McLaren Boston",
+     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-1c645195ac184dd26bf9b23614e2adb5.htm",
+     "price": 249998,
+     "dealer": "McLaren Boston",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/9e983f99-90bb-425e-a713-e5656ac2b20e/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 186076,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/9e983f99-90bb-425e-a713-e5656ac2b20e/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 249998,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 249998,
+   "sources": [
+    "autotempest",
+    "autotrader",
+    "dealer_sites",
+    "kbb"
+   ],
+   "first_seen": "2026-09-13",
+   "missing_runs": 0,
+   "last_price_change": {
+    "date": "2026-09-13",
+    "from": 249998,
+    "to": 249449,
+    "delta": -549
+   },
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-13",
+     "p": 249449
+    },
+    {
+     "d": "2026-09-24",
+     "p": 249449
+    }
+   ],
+   "expected_price": 238136,
+   "deal_pct": -4.8,
+   "price_per_mile_note": null,
+   "rank_cheapest_clean": 100
   },
   {
    "source": "jamesedition",
@@ -29485,138 +30039,6 @@
   {
    "source": "cargurus",
    "source_name": "CarGurus",
-   "url": "https://www.cargurus.com/details/431439801",
-   "title": "2025 McLaren Artura",
-   "vin": "SBM16BEA6SW003170",
-   "year": 2025,
-   "trim": "Coupe",
-   "price": 259548,
-   "mileage": 1581,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Boston",
-   "location": "Norwell, MA",
-   "state": "MA",
-   "color": "Volcano Blue",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://static.cargurus.com/images/forsale/2026/08/01/05/37/2025_mclaren_artura-pic-462616677536956320-1024x768.jpeg",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "Used 2025 McLaren Artura for sale - $250,640, 1581 mi"
-   },
-   "key": "SBM16BEA6SW003170",
-   "candidate": true,
-   "rankable": true,
-   "offers": [
-    {
-     "source": "autotrader",
-     "source_name": "Autotrader",
-     "url": "https://www.autotrader.com/cars-for-sale/vehicle/763986521",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "kbb",
-     "source_name": "Kelley Blue Book",
-     "url": "https://www.kbb.com/cars-for-sale/vehicle/763986521",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "cargurus",
-     "source_name": "CarGurus",
-     "url": "https://www.cargurus.com/details/431439801",
-     "price": 250640,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "dealer_sites",
-     "source_name": "McLaren Boston",
-     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-f917f00cac181c7e4de34a10deb77212.htm",
-     "price": 259548,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
-     "price": 177998,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cargurus.com/Cars/listing/431439801?sourceContext=autotempest&cgfv=1.24&cgfr=5&cgfab=Q&px8324=p110&dnetworktype=r&cgfdate=2026923&cgfloc=en",
-     "price": 249998,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": true,
-   "price_high": 259548,
-   "sources": [
-    "autotempest",
-    "autotrader",
-    "cargurus",
-    "dealer_sites",
-    "kbb"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-24",
-    "from": 249449,
-    "to": 259548,
-    "delta": 10099
-   },
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 177998
-    },
-    {
-     "d": "2026-09-14",
-     "p": 249449
-    },
-    {
-     "d": "2026-09-24",
-     "p": 259548
-    }
-   ],
-   "expected_price": 241122,
-   "deal_pct": -3.5,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 96,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "cargurus",
-   "source_name": "CarGurus",
    "url": "https://www.cargurus.com/details/457960954",
    "title": "2017 Lamborghini Huracan",
    "vin": "ZHWUC2ZF1HLA06812",
@@ -29930,6 +30352,91 @@
    "deal_pct": 7.1,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 117
+  },
+  {
+   "source": "autotrader",
+   "source_name": "Autotrader",
+   "url": "https://www.autotrader.com/cars-for-sale/vehicle/791719730",
+   "title": "Used 2021 Lamborghini Huracan EVO",
+   "vin": "ZHWUT5ZF3MLA16186",
+   "year": 2021,
+   "trim": "EVO",
+   "price": 259995,
+   "mileage": 20150,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": "Boutique Auto Haus LLC",
+   "location": "Oakland Park, FL",
+   "state": "FL",
+   "color": "White",
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "https://images.autotrader.com/hn/c/e8d37cea07d24768827f5faccb5a02fe.jpg",
+   "target": "huracan",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "Location: Oakland Park, FL. This 2021 Lamborghini Huracan is listed for $259995"
+   },
+   "key": "ZHWUT5ZF3MLA16186",
+   "candidate": false,
+   "rankable": false,
+   "offers": [
+    {
+     "source": "autotrader",
+     "source_name": "Autotrader",
+     "url": "https://www.autotrader.com/cars-for-sale/vehicle/791719730",
+     "price": 259995,
+     "dealer": "Boutique Auto Haus LLC",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "kbb",
+     "source_name": "Kelley Blue Book",
+     "url": "https://www.kbb.com/cars-for-sale/vehicle/791719730",
+     "price": 259995,
+     "dealer": "Boutique Auto Haus LLC",
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.autotempest.com/results?make=lamborghini&model=huracan&zip=10001&radius=any&sort=price",
+     "price": 230394,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": true,
+   "price_high": 259995,
+   "sources": [
+    "autotempest",
+    "autotrader",
+    "kbb"
+   ],
+   "first_seen": "2026-09-24",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-24",
+     "p": 259995
+    }
+   ],
+   "expected_price": 324938,
+   "deal_pct": 20.0,
+   "price_per_mile_note": null
   },
   {
    "source": "cargurus",
@@ -31393,6 +31900,84 @@
    "deal_pct": 11.7,
    "price_per_mile_note": null,
    "rank_cheapest_clean": 122
+  },
+  {
+   "source": "autotempest",
+   "source_name": "AutoTempest",
+   "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+   "title": "2020 Lamborghini Huracan EVO",
+   "vin": null,
+   "year": 2020,
+   "trim": "EVO",
+   "price": 267899,
+   "mileage": 8138,
+   "condition": "used",
+   "title_status": "unknown",
+   "title_notes": [],
+   "dealer": null,
+   "location": "Bloomington, MN",
+   "state": "MN",
+   "color": null,
+   "listing_type": "dealer",
+   "auction_end": null,
+   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
+   "target": "huracan",
+   "country": "US",
+   "currency": "USD",
+   "price_local": null,
+   "extra": {
+    "description": "2020 Lamborghini Huracan EVO | $333,888 | 8,138 mi. | 7 days ago | Bloomington, MN | (1017 mi. from 10001) | Lamborghini Minneapolis | THE LAMBORGHINI MINNEAPOLIS DIFFERENCE-- | Every pre-owned vehicle offered for reta | il by Lamb | orghini Minneapolis undergoes our comprehensive 150-point inspection, | ... | Read More | Share",
+    "country_from_card": true
+   },
+   "key": "ZHWUF4ZF7LLA13324",
+   "candidate": false,
+   "rankable": false,
+   "offers": [
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
+     "price": 267899,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "unknown",
+     "seen": "2026-09-24"
+    },
+    {
+     "source": "autotempest",
+     "source_name": "AutoTempest",
+     "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
+     "price": 333888,
+     "dealer": null,
+     "listing_type": "dealer",
+     "condition": "used",
+     "seen": "2026-09-24"
+    }
+   ],
+   "price_confirmed": false,
+   "price_high": 333888,
+   "sources": [
+    "autotempest"
+   ],
+   "first_seen": "2026-09-24",
+   "missing_runs": 0,
+   "last_price_change": null,
+   "last_seen": "2026-09-24",
+   "last_seen_at": "2026-09-24T12:27:05+00:00",
+   "status": "active",
+   "price_history": [
+    {
+     "d": "2026-09-20",
+     "p": 267899
+    },
+    {
+     "d": "2026-09-24",
+     "p": 267899
+    }
+   ],
+   "expected_price": 337026,
+   "deal_pct": 20.5,
+   "price_per_mile_note": null
   },
   {
    "source": "autotrader",
@@ -68107,584 +68692,6 @@
    "expected_price": 379437,
    "deal_pct": -187.3,
    "price_per_mile_note": null
-  },
-  {
-   "source": "autotempest",
-   "source_name": "AutoTempest",
-   "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-   "title": "2024 McLaren Artura Performance",
-   "vin": "SBM16AEA1RW002187",
-   "year": 2024,
-   "trim": "Performance",
-   "price": null,
-   "mileage": 8005,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren San Francisco",
-   "location": "Palo Alto, CA",
-   "state": "CA",
-   "color": "Amaranth Red",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "2024 McLaren Artura Performance | $186,076 | Great Deal | 8,005 mi. | 4 days ago | Palo Alto, CA | (2560 mi. from 10001) | Mclaren San Francisco | 4-Wheel Disc Brakes, 5 Speakers, ABS br | akes, Adaptive suspension, Air Condition | ing, Alloy | wheels, Apple CarPlay/Android Auto, Auto tilt-away steering wheel, Au | ... | Read More | Share",
-    "country_from_card": true
-   },
-   "key": "SBM16AEA1RW002187",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 170412,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/226ee3f7-c8e7-4492-8acb-01ed4b3b6e2d/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 186076,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest",
-    "cars_com"
-   ],
-   "first_seen": "2026-09-23",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-23",
-    "from": 185991,
-    "to": 186076,
-    "delta": 85
-   },
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-20",
-     "p": 186076
-    },
-    {
-     "d": "2026-09-22",
-     "p": 186076
-    },
-    {
-     "d": "2026-09-23",
-     "p": 185991
-    }
-   ],
-   "expected_price": 200843,
-   "deal_pct": 7.4,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 47,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "autotempest",
-   "source_name": "AutoTempest",
-   "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&utm_campaign=atempst&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-   "title": "2025 McLaren Artura",
-   "vin": null,
-   "year": 2025,
-   "trim": "Spider",
-   "price": null,
-   "mileage": 3900,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": null,
-   "location": "NEWPORT BEACH, CA",
-   "state": "CA",
-   "color": null,
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "2025 McLaren Artura | $246,500 | 3,900 mi. | 27 days ago | NEWPORT BEACH, CA | (2439 mi. from 10001) | 2025 Mclaren Artura Spider Techlux Clean | Title Title In Hand Color-Onyx Black (G | old Flakes | in the black paint) Orange Calipers $2,200 Technology package $7,800 | ... | Read More | Share",
-    "country_from_card": true
-   },
-   "key": "SBM16BEA7SW003727",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&amp;utm_campaign=atempst&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 125230,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/d377ab13-f58e-4c7f-ac77-31b33d93e9eb/?aff=atempst&utm_campaign=atempst&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 246500,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest"
-   ],
-   "first_seen": "2026-09-24",
-   "missing_runs": 0,
-   "last_price_change": null,
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 249900
-    },
-    {
-     "d": "2026-09-15",
-     "p": 249900
-    },
-    {
-     "d": "2026-09-16",
-     "p": 184063
-    },
-    {
-     "d": "2026-09-17",
-     "p": 247900
-    },
-    {
-     "d": "2026-09-23",
-     "p": 247900
-    }
-   ],
-   "expected_price": 236530,
-   "deal_pct": -4.2,
-   "price_per_mile_note": null,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "cargurus",
-   "source_name": "CarGurus",
-   "url": "https://www.cargurus.com/details/455605962",
-   "title": "2025 McLaren Artura",
-   "vin": "SBM16BEA2SW003389",
-   "year": 2025,
-   "trim": "Coupe",
-   "price": null,
-   "mileage": 2174,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Boston",
-   "location": "Norwell, MA",
-   "state": "MA",
-   "color": "MSO Bespoke Volcano Red",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://static.cargurus.com/images/forsale/2026/08/07/17/32/2025_mclaren_artura-pic-6840729932164946281-1024x768.jpeg",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "Used 2025 McLaren Artura for sale - $250,640, 2174 mi"
-   },
-   "key": "SBM16BEA2SW003389",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotrader",
-     "source_name": "Autotrader",
-     "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181151",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "kbb",
-     "source_name": "Kelley Blue Book",
-     "url": "https://www.kbb.com/cars-for-sale/vehicle/790181151",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "cargurus",
-     "source_name": "CarGurus",
-     "url": "https://www.cargurus.com/details/455605962",
-     "price": 250640,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "dealer_sites",
-     "source_name": "McLaren Boston",
-     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-dc51c20dac18490df7541314d24fc8dd.htm",
-     "price": 249998,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.autotempest.com/results?make=mclaren&model=artura&zip=10001&radius=any&sort=price",
-     "price": 214998,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cargurus.com/Cars/listing/455605962?sourceContext=autotempest&cgfv=1.24&cgfr=5&cgfab=Q&px8324=p110&dnetworktype=r&cgfdate=2026923&cgfloc=en",
-     "price": 249998,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest",
-    "autotrader",
-    "cargurus",
-    "dealer_sites",
-    "kbb"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-14",
-    "from": 214998,
-    "to": 249449,
-    "delta": 34451
-   },
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 175578
-    },
-    {
-     "d": "2026-09-14",
-     "p": 249449
-    }
-   ],
-   "expected_price": 239947,
-   "deal_pct": -4.0,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 98,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "autotrader",
-   "source_name": "Autotrader",
-   "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181148",
-   "title": "Used 2025 McLaren Artura Spider",
-   "vin": "SBM16BEA9SW003079",
-   "year": 2025,
-   "trim": "Spider",
-   "price": null,
-   "mileage": 3089,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "McLaren Boston",
-   "location": "Norwell, MA",
-   "state": "MA",
-   "color": "Black",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://images.autotrader.com/hn/c/dd1a3aa66bb34762922798122532c6c9.jpg",
-   "target": "artura",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "Location: Norwell, MA. This 2025 McLaren Artura is listed for $249449"
-   },
-   "key": "SBM16BEA9SW003079",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotrader",
-     "source_name": "Autotrader",
-     "url": "https://www.autotrader.com/cars-for-sale/vehicle/790181148",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "kbb",
-     "source_name": "Kelley Blue Book",
-     "url": "https://www.kbb.com/cars-for-sale/vehicle/790181148",
-     "price": 249449,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "dealer_sites",
-     "source_name": "McLaren Boston",
-     "url": "https://www.mclarenboston.com/certified/McLaren/2025-McLaren-Artura-1c645195ac184dd26bf9b23614e2adb5.htm",
-     "price": 249998,
-     "dealer": "McLaren Boston",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/9e983f99-90bb-425e-a713-e5656ac2b20e/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 186076,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/9e983f99-90bb-425e-a713-e5656ac2b20e/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 249998,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest",
-    "autotrader",
-    "dealer_sites",
-    "kbb"
-   ],
-   "first_seen": "2026-09-13",
-   "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-09-13",
-    "from": 249998,
-    "to": 249449,
-    "delta": -549
-   },
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-13",
-     "p": 249449
-    }
-   ],
-   "expected_price": 238136,
-   "deal_pct": -4.8,
-   "price_per_mile_note": null,
-   "rank_cheapest_clean": 100,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "autotrader",
-   "source_name": "Autotrader",
-   "url": "https://www.autotrader.com/cars-for-sale/vehicle/791719730",
-   "title": "Used 2021 Lamborghini Huracan EVO",
-   "vin": "ZHWUT5ZF3MLA16186",
-   "year": 2021,
-   "trim": "EVO",
-   "price": null,
-   "mileage": 20150,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": "Boutique Auto Haus LLC",
-   "location": "Oakland Park, FL",
-   "state": "FL",
-   "color": "White",
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "https://images.autotrader.com/hn/c/e8d37cea07d24768827f5faccb5a02fe.jpg",
-   "target": "huracan",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "Location: Oakland Park, FL. This 2021 Lamborghini Huracan is listed for $259995"
-   },
-   "key": "ZHWUT5ZF3MLA16186",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotrader",
-     "source_name": "Autotrader",
-     "url": "https://www.autotrader.com/cars-for-sale/vehicle/791719730",
-     "price": 259995,
-     "dealer": "Boutique Auto Haus LLC",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "kbb",
-     "source_name": "Kelley Blue Book",
-     "url": "https://www.kbb.com/cars-for-sale/vehicle/791719730",
-     "price": 259995,
-     "dealer": "Boutique Auto Haus LLC",
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.autotempest.com/results?make=lamborghini&model=huracan&zip=10001&radius=any&sort=price",
-     "price": 230394,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest",
-    "autotrader",
-    "kbb"
-   ],
-   "first_seen": "2026-09-24",
-   "missing_runs": 0,
-   "last_price_change": null,
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [],
-   "expected_price": 324938,
-   "deal_pct": 20.0,
-   "price_per_mile_note": null,
-   "price_low_unconfirmed": null
-  },
-  {
-   "source": "autotempest",
-   "source_name": "AutoTempest",
-   "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-   "title": "2020 Lamborghini Huracan EVO",
-   "vin": null,
-   "year": 2020,
-   "trim": "EVO",
-   "price": null,
-   "mileage": 8138,
-   "condition": "used",
-   "title_status": "unknown",
-   "title_notes": [],
-   "dealer": null,
-   "location": "Bloomington, MN",
-   "state": "MN",
-   "color": null,
-   "listing_type": "dealer",
-   "auction_end": null,
-   "image": "//static.autotempest.com/prod/build/main/img/source-logos/cm-logo.70c5d1e4.png",
-   "target": "huracan",
-   "country": "US",
-   "currency": "USD",
-   "price_local": null,
-   "extra": {
-    "description": "2020 Lamborghini Huracan EVO | $333,888 | 8,138 mi. | 7 days ago | Bloomington, MN | (1017 mi. from 10001) | Lamborghini Minneapolis | THE LAMBORGHINI MINNEAPOLIS DIFFERENCE-- | Every pre-owned vehicle offered for reta | il by Lamb | orghini Minneapolis undergoes our comprehensive 150-point inspection, | ... | Read More | Share",
-    "country_from_card": true
-   },
-   "key": "ZHWUF4ZF7LLA13324",
-   "candidate": false,
-   "rankable": false,
-   "offers": [
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&amp;utm_campaign=atempest&amp;utm_source=autotempest&amp;utm_medium=trp&amp;utm_campaign_id=1&amp;utm_trusted=TRUE",
-     "price": 267899,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "unknown",
-     "seen": "2026-09-24"
-    },
-    {
-     "source": "autotempest",
-     "source_name": "AutoTempest",
-     "url": "https://www.cars.com/vehicledetail/629f7cd8-f122-41a6-9036-b816ccfb2036/?aff=atempest&utm_campaign=atempest&utm_source=autotempest&utm_medium=trp&utm_campaign_id=1&utm_trusted=TRUE",
-     "price": 333888,
-     "dealer": null,
-     "listing_type": "dealer",
-     "condition": "used",
-     "seen": "2026-09-24"
-    }
-   ],
-   "price_confirmed": false,
-   "price_high": null,
-   "sources": [
-    "autotempest"
-   ],
-   "first_seen": "2026-09-24",
-   "missing_runs": 0,
-   "last_price_change": null,
-   "last_seen": "2026-09-24",
-   "last_seen_at": "2026-09-24T12:27:05+00:00",
-   "status": "active",
-   "price_history": [
-    {
-     "d": "2026-09-20",
-     "p": 267899
-    }
-   ],
-   "expected_price": 337026,
-   "deal_pct": 20.5,
-   "price_per_mile_note": null,
-   "price_low_unconfirmed": null
   },
   {
    "source": "truecar",

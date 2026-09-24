@@ -263,14 +263,19 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
 
 
 def repeated_prices(offers_by_key: dict) -> set:
-    """(source, price) pairs a source gave to two or more different cars in one run: a page-level
-    number (a featured car, a 'starting at'), not the price of each car it was attached to."""
+    """(source, price) pairs that are a page-level number, not a car's price: the source gave the
+    same price to two or more different cars, and for every one of them another real source
+    disagrees. Three cars a dealer really prices identically (Autotrader and KBB agree on each)
+    are left alone."""
     seen: dict = {}
     for key, offers in offers_by_key.items():
         for o in offers:
-            if o.get("price"):
-                seen.setdefault((o["source"], o["price"]), set()).add(key)
-    return {sp for sp, keys in seen.items() if len(keys) >= 2}
+            if not o.get("price"):
+                continue
+            others = [x for x in offers if x is not o and x.get("price") and x["source"] not in UNRELIABLE_ALONE and x["source"] != o["source"]]
+            conflict = bool(others) and all(abs(x["price"] - o["price"]) > o["price"] * 0.02 for x in others)
+            seen.setdefault((o["source"], o["price"]), {})[key] = conflict
+    return {sp for sp, cars in seen.items() if len(cars) >= 2 and all(cars.values())}
 
 
 def pick_price(offers: list[dict], page_prices: set | None = None):
@@ -282,14 +287,8 @@ def pick_price(offers: list[dict], page_prices: set | None = None):
     - when real sources disagree by more than 10%, the price two of them agree on wins and the lone
       low number is reported as low_unconfirmed instead of ranking the car on it"""
     page_prices = page_prices or set()
-    usable = []
-    for o in offers:
-        if not o.get("price"):
-            continue
-        if (o["source"], o["price"]) in page_prices and any(
-                x.get("price") and abs(x["price"] - o["price"]) > o["price"] * 0.02 for x in offers if x is not o):
-            continue
-        usable.append(o)
+    priced_offers = [o for o in offers if o.get("price")]
+    usable = [o for o in priced_offers if (o["source"], o["price"]) not in page_prices] or priced_offers
     reliable = [o for o in usable if o["source"] not in UNRELIABLE_ALONE]
     pool = reliable or usable
     priced = [o["price"] for o in pool]
