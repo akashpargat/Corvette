@@ -104,6 +104,8 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
             pc = l.get("last_price_change") or {}
             if pc.get("date") == today and pc.get("delta", 0) < 0:
                 tags.append(f"▼ {_money(-pc['delta'])}")
+            if l.get("price_low_unconfirmed"):
+                tags.append(f"one site shows {_money(l['price_low_unconfirmed'])}, unconfirmed")
             title = "verified clean" if l.get("title_status") == "clean" else "unverified"
             tag = f" [{' · '.join(tags)}]" if tags else ""
             srcs = ", ".join(SHORT.get(s, s) for s in l.get("sources", []))

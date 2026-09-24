@@ -192,3 +192,31 @@ def test_failed_reliable_source_is_carried_and_its_price_kept(tmp_path):
     car = [r for r in p["listings"] if r["key"] == vin][0]
     assert set(car["sources"]) == {"autotempest", "mclaren_preowned"}
     assert car["price"] == 160699 and car["rankable"] is True and vin not in p["changes"]["price_up"]
+
+
+def test_page_level_price_repeated_across_cars_is_ignored(tmp_path):
+    d = str(tmp_path)
+    fresh = []
+    for i, (vin, real) in enumerate((("SBM16AEA0TW004326", 298800), ("SBM16AEA7TW004663", 307700), ("SBM16BEAXTW004095", 314250))):
+        a = _l(vin, real, source="autotrader"); a.url = f"https://www.autotrader.com/cars-for-sale/vehicle/{i}"
+        k = _l(vin, real, source="kbb"); k.url = f"https://www.kbb.com/cars-for-sale/vehicle/{i}"
+        ds = _l(vin, 202609, source="dealer_sites"); ds.url = f"https://motorcarsofatlanta.com/for-sale/{vin.lower()}"
+        fresh += [a, k, ds]
+    p = merge(d, fresh, _report(("autotrader", "kbb", "dealer_sites")))
+    prices = {r["key"]: r["price"] for r in p["listings"]}
+    assert prices == {"SBM16AEA0TW004326": 298800, "SBM16AEA7TW004663": 307700, "SBM16BEAXTW004095": 314250}
+
+
+def test_lone_low_price_does_not_beat_two_agreeing_sources(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA0RW002116"
+    a = _l(vin, 178900, source="autotrader"); a.url = "https://www.autotrader.com/cars-for-sale/vehicle/791698351"
+    k = _l(vin, 178900, source="kbb"); k.url = "https://www.kbb.com/cars-for-sale/vehicle/791698351"
+    e = _l(vin, 125230, source="ebay"); e.url = "https://www.ebay.com/itm/377519321862"
+    p = merge(d, [a, k, e], _report(("autotrader", "kbb", "ebay")))
+    car = p["listings"][0]
+    assert car["price"] == 178900 and car["price_low_unconfirmed"] == 125230 and car["price_high"] == 178900
+    # a small disagreement (under 10%) still takes the lowest real price
+    e.price = 172000
+    p = merge(d, [a, k, e], _report(("autotrader", "kbb", "ebay")))
+    assert p["listings"][0]["price"] == 172000 and p["listings"][0]["price_low_unconfirmed"] is None

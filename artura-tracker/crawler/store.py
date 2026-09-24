@@ -107,6 +107,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
 
     changes = {"new": [], "price_drop": [], "price_up": [], "removed": [], "returned": []}
     seen_today = set()
+    page_prices = repeated_prices({k: [{"source": l.source, "price": l.price} for l in g] for k, g in groups.items()})
     for key, group in groups.items():
         offers = []
         for l in group:
@@ -117,13 +118,12 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["key"] = key   # the group's key (a VIN yesterday's URL join found), never the best card's URL hash
         rec["offers"] = offers
         old = by_key.get(key)
-        reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE]
-        priced = reliable or [o["price"] for o in offers if o["price"]]   # aggregator cards only when nothing better
-        if len(priced) >= 2:
-            hi = max(priced)
-            priced = [p for p in priced if p >= hi * 0.6] or priced   # a card that scraped a neighbour's price
-        rec["price"] = min(priced) if priced else None
-        rec["price_confirmed"] = bool(reliable)
+        price, price_high, confirmed, low_unconfirmed = pick_price(offers, page_prices)
+        reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE] if confirmed else []
+        priced = [price] if price else []
+        rec["price"] = price
+        rec["price_confirmed"] = confirmed
+        rec["price_low_unconfirmed"] = low_unconfirmed
         # sources whose crawl did not run OK today are not evidence the car left them
         carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
         if not reliable and priced and old and old.get("price"):
@@ -141,7 +141,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec.setdefault("currency", "USD")
         if not rec.get("target"):
             rec["target"] = "artura"
-        rec["price_high"] = max(priced) if priced else None
+        rec["price_high"] = price_high
         rec["sources"] = sorted({o["source"] for o in offers} | carried)
         # keep the best-known static facts from history if today's scrape is thinner
         if old:
@@ -260,6 +260,55 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     _save(rpath, runs)
     _save(os.path.join(data_dir, "market.json"), series)
     return payload
+
+
+def repeated_prices(offers_by_key: dict) -> set:
+    """(source, price) pairs a source gave to two or more different cars in one run: a page-level
+    number (a featured car, a 'starting at'), not the price of each car it was attached to."""
+    seen: dict = {}
+    for key, offers in offers_by_key.items():
+        for o in offers:
+            if o.get("price"):
+                seen.setdefault((o["source"], o["price"]), set()).add(key)
+    return {sp for sp, keys in seen.items() if len(keys) >= 2}
+
+
+def pick_price(offers: list[dict], page_prices: set | None = None):
+    """Today's price for one car from its offers: (price, price_high, confirmed, low_unconfirmed).
+
+    - a page-level number (see repeated_prices) is ignored when another offer disagrees
+    - aggregator cards (UNRELIABLE_ALONE) only count when nothing better priced the car
+    - a card that scraped a neighbour's price (< 60% of the highest) is ignored
+    - when real sources disagree by more than 10%, the price two of them agree on wins and the lone
+      low number is reported as low_unconfirmed instead of ranking the car on it"""
+    page_prices = page_prices or set()
+    usable = []
+    for o in offers:
+        if not o.get("price"):
+            continue
+        if (o["source"], o["price"]) in page_prices and any(
+                x.get("price") and abs(x["price"] - o["price"]) > o["price"] * 0.02 for x in offers if x is not o):
+            continue
+        usable.append(o)
+    reliable = [o for o in usable if o["source"] not in UNRELIABLE_ALONE]
+    pool = reliable or usable
+    priced = [o["price"] for o in pool]
+    if len(priced) >= 2:
+        hi = max(priced)
+        keep = {p for p in priced if p >= hi * 0.6} or set(priced)
+        pool = [o for o in pool if o["price"] in keep]
+        priced = [o["price"] for o in pool]
+    if not priced:
+        return None, None, False, None
+    price, low_unconfirmed = min(priced), None
+    if reliable and len({o["source"] for o in pool}) >= 2:
+        by_price: dict = {}
+        for o in pool:
+            by_price.setdefault(o["price"], set()).add(o["source"])
+        corroborated = [p for p, srcs in by_price.items() if len(srcs) >= 2]
+        if corroborated and price < min(corroborated) * 0.9:
+            low_unconfirmed, price = price, min(corroborated)
+    return price, max(priced), bool(reliable), low_unconfirmed
 
 
 def record_sales(data_dir: str, sales: list[Listing], keep: int = 600) -> list[dict]:
