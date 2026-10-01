@@ -231,3 +231,28 @@ def test_three_cars_a_dealer_really_prices_the_same_keep_their_price(tmp_path):
         fresh += [a, k]
     p = merge(d, fresh, _report(("autotrader", "kbb")))
     assert [r["price"] for r in p["listings"]] == [249449, 249449, 249449]
+
+
+def test_single_source_outlier_below_yesterday_keeps_the_price_aggregators_still_show(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA7PW001588"
+    du = _l(vin, 246500, source="dupont")
+    merge(d, [du], _report(("dupont", "autotempest")))
+    du2 = _l(vin, 202612, source="dupont")
+    card = Listing(source="autotempest", source_name="AutoTempest", url="https://www.cars.com/vehicledetail/x/?aff=atempest",
+                   title="2023 McLaren Artura", price=246500, mileage=5000, year=2023, vin=vin).finalize()
+    p = merge(d, [du2, card], _report(("dupont", "autotempest")))
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 246500 and car["price_low_unconfirmed"] == 202612 and vin not in p["changes"]["price_drop"]
+
+
+def test_price_far_under_market_is_kept_but_not_ranked():
+    from crawler.scoring import score_all
+    rows = [{"key": f"k{i}", "target": "artura", "price": 170000 + i * 2000, "mileage": 5000 + i * 500, "year": 2023, "candidate": True,
+             "rankable": True, "status": "active", "listing_type": "dealer", "condition": "used"} for i in range(12)]
+    rows.append({"key": "lease", "target": "artura", "price": 82570, "mileage": 750, "year": 2023, "candidate": True, "rankable": True,
+                 "status": "active", "listing_type": "dealer", "condition": "new"})
+    score_all(rows)
+    bad = [r for r in rows if r["key"] == "lease"][0]
+    assert bad["price_suspect"] is True and bad["rankable"] is False
+    assert not any(r["price_suspect"] for r in rows if r["key"] != "lease")

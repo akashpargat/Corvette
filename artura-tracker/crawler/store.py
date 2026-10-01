@@ -124,6 +124,14 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["price"] = price
         rec["price_confirmed"] = confirmed
         rec["price_low_unconfirmed"] = low_unconfirmed
+        # one real source suddenly >10% under yesterday while the aggregator cards still show
+        # yesterday's price: that source is the outlier (duPont $202,612 vs $246,500 everywhere else)
+        rel_srcs = {o["source"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE}
+        agg_prices = [o["price"] for o in offers if o["price"] and o["source"] in UNRELIABLE_ALONE]
+        if (old and old.get("price") and rec["price"] and rec["price"] < old["price"] * 0.9 and len(rel_srcs) == 1
+                and any(abs(p - old["price"]) <= old["price"] * 0.01 for p in agg_prices)):
+            rec["price_low_unconfirmed"] = rec["price"]
+            rec["price"] = old["price"]
         # sources whose crawl did not run OK today are not evidence the car left them
         carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
         if not reliable and priced and old and old.get("price"):

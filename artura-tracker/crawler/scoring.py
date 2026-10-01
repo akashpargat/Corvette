@@ -59,6 +59,9 @@ def expected_price(model: dict, row: dict):
     return model["intercept"] + model["per_mile"] * miles + model["per_year"] * yoff
 
 
+SUSPECT_PCT = 50.0   # % under the fitted market price; real bargains in this market sit under ~40%
+
+
 def score_all(rows: list[dict]) -> dict:
     """Fit one market model per target; the returned dict is the first target's model plus per_target."""
     targets = sorted({r.get("target", "artura") for r in rows})
@@ -71,6 +74,11 @@ def score_all(rows: list[dict]) -> dict:
         r["expected_price"] = round(exp) if exp else None
         r["deal_pct"] = round((exp - r["price"]) / exp * 100, 1) if exp and r.get("price") else None
         r["price_per_mile_note"] = None
+        # a price this far under the market is a lease/teaser number, a parse error or a branded
+        # title, not "the cheapest clean car": keep it visible but out of the ranking
+        r["price_suspect"] = bool(r.get("deal_pct") is not None and r["deal_pct"] >= SUSPECT_PCT and r.get("status") == "active")
+        if r["price_suspect"]:
+            r["rankable"] = False
     # rank among clean candidates by price
     for tk in targets:
         pool = sorted([r for r in rows if r.get("target", "artura") == tk and r.get("rankable", r.get("candidate")) and r.get("title_status") != "branded" and r.get("status") == "active"],

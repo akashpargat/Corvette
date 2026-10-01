@@ -127,6 +127,14 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         lines += _list(drop_k, lambda r: f"   {_money(r['last_price_change']['from'])} -> {_money(r['price'])} — {_car(r)}")
         lines.append(f"Sold or removed ({len(gone_k)}):")
         lines += _list(gone_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
+        sus = sorted([l for l in d["listings"] if l.get("target", "artura") == tk and l["status"] == "active" and l.get("price_suspect")
+                      and l.get("candidate")], key=lambda l: l["price"])
+        if sus:
+            lines += ["", f"VERIFY BEFORE TRUSTING ({len(sus)}): priced 50%+ under the market, so kept out of the top 10. Usually a lease or teaser number, a parse error, or a salvage/rebuilt title."]
+            for l in sus[:6]:
+                exp = f" (market ~{_money(l['expected_price'])})" if l.get("expected_price") else ""
+                lines.append(f"   {_money(l['price'])}{exp} — {_car(l)}")
+                lines.append(f"   {l['url']}")
         comps = recent_sales(data_dir, tk)
         if comps:
             lines += ["", f"RECENT AUCTION RESULTS ({config.TARGETS[tk]['model']}, {yrs[0]}-{yrs[1]}, what these cars actually sold for)"]
