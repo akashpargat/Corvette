@@ -147,6 +147,10 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
                 rec["price"] = near if abs(near - old["price"]) <= old["price"] * 0.15 else old["price"]
         rec.setdefault("country", "US")
         rec.setdefault("currency", "USD")
+        # a live auction is a current bid, not an asking price, whichever site handed it to us
+        # (AutoTempest relays Cars & Bids auctions as plain cards)
+        if any(AUCTION_URL_RE.search(o.get("url") or "") for o in offers):
+            rec["listing_type"] = "auction"
         if not rec.get("target"):
             rec["target"] = "artura"
         rec["price_high"] = price_high
@@ -428,6 +432,8 @@ def _best(group: list[Listing]) -> Listing:
     return max(group, key=score)
 
 
+import re as _re_auction
+AUCTION_URL_RE = _re_auction.compile(r"carsandbids\.com/auctions/|bringatrailer\.com/listing/|collectingcars\.com/for-sale/", _re_auction.I)
 RACE_TRIMS = {"GT4", "GT3", "Super Trofeo"}   # track-only cars are never "the cheapest road car"
 UNRELIABLE_ALONE = {"autotempest", "iseecars"}   # aggregator cards: fine as corroboration, not as the only price
 

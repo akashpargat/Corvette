@@ -256,3 +256,20 @@ def test_price_far_under_market_is_kept_but_not_ranked():
     bad = [r for r in rows if r["key"] == "lease"][0]
     assert bad["price_suspect"] is True and bad["rankable"] is False
     assert not any(r["price_suspect"] for r in rows if r["key"] != "lease")
+
+
+def test_auction_relayed_by_an_aggregator_is_never_ranked(tmp_path):
+    d = str(tmp_path)
+    card = Listing(source="autotempest", source_name="AutoTempest", title="2018 Lamborghini Huracan LP 580-2 Spyder",
+                   url="https://carsandbids.com/auctions/9QL5oRvD/2018-lamborghini-huracan-lp-580-2-spyder?utm_source=autotempest",
+                   price=135000, mileage=39500, year=2018, listing_type="dealer").finalize()
+    cb = Listing(source="carsandbids", source_name="Cars & Bids", title="2018 Lamborghini Huracan LP 580-2 Spyder",
+                 url="https://carsandbids.com/auctions/9QL5oRvD/2018-lamborghini-huracan-lp-580-2-spyder",
+                 price=135000, mileage=39500, year=2018, listing_type="auction").finalize()
+    from crawler.models import set_target
+    set_target("huracan")
+    card.target = cb.target = "huracan"
+    p = merge(d, [card, cb], _report(("autotempest", "carsandbids")))
+    set_target("artura")
+    rows = [r for r in p["listings"] if r["status"] == "active"]
+    assert rows and all(r["listing_type"] == "auction" and not r["rankable"] for r in rows)
