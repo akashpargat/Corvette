@@ -495,21 +495,21 @@
   "d": "2026-10-05",
   "cheapest": 153985,
   "p10": 179449,
-  "median": 189900,
-  "active": 791,
-  "clean": 341,
+  "median": 189945.0,
+  "active": 766,
+  "clean": 337,
   "targets": {
    "artura": {
     "cheapest": 153985,
     "median": 249389,
-    "active": 281,
-    "clean": 180
+    "active": 271,
+    "clean": 178
    },
    "huracan": {
     "cheapest": 160596,
     "median": 243002,
-    "active": 510,
-    "clean": 161
+    "active": 495,
+    "clean": 159
    }
   }
  }
