@@ -273,3 +273,21 @@ def test_auction_relayed_by_an_aggregator_is_never_ranked(tmp_path):
     set_target("artura")
     rows = [r for r in p["listings"] if r["status"] == "active"]
     assert rows and all(r["listing_type"] == "auction" and not r["rankable"] for r in rows)
+
+
+def test_blocked_source_keeps_its_last_offer_so_the_price_does_not_flip(tmp_path):
+    d = str(tmp_path)
+    vin = "ZHWUR2ZF8JLA08805"
+    both = ("autotrader", "truecar")
+    merge(d, [_l(vin, 185224, source="autotrader"), _l(vin, 184999, source="truecar")], _report(both))
+    # TrueCar blocked today: its $184,999 offer still counts, so no fake $225 rise
+    rep = {"started_at": "t", "seconds": 1, "sources": [{"source": "autotrader", "status": "ok", "count": 1},
+                                                       {"source": "truecar", "status": "blocked", "count": 0}]}
+    p = merge(d, [_l(vin, 185224, source="autotrader")], rep)
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 184999 and vin not in p["changes"]["price_up"]
+    assert {o["source"] for o in car["offers"]} == set(both)
+    # TrueCar back with the same price: no fake drop either
+    p = merge(d, [_l(vin, 185224, source="autotrader"), _l(vin, 184999, source="truecar")], _report(both))
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 184999 and vin not in p["changes"]["price_drop"]

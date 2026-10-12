@@ -118,6 +118,14 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["key"] = key   # the group's key (a VIN yesterday's URL join found), never the best card's URL hash
         rec["offers"] = offers
         old = by_key.get(key)
+        # sources whose crawl did not run OK today are not evidence the car left them
+        carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
+        # nor that their price changed: keep their last offer (a week at most) so the price does not flip
+        # each day the source is blocked (TrueCar $184,999 vs Autotrader $185,224 on alternate days)
+        today_srcs = {o["source"] for o in offers}
+        offers += [o for o in (old or {}).get("offers", [])
+                   if o.get("source") in carried and o["source"] not in today_srcs and o.get("price")
+                   and (datetime.fromisoformat(d) - datetime.fromisoformat(o.get("seen") or d)).days <= 7]
         price, price_high, confirmed, low_unconfirmed = pick_price(offers, page_prices)
         reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE] if confirmed else []
         priced = [price] if price else []
@@ -132,8 +140,6 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
                 and any(abs(p - old["price"]) <= old["price"] * 0.01 for p in agg_prices)):
             rec["price_low_unconfirmed"] = rec["price"]
             rec["price"] = old["price"]
-        # sources whose crawl did not run OK today are not evidence the car left them
-        carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
         if not reliable and priced and old and old.get("price"):
             if carried:
                 # its real source(s) failed today and only aggregator cards priced it: keep the confirmed price
