@@ -168,27 +168,7 @@
    "SBM16BEA4SW003135",
    "ZHWUS4ZF8JLA11008"
   ],
-  "removed": [
-   "SBM16AEA5PW001752",
-   "SBM16AEA1PW001991",
-   "ebay:e01cef30f82c",
-   "autotempest:f25c71a047b5",
-   "ZHWUR2ZFXHLA07469",
-   "ZHWUT5ZF6MLA17784",
-   "autotempest:9d3e13c64fd4",
-   "ZHWUR2ZFXKLA11349",
-   "ZHWUC1ZF7FLA02769",
-   "SBM16BEA4SW003300",
-   "ZHWUT5ZF5NLA19284",
-   "ZHWUF4ZF7MLA14135",
-   "ZHWUC1ZF9FLA02028",
-   "ZHWUF4ZFXLLA13866",
-   "ZHWCC1ZF6JLA11130",
-   "ZHWUF5ZF4MLA15913",
-   "autotrader_ca:a4670921bc57",
-   "jamesedition:ef2ea5cb6828",
-   "ebay:02ae3366d9b5"
-  ],
+  "removed": [],
   "returned": [
    "ZHWUD4ZF3JLA08690",
    "SBM16BEA4SW003135",
@@ -88343,11 +88323,11 @@
     "kbb"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -88363,7 +88343,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 63,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "jamesedition",
@@ -89141,11 +89121,11 @@
     "kbb"
    ],
    "first_seen": "2026-09-22",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-27",
@@ -89161,7 +89141,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 68,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotempest",
@@ -89727,11 +89707,11 @@
     "ebay"
    ],
    "first_seen": "2026-10-15",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-09",
@@ -89746,7 +89726,7 @@
    "deal_pct": 14.7,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotempest",
@@ -89798,11 +89778,11 @@
     "autotempest"
    ],
    "first_seen": "2026-10-15",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-10",
@@ -89817,7 +89797,7 @@
    "deal_pct": 14.7,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "cargurus",
@@ -92090,11 +92070,11 @@
     "autotempest"
    ],
    "first_seen": "2026-10-15",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-26",
@@ -92109,7 +92089,7 @@
    "deal_pct": 26.4,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "cargurus",
@@ -92714,7 +92694,7 @@
     "ebay"
    ],
    "first_seen": "2026-09-15",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-09-17",
     "from": 255000,
@@ -92723,7 +92703,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -92750,7 +92730,7 @@
    "deal_pct": 39.7,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "pcarmarket",
@@ -93211,11 +93191,11 @@
     "cars_com"
    ],
    "first_seen": "2026-09-23",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -93231,7 +93211,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 39,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader",
@@ -94133,7 +94113,7 @@
     "truecar"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-09-13",
     "from": 230588,
@@ -94142,7 +94122,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -94158,7 +94138,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 47,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "usedcars_com",
@@ -96903,11 +96883,11 @@
     "dupont"
    ],
    "first_seen": "2026-10-01",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-01",
@@ -96923,7 +96903,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 87,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader",
@@ -98607,7 +98587,7 @@
     "truecar"
    ],
    "first_seen": "2026-09-12",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-08",
     "from": 245991,
@@ -98616,7 +98596,7 @@
    },
    "last_seen": "2026-10-12",
    "last_seen_at": "2026-10-12T12:40:02+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -98692,7 +98672,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 95,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader",
@@ -101065,7 +101045,7 @@
     "truecar"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-15",
     "from": 253900,
@@ -101074,7 +101054,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -101157,7 +101137,7 @@
    "deal_pct": 27.4,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "ebay",
@@ -102155,7 +102135,7 @@
     "truecar"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-09-21",
     "from": 255555,
@@ -102164,7 +102144,7 @@
    },
    "last_seen": "2026-10-12",
    "last_seen_at": "2026-10-12T12:40:02+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -102183,7 +102163,7 @@
    "deal_pct": 23.0,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotempest",
@@ -103679,11 +103659,11 @@
     "kbb"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -103699,7 +103679,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 136,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "pcarmarket",
@@ -105077,7 +105057,7 @@
     "kbb"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-10",
     "from": 282995,
@@ -105086,7 +105066,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -105129,7 +105109,7 @@
    "deal_pct": 18.9,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "cargurus",
@@ -105180,7 +105160,7 @@
     "cargurus"
    ],
    "first_seen": "2026-09-14",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-08",
     "from": 282990,
@@ -105189,7 +105169,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-14",
@@ -105213,7 +105193,7 @@
    "price_per_mile_note": null,
    "price_suspect": false,
    "rank_cheapest_clean": 143,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotempest",
@@ -109428,7 +109408,7 @@
     "kbb"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-15",
     "from": 312905,
@@ -109437,7 +109417,7 @@
    },
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -109488,7 +109468,7 @@
    "deal_pct": 18.2,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader",
@@ -110428,11 +110408,11 @@
     "autotrader_ca"
    ],
    "first_seen": "2026-10-15",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-15",
@@ -110443,7 +110423,7 @@
    "deal_pct": 28.0,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader_ca",
@@ -117070,7 +117050,7 @@
     "jamesedition"
    ],
    "first_seen": "2026-09-13",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-10-13",
     "from": 364999,
@@ -117079,7 +117059,7 @@
    },
    "last_seen": "2026-10-14",
    "last_seen_at": "2026-10-14T12:24:44+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-09-13",
@@ -117106,7 +117086,7 @@
    "deal_pct": 12.4,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "autotrader",
@@ -125880,11 +125860,11 @@
     "ebay"
    ],
    "first_seen": "2026-10-06",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-10-15",
    "last_seen_at": "2026-10-15T12:25:29+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-06",
@@ -125899,7 +125879,7 @@
    "deal_pct": -61.1,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "removed_on": "2026-10-17"
+   "last_missed": "2026-10-17"
   },
   {
    "source": "ebay",

@@ -221,6 +221,9 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         carried_by = set(rec.get("sources", [rec.get("source")]))
         if carried_by and not (carried_by & sources_ok):
             continue  # its sources failed today; not evidence the car sold
+        if rec.get("last_missed") == d:
+            continue  # a second crawl the same day is not another day off the market
+        rec["last_missed"] = d
         rec["missing_runs"] = rec.get("missing_runs", 0) + 1
         if rec["missing_runs"] >= REMOVED_AFTER_MISSING_RUNS:
             rec["status"] = "removed"
