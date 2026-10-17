@@ -760,20 +760,20 @@
   "cheapest": 149985,
   "p10": 178000,
   "median": 189449,
-  "active": 819,
-  "clean": 366,
+  "active": 806,
+  "clean": 365,
   "targets": {
    "artura": {
     "cheapest": 149985,
-    "median": 247449,
-    "active": 294,
+    "median": 246886,
+    "active": 284,
     "clean": 186
    },
    "huracan": {
     "cheapest": 160596,
     "median": 244537,
-    "active": 525,
-    "clean": 180
+    "active": 522,
+    "clean": 179
    }
   }
  }
