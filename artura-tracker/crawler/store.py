@@ -122,10 +122,16 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
         # nor that their price changed: keep their last offer (a week at most) so the price does not flip
         # each day the source is blocked (TrueCar $184,999 vs Autotrader $185,224 on alternate days)
+        # unless a source we can still see repriced the car: then the stale offer is no longer its price
+        # (Autotrader $151,379 -> $157,432 while TrueCar still showed yesterday's $152,374)
         today_srcs = {o["source"] for o in offers}
-        offers += [o for o in (old or {}).get("offers", [])
-                   if o.get("source") in carried and o["source"] not in today_srcs and o.get("price")
-                   and (datetime.fromisoformat(d) - datetime.fromisoformat(o.get("seen") or d)).days <= 7]
+        old_by_src = {o.get("source"): o.get("price") for o in (old or {}).get("offers", []) if o.get("price")}
+        repriced = any(o["price"] and old_by_src.get(o["source"]) and abs(o["price"] - old_by_src[o["source"]]) > old_by_src[o["source"]] * 0.005
+                       for o in offers if o["source"] not in UNRELIABLE_ALONE)
+        if not repriced:
+            offers += [o for o in (old or {}).get("offers", [])
+                       if o.get("source") in carried and o["source"] not in today_srcs and o.get("price")
+                       and (datetime.fromisoformat(d) - datetime.fromisoformat(o.get("seen") or d)).days <= 7]
         price, price_high, confirmed, low_unconfirmed = pick_price(offers, page_prices)
         reliable = [o["price"] for o in offers if o["price"] and o["source"] not in UNRELIABLE_ALONE] if confirmed else []
         priced = [price] if price else []

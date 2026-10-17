@@ -291,3 +291,16 @@ def test_blocked_source_keeps_its_last_offer_so_the_price_does_not_flip(tmp_path
     p = merge(d, [_l(vin, 185224, source="autotrader"), _l(vin, 184999, source="truecar")], _report(both))
     car = [r for r in p["listings"] if r["key"] == vin][0]
     assert car["price"] == 184999 and vin not in p["changes"]["price_drop"]
+
+
+def test_blocked_source_offer_dropped_once_a_visible_source_reprices(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA6PW001503"
+    both = ("autotrader", "truecar")
+    merge(d, [_l(vin, 151379, source="autotrader"), _l(vin, 152374, source="truecar")], _report(both))
+    # TrueCar blocked and Autotrader raised the price: yesterday's TrueCar price is stale
+    rep = {"started_at": "t", "seconds": 1, "sources": [{"source": "autotrader", "status": "ok", "count": 1},
+                                                       {"source": "truecar", "status": "blocked", "count": 0}]}
+    p = merge(d, [_l(vin, 157432, source="autotrader")], rep)
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 157432 and "truecar" in car["sources"]
