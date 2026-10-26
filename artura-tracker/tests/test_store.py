@@ -315,3 +315,19 @@ def test_second_crawl_same_day_does_not_count_another_miss(tmp_path):
         p = merge(d, [_l("SBM16AEA5PW000001", 180000)], _report())
     car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
     assert car2["status"] == "active" and car2["missing_runs"] == 1
+
+
+def test_source_blocked_for_one_target_only_still_counts_as_blocked(tmp_path):
+    d = str(tmp_path)
+    vin = "ZHWUR2ZF8JLA08805"
+    hur = lambda price, source: Listing(source=source, source_name=source, url=f"https://{source}/{vin}", title="2018 Lamborghini Huracan",
+                                        vin=vin, price=price, mileage=44495, year=2018, location="Houston, TX", target="huracan").finalize()
+    rep = lambda tc: {"started_at": "t", "seconds": 1, "sources": [
+        {"source": "autotrader", "status": "ok", "count": 1, "target": "huracan"},
+        {"source": "truecar", "status": "ok", "count": 1, "target": "artura"},
+        {"source": "truecar", "status": tc, "count": 1, "target": "huracan"}]}
+    merge(d, [hur(185224, "autotrader"), hur(184999, "truecar")], rep("ok"))
+    # TrueCar fine for Artura but captcha'd for Huracán: its Huracán offer must carry
+    p = merge(d, [hur(185224, "autotrader")], rep("blocked"))
+    car = [r for r in p["listings"] if r["key"] == vin][0]
+    assert car["price"] == 184999 and "truecar" in car["sources"]

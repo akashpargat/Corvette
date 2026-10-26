@@ -53,6 +53,11 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     d = today()
     ts = now_iso()
     sources_ok = {s["source"] for s in run_report["sources"] if s["status"] == "ok"} | {"seed"}
+    # a source can be OK for one target and blocked for the other (TrueCar: Artura OK, Huracán captcha)
+    ok_pairs = {(s["source"], s.get("target")) for s in run_report["sources"] if s["status"] == "ok"}
+
+    def src_ok(src, target):
+        return src == "seed" or (src, target) in ok_pairs or (src, None) in ok_pairs
     # a seed/no-VIN record superseded by a VIN-keyed record for the same URL
     url_index = {}
     for r in prev.get("listings", []):
@@ -119,7 +124,8 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         rec["offers"] = offers
         old = by_key.get(key)
         # sources whose crawl did not run OK today are not evidence the car left them
-        carried = {s for s in (old or {}).get("sources", []) if s not in sources_ok and s not in UNRELIABLE_ALONE}
+        tgt = rec.get("target") or (old or {}).get("target") or "artura"
+        carried = {s for s in (old or {}).get("sources", []) if not src_ok(s, tgt) and s not in UNRELIABLE_ALONE}
         # nor that their price changed: keep their last offer (a week at most) so the price does not flip
         # each day the source is blocked (TrueCar $184,999 vs Autotrader $185,224 on alternate days)
         # unless a source we can still see repriced the car: then the stale offer is no longer its price
@@ -219,7 +225,7 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
         if rec.get("status") == "removed":
             continue
         carried_by = set(rec.get("sources", [rec.get("source")]))
-        if carried_by and not (carried_by & sources_ok):
+        if carried_by and not any(src_ok(s, rec.get("target") or "artura") for s in carried_by):
             continue  # its sources failed today; not evidence the car sold
         if rec.get("last_missed") == d:
             continue  # a second crawl the same day is not another day off the market
