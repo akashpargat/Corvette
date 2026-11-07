@@ -76,7 +76,9 @@ def score_all(rows: list[dict]) -> dict:
         r["price_per_mile_note"] = None
         # a price this far under the market is a lease/teaser number, a parse error or a branded
         # title, not "the cheapest clean car": keep it visible but out of the ranking
-        r["price_suspect"] = bool(r.get("deal_pct") is not None and r["deal_pct"] >= SUSPECT_PCT and r.get("status") == "active")
+        # a live auction's price is the running bid, not an asking price, so it is never "suspect"
+        r["price_suspect"] = bool(r.get("deal_pct") is not None and r["deal_pct"] >= SUSPECT_PCT and r.get("status") == "active"
+                                  and r.get("listing_type") != "auction")
         if r["price_suspect"]:
             r["rankable"] = False
     # rank among clean candidates by price

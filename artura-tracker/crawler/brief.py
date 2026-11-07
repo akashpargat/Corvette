@@ -128,7 +128,7 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         lines.append(f"Sold or removed ({len(gone_k)}):")
         lines += _list(gone_k, lambda r: f"   {_money(r.get('price'))} — {_car(r)}")
         sus = sorted([l for l in d["listings"] if l.get("target", "artura") == tk and l["status"] == "active" and l.get("price_suspect")
-                      and l.get("candidate")], key=lambda l: l["price"])
+                      and l.get("candidate") and l.get("listing_type") != "auction"], key=lambda l: l["price"])
         if sus:
             lines += ["", f"VERIFY BEFORE TRUSTING ({len(sus)}): priced 50%+ under the market, so kept out of the top 10. Usually a lease or teaser number, a parse error, or a salvage/rebuilt title."]
             for l in sus[:6]:
