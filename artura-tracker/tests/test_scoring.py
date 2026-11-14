@@ -15,3 +15,11 @@ def test_live_auction_bid_is_not_flagged_as_suspect_price():
     score_all(rows + [bid, teaser])
     assert teaser["price_suspect"] is True
     assert bid["price_suspect"] is False
+
+
+def test_new_car_priced_like_a_lease_offer_is_suspect():
+    rows = [_row(240000 + i * 1000, year=2025, mileage=500 + i * 100) for i in range(12)]
+    teaser = _row(131320, year=2025, mileage=750, condition="new")   # ~45% under the market
+    score_all(rows + [teaser])
+    assert teaser["price_suspect"] is True
+    assert teaser["rankable"] is False

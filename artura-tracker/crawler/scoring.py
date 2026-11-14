@@ -59,7 +59,9 @@ def expected_price(model: dict, row: dict):
     return model["intercept"] + model["per_mile"] * miles + model["per_year"] * yoff
 
 
-SUSPECT_PCT = 50.0   # % under the fitted market price; real bargains in this market sit under ~40%
+SUSPECT_PCT = 40.0   # % under the fitted market price; real bargains in this market sit under ~35%.
+# 50% let a dealer's lease figure through: McLaren Vancouver's 2025 Spiders at CA$179,890 against a
+# stated MSRP of CA$445,341 sat 45% under the market and ranked as the cheapest Artura.
 
 
 def score_all(rows: list[dict]) -> dict:

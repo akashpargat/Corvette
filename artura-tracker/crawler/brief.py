@@ -130,7 +130,7 @@ def build(data_dir: str = DATA, top_n: int = 10) -> tuple[str, str]:
         sus = sorted([l for l in d["listings"] if l.get("target", "artura") == tk and l["status"] == "active" and l.get("price_suspect")
                       and l.get("candidate") and l.get("listing_type") != "auction"], key=lambda l: l["price"])
         if sus:
-            lines += ["", f"VERIFY BEFORE TRUSTING ({len(sus)}): priced 50%+ under the market, so kept out of the top 10. Usually a lease or teaser number, a parse error, or a salvage/rebuilt title."]
+            lines += ["", f"VERIFY BEFORE TRUSTING ({len(sus)}): priced 40%+ under the market, so kept out of the top 10. Usually a lease or teaser number, a parse error, or a salvage/rebuilt title."]
             for l in sus[:6]:
                 exp = f" (market ~{_money(l['expected_price'])})" if l.get("expected_price") else ""
                 lines.append(f"   {_money(l['price'])}{exp} — {_car(l)}")
