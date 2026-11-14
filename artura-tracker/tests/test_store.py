@@ -131,8 +131,10 @@ def test_url_keyed_row_that_learned_its_vin_folds_into_the_vin_row(tmp_path):
     assert car["key"] not in p["changes"]["new"]
 
 
-def test_group_joined_by_yesterdays_url_keeps_the_vin_key(tmp_path):
+def test_group_joined_by_yesterdays_url_keeps_the_vin_key(tmp_path, monkeypatch):
     d = str(tmp_path)
+    days = iter(["2026-10-01", "2026-10-02", "2026-10-03"])
+    monkeypatch.setattr("crawler.store.today", lambda: next(days))
     vin = "SBM16AEA3PW001443"
     a = _l(vin, 179900, source="autotrader")
     a.url = "https://www.autotrader.com/cars-for-sale/vehicle/2"
@@ -331,3 +333,30 @@ def test_source_blocked_for_one_target_only_still_counts_as_blocked(tmp_path):
     p = merge(d, [hur(185224, "autotrader")], rep("blocked"))
     car = [r for r in p["listings"] if r["key"] == vin][0]
     assert car["price"] == 184999 and "truecar" in car["sources"]
+
+
+def test_second_crawl_same_day_keeps_the_days_changes_against_yesterday(tmp_path, monkeypatch):
+    d = str(tmp_path)
+    day = {"d": "2026-11-13"}
+    monkeypatch.setattr("crawler.store.today", lambda: day["d"])
+    merge(d, [_l("SBM16AEA5PW000001", 180000), _l("SBM16AEA5PW000002", 170000)], _report())
+    day["d"] = "2026-11-14"
+    merge(d, [_l("SBM16AEA5PW000001", 175000), _l("SBM16AEA5PW000002", 170000), _l("SBM16AEA5PW000003", 190000)], _report())
+    # re-crawl the same afternoon: 000001 cut again, nothing else moved
+    p = merge(d, [_l("SBM16AEA5PW000001", 172000), _l("SBM16AEA5PW000002", 170000), _l("SBM16AEA5PW000003", 190000)], _report())
+    assert "SBM16AEA5PW000003" in p["changes"]["new"]
+    assert p["changes"]["price_drop"] == ["SBM16AEA5PW000001"]
+    car = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000001")
+    assert car["last_price_change"]["from"] == 180000 and car["last_price_change"]["delta"] == -8000
+
+
+def test_recorded_auction_sale_is_not_erased_by_a_card_without_its_price(tmp_path):
+    from crawler.store import record_sales
+    d = str(tmp_path)
+    url = "https://carsandbids.com/auctions/rwyW5DEx/2016-lamborghini-huracan-lp610-4-spyder"
+    def sale(price, sold):
+        return Listing(source="carsandbids", source_name="Cars & Bids", url=url, title="2016 Lamborghini Huracan LP610-4 Spyder",
+                       year=2016, price=price, listing_type="sold", extra={"sold": sold, "ended": "2026-01-13"}).finalize()
+    record_sales(d, [sale(223000, True)])
+    out = record_sales(d, [sale(None, False)])
+    assert out[0]["price"] == 223000 and out[0]["sold"] is True

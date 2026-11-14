@@ -186,9 +186,14 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             if old.get("status") == "removed":
                 changes["returned"].append(key)
             oldp = old.get("price")
+            prior = old.get("last_price_change") or {}
+            if prior.get("date") == d:
+                oldp = prior.get("from") or oldp   # a second crawl today: measure from yesterday's price
             if oldp and rec["price"] and rec["price"] != oldp:
                 rec["last_price_change"] = {"date": d, "from": oldp, "to": rec["price"], "delta": rec["price"] - oldp}
                 (changes["price_drop"] if rec["price"] < oldp else changes["price_up"]).append(key)
+            elif prior.get("date") == d:
+                rec["last_price_change"] = None    # moved this morning, back to yesterday's price now
             else:
                 rec["last_price_change"] = old.get("last_price_change")
         else:
@@ -241,6 +246,25 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
             rec["target"] = "artura"
         rec["candidate"] = _candidate(rec)
         rec["rankable"] = _rankable(rec)
+
+    if (prev.get("summary") or {}).get("date") == d:
+        # a second crawl the same day: keep what the first one found, so the brief still reports
+        # today's changes against yesterday rather than against this morning's run
+        pc = prev.get("changes") or {}
+        for k in pc.get("new", []):
+            if k in by_key and k not in changes["new"]:
+                changes["new"].append(k)
+        for kind in ("removed", "returned"):
+            for k in pc.get(kind, []):
+                want = "removed" if kind == "removed" else "active"
+                if by_key.get(k, {}).get("status") == want and k not in changes[kind]:
+                    changes[kind].append(k)
+        moved = set(changes["price_drop"]) | set(changes["price_up"])
+        for k in pc.get("price_drop", []) + pc.get("price_up", []):
+            lpc = by_key.get(k, {}).get("last_price_change") or {}
+            if k not in moved and lpc.get("date") == d and lpc.get("delta"):
+                (changes["price_drop"] if lpc["delta"] < 0 else changes["price_up"]).append(k)
+                moved.add(k)
 
     listings = list(by_key.values())
     from .scoring import score_all
@@ -353,9 +377,14 @@ def record_sales(data_dir: str, sales: list[Listing], keep: int = 600) -> list[d
         if not l.url or l.listing_type != "sold":
             continue
         rec = rows.get(l.url) or {"url": l.url, "first_seen": d}
+        # an ended auction's result does not change: a card that comes back without its
+        # "Sold for $x" line must not erase the sale already recorded
+        price, sold = l.price, bool(l.extra.get("sold"))
+        if price is None and rec.get("price") is not None:
+            price, sold = rec["price"], bool(rec.get("sold"))
         rec.update({"target": l.target, "source": l.source, "source_name": l.source_name, "title": l.title, "year": l.year,
                     "trim": l.trim, "mileage": l.mileage if l.mileage is not None else rec.get("mileage"),
-                    "price": l.price, "sold": bool(l.extra.get("sold")), "ended": l.extra.get("ended") or rec.get("ended"),
+                    "price": price, "sold": sold, "ended": l.extra.get("ended") or rec.get("ended"),
                     "location": l.location or rec.get("location"), "image": l.image or rec.get("image"), "last_seen": d})
         rows[l.url] = rec
     out = sorted(rows.values(), key=lambda r: (r.get("ended") or "", r.get("first_seen") or ""), reverse=True)[:keep]
