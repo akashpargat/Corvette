@@ -360,3 +360,18 @@ def test_recorded_auction_sale_is_not_erased_by_a_card_without_its_price(tmp_pat
     record_sales(d, [sale(223000, True)])
     out = record_sales(d, [sale(None, False)])
     assert out[0]["price"] == 223000 and out[0]["sold"] is True
+
+
+def test_one_sources_placeholder_price_on_cars_years_apart_is_ignored(tmp_path):
+    d = str(tmp_path)
+    def dp(vin, year):
+        return Listing(source="dupont", source_name="duPont REGISTRY", url=f"https://dupont/{vin}", title=f"{year} McLaren Artura",
+                       vin=vin, price=202702, mileage=12000, year=year, location="West Chicago, IL").finalize()
+    real = _l("SBM16AEA5PW000009", 189000, source="autotrader")
+    cars = [("SBM16AEA5HW000001", 2017), ("SBM16AEA5PW000002", 2023), ("SBM16AEA5TW000003", 2026)]
+    p = merge(d, [dp(v, y) for v, y in cars] + [real], _report(("dupont", "autotrader")))
+    by = {r["key"]: r for r in p["listings"]}
+    assert sorted(by[v]["year"] for v, _ in cars) == [2017, 2023, 2026]
+    assert all(by[v]["price"] is None for v, _ in cars)
+    assert by["SBM16AEA5PW000009"]["price"] == 189000
+    assert p["summary"]["cheapest_clean_price"] == 189000

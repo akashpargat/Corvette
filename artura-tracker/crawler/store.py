@@ -112,7 +112,8 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
 
     changes = {"new": [], "price_drop": [], "price_up": [], "removed": [], "returned": []}
     seen_today = set()
-    page_prices = repeated_prices({k: [{"source": l.source, "price": l.price} for l in g] for k, g in groups.items()})
+    page_prices = repeated_prices({k: [{"source": l.source, "price": l.price} for l in g] for k, g in groups.items()},
+                                  {k: next((l.year for l in g if l.year), None) for k, g in groups.items()})
     for key, group in groups.items():
         offers = []
         for l in group:
@@ -319,11 +320,17 @@ def merge(data_dir: str, fresh: list[Listing], run_report: dict) -> dict:
     return payload
 
 
-def repeated_prices(offers_by_key: dict) -> set:
-    """(source, price) pairs that are a page-level number, not a car's price: the source gave the
-    same price to two or more different cars, and for every one of them another real source
-    disagrees. Three cars a dealer really prices identically (Autotrader and KBB agree on each)
-    are left alone."""
+def repeated_prices(offers_by_key: dict, years_by_key: dict | None = None) -> set:
+    """(source, price) pairs that are a page-level number, not a car's price:
+
+    - the source gave the same price to two or more different cars, and for every one of them
+      another real source disagrees, or
+    - the source gave the same price to three or more cars at least three model years apart and
+      no other source confirms it for any of them (duPont put $202,702 on a dealer's 2017 Huracan,
+      2020 Huracan, 2023 Artura and 2026 Artura)
+
+    Three cars a dealer really prices identically (Autotrader and KBB agree on each) are left alone."""
+    years_by_key = years_by_key or {}
     seen: dict = {}
     for key, offers in offers_by_key.items():
         for o in offers:
@@ -331,21 +338,31 @@ def repeated_prices(offers_by_key: dict) -> set:
                 continue
             others = [x for x in offers if x is not o and x.get("price") and x["source"] not in UNRELIABLE_ALONE and x["source"] != o["source"]]
             conflict = bool(others) and all(abs(x["price"] - o["price"]) > o["price"] * 0.02 for x in others)
-            seen.setdefault((o["source"], o["price"]), {})[key] = conflict
-    return {sp for sp, cars in seen.items() if len(cars) >= 2 and all(cars.values())}
+            confirmed = any(abs(x["price"] - o["price"]) <= o["price"] * 0.02 for x in others)
+            seen.setdefault((o["source"], o["price"]), {})[key] = (conflict, confirmed)
+    out = set()
+    for sp, cars in seen.items():
+        if len(cars) >= 2 and all(c for c, _ in cars.values()):
+            out.add(sp)
+            continue
+        yrs = [years_by_key[k] for k in cars if years_by_key.get(k)]
+        if len(cars) >= 3 and len(yrs) >= 3 and max(yrs) - min(yrs) >= 3 and not any(f for _, f in cars.values()):
+            out.add(sp)
+    return out
 
 
 def pick_price(offers: list[dict], page_prices: set | None = None):
     """Today's price for one car from its offers: (price, price_high, confirmed, low_unconfirmed).
 
-    - a page-level number (see repeated_prices) is ignored when another offer disagrees
+    - a page-level number (see repeated_prices) is ignored
     - aggregator cards (UNRELIABLE_ALONE) only count when nothing better priced the car
     - a card that scraped a neighbour's price (< 60% of the highest) is ignored
     - when real sources disagree by more than 10%, the price two of them agree on wins and the lone
       low number is reported as low_unconfirmed instead of ranking the car on it"""
     page_prices = page_prices or set()
     priced_offers = [o for o in offers if o.get("price")]
-    usable = [o for o in priced_offers if (o["source"], o["price"]) not in page_prices] or priced_offers
+    # a car priced only by a placeholder number has no price today, rather than a made-up one
+    usable = [o for o in priced_offers if (o["source"], o["price"]) not in page_prices]
     reliable = [o for o in usable if o["source"] not in UNRELIABLE_ALONE]
     pool = reliable or usable
     priced = [o["price"] for o in pool]
