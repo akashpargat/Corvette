@@ -48,7 +48,7 @@
   "clean_candidates": 346,
   "new_today": 19,
   "price_drops_today": 5,
-  "removed_today": 20,
+  "removed_today": 17,
   "cheapest_clean_key": "SBM16AEAXPW001505",
   "cheapest_clean_price": 145000,
   "median_clean_price": 195949.5,
@@ -178,11 +178,8 @@
    "autotempest:8aad08acd1b9",
    "ZHWUT5ZFXMLA17576",
    "ZHWUB6ZF4RLA28119",
-   "ZHWUA6ZX1RLA25674",
    "ZHWUD4ZF4JLA09489",
    "ZHWUB6ZF7RLA26526",
-   "ZHWUB6ZF7PLA24403",
-   "ZHWUB6ZFXRLA25922",
    "ZHWUT4ZF8RLA29372",
    "ZHWUA6ZX9RLA26734"
   ],
@@ -145905,11 +145902,11 @@
     "autotempest"
    ],
    "first_seen": "2026-11-07",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": null,
    "last_seen": "2026-11-14",
    "last_seen_at": "2026-11-14T12:25:38+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-11-07",
@@ -145924,8 +145921,7 @@
    "deal_pct": 12.6,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "last_missed": "2026-11-16",
-   "removed_on": "2026-11-16"
+   "last_missed": "2026-11-16"
   },
   {
    "source": "jamesedition",
@@ -152923,7 +152919,7 @@
     "autotempest"
    ],
    "first_seen": "2026-11-08",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-11-14",
     "from": 385072,
@@ -152932,7 +152928,7 @@
    },
    "last_seen": "2026-11-14",
    "last_seen_at": "2026-11-14T12:25:38+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-11-08",
@@ -152959,8 +152955,7 @@
    "deal_pct": 0.4,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "last_missed": "2026-11-16",
-   "removed_on": "2026-11-16"
+   "last_missed": "2026-11-16"
   },
   {
    "source": "iseecars",
@@ -153011,7 +153006,7 @@
     "iseecars"
    ],
    "first_seen": "2026-10-17",
-   "missing_runs": 3,
+   "missing_runs": 2,
    "last_price_change": {
     "date": "2026-11-14",
     "from": 399888,
@@ -153020,7 +153015,7 @@
    },
    "last_seen": "2026-11-14",
    "last_seen_at": "2026-11-14T12:25:38+00:00",
-   "status": "removed",
+   "status": "active",
    "price_history": [
     {
      "d": "2026-10-17",
@@ -153059,8 +153054,7 @@
    "deal_pct": 4.3,
    "price_per_mile_note": null,
    "price_suspect": false,
-   "last_missed": "2026-11-16",
-   "removed_on": "2026-11-16"
+   "last_missed": "2026-11-16"
   },
   {
    "source": "autotempest",

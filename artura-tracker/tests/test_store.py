@@ -310,9 +310,12 @@ def test_blocked_source_offer_dropped_once_a_visible_source_reprices(tmp_path):
     assert car["price"] == 157432 and "truecar" in car["sources"]
 
 
-def test_second_crawl_same_day_does_not_count_another_miss(tmp_path):
+def test_second_crawl_same_day_does_not_count_another_miss(tmp_path, monkeypatch):
     d = str(tmp_path)
+    day = {"d": "2026-11-13"}
+    monkeypatch.setattr("crawler.store.today", lambda: day["d"])
     merge(d, [_l("SBM16AEA5PW000001", 180000), _l("SBM16AEA5PW000002", 170000)], _report())
+    day["d"] = "2026-11-14"
     for _ in range(3):   # three crawls on one day, car 000002 missing from all of them
         p = merge(d, [_l("SBM16AEA5PW000001", 180000)], _report())
     car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
@@ -375,3 +378,11 @@ def test_one_sources_placeholder_price_on_cars_years_apart_is_ignored(tmp_path):
     assert all(by[v]["price"] is None for v, _ in cars)
     assert by["SBM16AEA5PW000009"]["price"] == 189000
     assert p["summary"]["cheapest_clean_price"] == 189000
+
+
+def test_car_seen_by_the_morning_crawl_is_not_missed_by_the_afternoon_one(tmp_path):
+    d = str(tmp_path)
+    merge(d, [_l("SBM16AEA5PW000001", 180000), _l("SBM16AEA5PW000002", 170000)], _report())
+    p = merge(d, [_l("SBM16AEA5PW000001", 180000)], _report())   # same day, 000002 not in this run
+    car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
+    assert car2["status"] == "active" and car2.get("missing_runs", 0) == 0
