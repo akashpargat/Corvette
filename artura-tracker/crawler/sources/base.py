@@ -108,6 +108,11 @@ def listings_from_vin_cards(html: str, source: str, source_name: str, base_url: 
         text = html_to_text(chunk)
         if not is_target(text) or not vin_matches(vin):
             continue
+        # a dealer's "sold vehicles" page prints "Sold" where the price goes; those cars are
+        # gone, and the 6,000-character window would hand them a neighbouring card's number
+        near = html_to_text(html[max(0, m.start() - 1500):min(len(html), m.end() + 1500)])
+        if re.search(r"(?im)^\s*sold\s*$", near):
+            continue
         t = current_target()
         title_m = re.search(r"(20(?:1[5-9]|2[0-9])\s+(?:New\s+|Used\s+|Certified\s+)?%s\s+%s[^\n$|]{0,30})" % (t["make"], t["alias_re"]), text, re.I)
         title = title_m.group(1).strip() if title_m else t["label"]

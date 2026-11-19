@@ -24,3 +24,12 @@ def test_script_json_and_vin_cards():
     assert "SBM16AEA5PW000999" in vins
     c = next(x for x in cards if x.vin == "SBM16AEA5PW000999")
     assert c.price == 205900 and c.mileage == 1200 and c.trim == "Spider" and c.url.endswith("/used/999")
+
+
+def test_sold_vehicle_cards_are_skipped():
+    # McLaren Chicago's sold-vehicles page: "Sold" sits where the price goes
+    html = '''<html><body>
+<div class="card"><h3>2023 McLaren Artura TechLux</h3><div>5,692 mi</div><div>Mileage</div>
+<div>Sold</div><div>Price</div><div>SBM16AEA8PW001972</div></div>
+</body></html>'''
+    assert listings_from_vin_cards(html, "t", "T", "https://dealer.example/") == []
