@@ -7,7 +7,7 @@
     "cheapest_clean_key": "SBM16AEAXPW001505",
     "cheapest_clean_price": 145000,
     "new_today": 26,
-    "price_drops_today": 9,
+    "price_drops_today": 8,
     "market_model": {
      "n": 117,
      "intercept": 183926,
@@ -47,7 +47,7 @@
   "active": 947,
   "clean_candidates": 361,
   "new_today": 48,
-  "price_drops_today": 24,
+  "price_drops_today": 23,
   "removed_today": 16,
   "cheapest_clean_key": "SBM16AEAXPW001505",
   "cheapest_clean_price": 145000,
@@ -183,7 +183,6 @@
    "SBM16BEA9SW003485",
    "SBM16BEAXSW003270",
    "SBM16BEA9SW003874",
-   "SBM16AEA6SW002675",
    "SBM16AEAXPW001732",
    "ZHWUC1ZF8HLA06199",
    "ZHWUC1ZFXFLA01678",
@@ -17754,12 +17753,7 @@
    ],
    "first_seen": "2026-11-19",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-11-20",
-    "from": 290858,
-    "to": 219991,
-    "delta": -70867
-   },
+   "last_price_change": null,
    "last_seen": "2026-11-20",
    "last_seen_at": "2026-11-20T12:25:29+00:00",
    "status": "active",
@@ -17783,10 +17777,6 @@
     {
      "d": "2026-11-18",
      "p": 192000
-    },
-    {
-     "d": "2026-11-19",
-     "p": 290858
     },
     {
      "d": "2026-11-20",
