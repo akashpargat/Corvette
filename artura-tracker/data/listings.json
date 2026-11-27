@@ -47,7 +47,7 @@
   "active": 927,
   "clean_candidates": 353,
   "new_today": 13,
-  "price_drops_today": 30,
+  "price_drops_today": 29,
   "removed_today": 19,
   "cheapest_clean_key": "SBM16AEA0PW000718",
   "cheapest_clean_price": 147985,
@@ -145,7 +145,6 @@
    "kijiji:02e9da2c6a14"
   ],
   "price_drop": [
-   "SBM16AEA2PW001420",
    "ZHWUA6ZX9RLA26734",
    "ZHWUG7ZFXPLA23155",
    "ZHWUD4ZF9KLA12888",
@@ -1175,19 +1174,14 @@
    ],
    "first_seen": "2026-10-16",
    "missing_runs": 0,
-   "last_price_change": {
-    "date": "2026-11-27",
-    "from": 288425,
-    "to": 154977,
-    "delta": -133448
-   },
+   "last_price_change": null,
    "last_seen": "2026-11-27",
    "last_seen_at": "2026-11-27T12:23:20+00:00",
    "status": "active",
    "price_history": [
     {
      "d": "2026-10-19",
-     "p": 288425
+     "p": 154977
     },
     {
      "d": "2026-10-22",
@@ -1199,11 +1193,11 @@
     },
     {
      "d": "2026-11-19",
-     "p": 288425
+     "p": 154977
     },
     {
      "d": "2026-11-26",
-     "p": 288425
+     "p": 154977
     },
     {
      "d": "2026-11-27",

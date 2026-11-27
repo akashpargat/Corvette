@@ -386,3 +386,15 @@ def test_car_seen_by_the_morning_crawl_is_not_missed_by_the_afternoon_one(tmp_pa
     p = merge(d, [_l("SBM16AEA5PW000001", 180000)], _report())   # same day, 000002 not in this run
     car2 = next(r for r in p["listings"] if r["key"] == "SBM16AEA5PW000002")
     assert car2["status"] == "active" and car2.get("missing_runs", 0) == 0
+
+
+def test_lone_high_dealer_price_does_not_push_out_the_price_four_sources_agree_on(tmp_path):
+    d = str(tmp_path)
+    vin = "SBM16AEA2PW001420"
+    offers = []
+    for src in ("autotrader", "kbb", "carfax", "ebay"):
+        o = _l(vin, 154977, source=src); o.url = f"https://{src}/listing/793753649"; offers.append(o)
+    dealer = _l(vin, 288425, source="dealer_sites"); dealer.url = "https://dealer.example/vdp/SBM16AEA2PW001420"
+    p = merge(d, offers + [dealer], _report(("autotrader", "kbb", "carfax", "ebay", "dealer_sites")))
+    car = p["listings"][0]
+    assert car["price"] == 154977 and car["price_high"] == 288425

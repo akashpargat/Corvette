@@ -368,7 +368,14 @@ def pick_price(offers: list[dict], page_prices: set | None = None):
     pool = reliable or usable
     priced = [o["price"] for o in pool]
     if len(priced) >= 2:
-        hi = max(priced)
+        # measure "neighbour's price" against a price two sources agree on when there is one: a lone
+        # high number (a dealer page's MSRP: The Motor Venue's 2023 Artura at $288,425 against four
+        # sources at $154,977) must not push the agreed price out as if it were the stray
+        srcs_at: dict = {}
+        for o in pool:
+            srcs_at.setdefault(o["price"], set()).add(o["source"])
+        agreed = [p for p, s in srcs_at.items() if len(s) >= 2]
+        hi = max(agreed) if agreed else max(priced)
         keep = {p for p in priced if p >= hi * 0.6} or set(priced)
         pool = [o for o in pool if o["price"] in keep]
         priced = [o["price"] for o in pool]
